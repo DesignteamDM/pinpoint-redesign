@@ -5,9 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Details</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="default.css">
 </head>
 <body>
-    <div class="container">
+    <div style="z-index: 99999; position:fixed; top:0px; height:60px; width:100%;" id="topMenu">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr valign="TOP">
+           
+        
+    <td class="topmenu-bg"><img src="http://pinpointusstage.pinpoint.test/oe/images/hmpg_02.jpg" alt="" width="209" height="57" class="topmenu-logo"><a href="index.cfm?page=home" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Home','','images/roll-hmpg_03.jpg',1)">
+        Main
+    </a><a href="index.cfm?page=customers" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Customers','','images/roll-hmpg_04.jpg',1)">Customers</a><a href="index.cfm?page=orders" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Orders','','images/roll-hmpg_05.jpg',1)">Orders</a><a href="index.cfm?page=reports" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Reports','','images/roll-hmpg_06.jpg',1)">Reports</a><a href="index.cfm?page=oldentrycustomer" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('oldentrycustomer','','images/roll-hmpg_11.jpg',1)"> Previous Orders</a> <a href="../ordercontroller/index.cfm?page=pricelist" target="_new">Garment Pricing</a>
+    <a href="index.cfm?page=advancedsearch" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('advancedsearch','','http://pinpointusstage.pinpoint.test/oe/images/search_hover.jpg',1)" class="topmenu-search"><img src="http://pinpointusstage.pinpoint.test/oe/images/search.jpg" name="advancedsearch" height="57" border="0" id="advancedsearch" title="Advanced Search"></a> <form name="form_search" id="form_search" action="/oe/index.cfm?page=order&amp;orderid=92075&amp;custid=418" method="post" style="display:inline-block; vertical-align:middle" onsubmit="return _CF_checkform_search(this)">
+        <input type="text" name="ordersearch" class="f10" id="ordersearch" onfocus="clearText(this)" onblur="clearText(this)" value="Find Order..." size="20">
+        &nbsp;
+        <input type="submit" name="FindOrder_new" class="f10" id="FindOrder_new" value="Find" onclick="return trimSearch();">
+    </form>
+    
+    
+    
+    </td>
+          </tr>
+        </tbody></table>
+        </div>
+<div class="main-content-container">
+        <div class="leftbar-bg">
+            <table width="195" border="0" cellspacing="0" cellpadding="3">
+              <tbody><tr>
+                <td align="center"><span class="f10"><strong><em>Welcome Back employee! Local..</em></strong><br>
+                    <a href="index.cfm?logout=yes">Logout</a><hr align="left" width="190" size="1" noshade="noshade"></span>
+    </td>
+              </tr>
+              <tr>
+                <td class="f12">
+                
+                      <p><a href="index.cfm?page=inventorystatus">Inventory Status</a></p>
+                
+                      <p><a href="index.cfm?page=vendors">Vendors</a></p>
+                
+                    <p><a href="index.cfm?page=suppliers">Suppliers</a></p>
+                    <p>&nbsp;-<a href="index.cfm?page=suppliers">Mark End of Fiscal Year</a>(<a style="font-size:95%" href="index.cfm?page=fiscalyearhelp">Help</a>)</p>
+                    <p>&nbsp;-<a href="index.cfm?page=OEconfirmedproduct">Confirmed Items</a>(<a style="font-size:95%" href="index.cfm?page=confirm_discont_item_help">Help</a>)</p>
+                    <p>&nbsp;-<a href="index.cfm?page=OEdiscontinued_Items">Discontinued Items</a>(<a style="font-size:95%" href="index.cfm?page=confirm_discont_item_help">Help</a>)</p>
+                
+                      <p><a href="index.cfm?page=items">Products</a></p>
+                    
+                    <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=expireditems">Expired</a></p>
+                
+                    <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=productcolors">Colors</a></p>
+                
+                    <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=ProductVendorMapping">Product Vendor Mapping</a></p>
+                
+                      <p><a href="index.cfm?page=shipping">Shipping Manager</a></p>
+                    
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=script_import_tracking">Import Tracking</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=fedexshipexport&amp;curr_orderid=92075" target="_blank">Export Keyed Shipping</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="javascript:void(0);" onclick="attachshippinglist(curr_orderid=92075);">Attach Shipping List</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="javascript:void(0);" onclick="linkshipdetails(curr_orderid=92075);">Edit Shipping List</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=exportautoshipping" target="_blank">Export Auto Shipping</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="printshippinglist.cfm?curr_orderid=92075" target="_blank">Print Shipping List</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="regularpackingslip.cfm?curr_orderid=92075" target="_blank" title="Packing slip for regular order ">Packing Slip</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="eventpickupslip.cfm?curr_orderid=92075" target="_blank" title="Event Pickup Slip">Event Pickup Slip</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="eventpackingslip.cfm?curr_orderid=92075" target="_blank" title="Event Packing Slip">Event Packing Slip</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=packingslipconfig&amp;curr_orderid=92075" title="Regular/ Event Slip Config">Regular/ Event Slip Config</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="multiShipQbexport.cfm?curr_orderid=92075" target="_blank">QB Shipping Export</a></p>
+                
+                      <p class="subitem">&nbsp;&nbsp;&nbsp;- <a href="index.cfm?page=shipping_manager_help" target="_blank">Shipping Manager Help</a></p>
+                
+                  <p><a href="index.cfm?page=coupons">Coupons</a></p>
+                
+                  <p><a href="index.cfm?page=catalogs">Catalogs</a></p>
+                
+                  <p><a href="index.cfm?page=managecustomertype">Manage Customer Type</a></p>
+                
+                  <p><a href="index.cfm?page=managecatalogmailreceivers">Catalog Mail Recipients</a></p>
+                
+                  <p><a href="index.cfm?page=utilities">Settings</a></p>
+                
+                  <p><a href="index.cfm?page=itemrules">Item Reminder Rules</a></p>
+                
+                  <p>
+    <a href="index.cfm?page=attributes">Attribute Tables</a>
+    (<a href="index.cfm?page=attributetablehelp" target="_blank">Help</a>)
+    </p>
+                
+                  <p><a href="index.cfm?page=quickcustomerupdate">Quick Customer Update</a></p>
+                
+                  <p><a href="../ordercontroller/index.cfm?page=approvals" target="_blank">Order Approvals</a></p>
+                
+                  <p><a href="index.cfm?page=emailcenter">Email Center</a></p>
+                
+                  <p><a href="index.cfm?page=epayqbexport">Convert USA E-Pay to T-Hub</a></p>
+                
+                  <p><a href="index.cfm?page=lightspeedqbexport">Convert Lightspeed to T-Hub</a></p>
+                
+                  <p><a href="index.cfm?page=accounting">Accounting</a></p>
+                
+                  <p><a href="../ordercontroller/index.cfm?page=pricelist" target="_blank">Garment Pricing</a></p>
+                
+                      <p><a href="index.cfm?page=holidaylist">Holiday List</a></p>
+                  
+                      <p><a href="index.cfm?page=pricecodelist">Price Code List</a></p>
+                  
+                    <p>
+                        <a href="index.cfm?page=addeditsize">Size List</a>
+                      (<a href="index.cfm?page=Sizelisthelp" target="_blank">Help</a>)
+                    </p>
+                
+                    <p>
+                        <a href="index.cfm?page=undefinedsizes">Import to Size List</a>
+                        (<a href="index.cfm?page=sizes_help" target="_blank">Help</a>)
+                    </p>
+                
+                    <p>
+    <a href="index.cfm?page=addeditcolor">Color List</a>
+    (<a href="index.cfm?page=colorhelp" target="_blank">Help</a>)
+    </p>
+                
+                    <p>
+                        <a href="index.cfm?page=productionemailreports">Production Email</a>
+                        (<a href="index.cfm?page=productionemailhelp" target="_blank">Help</a>)
+                    </p>
+                
+                    <p>
+                        <a href="index.cfm?page=shippinghistoryhelp">Shipping History Help</a>					
+                    </p>
+                
+                    <p>
+                        <a href="index.cfm?page=brightstoreorders">Add BrightStore Orders</a>					
+                    </p>
+                
+                    <p>
+                        <a href="index.cfm?page=update_productpricedb">Pricesheet Update</a>
+                    </p>
+                
+                <p><strong>Security Module</strong><br>
+                    <a href="../security" target="_blank">Security</a>
+                </p>
+                    
+                <p><a href="index.cfm?page=schedulerlist">Manage Scheduler</a></p>
+                
+                
+                <p><a href="index.cfm?page=shippinghistorytrack">Import Shipping History</a></p>
+                <p><a href="../ordercontroller/index.cfm?page=pricelist-calculation">Pricelist Calculation</a></p>
+                <p>Webserver: <a href="http://webserver16:81" target="_blank">81</a>&nbsp;&nbsp;&nbsp;  <a href="http://webserver16:82" target="_blank">82</a></p>
+                
+                
+                  <p><a href="index.cfm?page=webserver82history">82 Orders History</a></p>
+                
+                
+                <p><strong>Bright Store Management</strong>
+                </p>
+                
+                <p><a href="index.cfm?page=fetchorders" onclick="return confirm('Are you sure you want to continue to fetch orders from all stores?')">Fetch Orders</a></p>
+                
+                 <p><a href="index.cfm?page=manageautobrightorders">Manage Auto Bright Orders</a></p> 
+                
+                 <p><a href="index.cfm?page=fetchstorebased">Fetch Orders By Store</a></p>
+                 
+                 <p><a href="index.cfm?page=fetchnumberbased">Fetch Orders By Number</a></p> 
+                 
+                 <p><a href="index.cfm?page=orderupdate">Import Brightstore Orders</a></p>
+                
+                
+                <p><a href="index.cfm?page=removestores">Remove Stores</a></p>
+                <p><a href="index.cfm?page=addccpayment">Post Lightspeed CC Payments</a></p>
+                </td>
+              </tr>
+            </tbody></table>
+
+        </div>
+    <div class="new-ui-container">
         <div class="order-header">
             <div class="order-id">OE-92075</div>
             <div class="action-buttons">
@@ -349,7 +527,7 @@
             <p>Shipment Details content will be displayed here.</p>
         </div>
     </div>
-
+</div>
     <script src="script.js"></script>
 </body>
 </html>

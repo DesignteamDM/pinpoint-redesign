@@ -21,17 +21,11 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1400px;
+.new-ui-container {
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     background: white;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Order Header */
@@ -326,11 +320,11 @@ label {
     color: #555;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-select {
+.tab-content input[type="text"],
+.tab-content input[type="email"],
+.tab-content input[type="tel"],
+.tab-content input[type="date"],
+.tab-content select {
     width: 100%;
     padding: 6px 8px;
     border: 1px solid #bdbdbd;
@@ -342,11 +336,11 @@ select {
     transition: border-color 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="date"],
-select:focus {
+.tab-content input[type="text"]:focus,
+.tab-content input[type="email"]:focus,
+.tab-content input[type="tel"]:focus,
+.tab-content input[type="date"],
+.tab-content select:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -729,3 +723,9 @@ button {
     }
 }
 
+/* Not required */
+.main-content-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+}

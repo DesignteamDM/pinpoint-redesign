@@ -513,7 +513,37 @@ button {
     background-color: #dee2e6;
 }
 
+/* Tabs */
+.tabs {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
 /* Media Queries */
+@media (max-width: 768px) {
+    .tabs {
+        padding-bottom: 0px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tab-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
 @media (max-width: 679px) {
     .order-id {
         display: block;
@@ -589,7 +619,7 @@ button {
     .tabs {
         overflow-x: auto;
         white-space: nowrap;
-        padding-bottom: 5px;
+        padding-bottom: 0px;
     }
 }
 

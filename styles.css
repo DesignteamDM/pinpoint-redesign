@@ -513,6 +513,15 @@ button {
     background-color: #dee2e6;
 }
 
+/* Media Queries */
+@media (max-width: 679px) {
+    .order-id {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
 /* Hint Text */
 .hint {
     font-size: 12px;

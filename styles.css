@@ -282,7 +282,7 @@ body {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Side by side form groups */
@@ -332,7 +332,7 @@ input[type="tel"],
 input[type="date"],
 select {
     width: 100%;
-    padding: 8px 10px;
+    padding: 6px 8px;
     border: 1px solid #bdbdbd;
     border-radius: 4px;
     font-size: 13px;
@@ -424,7 +424,7 @@ button {
 .search-btn,
 .calendar-btn,
 .add-btn {
-    padding: 8px 12px;
+    padding: 6px 12px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -438,9 +438,6 @@ button {
 }
 
 /* Search Group */
-.search-group {
-    margin-bottom: 15px;
-}
 
 .search-input {
     display: flex;
@@ -542,7 +539,7 @@ button {
 
 .search-input-group input[type="text"] {
     flex: 1;
-    padding: 8px 12px;
+    padding: 6px 10px;
     border: 1px solid #ced4da;
     border-radius: 4px;
     font-size: 14px;
@@ -561,7 +558,7 @@ button {
 }
 
 .search-btn {
-    padding: 8px 16px;
+    padding: 6px 12px;
     font-size: 14px;
     font-weight: 500;
     color: #535353;

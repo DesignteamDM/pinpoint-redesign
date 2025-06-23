@@ -61,6 +61,50 @@
                 <div class="form-section">
                     <div class="form-row">
                         <div class="form-group full-width">
+                            <div class="customer-search">
+                                <div class="search-container">
+                                    <label>Customer Name</label>
+                                    <div class="search-input-group">
+                                        <input type="text" id="customerSearch" placeholder="Search customer...">
+                                        <button type="button" class="search-btn" id="searchCustomerBtn">Find</button>
+                                    </div>
+                                </div>
+                                <div class="search-results" id="customerSearchResults">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Customer</th>
+                                                <th>Contact</th>
+                                                <th>Phone</th>
+                                                <th>Cell</th>
+                                                <th>Fax</th>
+                                                <th>Email</th>
+                                                <th>Order</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="customerResultsBody">
+                                            <tr>
+                                                <td><a href="#" class="customer-link">A & M Ranch</a></td>
+                                                <td>Mark Johnson</td>
+                                                <td>(555) 123-4567</td>
+                                                <td>(555) 987-6543</td>
+                                                <td>(555) 789-0123</td>
+                                                <td>mark@amranch.com</td>
+                                                <td><a href="#" class="order-link">Place an Order</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#" class="customer-link">Smith & Co</a></td>
+                                                <td>Sarah Smith</td>
+                                                <td>(555) 234-5678</td>
+                                                <td>(555) 876-5432</td>
+                                                <td>(555) 678-9012</td>
+                                                <td>sarah@smithco.com</td>
+                                                <td><a href="#" class="order-link">Place an Order</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             <a href="#" class="sync-link">Sync Address From Master File</a>
                         </div>
                     </div>
@@ -70,7 +114,7 @@
                             <h4>Billing</h4>
                             <div class="form-row">
                             <div class="form-group">
-                                <label>Company</label>
+                                <label><a href="#" class="company-link">Company</a></label>
                                 <input type="text" value="Waketower Pro">
                             </div>
                             <div class="form-group">

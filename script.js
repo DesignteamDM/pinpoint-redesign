@@ -1,4 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize customer search functionality
+    const customerSearch = document.getElementById('customerSearch');
+    const searchCustomerBtn = document.getElementById('searchCustomerBtn');
+    const customerResultsBody = document.getElementById('customerResultsBody');
+    const customerSearchResults = document.getElementById('customerSearchResults');
+    let allTableRows = [];
+
+    // Get all table rows and store them
+    function initializeTableRows() {
+        allTableRows = Array.from(customerResultsBody.getElementsByTagName('tr'));
+    }
+
+    // Function to perform customer search
+    function performCustomerSearch(searchTerm) {
+        const searchLower = searchTerm.toLowerCase().trim();
+        
+        if (!searchLower) {
+            // If search is empty, show all rows
+            allTableRows.forEach(row => {
+                row.style.display = '';
+            });
+            return;
+        }
+
+
+        // Filter rows based on search term
+        allTableRows.forEach(row => {
+            const rowText = row.textContent.toLowerCase();
+            row.style.display = rowText.includes(searchLower) ? '' : 'none';
+        });
+    }
+
+
+    // Initialize the table rows
+    initializeTableRows();
+
+    // Event listeners for search
+    searchCustomerBtn.addEventListener('click', () => {
+        performCustomerSearch(customerSearch.value);
+    });
+
+    customerSearch.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            performCustomerSearch(customerSearch.value);
+        }
+    });
+
     // Tab functionality
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -54,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (searchTerm) {
                 // In a real implementation, this would trigger a search
                 console.log('Searching for:', searchTerm);
-                alert(`Search functionality would look for: ${searchTerm}`);
+                // alert(`Search functionality would look for: ${searchTerm}`);
             } else {
-                alert('Please enter a search term');
+                // alert('Please enter a search term');
             }
         });
     }
@@ -67,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             // In a real implementation, this would add a new field
             console.log('Add button clicked');
-            alert('Add functionality would be implemented here');
+            // alert('Add functionality would be implemented here');
         });
     });
 
@@ -105,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             // In a real implementation, this would sync the billing address from master file
             console.log('Syncing address from master file');
-            alert('Address would be synced from master file');
+            // alert('Address would be synced from master file');
         });
     }
 });

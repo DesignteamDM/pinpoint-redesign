@@ -523,6 +523,11 @@ button {
     margin-bottom: 15px;
 }
 
+/* Remove bottom border from last row in customer search results */
+.search-results table tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .search-container label {
     display: block;
     margin-bottom: 5px;
@@ -576,7 +581,7 @@ button {
     width: 100%;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    overflow: hidden;
+    overflow: scroll;
     margin-bottom: 15px;
 }
 
@@ -597,6 +602,7 @@ button {
     background-color: #f8f9fa;
     font-weight: 600;
     color: #495057;
+    min-width: 120px;
 }
 
 .search-results tbody tr:hover {

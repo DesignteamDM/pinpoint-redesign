@@ -382,9 +382,6 @@ select:focus {
     margin-right: 0;
 }
 /* Phone Input Groups */
-.phone-group {
-    margin-bottom: 20px;
-}
 
 .phone-inputs {
     display: flex;
@@ -488,7 +485,7 @@ button {
 .divider {
     height: 1px;
     background-color: #eee;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 /* Sync Link Button */

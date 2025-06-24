@@ -1,3 +1,121 @@
+/* Grid Utilities */
+.pui-row {
+    font-size: 0; /* Remove whitespace between inline-block elements */
+    margin: 0 -10px; /* Negative margin to counteract column padding */
+    padding: 0;
+    list-style: none;
+}
+
+[class*='pui-col-'] {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem; /* Reset font size */
+    padding: 0 10px; /* Column gutters */
+    box-sizing: border-box;
+    width: 100%; /* Default to full width on mobile */
+    margin-bottom: 15px;
+}
+
+/* Column widths - Extra Small (default) */
+.pui-col-1 { width: 8.333%; }
+.pui-col-2 { width: 16.666%; }
+.pui-col-3 { width: 25%; }
+.pui-col-4 { width: 33.333%; }
+.pui-col-5 { width: 41.666%; }
+.pui-col-6 { width: 50%; }
+.pui-col-7 { width: 58.333%; }
+.pui-col-8 { width: 66.666%; }
+.pui-col-9 { width: 75%; }
+.pui-col-10 { width: 83.333%; }
+.pui-col-11 { width: 91.666%; }
+.pui-col-12 { width: 100%; }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .pui-col-sm-1 { width: 8.333%; }
+    .pui-col-sm-2 { width: 16.666%; }
+    .pui-col-sm-3 { width: 25%; }
+    .pui-col-sm-4 { width: 33.333%; }
+    .pui-col-sm-5 { width: 41.666%; }
+    .pui-col-sm-6 { width: 50%; }
+    .pui-col-sm-7 { width: 58.333%; }
+    .pui-col-sm-8 { width: 66.666%; }
+    .pui-col-sm-9 { width: 75%; }
+    .pui-col-sm-10 { width: 83.333%; }
+    .pui-col-sm-11 { width: 91.666%; }
+    .pui-col-sm-12 { width: 100%; }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    [class*='pui-col-'] {
+        margin-bottom: 0;
+    }
+    
+    .pui-col-md-1 { width: 8.333%; }
+    .pui-col-md-2 { width: 16.666%; }
+    .pui-col-md-3 { width: 25%; }
+    .pui-col-md-4 { width: 33.333%; }
+    .pui-col-md-5 { width: 41.666%; }
+    .pui-col-md-6 { width: 50%; }
+    .pui-col-md-7 { width: 58.333%; }
+    .pui-col-md-8 { width: 66.666%; }
+    .pui-col-md-9 { width: 75%; }
+    .pui-col-md-10 { width: 83.333%; }
+    .pui-col-md-11 { width: 91.666%; }
+    .pui-col-md-12 { width: 100%; }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .pui-col-lg-1 { width: 8.333%; }
+    .pui-col-lg-2 { width: 16.666%; }
+    .pui-col-lg-3 { width: 25%; }
+    .pui-col-lg-4 { width: 33.333%; }
+    .pui-col-lg-5 { width: 41.666%; }
+    .pui-col-lg-6 { width: 50%; }
+    .pui-col-lg-7 { width: 58.333%; }
+    .pui-col-lg-8 { width: 66.666%; }
+    .pui-col-lg-9 { width: 75%; }
+    .pui-col-lg-10 { width: 83.333%; }
+    .pui-col-lg-11 { width: 91.666%; }
+    .pui-col-lg-12 { width: 100%; }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .pui-col-xl-1 { width: 8.333%; }
+    .pui-col-xl-2 { width: 16.666%; }
+    .pui-col-xl-3 { width: 25%; }
+    .pui-col-xl-4 { width: 33.333%; }
+    .pui-col-xl-5 { width: 41.666%; }
+    .pui-col-xl-6 { width: 50%; }
+    .pui-col-xl-7 { width: 58.333%; }
+    .pui-col-xl-8 { width: 66.666%; }
+    .pui-col-xl-9 { width: 75%; }
+    .pui-col-xl-10 { width: 83.333%; }
+    .pui-col-xl-11 { width: 91.666%; }
+    .pui-col-xl-12 { width: 100%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    [class*='pui-col-']:not([class*='pui-col-sm-']):not([class*='pui-col-md-']):not([class*='pui-col-lg-']):not([class*='pui-col-xl-']) {
+        width: 100%;
+    }
+    
+    [class*='pui-col-']:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Clearfix for the row */
+.pui-row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /* Helper Classes */
 .hint.hint-text-red {
     color: #dc3545; /* Red color for hint text */
@@ -32,8 +150,7 @@ body {
 .order-header {
     position: relative;
     width: 100%;
-    padding: 15px 0;
-    margin-bottom: 10px;
+    padding: 15px 0 15px 0px;
     border-bottom: 1px solid #eee;
     font-size: 0; /* Remove whitespace between inline-blocks */
 }
@@ -122,6 +239,16 @@ body {
 
 .print-order .icon {
     stroke: #333;
+}
+
+.close-order {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    border-color: #ffb3b3;
+}
+
+.close-order .icon {
+    stroke: #cc0000;
 }
 
 .action-btn:hover {
@@ -475,6 +602,65 @@ button {
     margin-bottom: 0px;
 }
 
+/* Payment Field */
+.payment-field {
+    display: flex;
+    align-items: center;
+}
+.payment-field .add-btn{
+    margin-left: 8px;
+}
+.payment-field input[type="text"] {
+    flex: 1;
+    margin-right: 8px;
+}
+.payment-field .account-select{
+    min-width: 250px;
+}
+
+.payment-toggle {
+    padding: 6px 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.payment-toggle:hover {
+    background-color: #e9ecef;
+}
+
+/* Radio Group */
+.radio-group {
+    display: flex;
+    margin-top: 4px;
+}
+.radio-group > * + * {
+    margin-left: 8px;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 5px;
+    width: auto;
+}
+.form-inline{
+    display: inline-block;
+}
+.form-inline > div {
+    display: inline-block;
+}
+.form-inline > div:first-child {
+    margin-right: 15px;
+}
 /* Divider */
 .divider {
     height: 1px;
@@ -533,7 +719,7 @@ button {
     padding: 6px 10px;
     border: 1px solid #ced4da;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
     color: #495057;
     max-width: 300px;
@@ -550,7 +736,7 @@ button {
 
 .search-btn {
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: #535353;
     background-color: #e4e4e4;
@@ -569,28 +755,35 @@ button {
     width: 100%;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    overflow: scroll;
+    max-height: 200px;
+    overflow: auto;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .search-results table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
+    position: relative;
 }
 
 .search-results th,
 .search-results td {
-    padding: 12px 8px;
+    padding: 8px 8px;
     text-align: left;
     border-bottom: 1px solid #dee2e6;
 }
 
-.search-results th {
+.search-results thead th {
     background-color: #f8f9fa;
     font-weight: 600;
     color: #495057;
     min-width: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
 }
 
 .search-results tbody tr:hover {
@@ -728,4 +921,46 @@ button {
     display: flex;
     flex-direction: row;
     margin-top: 60px;
+}
+/* Sticky Header and Tabs */
+
+/* Sticky Order Header */
+.order-header {
+    position: sticky;
+    top: 58px; /* Height of the top menu */
+    z-index: 90;
+    background: #fff;
+}
+
+/* Sticky Tabs */
+.tabs {
+    position: sticky;
+    top: 120px; /* Height of top menu + order header */
+    z-index: 89; /* One less than header */
+    background-color: white;
+    padding-top: 10px;
+}
+
+/* Ensure content doesn't jump under sticky elements */
+.new-ui-container {
+    padding-top: 0; /* Remove top padding since we're using sticky positioning */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .order-header {
+        top: 60px; /* Keep the same as desktop */
+    }
+    
+    .tabs {
+        top: 120px; /* Keep the same as desktop */
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0 10px;
+    }
+    
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }

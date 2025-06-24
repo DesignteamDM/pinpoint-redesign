@@ -59,9 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked button
             button.classList.add('active');
 
-            // Show corresponding tab content
+            // Show corresponding tab content and reset scroll position
             const tabId = button.getAttribute('data-tab');
-            document.getElementById(tabId).classList.add('active');
+            const tabContent = document.getElementById(tabId);
+            tabContent.classList.add('active');
+            
+            // Reset scroll position of the tab content
+            if (tabContent) {
+                tabContent.scrollTop = 0;
+            }
+            
+            // Also reset the window scroll position
+            window.scrollTo(0, 0);
         });
     });
 

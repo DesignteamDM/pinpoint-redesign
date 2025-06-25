@@ -4,6 +4,12 @@
     margin: 0 -10px; /* Negative margin to counteract column padding */
     padding: 0;
     list-style: none;
+    /* Flexbox fallback */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 [class*='pui-col-'] {
@@ -128,8 +134,14 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -137,6 +149,10 @@ body {
     color: #333;
     font-family: 'Verdana', sans-serif;
     line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .new-ui-container {
@@ -197,18 +213,28 @@ body {
 
 .action-btn {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 6px 8px;
     border: 1px solid #dee2e6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
     line-height: 1.4;
     white-space: nowrap;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .action-btn .icon {
@@ -318,9 +344,10 @@ body {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
-    -webkit-transition: -webkit-transform 0.3s ease;
-    -moz-transition: -moz-transform 0.3s ease;
-    -o-transition: -o-transform 0.3s ease;
+    -webkit-transition: -webkit-transform 0.3s ease, all 0.3s ease;
+    -moz-transition: -moz-transform 0.3s ease, all 0.3s ease;
+    -o-transition: -o-transform 0.3s ease, all 0.3s ease;
+    transition: transform 0.3s ease, all 0.3s ease;
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
@@ -332,6 +359,10 @@ body {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     background-color: #f8f9fa;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .tab-btn:hover {
@@ -371,7 +402,7 @@ body {
     display: table;
     width: 100%;
     table-layout: fixed;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .form-column {
@@ -662,6 +693,181 @@ button {
     margin-right: 15px;
 }
 /* Divider */
+/* Form Section Styling */
+.form-section {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+}
+
+.form-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+textarea.form-control {
+    height: auto;
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Text Styles */
+.text-muted {
+    color: #999;
+    font-size: 0.85em;
+    font-weight: normal;
+}
+
+.text-public {
+    color: #28a745; /* Green color for public */
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.text-private {
+    color: #dc3545; /* Red color for private */
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+/* Repeat Order Section Specific Styles */
+.repeat-order-section {
+
+    margin-bottom: 20px;
+}
+
+.repeat-order-section h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.repeat-order-section .form-group {
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.repeat-order-section .form-control {
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+    box-shadow: none;
+    transition: border-color 0.15s ease-in-out;
+    width: 100%;
+}
+
+.repeat-order-section .form-control:focus {
+    border-color: #4a90e2;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.repeat-order-section textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Customer Notes Specific */
+.repeat-order-section .customer-notes {
+    color: #d9534f;
+    font-family: monospace;
+    white-space: pre;
+    overflow-x: auto;
+    font-weight: 600;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .repeat-order-section .pui-col-md-4 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .repeat-order-section .pui-row > [class*='pui-col-'] {
+        padding: 0 10px;
+    }
+    
+    .repeat-order-section .pui-row > [class*='pui-col-']:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Legend and Taxable Styles */
+.legend-style {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.legend-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 6px;
+    color: #6c757d;
+}
+
+.legend-icon svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+}
+
+.product-name {
+    display: inline-flex;
+    align-items: center;
+}
+
+.taxable-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
 .divider {
     height: 1px;
     background-color: #eee;
@@ -731,6 +937,8 @@ button {
 .search-input-group input[type="text"]:focus {
     border-color: #80bdff;
     outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    -moz-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
@@ -808,11 +1016,15 @@ button {
 
 /* Tabs */
 .tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .tabs::-webkit-scrollbar {
@@ -923,19 +1135,25 @@ button {
 
 /* Sticky Order Header */
 .order-header {
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 58px; /* Height of the top menu */
     z-index: 90;
     background: #fff;
+    -webkit-backface-visibility: hidden; /* Fix for flickering in Safari */
+    backface-visibility: hidden;
 }
 
 /* Sticky Tabs */
 .tabs {
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 120px; /* Height of top menu + order header */
     z-index: 89; /* One less than header */
     background-color: white;
     padding-top: 10px;
+    -webkit-backface-visibility: hidden; /* Fix for flickering in Safari */
+    backface-visibility: hidden;
 }
 
 /* Ensure content doesn't jump under sticky elements */
@@ -969,13 +1187,18 @@ button {
 .required {
     color: #dc3545;
     margin-left: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Checkbox group styles */
 .checkbox-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    margin-top: 25px;
 }
 
 .checkbox-group input[type="checkbox"] {
@@ -988,27 +1211,45 @@ button {
     cursor: pointer;
 }
 
-.right-action-group{
+.right-action-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
-.right-action-group .add-btn,.right-action-group .calendar-btn{
+.right-action-group .add-btn,
+.right-action-group .calendar-btn {
     margin-left: 8px;
     padding: 2px 2px;
     height: 32px;
     width: 42px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     text-decoration: none;
     color: #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* Items Table Styles */
 .line-items-container {
-    margin-top: 20px;
+    margin-top: 15px;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .items-table {
@@ -1028,21 +1269,41 @@ button {
     font-weight: 600;
     color: #333;
     vertical-align: middle;
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     z-index: 10;
+    -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+    -webkit-backface-visibility: hidden; /* Fix for flickering in Safari */
+    backface-visibility: hidden;
 }
 
 .items-table > tbody > tr > td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 4px 8px;
     vertical-align: middle;
     overflow: hidden;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     background: #fff;
     position: relative;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
 }
-
+.items-table tfoot {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    vertical-align: middle;
+}
+.items-table tfoot td {
+    padding: 4px 8px;
+}
 /* Size variations and matrix styling */
 .items-table .size-variations {
     background-color: #f9f9f9;
@@ -1051,7 +1312,7 @@ button {
 .items-table .size-variations td {
     border-top: none;
     border-bottom: 1px solid #eee;
-    padding: 4px 10px;
+    padding: 4px 8px;
     font-size: 12px;
 }
 
@@ -1127,7 +1388,6 @@ button {
     display: flex;
     align-items: center;
     position: relative;
-    gap: 8px;
 }
 
 .product-name {
@@ -1364,7 +1624,6 @@ button {
 
 .size-breakdown th {
     background-color: #f5f5f5;
-    font-weight: 600;
 }
 
 .size-breakdown tr:nth-child(even) {
@@ -1432,7 +1691,6 @@ button {
     border: 1px solid #ced4da;
     padding: 5px 10px;
     border-radius: 3px;
-    cursor: pointer;
     font-size: 12px;
     display: inline-block;
 }
@@ -1462,7 +1720,6 @@ button {
 
 .size-breakdown th {
     background-color: #f2f2f2;
-    font-weight: bold;
 }
 
 .size-breakdown tr:first-child th:first-child,
@@ -1488,15 +1745,6 @@ button {
     margin-bottom: 5px;
 }
 
-.btn-option {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 6px 12px;
-    margin-bottom: 8px;
-    cursor: pointer;
-}
-
 .size-breakdown {
     width: 100%;
     border-collapse: collapse;
@@ -1506,7 +1754,7 @@ button {
 
 .size-breakdown th {
     background-color: #f1f1f1;
-    font-weight: 600;
+    font-weight: normal;
     text-align: center;
     padding: 4px 4px;
     border: 1px solid #ddd;
@@ -1565,6 +1813,7 @@ button {
     text-align: right;
     padding-right: 10px;
     color: #333;
+    font-weight: bold;
 }
 
 /* Responsive adjustments for mobile */
@@ -1587,5 +1836,5 @@ button {
     margin-top: 35px;
 }
 .pui-text-right{
-    text-align: right;
+    text-align: right!important;
 }

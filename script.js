@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.textContent = '-';
                     
                     // Show size variations and matrix rows
-                    while (nextRow && (nextRow.classList.contains('size-variations') || nextRow.classList.contains('size-matrix'))) {
+                    while (nextRow && (nextRow.classList.contains('size-variations') || nextRow.classList.contains('size-matrix') || nextRow.classList.contains('specification-item'))) {
                         nextRow.style.display = 'table-row';
                         nextRow = nextRow.nextElementSibling;
                     }
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.textContent = '+';
                     
                     // Hide size variations and matrix rows
-                    while (nextRow && (nextRow.classList.contains('size-variations') || nextRow.classList.contains('size-matrix'))) {
+                    while (nextRow && (nextRow.classList.contains('size-variations') || nextRow.classList.contains('size-matrix') || nextRow.classList.contains('specification-item'))) {
                         nextRow.style.display = 'none';
                         nextRow = nextRow.nextElementSibling;
                     }

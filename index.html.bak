@@ -879,23 +879,10 @@
                             </div>
                         </div>
                         <div class="divider"></div>
-                        <div class="line-items-header pui-row">
-                            <div class="pui-col-xl-6">
-                                <h5 class="inline-block">Line Items</h5>
-                            </div>
-                            <div class="pui-col-xl-6 pui-text-right">
-                                <div class="taxable-label legend-style">
-                                    <span class="legend-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="currentColor">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path
-                                                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1" />
-                                        </svg>
-                                    </span>
-                                    Taxable Items
-                                </div>
-                            </div>
+                        <h5>Line Items</h5>
+                        <div class="taxable-label">
+                            <span class="taxable-icon"></span>
+                            Taxable Items
                         </div>
                         <div class="line-items-container">
                             <table class="items-table">
@@ -931,64 +918,26 @@
                                                 <button class="toggle-details" type="button">+</button>
                                                 <span class="product-name">Men's Corporate Quarter Snap Up Sweater
                                                     Fleece - BLACK/WHITE_001</span>
-                                                <span class="legend-icon" title="Taxable">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="currentColor">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <path
-                                                            d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1">
-                                                        </path>
-                                                    </svg>
-                                                </span>
                                                 <div class="item-actions">
-                                                    <!-- <button class="btn-action" title="Copy">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
-                                                            </path>
-                                                        </svg></button> -->
+                                                    <button class="btn-action" title="Copy">
+                                                        Copy
+                                                    </button>
                                                     <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
+                                                        Edit
+                                                    </button>
                                                     <button class="btn-action" title="Duplicate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
-                                                            </path>
-                                                        </svg></button>
+                                                        Duplicate
+                                                    </button>
                                                     <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
+                                                        Delete
+                                                    </button>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>3</td>
+                                        <td>6</td>
                                         <td>0</td>
-                                        <!-- <td class="pui-text-right">$96.45</td> -->
-                                        <td colspan="2" class="pui-text-right line-total-amount">$590.70</td>
+                                        <td class="pui-text-right">$96.45</td>
+                                        <td class="pui-text-right line-total-amount">$590.70</td>
                                     </tr>
 
                                     <!-- Size Variations for Item 1 -->
@@ -1062,16 +1011,6 @@
                                         </td>
                                     </tr>
 
-                                    <!-- Specification Item -->
-                                    <tr class="specification-item" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Specification</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                    </tr>
 
 
                                     <!-- Item 2 -->
@@ -1084,54 +1023,25 @@
                                                 <span class="product-name">Men's Corporate Quarter Snap Up Sweater
                                                     Fleece - BLACK/WHITE_001</span>
                                                 <div class="item-actions">
-                                                    <!-- <button class="btn-action" title="Copy">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
-                                                            </path>
-                                                        </svg></button> -->
+                                                    <button class="btn-action" title="Copy">
+                                                        Copy
+                                                    </button>
                                                     <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
+                                                        Edit
+                                                    </button>
                                                     <button class="btn-action" title="Duplicate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
-                                                            </path>
-                                                        </svg></button>
+                                                        Duplicate
+                                                    </button>
                                                     <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
+                                                        Delete
+                                                    </button>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>3</td>
+                                        <td>6</td>
                                         <td>0</td>
-                                        <!-- <td class="pui-text-right">$96.45</td> -->
-                                        <td colspan="2" class="pui-text-right line-total-amount">$590.70</td>
+                                        <td class="pui-text-right">$96.45</td>
+                                        <td class="pui-text-right line-total-amount">$590.70</td>
                                     </tr>
 
                                     <!-- Size Variations for Item 2 -->
@@ -1216,54 +1126,25 @@
                                                 <button class="toggle-details" type="button">+</button>
                                                 <span class="product-name">Women's Classic Polo Shirt - NAVY_001</span>
                                                 <div class="item-actions">
-                                                    <!-- <button class="btn-action" title="Copy">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
-                                                            </path>
-                                                        </svg></button> -->
+                                                    <button class="btn-action" title="Copy">
+                                                        Copy
+                                                    </button>
                                                     <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
+                                                        Edit
+                                                    </button>
                                                     <button class="btn-action" title="Duplicate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
-                                                            </path>
-                                                        </svg></button>
+                                                        Duplicate
+                                                    </button>
                                                     <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
+                                                        Delete
+                                                    </button>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>4</td>
                                         <td>0</td>
-                                        <!-- <td class="pui-text-right">$45.99</td> -->
-                                        <td colspan="2" class="pui-text-right line-total-amount">$183.96</td>
+                                        <td class="pui-text-right">$45.99</td>
+                                        <td class="pui-text-right line-total-amount">$183.96</td>
                                     </tr>
 
                                     <!-- Size Variations for Item 3 -->
@@ -1350,65 +1231,8 @@
 
 
                                 </tbody>
-                                <!-- Footer with grand total -->
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="6" class="pui-text-right">Grand Total:</td>
-                                        <td class="pui-text-right">$786.66</td>
-                                    </tr>
-                                </tfoot>
                             </table>
-
-
                         </div>
-                        <!-- Repeat Order Info Section -->
-                        <div class="repeat-order-section">
-                            <h4>Repeat Order Info</h4>
-
-
-                            <div class="pui-row">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="original-order">Original Order #:</label>
-                                        <input type="text" id="original-order" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="previous-po">Previous PO #:</label>
-                                        <input type="text" id="previous-po" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pui-row" style="margin-top: 15px;">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="order-notes">Order Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="order-notes" class="form-control" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="pinpoint-notes">Pinpoint Notes <span
-                                                class="text-private">PRIVATE</span></label>
-                                        <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="customer-notes">Customer Provided Item Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
-----------------------------------------------------------------------
-Monograms is not responsible for damages to customer provided items. There</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </form>
             </div>
 

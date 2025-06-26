@@ -1,4 +1,67 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize warehouse table toggle functionality
+    function initializeWarehouseTable() {
+        const table = document.querySelector('.warehouse-list-table .data-table');
+        const toggleButton = document.querySelector('.toggle-warehouses');
+        const toggleIcon = document.querySelector('.toggle-icon');
+        const viewAllCheckbox = document.getElementById('viewAllWarehouses');
+        
+        if (!table || !toggleButton) return;
+        
+        // Get all rows except the header and yellow row
+        const toggleableRows = Array.from(table.querySelectorAll('tbody tr:not(.row-yellow)'));
+        
+        // Function to update row visibility
+        const updateRowVisibility = () => {
+            const isExpanded = table.classList.contains('table-expanded');
+            const showAll = viewAllCheckbox && viewAllCheckbox.checked;
+            
+            toggleableRows.forEach(row => {
+                row.style.display = (isExpanded || showAll) ? 'table-row' : 'none';
+            });
+            
+            if (toggleIcon) {
+                const shouldShowToggleMinus = isExpanded || showAll;
+                toggleIcon.textContent = shouldShowToggleMinus ? '−' : '+';
+                
+                // Ensure checkbox matches the toggle state
+                if (viewAllCheckbox) {
+                    viewAllCheckbox.checked = shouldShowToggleMinus;
+                }
+            }
+        };
+        
+        // Set initial state
+        table.classList.remove('table-expanded');
+        if (viewAllCheckbox) viewAllCheckbox.checked = false;
+        updateRowVisibility();
+        
+        // Toggle table expansion when clicking the toggle button
+        toggleButton.addEventListener('click', function() {
+            table.classList.toggle('table-expanded');
+            // Update checkbox to match toggle state
+            if (viewAllCheckbox) {
+                viewAllCheckbox.checked = table.classList.contains('table-expanded');
+            }
+            updateRowVisibility();
+        });
+        
+        // Toggle all warehouses when checkbox is clicked
+        if (viewAllCheckbox) {
+            viewAllCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    table.classList.add('table-expanded');
+                } else {
+                    table.classList.remove('table-expanded');
+                }
+                updateRowVisibility();
+            });
+        }
+    }
+    
+    // Initialize the warehouse table functionality
+    initializeWarehouseTable();
+    
     // Initialize customer search functionality
     const customerSearch = document.getElementById('customerSearch');
     const searchCustomerBtn = document.getElementById('searchCustomerBtn');

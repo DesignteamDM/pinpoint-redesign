@@ -294,6 +294,7 @@
                 <button class="tab-btn active" data-tab="customer-details">Customer Details</button>
                 <button class="tab-btn" data-tab="order-details">Order Details</button>
                 <button class="tab-btn" data-tab="flat-goods">Flat Goods</button>
+                <button class="tab-btn" data-tab="promotional-products">Promotional Products</button>
                 <button class="tab-btn" data-tab="payment-details">Payment Details</button>
                 <button class="tab-btn" data-tab="shipment-details">Shipment Details</button>
             </div>
@@ -1066,18 +1067,18 @@
                                     <tr class="specification-item" style="display: none;">
                                         <td></td>
                                         <td></td>
-                                        <td>Specification</td>
+                                        <td>Line 1</td>
                                         <td>1</td>
                                         <td>0</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                        <td class="pui-text-right">$45.99</td>
+                                        <td class="pui-text-right">$0</td>
+                                        <td class="pui-text-right">$0</td>
                                     </tr>
 
                                     <!-- Specification Item -->
                                     <tr class="specification-item" style="display: none;">
                                         <td></td>
                                         <td></td>
-                                        <td>Specification</td>
+                                        <td>Line 1</td>
                                         <td>1</td>
                                         <td>0</td>
                                         <td class="pui-text-right">$0</td>
@@ -1087,7 +1088,7 @@
 
                                     <!-- Item 2 -->
                                     <tr class="main-item">
-                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox"></td>
                                         <td><a href="#" class="item-link">1317219</a></td>
                                         <td>
                                             <div class="item-description">
@@ -1425,7 +1426,6 @@ Monograms is not responsible for damages to customer provided items. There</text
 
             <div class="tab-content" id="flat-goods">
                 <div class="form-section">
-                    
                     <div class="pui-row">
                         <div class="pui-col-md-6">
                             <div class="search-container">
@@ -1443,7 +1443,7 @@ Monograms is not responsible for damages to customer provided items. There</text
                             <thead>
                                 <tr>
                                     <th>Vendor Company</th>
-                                    <th>Vendor Address</th>
+                                    <th>Brand</th>
                                     <th>Style</th>
                                     <th>Find</th>
                                 </tr>
@@ -1451,15 +1451,15 @@ Monograms is not responsible for damages to customer provided items. There</text
                             <tbody>
                                 <tr>
                                     <td>Sanmar</td>
-                                    <td>123 Fabric Way, Textile City, TX 75001</td>
+                                    <td>Bella Canvas</td>
                                     <td>BC3001</td>
-                                    <td><button type="button" class="btn-action btn-sm">Find</button></td>
+                                    <td><button type="button" class="btn-action btn-sm">Select</button></td>
                                 </tr>
                                 <tr>
                                     <td>S&amp;S Activewear</td>
-                                    <td>456 Apparel Ave, Garment, CA 90210</td>
+                                    <td>Bella Canvas</td>
                                     <td>BC3001CVC</td>
-                                    <td><button type="button" class="btn-action btn-sm">Find</button></td>
+                                    <td><button type="button" class="btn-action btn-sm">Select</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1471,111 +1471,111 @@ Monograms is not responsible for damages to customer provided items. There</text
                         <h4>Sanmar</h4>
                     </div>
                     <div class="color-grid" id="colorGrid">
-                        <div class="color-option">
+                        <div class="color-option active" onclick="selectColor(this, 'Aqua')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_aqua.gif" alt="Aqua"></div>
                             <span class="color-name">Aqua</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Asphalt')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_asphalt.gif" alt="Asphalt"></div>
                             <span class="color-name">Asphalt</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Baby Blue')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_babyblue.gif" alt="Baby Blue"></div>
                             <span class="color-name">Baby Blue</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Blue Storm')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_BlueStorm.gif" alt="Blue Storm"></div>
                             <span class="color-name">Blue Storm</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Canvas Red')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_canvasred.gif" alt="Canvas Red"></div>
                             <span class="color-name">Canvas Red</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Charity Pink')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_charitypink.gif" alt="Charity Pink"></div>
                             <span class="color-name">Charity Pink</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Cocoa')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_Cocoa.gif" alt="Cocoa"></div>
                             <span class="color-name">Cocoa</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Coral')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_coral.gif" alt="Coral"></div>
                             <span class="color-name">Coral</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Dark Olive')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_darkolive.gif" alt="Dark Olive"></div>
                             <span class="color-name">Dark Olive</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Army')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_army.gif" alt="Army"></div>
                             <span class="color-name">Army</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Atlantic')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_Atlantic.gif" alt="Atlantic"></div>
                             <span class="color-name">Atlantic</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Berry')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_berry.gif" alt="Berry"></div>
                             <span class="color-name">Berry</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Brown')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_brown.gif" alt="Brown"></div>
                             <span class="color-name">Brown</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Cardinal')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_cardinal.gif" alt="Cardinal"></div>
                             <span class="color-name">Cardinal</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Chestnut')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_Chestnut.gif" alt="Chestnut"></div>
                             <span class="color-name">Chestnut</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Columbia Blue')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_ColumbiaBlue.gif" alt="Columbia Blue"></div>
                             <span class="color-name">Columbia Blue</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Dark Grey')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_darkgrey.gif" alt="Dark Grey"></div>
                             <span class="color-name">Dark Grey</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Deep Teal')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_deepteal.gif" alt="Deep Teal"></div>
                             <span class="color-name">Deep Teal</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Ash')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_ash.gif" alt="Ash"></div>
                             <span class="color-name">Ash</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Autumn')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_autumn.gif" alt="Autumn"></div>
                             <span class="color-name">Autumn</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Black')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_black.gif" alt="Black"></div>
                             <span class="color-name">Black</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Burnt Orange')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/bc_burntorange.gif" alt="Burnt Orange"></div>
                             <span class="color-name">Burnt Orange</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Carolina Blue')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_CarolinaBlue.gif" alt="Carolina Blue"></div>
                             <span class="color-name">Carolina Blue</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Clay')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_Clay.gif" alt="Clay"></div>
                             <span class="color-name">Clay</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Cool Blue')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_CoolBlue.gif" alt="Cool Blue"></div>
                             <span class="color-name">Cool Blue</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Dark Lavender')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_DarkLavender.gif" alt="Dark Lavender"></div>
                             <span class="color-name">Dark Lavender</span>
                         </div>
-                        <div class="color-option">
+                        <div class="color-option" onclick="selectColor(this, 'Dust')">
                             <div class="color-swatch"><img src="https://cdnm.sanmar.com/swatch/gifs/BC3001_Dust.gif" alt="Dust"></div>
                             <span class="color-name">Dust</span>
                         </div>
@@ -1761,12 +1761,11 @@ Monograms is not responsible for damages to customer provided items. There</text
                                             <th class="text-center">3XL</th>
                                             <th class="text-center">4XL</th>
                                             <th class="text-center">5XL</th>
-                                            <th class="text-center">6XL</th>
+                                         
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="number" min="0" class="form-control input-sm qty-input" placeholder="0"></td>
                                             <td><input type="number" min="0" class="form-control input-sm qty-input" placeholder="0"></td>
                                             <td><input type="number" min="0" class="form-control input-sm qty-input" placeholder="0"></td>
                                             <td><input type="number" min="0" class="form-control input-sm qty-input" placeholder="0"></td>
@@ -1933,27 +1932,30 @@ Monograms is not responsible for damages to customer provided items. There</text
                 <div class="pui-row">
                     <div class="pui-col-md-1 pui-mt-5px">Line 1</div>
                     <div class="pui-col-md-2">
-                        <input type="text" class="form-control" placeholder="Description">
+                        <input type="text" placeholder="Description">
                     </div>
                     <div class="pui-col-md-1">
-                        <input type="text" class="form-control" placeholder="NBR">
+                        <input type="text" placeholder="NBR">
                     </div>
                     <div class="pui-col-md-2">
-                        <input type="text" class="form-control" placeholder="Color\NRB">
+                        <input type="text" placeholder="Color\NRB">
                     </div>
-                    <div class="pui-col-md-3">
+                    <div class="pui-col-md-2">
                         <div class="right-action-group">
-                            <select class="form-control">
+                            <select>
                                 <option value="" disabled selected>Select Location</option>
                             </select>
-                            <button type="button" class="add-btn-sm-green-rounded">+</button>
+                            <a href="#" class="add-btn">+</a>
                         </div>
                     </div>
                     <div class="pui-col-md-2">
-                        <input type="text" class="form-control" placeholder="Lettering">
+                        <input type="text" placeholder="Lettering">
                     </div>
                     <div class="pui-col-md-1">
-                        <input type="text" class="form-control" placeholder="Price">
+                        <input type="text" placeholder="Price">
+                    </div>
+                    <div class="pui-col-md-1">
+                        <button type="button" class="add-btn-sm-green-rounded">+</button>
                     </div>
                 </div>
             </div>
@@ -1963,14 +1965,41 @@ Monograms is not responsible for damages to customer provided items. There</text
                 </div>
             </div>
         </div>
+        
+        </div>
+        <div class="tab-content" id="promotional-products">
+            <!-- Promotional Products content will go here -->
+            <p>Promotional Products content will be displayed here.</p>
+        </div>
+        <div class="tab-content" id="shipment-details">
+            <!-- Shipment Details content will go here -->
+            <p>Shipment Details content will be displayed here.</p>
+        </div>
             <div class="tab-content" id="payment-details">
                 <!-- Payment Details content will go here -->
                 <p>Payment Details content will be displayed here.</p>
             </div>
-        </div>
-      
     </div>
 
+    <script>
+        // Global function to handle color selection
+        function selectColor(element, colorName) {
+            // Remove active class from all color options
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            // Add active class to clicked option
+            element.classList.add('active');
+            
+            // Update the selected color display
+            const colorSelectedSpan = document.querySelector('.pui-mb-10px > span');
+            if (colorSelectedSpan) {
+                colorSelectedSpan.textContent = colorName;
+            }
+        }
+    </script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </body>

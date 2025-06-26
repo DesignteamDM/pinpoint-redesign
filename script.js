@@ -189,6 +189,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the items table functionality
     initializeItemsTable();
 
+    // Initialize accordion functionality
+    function initializeAccordions() {
+        const accordionToggles = document.querySelectorAll('.accordion-toggle');
+        
+        accordionToggles.forEach(toggle => {
+            // Set initial state (all closed)
+            const targetId = toggle.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+            const icon = toggle.querySelector('.accordion-icon');
+            
+            if (content) {
+                content.style.display = 'none';
+                if (icon) icon.textContent = '+';
+            }
+            
+            // Add click handler
+            toggle.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const icon = this.querySelector('.accordion-icon');
+                
+                // Toggle current accordion
+                if (content.style.display === 'none' || content.style.display === '') {
+                    content.style.display = 'block';
+                    if (icon) icon.textContent = '-';
+                } else {
+                    content.style.display = 'none';
+                    if (icon) icon.textContent = '+';
+                }
+            });
+        });
+    }
+
+    // Initialize accordions on page load
+    if (document.querySelector('.accordion-toggle')) {
+        initializeAccordions();
+    }
+
     // Add click handler for the search button
     const searchBtn = document.querySelector('.search-btn');
     if (searchBtn) {

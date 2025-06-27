@@ -409,21 +409,27 @@
                                         <select class="area-code">
                                             <option>USA (+1)</option>
                                         </select>
-                                        <div class="phone-inputs">
-                                            <select class="phone-type">
-                                                <option>Cell</option>
-                                            </select>
-                                            <input class="phone-number" type="text" value="405.255.7668">
-                                            <span class="phone-ext">Ext.</span>
-                                            <input class="ext-input" type="text">
+                                        <div class="phone-inputs-container">
+                                            <div class="phone-inputs">
+                                                <select class="phone-type">
+                                                    <option>Cell</option>
+                                                </select>
+                                                <input class="phone-number" type="text" value="405.255.7668">
+                                                <span class="phone-ext">Ext.</span>
+                                                <input class="ext-input" type="text">
+                                            </div>
+                                            <div class="phone-inputs">
+                                                <select class="phone-type">
+                                                    <option>Cell</option>
+                                                </select>
+                                                <input class="phone-number" type="text" value="405.255.7668">
+                                                <span class="phone-ext">Ext.</span>
+                                                <input class="ext-input" type="text">
+                                            </div>
                                         </div>
-                                        <div class="phone-inputs">
-                                            <select class="phone-type">
-                                                <option>Cell</option>
-                                            </select>
-                                            <input class="phone-number" type="text" value="405.255.7668">
-                                            <span class="phone-ext">Ext.</span>
-                                            <input class="ext-input" type="text">
+                                        <div class="phone-buttons-container">
+                                            <button type="button" class="add-phone-btn">+ Add another phone number</button>
+                                            <button type="button" class="show-more-phones" style="display: none;">Show more phone numbers</button>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -446,7 +452,7 @@
                                                 <span class="radio-mark"></span>
                                                 No
                                             </label>
-    
+
                                         </div>
                                     </div>
                                 </div>
@@ -693,51 +699,51 @@
                         </div>
                         <div class="section-card pui-mt-10px">
                             <!-- Repeat Order Info Section -->
-                        <div class="repeat-order-section">
-                            <h4 class="section-heading">Repeat Order Info</h4>
+                            <div class="repeat-order-section">
+                                <h4 class="section-heading">Repeat Order Info</h4>
 
 
-                            <div class="pui-row">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="original-order">Original Order #:</label>
-                                        <input type="text" id="original-order" class="form-control">
+                                <div class="pui-row">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="original-order">Original Order #:</label>
+                                            <input type="text" id="original-order" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="previous-po">Previous PO #:</label>
+                                            <input type="text" id="previous-po" class="form-control">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="previous-po">Previous PO #:</label>
-                                        <input type="text" id="previous-po" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="pui-row" style="margin-top: 15px;">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="order-notes">Order Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="order-notes" class="form-control" rows="3"></textarea>
+                                <div class="pui-row" style="margin-top: 15px;">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="order-notes">Order Notes <span
+                                                    class="text-public">PUBLIC</span></label>
+                                            <textarea id="order-notes" class="form-control" rows="3"></textarea>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="pinpoint-notes">Pinpoint Notes <span
-                                                class="text-private">PRIVATE</span></label>
-                                        <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="pinpoint-notes">Pinpoint Notes <span
+                                                    class="text-private">PRIVATE</span></label>
+                                            <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="customer-notes">Customer Provided Item Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="customer-notes">Customer Provided Item Notes <span
+                                                    class="text-public">PUBLIC</span></label>
+                                            <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
 ----------------------------------------------------------------------
 Monograms is not responsible for damages to customer provided items. There</textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </form>
@@ -747,332 +753,332 @@ Monograms is not responsible for damages to customer provided items. There</text
                 <form id="order-details-form">
                     <div class="form-section">
                         <div class="section-card">
-                        <div class="pui-row">
-                            <div class="pui-col-xl-3">
-                                <div class="form-group">
-                                    <label>Approval Delivery <span class="required">*</span></label>
-                                    <div class="right-action-group">
-
-                                        <select class="form-control">
-                                            <option selected>In Person</option>
-                                        </select>
-
-
-                                        <a href="#" class="add-btn">+</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pui-col-xl-3">
-                                <div class="form-group">
-                                    <label>Type <span class="required">*</span></label>
-                                    <div class="right-action-group">
-                                        <select class="form-control">
-                                            <option selected>Combo</option>
-                                        </select>
-                                        <a href="#" class="add-btn">+</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pui-col-xl-2">
-                                <div class="form-group">
-                                    <label>Re-Order Date </label>
-
-                                    <div class="input-group">
+                            <div class="pui-row">
+                                <div class="pui-col-xl-3">
+                                    <div class="form-group">
+                                        <label>Approval Delivery <span class="required">*</span></label>
                                         <div class="right-action-group">
-                                            <input type="text" class="form-control">
-                                            <button type="button" class="calendar-btn">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
-                            <div class="pui-col-xl-3">
-                                <div class="form-group mt-35px">
-                                    <label class="checkbox-container">
-                                        <input type="checkbox" id="reorder-not-allowed">
-                                        <span class="checkmark"></span>
-                                        Not Allowed
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="pui-row">
-                            <div class="pui-col-xl-2">
-                                <div class="form-group">
-                                    <label>Must Have</label>
+                                            <select class="form-control">
+                                                <option selected>In Person</option>
+                                            </select>
 
-                                    <div class="input-group">
-                                        <div class="right-action-group">
-                                            <input type="text" class="form-control" value="08/29/2016">
-                                            <button type="button" class="calendar-btn">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                </svg>
-                                            </button>
+
+                                            <a href="#" class="add-btn">+</a>
+
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="pui-col-xl-2">
-                                <div class="form-group">
-                                    <label>Event Date</label>
-                                    <div class="input-group">
+                                <div class="pui-col-xl-3">
+                                    <div class="form-group">
+                                        <label>Type <span class="required">*</span></label>
                                         <div class="right-action-group">
-                                            <input type="text" class="form-control">
-                                            <button type="button" class="calendar-btn">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                </svg>
-                                            </button>
+                                            <select class="form-control">
+                                                <option selected>Combo</option>
+                                            </select>
+                                            <a href="#" class="add-btn">+</a>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="pui-col-xl-2">
+                                    <div class="form-group">
+                                        <label>Re-Order Date </label>
+
+                                        <div class="input-group">
+                                            <div class="right-action-group">
+                                                <input type="text" class="form-control">
+                                                <button type="button" class="calendar-btn">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="pui-col-xl-3">
+                                    <div class="form-group mt-35px">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" id="reorder-not-allowed">
+                                            <span class="checkmark"></span>
+                                            Not Allowed
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pui-col-xl-2">
-                                <div class="form-group">
-                                    <label>Release Date</label>
-                                    <div class="input-group">
-                                        <div class="right-action-group">
-                                            <input type="text" class="form-control">
-                                            <button type="button" class="calendar-btn">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                </svg>
-                                            </button>
+                            <div class="divider"></div>
+                            <div class="pui-row">
+                                <div class="pui-col-xl-2">
+                                    <div class="form-group">
+                                        <label>Must Have</label>
+
+                                        <div class="input-group">
+                                            <div class="right-action-group">
+                                                <input type="text" class="form-control" value="08/29/2016">
+                                                <button type="button" class="calendar-btn">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="pui-col-xl-2">
-                                <div class="form-group">
-                                    <label>BackOrder Date</label>
-                                    <div class="input-group">
-                                        <div class="right-action-group">
-                                            <input type="text" class="form-control">
-                                            <button type="button" class="calendar-btn">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                </svg>
-                                            </button>
+                                <div class="pui-col-xl-2">
+                                    <div class="form-group">
+                                        <label>Event Date</label>
+                                        <div class="input-group">
+                                            <div class="right-action-group">
+                                                <input type="text" class="form-control">
+                                                <button type="button" class="calendar-btn">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="pui-row">
-                            <div class="pui-col-xl-3">
-                                <div class="form-group">
-                                    <label>Delivery <span class="required">*</span></label>
-                                    <div class="right-action-group">
-                                        <select class="form-control">
-                                            <option selected>Pickup - OKC</option>
-                                        </select>
-                                        <a href="#" class="add-btn">+</a>
+                                <div class="pui-col-xl-2">
+                                    <div class="form-group">
+                                        <label>Release Date</label>
+                                        <div class="input-group">
+                                            <div class="right-action-group">
+                                                <input type="text" class="form-control">
+                                                <button type="button" class="calendar-btn">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="pui-col-xl-3">
-                                <div class="form-group">
-                                    <label>Freight <span class="required">*</span></label>
-                                    <div class="right-action-group">
-                                        <select class="form-control">
-                                            <option selected>No Charge</option>
-                                        </select>
-                                        <a href="#" class="add-btn">+</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pui-col-xl-2">
-                                <div class="form-group">
-                                    <label>Sched. Ship/Pickup Date <span class="required">*</span></label>
-                                    <div class="input-group">
-                                        <div class="right-action-group">
-                                            <input type="text" class="form-control" value="07/20/2024">
-                                            <button type="button" class="calendar-btn">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                </svg>
-                                            </button>
+                                <div class="pui-col-xl-2">
+                                    <div class="form-group">
+                                        <label>BackOrder Date</label>
+                                        <div class="input-group">
+                                            <div class="right-action-group">
+                                                <input type="text" class="form-control">
+                                                <button type="button" class="calendar-btn">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="pui-row">
-                            <div class="pui-col-xl-3">
-                                <div class="form-group">
-                                    <label>Tracking</label>
-                                    <input type="text" class="form-control">
+                            <div class="divider"></div>
+                            <div class="pui-row">
+                                <div class="pui-col-xl-3">
+                                    <div class="form-group">
+                                        <label>Delivery <span class="required">*</span></label>
+                                        <div class="right-action-group">
+                                            <select class="form-control">
+                                                <option selected>Pickup - OKC</option>
+                                            </select>
+                                            <a href="#" class="add-btn">+</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pui-col-xl-3">
+                                    <div class="form-group">
+                                        <label>Freight <span class="required">*</span></label>
+                                        <div class="right-action-group">
+                                            <select class="form-control">
+                                                <option selected>No Charge</option>
+                                            </select>
+                                            <a href="#" class="add-btn">+</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pui-col-xl-2">
+                                    <div class="form-group">
+                                        <label>Sched. Ship/Pickup Date <span class="required">*</span></label>
+                                        <div class="input-group">
+                                            <div class="right-action-group">
+                                                <input type="text" class="form-control" value="07/20/2024">
+                                                <button type="button" class="calendar-btn">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="pui-col-xl-3">
-                                <div class="form-group">
-                                    <label>Invoice #</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                        <div class="section-card pui-mt-10px">
-                            <!-- Repeat Order Info Section -->
-                        <div class="repeat-order-section">
-                            <h4 class="section-heading">Repeat Order Info</h4>
-
 
                             <div class="pui-row">
-                                <div class="pui-col-md-4">
+                                <div class="pui-col-xl-3">
                                     <div class="form-group">
-                                        <label for="original-order">Original Order #:</label>
-                                        <input type="text" id="original-order" class="form-control">
+                                        <label>Tracking</label>
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
-                                <div class="pui-col-md-4">
+                                <div class="pui-col-xl-3">
                                     <div class="form-group">
-                                        <label for="previous-po">Previous PO #:</label>
-                                        <input type="text" id="previous-po" class="form-control">
+                                        <label>Invoice #</label>
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="pui-row" style="margin-top: 15px;">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="order-notes">Order Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="order-notes" class="form-control" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="pinpoint-notes">Pinpoint Notes <span
-                                                class="text-private">PRIVATE</span></label>
-                                        <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="customer-notes">Customer Provided Item Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
-----------------------------------------------------------------------
-Monograms is not responsible for damages to customer provided items. There</textarea>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
                         </div>
                         <div class="section-card pui-mt-10px">
-                        <div class="line-items-header pui-row">
-                            <div class="pui-col-xl-6">
-                                <h4>Line Items</h4>
-                            </div>
-                            <div class="pui-col-xl-6 pui-text-right">
-                                <div class="expand-all-container" style="display: inline-block; margin-left: 10px;">
-                                    <label class="checkbox-container">
-                                        <input type="checkbox" id="expandAllProducts">
-                                        <span class="checkmark"></span>
-                                        <span>Expand all products</span>
-                                    </label>
+                            <!-- Repeat Order Info Section -->
+                            <div class="repeat-order-section">
+                                <h4 class="section-heading">Repeat Order Info</h4>
+
+
+                                <div class="pui-row">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="original-order">Original Order #:</label>
+                                            <input type="text" id="original-order" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="previous-po">Previous PO #:</label>
+                                            <input type="text" id="previous-po" class="form-control">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="taxable-label legend-style">
-                                    <span class="legend-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="currentColor">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path
-                                                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                    Taxable Items
+
+                                <div class="pui-row" style="margin-top: 15px;">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="order-notes">Order Notes <span
+                                                    class="text-public">PUBLIC</span></label>
+                                            <textarea id="order-notes" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="pinpoint-notes">Pinpoint Notes <span
+                                                    class="text-private">PRIVATE</span></label>
+                                            <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="customer-notes">Customer Provided Item Notes <span
+                                                    class="text-public">PUBLIC</span></label>
+                                            <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
+----------------------------------------------------------------------
+Monograms is not responsible for damages to customer provided items. There</textarea>
+                                        </div>
+                                    </div>
                                 </div>
-                                
                             </div>
                         </div>
-                        <div class="line-items-container">
-                            <table class="items-table">
-                                <colgroup>
-                                    <col width="40">
-                                    <col width="80">
-                                    <col>
-                                    <col width="70">
-                                    <col width="100">
-                                    <col width="80">
-                                    <col width="80">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th><input type="checkbox"></th>
-                                        <th>Item #</th>
-                                        <th>Description
+                        <div class="section-card pui-mt-10px">
+                            <div class="line-items-header pui-row">
+                                <div class="pui-col-xl-6">
+                                    <h4>Line Items</h4>
+                                </div>
+                                <div class="pui-col-xl-6 pui-text-right">
+                                    <div class="expand-all-container" style="display: inline-block; margin-left: 10px;">
+                                        <label class="checkbox-container">
+                                            <input type="checkbox" id="expandAllProducts">
+                                            <span class="checkmark"></span>
+                                            <span>Expand all products</span>
+                                        </label>
+                                    </div>
+                                    <div class="taxable-label legend-style">
+                                        <span class="legend-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="currentColor">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path
+                                                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        Taxable Items
+                                    </div>
 
-                                        </th>
-                                        <th>Qty</th>
-                                        <th>Qty Shipped</th>
-                                        <th class="pui-text-right">Price</th>
-                                        <th class="pui-text-right">Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Item 1 -->
-                                    <tr class="main-item">
-                                        <td><input type="checkbox"></td>
-                                        <td><a href="#" class="item-link">1317218</a></td>
-                                        <td>
-                                            <div class="item-description">
-                                                <button class="toggle-details" type="button">+</button>
-                                                <span class="product-name">Men's Corporate Quarter Snap Up Sweater
-                                                    Fleece - BLACK/WHITE_001</span>
-                                                <span class="legend-icon" title="Taxable">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                        viewBox="0 0 24 24" fill="currentColor">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <path
-                                                            d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1">
-                                                        </path>
-                                                    </svg>
-                                                </span>
-                                                <div class="item-actions">
-                                                    <!-- <button class="btn-action" title="Copy">
+                                </div>
+                            </div>
+                            <div class="line-items-container">
+                                <table class="items-table">
+                                    <colgroup>
+                                        <col width="40">
+                                        <col width="80">
+                                        <col>
+                                        <col width="70">
+                                        <col width="100">
+                                        <col width="80">
+                                        <col width="80">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox"></th>
+                                            <th>Item #</th>
+                                            <th>Description
+
+                                            </th>
+                                            <th>Qty</th>
+                                            <th>Qty Shipped</th>
+                                            <th class="pui-text-right">Price</th>
+                                            <th class="pui-text-right">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Item 1 -->
+                                        <tr class="main-item">
+                                            <td><input type="checkbox"></td>
+                                            <td><a href="#" class="item-link">1317218</a></td>
+                                            <td>
+                                                <div class="item-description">
+                                                    <button class="toggle-details" type="button">+</button>
+                                                    <span class="product-name">Men's Corporate Quarter Snap Up Sweater
+                                                        Fleece - BLACK/WHITE_001</span>
+                                                    <span class="legend-icon" title="Taxable">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="currentColor">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path
+                                                                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                    <div class="item-actions">
+                                                        <!-- <button class="btn-action" title="Copy">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                             stroke-width="2" stroke-linecap="round"
@@ -1083,150 +1089,151 @@ Monograms is not responsible for damages to customer provided items. There</text
                                                                 d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
                                                             </path>
                                                         </svg></button> -->
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
-                                                    <button class="btn-action" title="Duplicate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
-                                                            </path>
-                                                        </svg></button>
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
+                                                        <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path
+                                                                    d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                                </path>
+                                                            </svg></button>
+                                                        <button class="btn-action" title="Duplicate">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
+                                                                </rect>
+                                                                <path
+                                                                    d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
+                                                                </path>
+                                                            </svg></button>
+                                                        <button class="btn-action" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M3 6h18"></path>
+                                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                            </svg></button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <!-- <td class="pui-text-right">$96.45</td> -->
-                                        <td colspan="2" class="pui-text-right line-total-amount">$590.70</td>
-                                    </tr>
+                                            </td>
+                                            <td>3</td>
+                                            <td>0</td>
+                                            <!-- <td class="pui-text-right">$96.45</td> -->
+                                            <td colspan="2" class="pui-text-right line-total-amount">$590.70</td>
+                                        </tr>
 
-                                    <!-- Size Variations for Item 1 -->
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: S-XL</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                    </tr>
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: 2XL</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                    </tr>
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: 3XL</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$108.45</td>
-                                        <td class="pui-text-right">$108.45</td>
-                                    </tr>
+                                        <!-- Size Variations for Item 1 -->
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: S-XL</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                        </tr>
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: 2XL</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                        </tr>
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: 3XL</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$108.45</td>
+                                            <td class="pui-text-right">$108.45</td>
+                                        </tr>
 
-                                    <!-- Size Matrix for Item 1 -->
-                                    <tr class="size-matrix" style="display: none;">
-                                        <td></td>
-                                        <td colspan="6">
-                                            <div class="size-matrix-container">
-                                                <div class="btn-option">GENERIC SIZES - BLACK/WHITE_001</div>
-                                                <div>
-                                                    <table class="size-breakdown">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>S</th>
-                                                                <th>M</th>
-                                                                <th>L</th>
-                                                                <th>XL</th>
-                                                                <th>2XL</th>
-                                                                <th>3XL</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                        <!-- Size Matrix for Item 1 -->
+                                        <tr class="size-matrix" style="display: none;">
+                                            <td></td>
+                                            <td colspan="6">
+                                                <div class="size-matrix-container">
+                                                    <div class="btn-option">GENERIC SIZES - BLACK/WHITE_001</div>
+                                                    <div>
+                                                        <table class="size-breakdown">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>S</th>
+                                                                    <th>M</th>
+                                                                    <th>L</th>
+                                                                    <th>XL</th>
+                                                                    <th>2XL</th>
+                                                                    <th>3XL</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Specification Item -->
-                                    <tr class="specification-item" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Line 1</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$0</td>
-                                        <td class="pui-text-right">$0</td>
-                                    </tr>
+                                        <!-- Specification Item -->
+                                        <tr class="specification-item" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Line 1</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$0</td>
+                                            <td class="pui-text-right">$0</td>
+                                        </tr>
 
-                                    <!-- Specification Item -->
-                                    <tr class="specification-item" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Line 1</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$0</td>
-                                        <td class="pui-text-right">$0</td>
-                                    </tr>
+                                        <!-- Specification Item -->
+                                        <tr class="specification-item" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Line 1</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$0</td>
+                                            <td class="pui-text-right">$0</td>
+                                        </tr>
 
 
-                                    <!-- Item 2 -->
-                                    <tr class="main-item">
-                                        <td><input type="checkbox"></td>
-                                        <td><a href="#" class="item-link">1317219</a></td>
-                                        <td>
-                                            <div class="item-description">
-                                                <button class="toggle-details" type="button">+</button>
-                                                <span class="product-name">Men's Corporate Quarter Snap Up Sweater
-                                                    Fleece - BLACK/WHITE_001</span>
-                                                <div class="item-actions">
-                                                    <!-- <button class="btn-action" title="Copy">
+                                        <!-- Item 2 -->
+                                        <tr class="main-item">
+                                            <td><input type="checkbox"></td>
+                                            <td><a href="#" class="item-link">1317219</a></td>
+                                            <td>
+                                                <div class="item-description">
+                                                    <button class="toggle-details" type="button">+</button>
+                                                    <span class="product-name">Men's Corporate Quarter Snap Up Sweater
+                                                        Fleece - BLACK/WHITE_001</span>
+                                                    <div class="item-actions">
+                                                        <!-- <button class="btn-action" title="Copy">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                             stroke-width="2" stroke-linecap="round"
@@ -1237,128 +1244,130 @@ Monograms is not responsible for damages to customer provided items. There</text
                                                                 d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
                                                             </path>
                                                         </svg></button> -->
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
-                                                    <button class="btn-action" title="Duplicate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
-                                                            </path>
-                                                        </svg></button>
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
+                                                        <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path
+                                                                    d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                                </path>
+                                                            </svg></button>
+                                                        <button class="btn-action" title="Duplicate">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
+                                                                </rect>
+                                                                <path
+                                                                    d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
+                                                                </path>
+                                                            </svg></button>
+                                                        <button class="btn-action" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M3 6h18"></path>
+                                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                            </svg></button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>3</td>
-                                        <td>0</td>
-                                        <!-- <td class="pui-text-right">$96.45</td> -->
-                                        <td colspan="2" class="pui-text-right line-total-amount">$590.70</td>
-                                    </tr>
+                                            </td>
+                                            <td>3</td>
+                                            <td>0</td>
+                                            <!-- <td class="pui-text-right">$96.45</td> -->
+                                            <td colspan="2" class="pui-text-right line-total-amount">$590.70</td>
+                                        </tr>
 
-                                    <!-- Size Variations for Item 2 -->
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: S-XL</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                    </tr>
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: 2XL</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                        <td class="pui-text-right">$96.45</td>
-                                    </tr>
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: 3XL</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$108.45</td>
-                                        <td class="pui-text-right">$108.45</td>
-                                    </tr>
+                                        <!-- Size Variations for Item 2 -->
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: S-XL</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                        </tr>
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: 2XL</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                            <td class="pui-text-right">$96.45</td>
+                                        </tr>
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: 3XL</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$108.45</td>
+                                            <td class="pui-text-right">$108.45</td>
+                                        </tr>
 
-                                    <!-- Size Matrix for Item 2 -->
-                                    <tr class="size-matrix" style="display: none;">
-                                        <td></td>
-                                        <td colspan="6">
-                                            <div class="size-matrix-container">
-                                                <div class="btn-option">GENERIC SIZES - BLACK/WHITE_001</div>
-                                                <div>
-                                                    <table class="size-breakdown">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>S</th>
-                                                                <th>M</th>
-                                                                <th>L</th>
-                                                                <th>XL</th>
-                                                                <th>2XL</th>
-                                                                <th>3XL</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                        <!-- Size Matrix for Item 2 -->
+                                        <tr class="size-matrix" style="display: none;">
+                                            <td></td>
+                                            <td colspan="6">
+                                                <div class="size-matrix-container">
+                                                    <div class="btn-option">GENERIC SIZES - BLACK/WHITE_001</div>
+                                                    <div>
+                                                        <table class="size-breakdown">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>S</th>
+                                                                    <th>M</th>
+                                                                    <th>L</th>
+                                                                    <th>XL</th>
+                                                                    <th>2XL</th>
+                                                                    <th>3XL</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
 
 
 
-                                    <!-- Item 3 -->
-                                    <tr class="main-item">
-                                        <td><input type="checkbox"></td>
-                                        <td><a href="#" class="item-link">1317220</a></td>
-                                        <td>
-                                            <div class="item-description">
-                                                <button class="toggle-details" type="button">+</button>
-                                                <span class="product-name">Women's Classic Polo Shirt - NAVY_001</span>
-                                                <div class="item-actions">
-                                                    <!-- <button class="btn-action" title="Copy">
+                                        <!-- Item 3 -->
+                                        <tr class="main-item">
+                                            <td><input type="checkbox"></td>
+                                            <td><a href="#" class="item-link">1317220</a></td>
+                                            <td>
+                                                <div class="item-description">
+                                                    <button class="toggle-details" type="button">+</button>
+                                                    <span class="product-name">Women's Classic Polo Shirt -
+                                                        NAVY_001</span>
+                                                    <div class="item-actions">
+                                                        <!-- <button class="btn-action" title="Copy">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                             stroke-width="2" stroke-linecap="round"
@@ -1369,142 +1378,143 @@ Monograms is not responsible for damages to customer provided items. There</text
                                                                 d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
                                                             </path>
                                                         </svg></button> -->
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
-                                                    <button class="btn-action" title="Duplicate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
-                                                            </rect>
-                                                            <path
-                                                                d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
-                                                            </path>
-                                                        </svg></button>
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
+                                                        <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path
+                                                                    d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                                </path>
+                                                            </svg></button>
+                                                        <button class="btn-action" title="Duplicate">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
+                                                                </rect>
+                                                                <path
+                                                                    d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
+                                                                </path>
+                                                            </svg></button>
+                                                        <button class="btn-action" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M3 6h18"></path>
+                                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                            </svg></button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>4</td>
-                                        <td>0</td>
-                                        <!-- <td class="pui-text-right">$45.99</td> -->
-                                        <td colspan="2" class="pui-text-right line-total-amount">$183.96</td>
-                                    </tr>
+                                            </td>
+                                            <td>4</td>
+                                            <td>0</td>
+                                            <!-- <td class="pui-text-right">$45.99</td> -->
+                                            <td colspan="2" class="pui-text-right line-total-amount">$183.96</td>
+                                        </tr>
 
-                                    <!-- Size Variations for Item 3 -->
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: S</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                    </tr>
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: M</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                    </tr>
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: L</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                    </tr>
-                                    <tr class="size-variations" style="display: none;">
-                                        <td></td>
-                                        <td></td>
-                                        <td>Size: XL</td>
-                                        <td>1</td>
-                                        <td>0</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                        <td class="pui-text-right">$45.99</td>
-                                    </tr>
+                                        <!-- Size Variations for Item 3 -->
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: S</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                        </tr>
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: M</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                        </tr>
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: L</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                        </tr>
+                                        <tr class="size-variations" style="display: none;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Size: XL</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                            <td class="pui-text-right">$45.99</td>
+                                        </tr>
 
-                                    <!-- Size Matrix for Item 3 -->
-                                    <tr class="size-matrix" style="display: none;">
-                                        <td></td>
-                                        <td colspan="6">
-                                            <div class="size-matrix-container">
-                                                <div class="btn-option">GENERIC SIZES - BLACK/WHITE_001</div>
-                                                <div>
-                                                    <table class="size-breakdown">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>S</th>
-                                                                <th>M</th>
-                                                                <th>L</th>
-                                                                <th>XL</th>
-                                                                <th>2XL</th>
-                                                                <th>3XL</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                                <td>1</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                                <td>$96.45</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                        <!-- Size Matrix for Item 3 -->
+                                        <tr class="size-matrix" style="display: none;">
+                                            <td></td>
+                                            <td colspan="6">
+                                                <div class="size-matrix-container">
+                                                    <div class="btn-option">GENERIC SIZES - BLACK/WHITE_001</div>
+                                                    <div>
+                                                        <table class="size-breakdown">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>S</th>
+                                                                    <th>M</th>
+                                                                    <th>L</th>
+                                                                    <th>XL</th>
+                                                                    <th>2XL</th>
+                                                                    <th>3XL</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                    <td>1</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                    <td>$96.45</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
 
 
 
 
-                                </tbody>
-                                <!-- Footer with subtotal -->
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="6" class="pui-text-right">Subtotal:</td>
-                                        <td class="pui-text-right">$786.66</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                                    </tbody>
+                                    <!-- Footer with subtotal -->
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6" class="pui-text-right">Subtotal:</td>
+                                            <td class="pui-text-right">$786.66</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
 
 
+                            </div>
                         </div>
-                    </div>
-                        
+
                     </div>
 
                 </form>
@@ -1752,7 +1762,7 @@ Monograms is not responsible for damages to customer provided items. There</text
                                         </tbody>
                                     </table>
                                 </div>
-                                
+
                                 <div class="warehouse-list-table">
                                     <div class="form-group">
                                         <label class="checkbox-container">

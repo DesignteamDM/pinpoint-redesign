@@ -858,6 +858,116 @@ button {
   flex: 1;
 }
 
+/* Phone Number Styles */
+.phone-inputs-container {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.phone-inputs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 100%;
+    gap: 5px;
+}
+
+.phone-inputs .phone-type {
+    width: 90px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 13px;
+}
+
+.phone-inputs .phone-number {
+    flex: 1;
+    min-width: 120px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.phone-ext {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+    margin: 0 2px;
+}
+
+.phone-inputs .ext-input {
+    width: 60px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* Phone Buttons Container */
+.phone-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.add-phone-btn,
+.show-more-phones {
+    background: white;
+    border: 1px dashed #999;
+    color: #0066cc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.add-phone-btn {
+    margin-right: 10px;
+}
+
+.show-more-phones {
+    margin-left: auto;
+}
+
+.add-phone-btn:hover,
+.show-more-phones:hover {
+    background-color: #f5f9ff;
+    border-color: #0066cc;
+}
+
+.remove-phone {
+    background: #fff0f0;
+    border: 1px solid #ffcccc;
+    color: #cc0000;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    transition: all 0.2s;
+}
+
+.remove-phone:hover {
+    background: #ffdddd;
+    border-color: #ff9999;
+}
+
+.phone-inputs:first-child .remove-phone {
+    display: none !important;
+}
+
 /* Status Indicator */
 .status-indicator {
   display: inline-block;

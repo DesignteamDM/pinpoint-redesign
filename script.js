@@ -320,6 +320,131 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeAccordions();
     }
 
+    // Initialize phone number functionality
+    function initializePhoneNumbers() {
+        const phoneGroups = document.querySelectorAll('.phone-group');
+        
+        phoneGroups.forEach(group => {
+            const container = group.querySelector('.phone-inputs-container');
+            const addButton = group.querySelector('.add-phone-btn');
+            const showMoreButton = group.querySelector('.show-more-phones');
+            let isExpanded = false;
+            
+            // Function to create a new phone input group
+            function createNewPhoneInput() {
+                const newPhoneInput = document.createElement('div');
+                newPhoneInput.className = 'phone-inputs';
+                newPhoneInput.innerHTML = `
+                    <select class="phone-type">
+                        <option>Cell</option>
+                        <option>Home</option>
+                        <option>Work</option>
+                        <option>Other</option>
+                    </select>
+                    <input class="phone-number" type="text" placeholder="Phone number">
+                    <span class="phone-ext">Ext.</span>
+                    <input class="ext-input" type="text" placeholder="Ext">
+                    <button type="button" class="remove-phone">×</button>
+                `;
+                
+                // Add remove button handler
+                const removeBtn = newPhoneInput.querySelector('.remove-phone');
+                if (removeBtn) {
+                    removeBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        newPhoneInput.remove();
+                        updatePhoneInputsVisibility();
+                    });
+                }
+                
+                return newPhoneInput;
+            }
+            
+            // Update phone inputs visibility based on expanded state
+            function updatePhoneInputsVisibility() {
+                const allInputs = Array.from(container.querySelectorAll('.phone-inputs'));
+                
+                // Always show first two inputs
+                allInputs.forEach((input, index) => {
+                    if (index < 2) {
+                        input.style.display = 'flex';
+                    } else if (isExpanded) {
+                        input.style.display = 'flex';
+                    } else {
+                        input.style.display = 'none';
+                    }
+                });
+                
+                // Update show more button
+                if (allInputs.length <= 2) {
+                    showMoreButton.style.display = 'none';
+                } else {
+                    showMoreButton.style.display = 'block';
+                    if (isExpanded) {
+                        showMoreButton.textContent = 'Collapse phone numbers';
+                    } else {
+                        showMoreButton.textContent = `Show ${allInputs.length - 2} more phone numbers`;
+                    }
+                }
+                
+                // Update remove buttons (hide for first input)
+                allInputs.forEach((input, index) => {
+                    const removeBtn = input.querySelector('.remove-phone');
+                    if (removeBtn) {
+                        removeBtn.style.display = index === 0 ? 'none' : 'flex';
+                    }
+                });
+            }
+            
+            // Add event listener for add button
+            addButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const newInput = createNewPhoneInput();
+                container.appendChild(newInput);
+                
+                // Always show the newly added input
+                newInput.style.display = 'flex';
+                
+                // If this is the third phone number, show the showMoreButton
+                const allInputs = container.querySelectorAll('.phone-inputs');
+                if (allInputs.length >= 3) {
+                    showMoreButton.style.display = 'block';
+                    // Expand the view if it was collapsed
+                    if (!isExpanded) {
+                        isExpanded = true;
+                    }
+                }
+                
+                // Update the show more button text and visibility
+                updatePhoneInputsVisibility();
+                
+                // Scroll to the new input
+                setTimeout(() => {
+                    newInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    // Focus on the phone number input
+                    const phoneInput = newInput.querySelector('.phone-number');
+                    if (phoneInput) phoneInput.focus();
+                }, 100);
+            });
+            
+            // Toggle show/hide extra phone numbers
+            showMoreButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                isExpanded = !isExpanded;
+                updatePhoneInputsVisibility();
+            });
+            
+            // Initialize the component
+            updatePhoneInputsVisibility();
+        });
+    }
+    
+    // Initialize phone number functionality on page load
+    if (document.querySelector('.phone-group')) {
+        initializePhoneNumbers();
+    }
+
     // Add click handler for the search button
     const searchBtn = document.querySelector('.search-btn');
     if (searchBtn) {

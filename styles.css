@@ -1123,6 +1123,7 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   margin-bottom: 0px;
+  vertical-align: middle;
 }
 
 .divider {
@@ -1559,7 +1560,6 @@ textarea.form-control {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  margin-bottom: 20px;
   table-layout: fixed; /* Ensure consistent column widths */
   background: #fff;
 }
@@ -2596,4 +2596,16 @@ textarea.form-control {
     padding: 15px;
     border: 1px solid #bdbdbd;
     border-radius: 4px;
+}
+.expand-all-container{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.expand-all-container .checkbox-container{
+    display: inline-flex;
+    align-items: center;
+}
+.expand-all-container .checkbox-container input{
+    margin-right: 5px;
 }

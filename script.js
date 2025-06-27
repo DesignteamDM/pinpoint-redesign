@@ -210,9 +210,39 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize calendar buttons on page load
     initializeCalendarButtons();
 
+    // Function to toggle all product details
+    function toggleAllProductDetails(expand) {
+        const toggleButtons = document.querySelectorAll('.toggle-details');
+        
+        toggleButtons.forEach(button => {
+            // Only toggle buttons that don't match the desired state
+            if ((expand && button.textContent === '+') || (!expand && button.textContent === '-')) {
+                button.click();
+            }
+        });
+    }
+    
     // Initialize items table functionality
     function initializeItemsTable() {
         const toggleButtons = document.querySelectorAll('.toggle-details');
+        const expandAllCheckbox = document.getElementById('expandAllProducts');
+        
+        // Add event listener for the expand all checkbox
+        if (expandAllCheckbox) {
+            expandAllCheckbox.addEventListener('change', function() {
+                toggleAllProductDetails(this.checked);
+            });
+            
+            // Update the expand all checkbox state when individual items are toggled
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('toggle-details')) {
+                    const allExpanded = Array.from(document.querySelectorAll('.toggle-details')).every(
+                        btn => btn.textContent === '-'
+                    );
+                    expandAllCheckbox.checked = allExpanded;
+                }
+            });
+        }
         
         toggleButtons.forEach(button => {
             button.addEventListener('click', function() {

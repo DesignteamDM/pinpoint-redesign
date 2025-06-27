@@ -691,6 +691,54 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="section-card pui-mt-10px">
+                            <!-- Repeat Order Info Section -->
+                        <div class="repeat-order-section">
+                            <h4 class="section-heading">Repeat Order Info</h4>
+
+
+                            <div class="pui-row">
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="original-order">Original Order #:</label>
+                                        <input type="text" id="original-order" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="previous-po">Previous PO #:</label>
+                                        <input type="text" id="previous-po" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pui-row" style="margin-top: 15px;">
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="order-notes">Order Notes <span
+                                                class="text-public">PUBLIC</span></label>
+                                        <textarea id="order-notes" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="pinpoint-notes">Pinpoint Notes <span
+                                                class="text-private">PRIVATE</span></label>
+                                        <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="customer-notes">Customer Provided Item Notes <span
+                                                class="text-public">PUBLIC</span></label>
+                                        <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
+----------------------------------------------------------------------
+Monograms is not responsible for damages to customer provided items. There</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -698,6 +746,7 @@
             <div class="tab-content" id="order-details">
                 <form id="order-details-form">
                     <div class="form-section">
+                        <div class="section-card">
                         <div class="pui-row">
                             <div class="pui-col-xl-3">
                                 <div class="form-group">
@@ -902,23 +951,81 @@
                             </div>
                             
                         </div>
-                        <div class="divider"></div>
+                    </div>
+                        <div class="section-card pui-mt-10px">
+                            <!-- Repeat Order Info Section -->
+                        <div class="repeat-order-section">
+                            <h4 class="section-heading">Repeat Order Info</h4>
+
+
+                            <div class="pui-row">
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="original-order">Original Order #:</label>
+                                        <input type="text" id="original-order" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="previous-po">Previous PO #:</label>
+                                        <input type="text" id="previous-po" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pui-row" style="margin-top: 15px;">
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="order-notes">Order Notes <span
+                                                class="text-public">PUBLIC</span></label>
+                                        <textarea id="order-notes" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="pinpoint-notes">Pinpoint Notes <span
+                                                class="text-private">PRIVATE</span></label>
+                                        <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-4">
+                                    <div class="form-group">
+                                        <label for="customer-notes">Customer Provided Item Notes <span
+                                                class="text-public">PUBLIC</span></label>
+                                        <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
+----------------------------------------------------------------------
+Monograms is not responsible for damages to customer provided items. There</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="section-card pui-mt-10px">
                         <div class="line-items-header pui-row">
                             <div class="pui-col-xl-6">
-                                <h5 class="inline-block">Line Items</h5>
+                                <h4>Line Items</h4>
                             </div>
                             <div class="pui-col-xl-6 pui-text-right">
+                                <div class="expand-all-container" style="display: inline-block; margin-left: 10px;">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="expandAllProducts">
+                                        <span class="checkmark"></span>
+                                        <span>Expand all products</span>
+                                    </label>
+                                </div>
                                 <div class="taxable-label legend-style">
                                     <span class="legend-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="currentColor">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <path
-                                                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1" />
+                                                d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-4a1 1 0 1 0 0 2h1v7a1 1 0 0 0 .883 .993l.117 .007a1 1 0 0 0 1 -1v-7h1a1 1 0 0 0 .993 -.883l.007 -.117a1 1 0 0 0 -1 -1">
+                                            </path>
                                         </svg>
                                     </span>
                                     Taxable Items
                                 </div>
+                                
                             </div>
                         </div>
                         <div class="line-items-container">
@@ -1396,52 +1503,8 @@
 
 
                         </div>
-                        <!-- Repeat Order Info Section -->
-                        <div class="repeat-order-section">
-                            <h4 class="section-heading">Repeat Order Info</h4>
-
-
-                            <div class="pui-row">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="original-order">Original Order #:</label>
-                                        <input type="text" id="original-order" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="previous-po">Previous PO #:</label>
-                                        <input type="text" id="previous-po" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pui-row" style="margin-top: 15px;">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="order-notes">Order Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="order-notes" class="form-control" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="pinpoint-notes">Pinpoint Notes <span
-                                                class="text-private">PRIVATE</span></label>
-                                        <textarea id="pinpoint-notes" class="form-control" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="customer-notes">Customer Provided Item Notes <span
-                                                class="text-public">PUBLIC</span></label>
-                                        <textarea id="customer-notes" class="form-control customer-notes" rows="3">Note: Not responsible for damage to customer items during embroidery.
-----------------------------------------------------------------------
-Monograms is not responsible for damages to customer provided items. There</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                        
                     </div>
 
                 </form>

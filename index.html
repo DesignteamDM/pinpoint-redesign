@@ -1031,6 +1031,13 @@ Monograms is not responsible for damages to customer provided items. There</text
                                             <span class="checkmark"></span>
                                             <span>Expand all products</span>
                                         </label>
+                                        <button id="deleteAllBtn" class="action-btn delete-all" style="display: none; margin-left: 10px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M3 6h18"></path>
+                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            </svg>
+                                            Delete All
+                                        </button>
                                     </div>
                                     <div class="taxable-label legend-style">
                                         <span class="legend-icon">
@@ -1060,7 +1067,7 @@ Monograms is not responsible for damages to customer provided items. There</text
                                     </colgroup>
                                     <thead>
                                         <tr>
-                                            <th><input type="checkbox"></th>
+                                            <th><input type="checkbox" id="selectAllItems"></th>
                                             <th>Item #</th>
                                             <th>Description
 
@@ -1074,7 +1081,7 @@ Monograms is not responsible for damages to customer provided items. There</text
                                     <tbody>
                                         <!-- Item 1 -->
                                         <tr class="main-item">
-                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" class="item-checkbox"></td>
                                             <td><a href="#" class="item-link">1317218</a></td>
                                             <td>
                                                 <div class="item-description">
@@ -1238,7 +1245,7 @@ Monograms is not responsible for damages to customer provided items. There</text
 
                                         <!-- Item 2 -->
                                         <tr class="main-item">
-                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" class="item-checkbox"></td>
                                             <td><a href="#" class="item-link">1317219</a></td>
                                             <td>
                                                 <div class="item-description">
@@ -1372,7 +1379,7 @@ Monograms is not responsible for damages to customer provided items. There</text
 
                                         <!-- Item 3 -->
                                         <tr class="main-item">
-                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" class="item-checkbox"></td>
                                             <td><a href="#" class="item-link">1317220</a></td>
                                             <td>
                                                 <div class="item-description">
@@ -2169,6 +2176,7 @@ Monograms is not responsible for damages to customer provided items. There</text
             }
         </script>
         <script src="script.js"></script>
+        <script src="line-items.js"></script>
         <link rel="stylesheet" href="styles.css">
 </body>
 

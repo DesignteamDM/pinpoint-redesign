@@ -440,6 +440,25 @@ body {
   stroke: #cc0000;
 }
 
+.delete-all {
+  background-color: #ffe6e6;
+  color: #cc0000;
+  border-color: #ffb3b3;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-all .icon {
+  stroke: #cc0000;
+  width: 16px;
+  height: 16px;
+}
+
 .action-btn:hover {
   filter: brightness(0.95);
 }

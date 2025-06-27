@@ -438,16 +438,16 @@
                                     </div>
                                 </div>
                                 <div class="section-card pui-mt-10px">
-                                    <div>
-                                        <label>Turn Emails Off? <span class="required">*</span></label>
-                                        <div class="radio-group"
-                                            style="display: flex; align-items: center; margin-top: 5px;">
-                                            <label class="radio-container">
+                                    <div style="display: flex; align-items: center;">
+                                        <label class="pui-mb-none">Turn Emails Off? <span class="required">*</span></label>
+                                        <div class="radio-group pui-ms-5px pui-mt-none"
+                                            style="display: flex; align-items: center">
+                                            <label class="radio-container pui-mb-none">
                                                 <input type="radio" name="emails-off" value="yes">
                                                 <span class="radio-mark"></span>
                                                 Yes
                                             </label>
-                                            <label class="radio-container" style="margin-right: 15px;">
+                                            <label class="radio-container pui-mb-none" style="margin-right: 15px;">
                                                 <input type="radio" name="emails-off" value="no" checked>
                                                 <span class="radio-mark"></span>
                                                 No
@@ -600,10 +600,11 @@
                                         <label>Phone <span class="required">*</span></label>
                                         <div class="phone-inputs">
                                             <span class="phone-ext">Type:</span>
+                                            <button type="button" class="add-option-btn-sm" title="Add New">+</button>
                                             <select class="phone-type">
                                                 <option>Select</option>
                                             </select>
-                                            <button type="button" class="add-btn">+</button>
+                                            
                                             <input type="text">
                                             <span class="phone-ext">Ext.</span>
                                             <input class="ext-input" type="text">
@@ -644,12 +645,14 @@
                                         </div>
                                         <div class="pui-col-xl-6">
                                             <div class="form-group">
-                                                <label>Status <span class="required">*</span></label>
+                                                <label>Status <span class="required">*</span>
+                                                    <button type="button" class="add-option-btn-sm" title="Add New">+</button>
+                                                </label>
                                                 <div class="status-group">
                                                     <select class="status">
                                                         <option>Closed</option>
                                                     </select>
-                                                    <button type="button" class="add-btn">+</button>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -676,12 +679,14 @@
                         <div class="section-card pui-mt-10px">
                             <div class="form-inline">
                                 <div class="form-group">
-                                    <label>Payment <span class="required">*</span></label>
+                                    <label>Payment <span class="required">*</span>
+                                        <button type="button" class="add-option-btn-sm" title="Add New">+</button>
+                                    </label>
                                     <div class="payment-field">
                                         <select class="account-select">
                                             <option value="">Account</option>
                                         </select>
-                                        <button type="button" class="add-btn">+</button>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -756,7 +761,9 @@ Monograms is not responsible for damages to customer provided items. There</text
                             <div class="pui-row">
                                 <div class="pui-col-xl-3">
                                     <div class="form-group">
-                                        <label>Approval Delivery <span class="required">*</span></label>
+                                        <label>Approval Delivery <span class="required">*</span>
+                                            <button type="button" class="add-option-btn-sm" title="Add New">+</button>
+                                        </label>
                                         <div class="right-action-group">
 
                                             <select class="form-control">
@@ -764,19 +771,21 @@ Monograms is not responsible for damages to customer provided items. There</text
                                             </select>
 
 
-                                            <a href="#" class="add-btn">+</a>
+                                            
 
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pui-col-xl-3">
                                     <div class="form-group">
-                                        <label>Type <span class="required">*</span></label>
+                                        <label>Type <span class="required">*</span>
+                                            <a href="#" class="add-option-btn-sm" title="Add New">+</a>
+                                        </label>
                                         <div class="right-action-group">
                                             <select class="form-control">
                                                 <option selected>Combo</option>
                                             </select>
-                                            <a href="#" class="add-btn">+</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -900,23 +909,27 @@ Monograms is not responsible for damages to customer provided items. There</text
                             <div class="pui-row">
                                 <div class="pui-col-xl-3">
                                     <div class="form-group">
-                                        <label>Delivery <span class="required">*</span></label>
+                                        <label>Delivery <span class="required">*</span>
+                                            <a href="#" class="add-option-btn-sm" title="Add New">+</a>
+                                        </label>
                                         <div class="right-action-group">
                                             <select class="form-control">
                                                 <option selected>Pickup - OKC</option>
                                             </select>
-                                            <a href="#" class="add-btn">+</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pui-col-xl-3">
                                     <div class="form-group">
-                                        <label>Freight <span class="required">*</span></label>
+                                        <label>Freight <span class="required">*</span>
+                                            <a href="#" class="add-option-btn-sm" title="Add New">+</a>
+                                        </label>
                                         <div class="right-action-group">
                                             <select class="form-control">
                                                 <option selected>No Charge</option>
                                             </select>
-                                            <a href="#" class="add-btn">+</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -2100,7 +2113,7 @@ Monograms is not responsible for damages to customer provided items. There</text
                                     <select>
                                         <option value="" disabled selected>Select Location</option>
                                     </select>
-                                    <a href="#" class="add-btn">+</a>
+                                    <a href="#" class="add-option-btn-sm" title="Add New">+</a>
                                 </div>
                             </div>
                             <div class="pui-col-md-2">

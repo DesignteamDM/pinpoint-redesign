@@ -2020,7 +2020,9 @@ textarea.form-control {
   text-align: right;
   padding-right: 10px;
 }
-
+.items-table > thead > tr > th.line-total-header{
+  padding-right: 30px;
+}
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .line-items-container {
@@ -2780,7 +2782,56 @@ textarea.form-control {
 .expand-all-container .checkbox-container input{
     margin-right: 5px;
 }
-.add-option-btn-sm{
+/* Sortable table headers */
+.items-table th {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    padding-right: 20px; /* Make room for the sort icon */
+}
+
+.items-table th:hover {
+    background-color: #f0f7ff;
+}
+
+.items-table th.sorted {
+    background-color: #e6f2ff;
+}
+
+/* Sort icon styling */
+.sort-icon {
+    margin-left: 4px;
+    color: #999;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.items-table th:hover .sort-icon {
+    color: #666;
+}
+
+/* Make sure the sort indicator doesn't affect the header layout */
+.items-table th span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Header text container */
+.items-table th > span:first-child:not(.sort-icon) {
+    display: inline-block;
+    max-width: calc(100% - 20px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.add-option-btn-sm {
     background: white;
     border: 1px dashed #999;
     color: #0066cc;

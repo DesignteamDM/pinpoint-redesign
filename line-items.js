@@ -49,9 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial setup of toggle details
     setupToggleDetails();
     
-    // Add sorting functionality to the table headers
-    const table = document.querySelector('.items-table');
-    if (table) {
+    // Add sorting functionality to the main items table headers
+    const tables = document.querySelectorAll('.items-table');
+    tables.forEach(table => {
+        // Skip size-breakdown tables
+        if (table.closest('.size-breakdown') || table.classList.contains('no-sort')) {
+            return;
+        }
+        
         const headers = table.querySelectorAll('th');
         headers.forEach((header, index) => {
             // Skip the first column (checkbox) and any columns that shouldn't be sorted
@@ -81,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    }
+    });
     
     // Function to collect all related rows (size variations, etc.) for a main item
     function getRelatedRows(row) {

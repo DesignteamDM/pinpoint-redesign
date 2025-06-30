@@ -2023,6 +2023,16 @@ textarea.form-control {
 .items-table > thead > tr > th.line-total-header{
   padding-right: 30px;
 }
+
+/* Hide sort icons in size-breakdown tables */
+.size-breakdown th .sort-icon,
+.size-breakdown .sort-icon {
+  display: none !important;
+}
+
+.size-breakdown th {
+  cursor: default !important;
+}
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .line-items-container {
@@ -2788,7 +2798,6 @@ textarea.form-control {
     cursor: pointer;
     user-select: none;
     transition: all 0.2s ease;
-    padding-right: 20px; /* Make room for the sort icon */
 }
 
 .items-table th:hover {

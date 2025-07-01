@@ -133,6 +133,49 @@ txtcapital { text-transform:capitalize; }
 .item-editable-table-button-container input:first-child{
 	margin-right: 15px;
 }
+
+/* Editable row styles */
+tr.main-item.edit-mode {
+    background-color: #f8f9fa;
+    box-shadow: 0 0 0 1px #4a90e2;
+}
+
+.editable-input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.editable-input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.editable {
+    padding: 4px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.editable:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.btn-cancel-edit {
+    color: #dc3545 !important;
+}
+
+.btn-cancel-edit:hover {
+    background-color: #f8d7da !important;
+}
 /* Shipping Modal Backdrop */
 #ccLightModalDiv {
     width: 100%;

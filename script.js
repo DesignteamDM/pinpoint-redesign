@@ -281,6 +281,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize the items table functionality
     initializeItemsTable();
+    
+    // Initialize override price functionality
+    const overridePriceCheckbox = document.getElementById('overridePriceCheckbox');
+    const priceOverrideContainer = document.querySelector('.price-override-container');
+    
+    if (overridePriceCheckbox && priceOverrideContainer) {
+        overridePriceCheckbox.addEventListener('change', function() {
+            priceOverrideContainer.style.display = this.checked ? 'block' : 'none';
+        });
+    }
+    
+    // Initialize sale price toggle functionality
+    const salePriceCheckbox = document.getElementById('showSalePrice');
+    if (salePriceCheckbox) {
+        salePriceCheckbox.addEventListener('change', function() {
+            const salePriceRows = document.querySelectorAll('.sale-price-row');
+            salePriceRows.forEach(row => {
+                row.style.display = this.checked ? 'table-row' : 'none';
+            });
+        });
+    }
 
     // Initialize accordion functionality
     function initializeAccordions() {

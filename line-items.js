@@ -553,6 +553,117 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the flat goods modal
     setupFlatGoodsModal();
     
+    // Handle Customer Provided Items checkbox
+    const customerItemsCheckbox = document.getElementById('customer-items');
+    const customerNotesTextareas = document.querySelectorAll('.customer-notes');
+    
+    if (customerItemsCheckbox && customerNotesTextareas.length > 0) {
+        // Save the default notes text from the first textarea (assuming all have same default text)
+        const defaultNotes = customerNotesTextareas[0].value;
+        let isDefaultTextProtected = true;
+        
+        // Function to update all customer notes textareas
+        const updateCustomerNotes = (checked) => {
+            customerNotesTextareas.forEach(textarea => {
+                if (!checked) {
+                    // Clear the notes when unchecked
+                    textarea.value = '';
+                    isDefaultTextProtected = false;
+                } else {
+                    // Restore default notes when checked
+                    textarea.value = defaultNotes;
+                    isDefaultTextProtected = true;
+                }
+            });
+        };
+        
+        // Function to protect default text
+        const protectDefaultText = (textarea) => {
+            if (!isDefaultTextProtected) return;
+            
+            const currentValue = textarea.value;
+            
+            // If text is shorter than default, restore default
+            if (currentValue.length < defaultNotes.length) {
+                textarea.value = defaultNotes;
+                return;
+            }
+            
+            // If text doesn't start with default, restore default
+            if (!currentValue.startsWith(defaultNotes)) {
+                const cursorPos = textarea.selectionStart;
+                textarea.value = defaultNotes + currentValue.substring(defaultNotes.length);
+                textarea.setSelectionRange(cursorPos, cursorPos);
+            }
+        };
+        
+        // Add event listeners to each textarea
+        customerNotesTextareas.forEach(textarea => {
+            // Handle keydown to prevent deleting default text
+            textarea.addEventListener('keydown', function(e) {
+                if (!isDefaultTextProtected) return;
+                
+                const cursorPos = this.selectionStart;
+                const cursorEnd = this.selectionEnd;
+                
+                // Allow arrow keys, tab, delete, etc.
+                if ([37, 38, 39, 40, 8, 46, 9, 16, 17, 18, 91, 13].includes(e.keyCode)) {
+                    // If backspace or delete would affect default text, prevent it
+                    if ((e.keyCode === 8 && cursorPos <= defaultNotes.length && cursorPos === cursorEnd) ||
+                        (e.keyCode === 46 && cursorPos < defaultNotes.length && cursorPos === cursorEnd)) {
+                        e.preventDefault();
+                    }
+                    return;
+                }
+                
+                // If cursor is before the end of default text and not a selection
+                if (cursorPos < defaultNotes.length && cursorPos === cursorEnd) {
+                    // Move cursor to end of default text
+                    this.setSelectionRange(defaultNotes.length, defaultNotes.length);
+                }
+            });
+            
+            // Handle paste
+            textarea.addEventListener('paste', function(e) {
+                if (!isDefaultTextProtected) return;
+                
+                const cursorPos = this.selectionStart;
+                if (cursorPos < defaultNotes.length) {
+                    e.preventDefault();
+                    // Move cursor to end of default text and paste there
+                    this.setSelectionRange(defaultNotes.length, defaultNotes.length);
+                    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                    document.execCommand('insertText', false, pastedText);
+                }
+            });
+            
+            // Handle input changes
+            textarea.addEventListener('input', function() {
+                if (isDefaultTextProtected) {
+                    protectDefaultText(this);
+                }
+            });
+            
+            // Handle mouse clicks to prevent placing cursor in default text
+            textarea.addEventListener('click', function() {
+                if (!isDefaultTextProtected) return;
+                
+                const cursorPos = this.selectionStart;
+                if (cursorPos < defaultNotes.length) {
+                    this.setSelectionRange(defaultNotes.length, defaultNotes.length);
+                }
+            });
+        });
+        
+        // Handle checkbox change
+        customerItemsCheckbox.addEventListener('change', function() {
+            updateCustomerNotes(this.checked);
+        });
+        
+        // Initialize the state on page load
+        updateCustomerNotes(customerItemsCheckbox.checked);
+    }
+    
     // Get all the necessary elements
     const selectAllCheckbox = document.getElementById('selectAllItems');
     const itemCheckboxes = document.querySelectorAll('.item-checkbox');

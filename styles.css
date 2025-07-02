@@ -3147,6 +3147,8 @@ textarea.form-control {
     border-left: none;
 }
 .main-item .item-image img{
+  display: block;
+  background: #fff;
   max-width: 40px;
   width: 35px;
   height: 35px;
@@ -3195,4 +3197,7 @@ textarea.form-control {
   border: 1px solid #cbcbcb;
   border-radius: 4px;
   padding: 2px;
+}
+.promo-item-bg td{
+  background: #dfefff!important;
 }

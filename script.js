@@ -159,6 +159,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize tabs
     initializeTabs();
 
+    // Handle edit button clicks for promotional items
+    function handlePromoItemEdit() {
+        document.addEventListener('click', function(e) {
+            // Check if the clicked element is an edit button
+            const editButton = e.target.closest('.btn-action[title="Edit"]');
+            if (!editButton) return;
+
+            // Check if the edit button is within a promotional item row
+            const promoItemRow = editButton.closest('.promo-item');
+            if (promoItemRow) {
+                e.preventDefault(); // Prevent default action
+                e.stopPropagation(); // Stop event from bubbling to other handlers
+                
+                // Find the promotional products tab button
+                const promoTabButton = document.querySelector('.tab-btn[data-tab="promotional-products"]');
+                if (promoTabButton) {
+                    // Trigger click on the promotional products tab
+                    promoTabButton.click();
+                }
+            }
+        }, true); // Use capture phase to run before other handlers
+    }
+
+    // Initialize promotional item edit handling
+    handlePromoItemEdit();
+
     // Add click handler for all calendar buttons
     function initializeCalendarButtons() {
         const calendarBtns = document.querySelectorAll('.calendar-btn');

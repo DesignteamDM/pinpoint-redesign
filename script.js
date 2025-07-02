@@ -284,11 +284,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize override price functionality
     const overridePriceCheckbox = document.getElementById('overridePriceCheckbox');
-    const priceOverrideContainer = document.querySelector('.price-override-container');
+    const priceOverrideRows = document.querySelectorAll('.price-override-row');
     
-    if (overridePriceCheckbox && priceOverrideContainer) {
+    if (overridePriceCheckbox) {
         overridePriceCheckbox.addEventListener('change', function() {
-            priceOverrideContainer.style.display = this.checked ? 'block' : 'none';
+            priceOverrideRows.forEach(row => {
+                row.style.display = this.checked ? 'table-row' : 'none';
+            });
         });
     }
     

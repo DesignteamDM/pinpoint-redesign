@@ -684,8 +684,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Handle save on clicking the save button (which is now the edit button in edit mode)
-        const saveBtn = e.target.closest('tr.main-item.edit-mode .btn-action[title!="Edit"][title!="Cancel"]');
-        if (saveBtn) {
+        const saveBtn = e.target.closest('tr.main-item.edit-mode .btn-action');
+        if (saveBtn && saveBtn.getAttribute('title') !== 'Edit' && saveBtn.getAttribute('title') !== 'Cancel') {
             e.preventDefault();
             e.stopPropagation();
             const row = saveBtn.closest('tr.main-item');

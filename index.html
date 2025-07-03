@@ -3079,17 +3079,21 @@ Monograms is not responsible for damages to customer provided items. There is an
                 <div class="form-section">
                     <div class="section-card">
                         <!-- Action Buttons -->
-                        <div class="pui-row pui-mb-15px">
-                            <div class="pui-col-md-12">
-                                <button class="pui-btn pui-btn-primary pui-me-10px">Add Shipment</button>
-                                <button class="pui-btn pui-btn-secondary">History</button>
+                        <div class="pui-row pui-mb-15px" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="pui-col-md-6">
+                                <h3 style="margin: 0;">Shipments</h3>
+                            </div>
+                            <div class="pui-col-md-6" style="text-align: right;">
+                                <button class="pui-btn pui-btn-primary pui-me-10px" onclick="return openNewShipmentModal(event)">Add Shipment</button>
+                                <button class="pui-btn pui-btn-secondary btn-history" onclick="openShippingHistoryModal()">History</button>
                             </div>
                         </div>
                         
                         <!-- Shipments Table -->
                         <div class="pui-row">
                             <div class="pui-col-md-12">
-                                <table class="data-table">
+                                <div class="table-responsive" style="width: 100%; overflow-x: auto;">
+                                    <table class="data-table" style="min-width: 800px;">
                                     <thead>
                                         <tr>
                                             <th>Item</th>
@@ -3125,7 +3129,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <td>07/25/19</td>
                                             <td><a href="#">540933743346</a></td>
                                             <td>
-                                                <button class="btn-action" title="Edit">
+                                                <button class="btn-action" title="Edit" onclick="return openEditShipmentModal(event, this.closest('tr'))">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
                                                                 </path>
@@ -3150,7 +3154,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <td>02/07/25</td>
                                             <td><a href="#">756633745544</a></td>
                                             <td>
-                                                <button class="btn-action" title="Edit">
+                                                <button class="btn-action" title="Edit" onclick="return openEditShipmentModal(event, this.closest('tr'))">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
                                                                 </path>
@@ -3175,7 +3179,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <td>07/02/25</td>
                                             <td><a href="#">720933748836</a></td>
                                             <td>
-                                                <button class="btn-action" title="Edit">
+                                                <button class="btn-action" title="Edit" onclick="return openEditShipmentModal(event, this.closest('tr'))">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
                                                                 </path>
@@ -3200,7 +3204,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <td>02/07/25</td>
                                             <td><a href="#">53455533333</a></td>
                                             <td>
-                                                <button class="btn-action" title="Edit">
+                                                <button class="btn-action" title="Edit" onclick="return openEditShipmentModal(event, this.closest('tr'))">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
                                                                 </path>
@@ -3240,7 +3244,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <td></td>
                                         </tr>
                                     </tfoot>
-                                </table>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3621,6 +3626,371 @@ Monograms is not responsible for damages to customer provided items. There is an
                 </div>
             </div>
         </div>
+
+        <!-- Shipping History Modal -->
+        <div id="shippingHistoryModal" class="modal" style="display: none;">
+            <div class="modal-content" style="max-width: 900px;">
+                <div class="modal-header">
+                    <h3>Shipping History</h3>
+                    <button type="button" class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="shipping-history-form">
+                            <div class="shipping-history-form-row">
+                                <label class="pui-mr-10px">Fedex Tracking No.</label>
+                                <select class="form-control shipping-history-tracking-select">
+                                    <option>92075 - 720933748836</option>
+                                </select>
+                                
+                            </div>
+                            <div class="shipping-history-buttons">
+                                <label class="shipping-history-delivered-checkbox">
+                                    <input type="checkbox"> Delivered
+                                </label>
+                                <button class="btn btn-primary">
+                                    Add New
+                                </button>
+                                <button class="btn">
+                                    Print History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shipping-history-list">
+                        
+                        
+                        <!-- Entry 1 - Delivered -->
+                        <div class="shipping-entry delivered">
+                            <div class="shipping-date">Thursday, 04/30/2020 09:30 AM</div>
+                            <div class="shipping-details">
+                                <div class="status delivered"><span>Delivered</span></div>
+                                <div class="location">Location: <span>123 Main St, Oklahoma City, OK 73102</span></div>
+                                <div class="signed-by">Signed For By: <span>John Smith (Front Door)</span></div>
+                                <div class="reason">Reason Description: <span>Left at front door - Signature service not requested</span></div>
+                                <div class="service">Service: <span>FedEx Home Delivery</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Entry 2 -->
+                        <div class="shipping-entry">
+                            <div class="shipping-date">Wednesday, 04/29/2020 06:10 AM</div>
+                            <div class="shipping-details">
+                                <div class="location">Location: <span>Oklahoma City, OK</span></div>
+                                <div class="status"><span>In Transit</span></div>
+                                <div class="signed-by">Signed For By: <span>John Doe</span></div>
+                                <div class="reason">Reason Description: <span>Out for delivery</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Entry 3 -->
+                        <div class="shipping-entry">
+                            <div class="shipping-date">Wednesday, 04/29/2020 06:05 AM</div>
+                            <div class="shipping-details">
+                                <div class="location">Location: <span>Dallas, TX</span></div>
+                                <div class="status"><span>In Transit</span></div>
+                                <div class="signed-by">Signed For By: <span>-</span></div>
+                                <div class="reason">Reason Description: <span>Departed from facility</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Entry 4 -->
+                        <div class="shipping-entry">
+                            <div class="shipping-date">Tuesday, 04/28/2020 11:20 PM</div>
+                            <div class="shipping-details">
+                                <div class="location">Location: <span>Dallas, TX</span></div>
+                                <div class="status"><span>Processing</span></div>
+                                <div class="reason">Reason Description: <span>Package received at facility</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <!-- End Shipping History Modal -->
+
+        <!-- Shipment Modal -->
+        <div id="shipmentModal" class="modal" style="display: none;">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header">
+                    <h3>Add Shipment</h3>
+                    <button type="button" class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="pui-row" id="lineItemsDropdownContainer" style="display: none;">
+                        <div class="pui-col-md-12">
+                            <div class="form-group">
+                                <label>Select Line Item:</label>
+                                <select class="form-control" id="lineItemsSelect">
+                                    <option value="">-- Select Line Item --</option>
+                                    <option value="4533">4533 - Test Item 1</option>
+                                    <option value="5533">5533 - Test Item 2</option>
+                                    <option value="112">112 - Test Item 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pui-row">
+                        <div class="pui-col-md-12">
+                            <div class="form-group">
+                                <label>Item:</label>
+                                <input type="text" class="form-control" data-field-index="0" value="testgeomon1">
+                            </div>
+                        </div>
+                        <div class="pui-col-md-4">
+                            <div class="form-group">
+                                <label>Qty Shipped:</label>
+                                <input type="text" class="form-control" data-field-index="1" value="1">
+                            </div>
+                        </div>
+                        <div class="pui-col-md-4">
+                            <div class="form-group">
+                                <label>Freight Cost:</label>
+                                <div class="date-input">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="text" class="form-control" data-field-index="3" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-col-md-4">
+                            <div class="form-group">
+                                <label>Freight Billed:</label>
+                                <div class="date-input">
+                                    <span class="currency-symbol">$</span>
+                                    <input type="text" class="form-control" data-field-index="6" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label>Date Shipped:</label>
+                                <div class="date-input">
+                                    <input type="text" class="form-control" data-field-index="7" value="03/07/2025">
+                                    <button type="button" class="calendar-btn">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label>Origin:</label>
+                                <select class="form-control" data-field-index="8">
+                                    <option>Factory</option>
+                                    <option>Warehouse</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label>Tracking:</label>
+                                <input type="text" class="form-control" data-field-index="10">
+                            </div>
+                        </div>
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label class="d-flex align-items-center">
+                                    Carrier:
+                                    <button type="button" class="add-option-btn-sm ms-2" title="Add Carrier">+</button>
+                                </label>
+                                <select class="form-control mt-2">
+                                    <option>Select Carrier...</option>
+                                    <option>FedEx</option>
+                                    <option>UPS</option>
+                                    <option>USPS</option>
+                                </select>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary pui-me-10px">Add</button>
+                    <button type="button" class="btn btn-primary">Add & Close</button>
+                </div>
+            </div>
+        </div>
+        <!-- End Shipment Modal -->
+
+        <script>
+            // Function to open shipment modal for adding a new shipment
+            function openNewShipmentModal(event) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                }
+                
+                // Hide any other open modals
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+                
+                const modal = document.getElementById('shipmentModal');
+                if (!modal) {
+                    console.error('Shipment modal not found');
+                    return false;
+                }
+                
+                // Show the line items dropdown for new shipments
+                const lineItemsContainer = document.getElementById('lineItemsDropdownContainer');
+                if (lineItemsContainer) {
+                    lineItemsContainer.style.display = 'block';
+                }
+                
+                // Reset form
+                const form = modal.querySelector('form');
+                if (form) {
+                    form.reset();
+                }
+                
+                // Set modal title to Add Shipment
+                const modalTitle = modal.querySelector('h3');
+                if (modalTitle) {
+                    modalTitle.textContent = 'Add Shipment';
+                }
+                
+                // Clear all form fields
+                modal.querySelectorAll('input[type="text"]').forEach(input => {
+                    input.value = '';
+                });
+                
+                // Set default values
+                modal.querySelector('input[data-field-index="1"]').value = '1'; // Qty
+                modal.querySelector('input[data-field-index="3"]').value = '0'; // Freight Cost
+                modal.querySelector('input[data-field-index="6"]').value = '0'; // Freight Billed
+                
+                // Show modal
+                modal.style.display = 'block';
+                return false;
+            }
+            
+            // Function to open shipment modal for editing
+            function openEditShipmentModal(event, row) {
+                // Prevent default behavior and stop propagation
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                }
+                
+                // Hide any other open modals
+                document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+                
+                const cells = row.cells;
+                const modal = document.getElementById('shipmentModal');
+                
+                if (!modal) {
+                    console.error('Shipment modal not found');
+                    return false;
+                }
+                
+                // Hide the line items dropdown for edit mode
+                const lineItemsContainer = document.getElementById('lineItemsDropdownContainer');
+                if (lineItemsContainer) {
+                    lineItemsContainer.style.display = 'none';
+                }
+                
+                // Set modal title to Edit Shipment
+                const modalTitle = modal.querySelector('h3');
+                if (modalTitle) {
+                    modalTitle.textContent = 'Edit Shipment';
+                }
+                
+                // Helper function to safely set input value
+                const setInputValue = (selector, value) => {
+                    const element = modal.querySelector(selector);
+                    if (element) {
+                        element.value = value || '';
+                    } else {
+                        console.warn('Element not found:', selector);
+                        return false;
+                    }
+                    return true;
+                };
+                
+                // Map cell indices to field selectors
+                const fieldMap = {
+                    0: 'input[data-field-index="0"]', // Item
+                    1: 'input[data-field-index="1"]', // Qty Shipped
+                    2: 'input[data-field-index="3"]', // Freight Cost (first $ input)
+                    3: 'input[data-field-index="6"]', // Freight Billed (second $ input)
+                    4: 'select[data-field-index="8"]', // Origin
+                    7: 'input[data-field-index="10"]'  // Tracking
+                };
+                
+                // Populate modal with row data
+                Object.entries(fieldMap).forEach(([cellIndex, selector]) => {
+                    if (cells[cellIndex]) {
+                        let value = cells[cellIndex].textContent.trim();
+                        
+                        // Special handling for currency values
+                        if (cellIndex === '2' || cellIndex === '3') {
+                            value = value.replace(/[^0-9.]/g, '') || '0';
+                        }
+                        
+                        // Special handling for tracking link
+                        if (cellIndex === '6' && cells[cellIndex].querySelector('a')) {
+                            value = cells[cellIndex].querySelector('a').textContent;
+                        }
+                        
+                        setInputValue(selector, value);
+                    }
+                });
+                
+                // Set default values if not present
+                if (!setInputValue(fieldMap[1], cells[1]?.textContent || '1')) {
+                    setInputValue('input[type="text"]:nth-child(2)', '1'); // Fallback for Qty
+                }
+                
+                // Show modal
+                modal.style.display = 'block';
+                return false;
+            }
+            
+            // Close modal when clicking the close button
+            document.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                });
+            });
+            
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            });
+            
+            // Initialize edit buttons
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize Add Shipment button
+                const addShipmentBtn = document.querySelector('.pui-btn-primary');
+                if (addShipmentBtn && !addShipmentBtn.onclick) {
+                    addShipmentBtn.addEventListener('click', openNewShipmentModal);
+                }
+                
+                // Initialize Edit buttons
+                const editButtons = document.querySelectorAll('#shipmentHistoryTable .btn-action[title="Edit"]');
+                editButtons.forEach(button => {
+                    // Remove any existing click handlers
+                    const newButton = button.cloneNode(true);
+                    button.parentNode.replaceChild(newButton, button);
+                    
+                    // Add new click handler
+                    newButton.addEventListener('click', function(event) {
+                        const row = this.closest('tr');
+                        return openEditShipmentModal(event, row);
+                    }, true); // Use capture phase to ensure we get the event first
+                });
+            });
+        </script>
 </body>
 
 </html>

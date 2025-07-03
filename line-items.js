@@ -549,9 +549,89 @@ function saveFlatGoodsChanges() {
     alert('Changes saved successfully!');
 }
 
+// Function to open the shipping history modal
+function openShippingHistoryModal(trackingNumber = '') {
+    const modal = document.getElementById('shippingHistoryModal');
+    if (!modal) return;
+
+    // If tracking number is provided, update the dropdown
+    if (trackingNumber) {
+        const select = modal.querySelector('select');
+        if (select) {
+            select.value = trackingNumber;
+        }
+    }
+
+    // Show the modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close the shipping history modal
+function closeShippingHistoryModal() {
+    const modal = document.getElementById('shippingHistoryModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+// Function to initialize the shipping history modal
+function setupShippingHistoryModal() {
+    const modal = document.getElementById('shippingHistoryModal');
+    if (!modal) return;
+
+    // Close modal when clicking the close button or outside the modal
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal || e.target.classList.contains('close-modal')) {
+            closeShippingHistoryModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeShippingHistoryModal();
+        }
+    });
+
+    // Handle print history button
+    const printBtn = modal.querySelector('.btn');
+    if (printBtn && printBtn.textContent.trim() === 'Print History') {
+        printBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.print();
+        });
+    }
+
+    // Handle tracking number selection change
+    const trackingSelect = modal.querySelector('select');
+    if (trackingSelect) {
+        trackingSelect.addEventListener('change', function() {
+            // Add logic to update history based on selected tracking number
+            console.log('Selected tracking number:', this.value);
+        });
+    }
+    
+    // Add click handler for the History button in the shipping tab
+    const historyBtn = document.querySelector('.shipping-tab .btn-history');
+    if (historyBtn) {
+        historyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openShippingHistoryModal();
+        });
+    }
+}
+
+// Make these functions globally available
+window.openShippingHistoryModal = openShippingHistoryModal;
+window.closeShippingHistoryModal = closeShippingHistoryModal;
+
+// Initialize modals when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the flat goods modal
     setupFlatGoodsModal();
+    setupShippingHistoryModal();
     
     // Handle Customer Provided Items checkbox
     const customerItemsCheckbox = document.getElementById('customer-items');

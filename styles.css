@@ -900,7 +900,15 @@ body {
   border: 1px solid #ccc;
   white-space: nowrap;
 }
-
+.data-table tfoot td {
+  background-color: #eaf5ff;
+  color: #103351;
+  height: 30px;
+  padding: 5px 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+  font-weight: bold;
+}
 /* Warehouse Table Specific */
 .warehouse-list-table .table-responsive {
   overflow-x: auto;

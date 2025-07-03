@@ -2370,7 +2370,7 @@ Monograms is not responsible for damages to customer provided items. There is an
             <div class="tab-content" id="promotional-products">
                 <div class="form-section">
                     <!-- STEP 1: Style Selection -->
-                    <div class="section-card pui-mb-15px">
+                    <div class="section-card pui-mb-15px search-promo-products">
 
                         <div class="pui-row">
                             <div class="pui-col-md-8">
@@ -2484,7 +2484,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                         </div> -->
 
                                 <!-- Quick Quantity Setup -->
-                                <div class="pui-row pui-mb-15px">
+                                <div class="quick-quantity-setup pui-row pui-mb-15px">
                                     <div class="pui-col-md-12">
                                         <div class="alert alert-info"
                                             style="background-color: #e8f4f8; border: 1px solid #bee5eb; color: #0c5460; padding: 12px;">
@@ -3076,8 +3076,175 @@ Monograms is not responsible for damages to customer provided items. There is an
                 </div>
             </div>
             <div class="tab-content" id="shipment-details">
-               <!-- Shipment Details content will go here -->
-                <p>Shipment details will be displayed here.</p>
+                <div class="form-section">
+                    <div class="section-card">
+                        <!-- Action Buttons -->
+                        <div class="pui-row pui-mb-15px">
+                            <div class="pui-col-md-12">
+                                <button class="pui-btn pui-btn-primary pui-me-10px">Add Shipment</button>
+                                <button class="pui-btn pui-btn-secondary">History</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Shipments Table -->
+                        <div class="pui-row">
+                            <div class="pui-col-md-12">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Qty</th>
+                                            <th>Cost</th>
+                                            <th>Billed</th>
+                                            <th>Drop Ship</th>
+                                            <th>Origin</th>
+                                            <th>Date</th>
+                                            <th>Tracking #</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="color: #dc3545;">
+                                            <td>Subtotal - PO Tracking</td>
+                                            <td>0</td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4533</td>
+                                            <td></td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td>Factory</td>
+                                            <td>07/25/19</td>
+                                            <td><a href="#">540933743346</a></td>
+                                            <td>
+                                                <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                                </path>
+                                                            </svg></button>
+                                                <button class="btn-action" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M3 6h18"></path>
+                                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                            </svg></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5533</td>
+                                            <td>9.00</td>
+                                            <td class="pui-text-right">$8.00</td>
+                                            <td class="pui-text-right">$8.00</td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td>Factory</td>
+                                            <td>02/07/25</td>
+                                            <td><a href="#">756633745544</a></td>
+                                            <td>
+                                                <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                                </path>
+                                                            </svg></button>
+                                                <button class="btn-action" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M3 6h18"></path>
+                                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                            </svg></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>543</td>
+                                            <td>9.00</td>
+                                            <td class="pui-text-right">$8.00</td>
+                                            <td class="pui-text-right">$8.00</td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td>Factory</td>
+                                            <td>07/02/25</td>
+                                            <td><a href="#">720933748836</a></td>
+                                            <td>
+                                                <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                                </path>
+                                                            </svg></button>
+                                                <button class="btn-action" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M3 6h18"></path>
+                                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                            </svg></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>112</td>
+                                            <td>1.00</td>
+                                            <td class="pui-text-right">$10.00</td>
+                                            <td class="pui-text-right">$10.00</td>
+                                            <td class="pui-text-right">$0.00</td>
+                                            <td>Factory</td>
+                                            <td>02/07/25</td>
+                                            <td><a href="#">53455533333</a></td>
+                                            <td>
+                                                <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                                </path>
+                                                            </svg></button>
+                                                <button class="btn-action" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M3 6h18"></path>
+                                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                            </svg></button>
+                                            </td>
+                                        </tr>
+                                        <tr style="color: #dc3545;">
+                                            <td>Subtotal - Imported Tracking & Custom Hand Shipments</td>
+                                            <td>19</td>
+                                            <td class="pui-text-right">$26.00</td>
+                                            <td class="pui-text-right">$26.00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr style="font-weight: bold;">
+                                            <td>TOTAL</td>
+                                            <td>19</td>
+                                            <td class="pui-text-right">$26.00</td>
+                                            <td class="pui-text-right">$26.00</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tab-content" id="payment-details">
                 <!-- Order Summary Section -->

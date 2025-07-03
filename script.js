@@ -126,13 +126,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add active class to clicked button
                 button.classList.add('active');
 
-
                 // Show corresponding tab content and reset scroll position
                 const tabId = button.getAttribute('data-tab');
                 const tabContent = document.getElementById(tabId);
                 if (tabContent) {
                     tabContent.classList.add('active');
                     tabContent.scrollTop = 0; // Reset scroll position
+                }
+                
+                // Handle promotional products tab visibility
+                if (tabId === 'promotional-products') {
+                    const searchDiv = document.querySelector('.search-promo-products');
+                    const quickQuantityDiv = document.querySelector('.quick-quantity-setup');
+                    const fromEdit = button.getAttribute('data-from-edit') === 'true';
+                    
+                    if (searchDiv && quickQuantityDiv) {
+                        if (fromEdit) {
+                            // Hide both search div and quick quantity setup when coming from edit
+                            searchDiv.style.display = 'none';
+                            quickQuantityDiv.style.display = 'none';
+                            // Clear the flag after use
+                            button.removeAttribute('data-from-edit');
+                        } else {
+                            // Show both divs when directly clicking the tab
+                            searchDiv.style.display = 'block';
+                            quickQuantityDiv.style.display = 'block';
+                        }
+                    }
                 }
                 
                 // Also reset the window scroll position
@@ -175,8 +195,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Find the promotional products tab button
                 const promoTabButton = document.querySelector('.tab-btn[data-tab="promotional-products"]');
                 if (promoTabButton) {
+                    // Mark that we're navigating from an edit action
+                    promoTabButton.setAttribute('data-from-edit', 'true');
+                    
                     // Trigger click on the promotional products tab
                     promoTabButton.click();
+                    
+                    // Hide the search section and quick quantity setup when coming from edit
+                    setTimeout(() => {
+                        const searchDiv = document.querySelector('.search-promo-products');
+                        const quickQuantityDiv = document.querySelector('.quick-quantity-setup');
+                        if (searchDiv) {
+                            searchDiv.style.display = 'none';
+                        }
+                        if (quickQuantityDiv) {
+                            quickQuantityDiv.style.display = 'none';
+                        }
+                    }, 0);
                 }
             }
         }, true); // Use capture phase to run before other handlers

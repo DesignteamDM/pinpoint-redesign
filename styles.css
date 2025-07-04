@@ -812,6 +812,29 @@ body {
   font-size: 0; /* Remove whitespace between inline-blocks */
 }
 
+.language-selector {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.language-dropdown {
+  padding: 6px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 13px;
+  color: #495057;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.language-dropdown:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
 .action-buttons > * {
   display: inline-block;
   vertical-align: middle;
@@ -1400,6 +1423,7 @@ button {
 }
 
 .add-phone-btn,
+.add-misc-line-btn,
 .show-more-phones {
     background: white;
     border: 1px dashed #999;
@@ -1421,6 +1445,7 @@ button {
 }
 
 .add-phone-btn:hover,
+.add-misc-line-btn:hover,
 .show-more-phones:hover {
     background-color: #f5f9ff;
     border-color: #0066cc;
@@ -1502,7 +1527,6 @@ button {
 .payment-field .account-select {
   min-width: 250px;
 }
-
 .payment-toggle {
   padding: 6px 12px;
   background-color: #f8f9fa;
@@ -3404,3 +3428,25 @@ textarea.form-control {
   background: #dfefff!important;
 }
 
+.credit-card-expired-warning{
+  margin-top: 5px; color: #dc3545; font-size: 12px;
+  border: 1px solid #ffb1b9;
+  padding: 5px 10px;
+  background-color: #fff3f5;
+  border-radius: 4px;
+  font-weight: 600;
+} 
+.pui-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+.pui-checkbox input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+.pui-checkbox label{
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0px;
+}

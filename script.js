@@ -1,4 +1,108 @@
+// Translation dictionary
+const translations = {
+    en: {
+        // Header
+        'View Order': 'View Order',
+        'Print Order': 'Print Order',
+        'Close Order': 'Close Order',
+        // Billing Section
+        'Billing': 'Billing',
+        'Company': 'Company',
+        'Contact': 'Contact',
+        'Address': 'Address',
+        'City': 'City',
+        'State': 'State',
+        'Zip': 'Zip',
+        'Phone': 'Phone',
+        'Email': 'Email',
+        'Billing Email': 'Billing Email',
+        'Turn Emails Off?': 'Turn Emails Off?',
+        // Shipping Section
+        'Shipping': 'Shipping',
+        'Same as Billing': 'Same as Billing',
+        'Ship To': 'Ship To',
+        'Search Address': 'Search Address',
+        // Add more translations as needed
+    },
+    es: {
+        // Header
+        'View Order': 'Ver Pedido',
+        'Print Order': 'Imprimir Pedido',
+        'Close Order': 'Cerrar Pedido',
+        // Billing Section
+        'Billing': 'Facturación',
+        'Company': 'Empresa',
+        'Contact': 'Contacto',
+        'Address': 'Dirección',
+        'City': 'Ciudad',
+        'State': 'Estado',
+        'Zip': 'Código Postal',
+        'Phone': 'Teléfono',
+        'Email': 'Correo Electrónico',
+        'Billing Email': 'Correo de Facturación',
+        'Turn Emails Off?': '¿Desactivar Correos?',
+        // Shipping Section
+        'Shipping': 'Envío',
+        'Same as Billing': 'Igual que Facturación',
+        'Ship To': 'Enviar A',
+        'Search Address': 'Buscar Dirección',
+        // Add more translations as needed
+    }
+};
+
+// Function to translate the page
+function translatePage(language) {
+    // Update all translatable elements
+    document.querySelectorAll('.translatable').forEach(element => {
+        const key = element.getAttribute('data-en') || element.textContent.trim();
+        if (translations[language] && translations[language][key]) {
+            element.textContent = translations[language][key];
+        }
+    });
+    
+    // Update select dropdowns
+    document.querySelectorAll('select option').forEach(option => {
+        const key = option.textContent.trim();
+        if (translations[language] && translations[language][key]) {
+            option.textContent = translations[language][key];
+        }
+    });
+    
+    // Update input placeholders
+    document.querySelectorAll('input[placeholder]').forEach(input => {
+        const key = input.getAttribute('placeholder');
+        if (translations[language] && translations[language][key]) {
+            input.setAttribute('placeholder', translations[language][key]);
+        }
+    });
+    
+    // Update button texts
+    document.querySelectorAll('button').forEach(button => {
+        const key = button.textContent.trim();
+        if (translations[language] && translations[language][key] && !button.querySelector('svg')) {
+            button.textContent = translations[language][key];
+        }
+    });
+}
+
+// Initialize language selector
 document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener for language selector
+    const languageSelector = document.getElementById('language-selector');
+    if (languageSelector) {
+        languageSelector.addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            localStorage.setItem('preferredLanguage', selectedLanguage);
+            translatePage(selectedLanguage);
+        });
+        
+        // Set initial language from localStorage or default to English
+        const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        languageSelector.value = savedLanguage;
+        if (savedLanguage !== 'en') {
+            translatePage(savedLanguage);
+        }
+    }
     // Initialize warehouse table toggle functionality
     function initializeWarehouseTable() {
         const table = document.querySelector('.warehouse-list-table .data-table');
@@ -407,12 +511,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize phone number functionality
     function initializePhoneNumbers() {
         const phoneGroups = document.querySelectorAll('.phone-group');
+        if (!phoneGroups || phoneGroups.length === 0) return;
         
         phoneGroups.forEach(group => {
             const container = group.querySelector('.phone-inputs-container');
             const addButton = group.querySelector('.add-phone-btn');
             const showMoreButton = group.querySelector('.show-more-phones');
             let isExpanded = false;
+            
+            // Skip this group if required elements are missing
+            if (!container || !addButton) return;
             
             // Function to create a new phone input group
             function createNewPhoneInput() {
@@ -482,42 +590,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Add event listener for add button
-            addButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                const newInput = createNewPhoneInput();
-                container.appendChild(newInput);
-                
-                // Always show the newly added input
-                newInput.style.display = 'flex';
-                
-                // If this is the third phone number, show the showMoreButton
-                const allInputs = container.querySelectorAll('.phone-inputs');
-                if (allInputs.length >= 3) {
-                    showMoreButton.style.display = 'block';
-                    // Expand the view if it was collapsed
-                    if (!isExpanded) {
-                        isExpanded = true;
+            if (addButton) {
+                addButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const newInput = createNewPhoneInput();
+                    container.appendChild(newInput);
+                    
+                    // Always show the newly added input
+                    newInput.style.display = 'flex';
+                    
+                    // If this is the third phone number, show the showMoreButton
+                    const allInputs = container.querySelectorAll('.phone-inputs');
+                    if (allInputs.length >= 3 && showMoreButton) {
+                        showMoreButton.style.display = 'block';
+                        // Expand the view if it was collapsed
+                        if (!isExpanded) {
+                            isExpanded = true;
+                        }
                     }
-                }
-                
-                // Update the show more button text and visibility
-                updatePhoneInputsVisibility();
-                
-                // Scroll to the new input
-                setTimeout(() => {
-                    newInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    // Focus on the phone number input
-                    const phoneInput = newInput.querySelector('.phone-number');
-                    if (phoneInput) phoneInput.focus();
-                }, 100);
-            });
+                    
+                    // Update the show more button text and visibility
+                    updatePhoneInputsVisibility();
+                    
+                    // Scroll to the new input
+                    setTimeout(() => {
+                        newInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        // Focus on the phone number input
+                        const phoneInput = newInput.querySelector('.phone-number');
+                        if (phoneInput) phoneInput.focus();
+                    }, 100);
+                });
+            }
             
             // Toggle show/hide extra phone numbers
-            showMoreButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                isExpanded = !isExpanded;
-                updatePhoneInputsVisibility();
-            });
+            if (showMoreButton) {
+                showMoreButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    isExpanded = !isExpanded;
+                    updatePhoneInputsVisibility();
+                });
+            }
             
             // Initialize the component
             updatePhoneInputsVisibility();
@@ -528,6 +640,91 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.phone-group')) {
         initializePhoneNumbers();
     }
+
+// Simple implementation for adding misc lines
+function setupMiscLines() {
+    // Wait a small amount of time to ensure all other initializations are done
+    setTimeout(function() {
+        // Get the button and container
+        const addButton = document.getElementById('addMiscLineBtn');
+        const container = document.getElementById('miscLinesContainer');
+        const template = document.getElementById('miscLineTemplate');
+        
+        if (!addButton || !container || !template) {
+            console.error('Required elements not found for misc lines');
+            return;
+        }
+        
+        // Counter for new misc lines
+        let miscLineCount = 0;
+        
+        // Function to add a new misc line
+        function addMiscLine() {
+            try {
+                // Clone the template content
+                const content = template.content.cloneNode(true);
+                
+                // Create a container for the new line
+                const newLine = document.createElement('div');
+                newLine.className = 'misc-line';
+                if (miscLineCount > 0) {
+                    newLine.classList.add('pui-mt-15px');
+                }
+                
+                // Add the template content to the container
+                newLine.appendChild(content);
+                
+                // Update the title
+                const title = newLine.querySelector('h5');
+                if (title) {
+                    title.textContent = `Misc Line #${miscLineCount + 1}`;
+                }
+                
+                // Add the new line to the container
+                container.appendChild(newLine);
+                
+                // Remove default line if this is the first addition
+                if (miscLineCount === 0) {
+                    const defaultLine = document.querySelector('.default-misc-line');
+                    if (defaultLine && defaultLine.parentNode) {
+                        defaultLine.parentNode.removeChild(defaultLine);
+                    }
+                }
+                
+                // Increment the counter
+                miscLineCount++;
+                
+                // Scroll to the new line
+                newLine.scrollIntoView({ behavior: 'smooth' });
+                
+                return true;
+            } catch (error) {
+                console.error('Error adding misc line:', error);
+                return false;
+            }
+        }
+        
+        // Add click event to the button
+        if (addButton) {
+            addButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                addMiscLine();
+            });
+            
+            // Add the first line automatically if there's a default line
+            if (document.querySelector('.default-misc-line')) {
+                setTimeout(function() {
+                    addMiscLine();
+                }, 100);
+            }
+        }
+    }, 100); // Small delay to ensure other initializations are done
+}
+
+// Initialize misc lines after the page is fully loaded
+window.addEventListener('load', function() {
+    setupMiscLines();
+});
 
     // Add click handler for the search button
     const searchBtn = document.querySelector('.search-btn');

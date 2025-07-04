@@ -7,6 +7,7 @@
     <title>Order Details</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="purchase-receipt.css">
 </head>
 
 <body>
@@ -294,6 +295,7 @@
                 <button class="tab-btn active" data-tab="customer-details">Customer Details</button>
                 <button class="tab-btn" data-tab="order-details">Order Details</button>
                 <button class="tab-btn" data-tab="flat-goods">Flat Goods</button>
+                <button class="tab-btn" data-tab="screen-printing">Screen Printing</button>
                 <button class="tab-btn" data-tab="promotional-products">Promotional Products</button>
                 <button class="tab-btn" data-tab="payment-details">Payment Details</button>
                 <button class="tab-btn" data-tab="shipment-details">Shipment Details</button>
@@ -2770,101 +2772,132 @@ Monograms is not responsible for damages to customer provided items. There is an
                                         </div>
                                         <!-- Miscellaneous Lines -->
                                         <div class="pui-mb-15px">
-                                            <!-- <h5 class="pui-mb-10px">Miscellaneous Lines</h5> -->
-
-                                            <!-- Misc Line 1 -->
                                             <div class="pui-row pui-mb-10px">
                                                 <div class="pui-col-md-6">
-                                                    <label>Display Misc Line #1 on PO?
-                                                        <input type="radio" name="displayMisc1" value="yes" checked> Yes
-                                                        <input type="radio" name="displayMisc1" value="no"> No
-                                                    </label>
+                                                    <h4>Miscellaneous Lines</h4>
                                                 </div>
                                             </div>
-                                            <div class="table-responsive pui-mb-15px">
-                                                <table class="data-table">
-                                                    <colgroup>
-                                                        <col style="width: 15%;">
-                                                        <col style="width: 10%;">
-                                                        <col style="width: 15%;">
-                                                        <col style="width: 10%;">
-                                                        <col style="width: 10%;">
-                                                        <col style="width: 10%;">
-                                                        <col style="width: 10%;">
-                                                        <col style="width: 12%;">
-                                                        <col style="width: 5%;">
-                                                    </colgroup>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td colspan="9">
-                                                                <input type="text"
-                                                                    class="form-control input-sm pui-mt-5px pui-mb-5px"
-                                                                    value="">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="width: 15%;"><strong></strong></td>
-                                                            <td style="width: 10%;"><input type="number"
-                                                                    class="form-control input-sm" value="0.0000"
-                                                                    step="0.0001"></td>
-                                                            <td style="width: 15%;">
-                                                                <select class="form-control input-sm">
-                                                                    <option value="">Select Code</option>
-                                                                </select>
-                                                            </td>
-                                                            <td style="width: 10%;">$0.00</td>
-                                                            <td style="width: 10%;">
-                                                                <div style="display: flex; align-items: center;">
-                                                                    <div class="pui-me-5px">$</div> <input type="number"
-                                                                        class="form-control input-sm" value="0"
-                                                                        style="width: 50px;">
-                                                                </div>
-                                                            </td>
-                                                            <td style="width: 10%;">$0.00</td>
-                                                            <td style="width: 10%;"><input type="number"
-                                                                    class="form-control input-sm" value="0"></td>
-                                                            <td style="width: 15%;">$0.00</td>
-                                                            <td style="width: 5%;"><input type="checkbox"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                            <!-- Misc Line 2 -->
-                                            <div class="pui-row pui-mb-10px">
-                                                <div class="pui-col-md-6">
-                                                    <label>Display Misc Line #2 on PO?
-                                                        <input type="radio" name="displayMisc2" value="yes" checked> Yes
-                                                        <input type="radio" name="displayMisc2" value="no"> No
-                                                    </label>
+                                            
+                                            <!-- Container for misc lines -->
+                                            <div id="miscLinesContainer">
+                                                <!-- Default Misc Line 1 -->
+                                                <div class="misc-line default-misc-line pui-mb-15px">
+                                                    <h5 class="pui-mb-10px">Misc Line #1</h5>
+                                                    <div class="table-responsive">
+                                                        <table class="data-table">
+                                                            <colgroup>
+                                                                <col style="width: 15%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 15%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 12%;">
+                                                                <col style="width: 5%;">
+                                                            </colgroup>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="9">
+                                                                        <input type="text"
+                                                                            class="form-control input-sm pui-mt-5px pui-mb-5px"
+                                                                            value="">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 15%;"><strong></strong></td>
+                                                                    <td style="width: 10%;"><input type="number"
+                                                                            class="form-control input-sm" value="0.0000"
+                                                                            step="0.0001"></td>
+                                                                    <td style="width: 15%;">
+                                                                        <select class="form-control input-sm">
+                                                                            <option value="">Select Code</option>
+                                                                        </select>
+                                                                    </td>
+                                                                    <td style="width: 10%;">$0.00</td>
+                                                                    <td style="width: 10%;">
+                                                                        <div style="display: flex; align-items: center;">
+                                                                            <div class="pui-me-5px">$</div> <input type="number"
+                                                                                class="form-control input-sm" value="0"
+                                                                                style="width: 50px;">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="width: 10%;">$0.00</td>
+                                                                    <td style="width: 10%;"><input type="number"
+                                                                            class="form-control input-sm" value="0"></td>
+                                                                    <td style="width: 15%;">$0.00</td>
+                                                                    <td style="width: 5%;"><input type="checkbox"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="table-responsive pui-mb-15px">
-                                        <table class="data-table">
-                                            <tbody>
-                                                <tr>
-                                                    <td style="width: 15%;"><strong>Misc Line #2</strong></td>
-                                                    <td style="width: 10%;"><input type="number" class="form-control input-sm" value="0.0000" step="0.0001"></td>
-                                                    <td style="width: 15%;">
-                                                        <select class="form-control input-sm">
-                                                            <option value="">Select Code</option>
-                                                        </select>
-                                                    </td>
-                                                    <td style="width: 10%;">$0.00</td>
-                                                    <td style="width: 10%;">
-                                                        <div style="display: flex; align-items: center;">
-                                                            <div class="pui-me-5px">$</div> <input type="number" class="form-control input-sm" value="0" style="width: 50px;">
-                                                        </div>
-                                                    </td>
-                                                    <td style="width: 10%;">$0.00</td>
-                                                    <td style="width: 10%;"><input type="number" class="form-control input-sm" value="0"></td>
-                                                    <td style="width: 15%;">$0.00</td>
-                                                    <td style="width: 5%;"><input type="checkbox"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div> -->
+                                            
+                                            <!-- Add New Misc Line Button -->
+                                            <div class="pui-row pui-mt-10px">
+                                                <div class="pui-col-md-12">
+                                                    <button type="button" id="addMiscLineBtn" class="add-misc-line-btn">
+                                                        <i class="fa fa-plus pui-me-5px"></i>+ Add New Misc Line
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
+                                        
+                                        <!-- Template for new misc line (hidden) -->
+                                        <template id="miscLineTemplate">
+                                            <div class="misc-line pui-mb-15px pui-mt-15px">
+                                                <h5 class="pui-mb-10px"></h5>
+                                                <div class="table-responsive">
+                                                    <table class="data-table">
+                                                        <colgroup>
+                                                            <col style="width: 15%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 15%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 12%;">
+                                                            <col style="width: 5%;">
+                                                        </colgroup>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="9">
+                                                                    <input type="text"
+                                                                        class="form-control input-sm pui-mt-5px pui-mb-5px"
+                                                                        value="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width: 15%;"><strong></strong></td>
+                                                                <td style="width: 10%;"><input type="number"
+                                                                        class="form-control input-sm" value="0.0000"
+                                                                        step="0.0001"></td>
+                                                                <td style="width: 15%;">
+                                                                    <select class="form-control input-sm">
+                                                                        <option value="">Select Code</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td style="width: 10%;">$0.00</td>
+                                                                <td style="width: 10%;">
+                                                                    <div style="display: flex; align-items: center;">
+                                                                        <div class="pui-me-5px">$</div> <input type="number"
+                                                                            class="form-control input-sm" value="0"
+                                                                            style="width: 50px;">
+                                                                    </div>
+                                                                </td>
+                                                                <td style="width: 10%;">$0.00</td>
+                                                                <td style="width: 10%;"><input type="number"
+                                                                        class="form-control input-sm" value="0"></td>
+                                                                <td style="width: 15%;">$0.00</td>
+                                                                <td style="width: 5%;"><input type="checkbox"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </template>
 
                                         <!-- Pricing Total -->
                                         <div class="pui-row pui-mt-15px">
@@ -2987,12 +3020,12 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <div>
                                                 <select class="form-control" multiple style="height: 100px; flex: 1;">
                                                     <option value="">Select Imprint Location...</option>
-                                                    <option value="item-back">Item Back (Screenprinted)</option>
-                                                    <option value="item-front">Item Front (Screenprinted)</option>
-                                                    <option value="left-chest">Left Chest (Screenprinted)</option>
-                                                    <option value="left-hip">Left Hip (Screenprinted)</option>
-                                                    <option value="right-chest">Right Chest (Screenprinted)</option>
-                                                    <option value="sleeve">Sleeve (Screenprinted)</option>
+                                                    <option value="item-back">Item Back (Screenprinted)(2"W x 3"H)</option>
+                                                    <option value="item-front">Item Front (Screenprinted) (3.5"W x 2"H)</option>
+                                                    <option value="left-chest">Left Chest (Screenprinted) (2"W x 2"H)</option>
+                                                    <option value="left-hip">Left Hip (Screenprinted) (2"W x 2"H)</option>
+                                                    <option value="right-chest">Right Chest (Screenprinted) (2"W x 2"H)</option>
+                                                    <option value="sleeve">Sleeve (Screenprinted) (2"W x 2"H)</option>
                                                 </select>
                                                 <div>
                                                     <div
@@ -3001,6 +3034,9 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <button class="pui-btn pui-btn-secondary pui-btn-sm pui-mt-20px">Reminder Rules</button>
                                     </div>
                                 </div>
 
@@ -3254,103 +3290,992 @@ Monograms is not responsible for damages to customer provided items. There is an
             <div class="tab-content" id="payment-details">
                 <!-- Order Summary Section -->
                  <div class="form-section">
-                <div class="section-card">
-                    
                     <div class="pui-row">
                         <div class="pui-col-md-6">
-                            <table class="data-table">
-                                <tbody>
-                                    <tr>
-                                        <td><strong>SUBTOTAL</strong></td>
-                                        <td class="pui-text-right"><strong>$9,452.15</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                            <div class="section-card">
                     
-                    <div class="pui-row pui-mt-10px">
-                        <div class="pui-col-md-6">
-                            <div class="pui-row pui-mb-5px">
-                                <div class="pui-col-md-6">
-                                    <input type="text" value="8.6350" class="form-control" style="width: 80px; display: inline-block;">
-                                    <span style="margin-left: 5px;">%</span>
-                                    <span>- TAX</span>
+                                <div class="pui-row">
+                                    <div class="pui-col-md-12">
+                                        <table class="data-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>SUBTOTAL</strong></td>
+                                                    <td class="pui-text-right"><strong>$9,452.15</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 
-                                <div class="pui-col-md-6 pui-text-right">
-                                    <strong>$808.64</strong>
+                                <div class="pui-row pui-mt-10px">
+                                    <div class="pui-col-md-12">
+                                        <div class="pui-row pui-mb-5px">
+                                            <div class="pui-col-md-6">
+                                                <input type="text" value="8.6350" class="form-control" style="width: 80px; display: inline-block;">
+                                                <span style="margin-left: 5px;">%</span>
+                                                <span>- TAX</span>
+                                            </div>
+                                            
+                                            <div class="pui-col-md-6 pui-text-right">
+                                                <strong>$808.64</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="pui-row">
+                                    <div class="pui-col-md-12">
+                                        <table class="data-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>SHIPPING</td>
+                                                    <td class="pui-text-right">
+                                                        <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>C.O.D. CHARGES</td>
+                                                    <td class="pui-text-right">
+                                                        <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DISCOUNT</td>
+                                                    <td class="pui-text-right">
+                                                        <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
+                                                    </td>
+                                                </tr>
+                                                <tr style="background-color: #f8f9fa;">
+                                                    <td><strong>SUBTOTAL</strong></td>
+                                                    <td class="pui-text-right"><strong>$10,260.79</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>DEPOSIT</td>
+                                                    <td class="pui-text-right">
+                                                        <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Misc.Amount</td>
+                                                    <td class="pui-text-right">
+                                                        <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>RUSH FEE</td>
+                                                    <td class="pui-text-right">
+                                                        <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
+                                                    </td>
+                                                </tr>
+                                                <tr style="background-color: #e3f2fd; font-weight: bold;">
+                                                    <td><strong>ORDER TOTAL</strong></td>
+                                                    <td class="pui-text-right" style="color: #1976d2;"><strong><a href="#">$10,260.79</a></strong></td>
+                                                </tr>
+                                                <tr style="background-color: #f5f5f5;">
+                                                    <td><strong>PAYMENT TOTAL</strong></td>
+                                                    <td class="pui-text-right"><strong>$0.00</strong></td>
+                                                </tr>
+                                                <tr style="background-color: #fff3cd; font-weight: bold;">
+                                                    <td><strong>AMOUNT DUE</strong></td>
+                                                    <td class="pui-text-right" style="color: #856404;"><strong>$10,260.79</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="pui-row">
                         <div class="pui-col-md-6">
-                            <table class="data-table">
-                                <tbody>
-                                    <tr>
-                                        <td>SHIPPING</td>
-                                        <td class="pui-text-right">
-                                            <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>C.O.D. CHARGES</td>
-                                        <td class="pui-text-right">
-                                            <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>DISCOUNT</td>
-                                        <td class="pui-text-right">
-                                            <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
-                                        </td>
-                                    </tr>
-                                    <tr style="background-color: #f8f9fa;">
-                                        <td><strong>SUBTOTAL</strong></td>
-                                        <td class="pui-text-right"><strong>$10,260.79</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td>DEPOSIT</td>
-                                        <td class="pui-text-right">
-                                            <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc.Amount</td>
-                                        <td class="pui-text-right">
-                                            <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>RUSH FEE</td>
-                                        <td class="pui-text-right">
-                                            <input type="number" value="0.00" class="form-control" style="width: 100px; text-align: right;display: inline-block;">
-                                        </td>
-                                    </tr>
-                                    <tr style="background-color: #e3f2fd; font-weight: bold;">
-                                        <td><strong>ORDER TOTAL</strong></td>
-                                        <td class="pui-text-right" style="color: #1976d2;"><strong><a href="#">$10,260.79</a></strong></td>
-                                    </tr>
-                                    <tr style="background-color: #f5f5f5;">
-                                        <td><strong>PAYMENT TOTAL</strong></td>
-                                        <td class="pui-text-right"><strong>$0.00</strong></td>
-                                    </tr>
-                                    <tr style="background-color: #fff3cd; font-weight: bold;">
-                                        <td><strong>AMOUNT DUE</strong></td>
-                                        <td class="pui-text-right" style="color: #856404;"><strong>$10,260.79</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="section-card">
+                                <div>
+                                    <div class="pui-row">
+                                        <div class="pui-col-lg-6">
+                                            <div class="form-group">
+                                                <label>Payment <span class="required">*</span>
+                                                    <button type="button" class="add-option-btn-sm" title="Add New">+</button>
+                                                </label>
+                                                <div class="payment-field">
+                                                    <select class="account-select" id="paymentMethod">
+                                                        <option value="credit-card">Credit Card</option>
+                                                        <option value="account">Account</option>
+                                                    </select>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-lg-6">
+                                            <div class="form-group">
+                                                <label>Invoices Past Due?</label>
+                                                <div class="radio-group">
+                                                    <label class="radio-label">
+                                                        <input type="radio" name="invoicesPastDue" value="yes"> Yes
+                                                    </label>
+                                                    <label class="radio-label">
+                                                        <input type="radio" name="invoicesPastDue" value="no" checked=""> No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-lg-6">
+                                            <div class="form-group pui-mb-none" id="creditCardSelection" style="display: none;">
+                                                <label>Select Credit Card
+                                                    <button type="button" class="add-option-btn-sm" title="Add New">+</button>
+                                                </label>
+                                                <div class="payment-cc-field"> 
+                                                <select class="form-control" id="creditCardSelect">
+                                                    <option value="">-- Select Credit Card --</option>
+                                                    <option value="1" data-expired="true">Visa (Kathleen M Farris) *-5117</option>
+                                                    <option value="2">Mastercard (John D Smith) *-1234</option>
+                                                    <option value="3">Amex (Robert J Wilson) *-5678</option>
+                                                </select>
+                                               
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-lg-6"> 
+                                            <div id="expiredCardWarning" class="credit-card-expired-warning pui-mt-15px" style="display: none;">
+                                                <span>⚠️ Credit Card Expired</span>
+                                                <button type="button" class="pui-btn pui-btn-secondary btn-history pui-ms-10px" onclick="updateCreditCard()">Click to update</button>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                   
+                                    
+                                   
+                                </div>
+                            </div>
+                            
+                            <div class="section-card pui-mt-10px">
+                                <div class="pui-row">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label>Invoice #</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label>Status
+                                                <button type="button" class="add-option-btn-sm" title="Add New">+</button>
+                                            </label>
+                                            <div class="status-group">
+                                                <select class="status">
+                                                    <option>Closed</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="status-indicator-group">
+                                            <input type="checkbox">
+                                            <label class="pui-ms-5px">Email Pickup Notice</label>
+                                        </div>
+                                        <button class="pui-btn pui-btn-secondary pui-btn-sm">Export to Quickbooks</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-card pui-mt-10px">
+                                <h4 class="pui-mb-10px">Previous Transactions for this Order</h4>
+                                <div class="table-responsive">
+                                    <table class="data-table" style="border: 1px solid #dc3545; width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                <th>Amount</th>
+                                                <th>Approval Code</th>
+                                                <th>Transaction #</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2/5/25</td>
+                                                <td style="color: #dc3545;">Declined</td>
+                                                <td style="color: #dc3545;">($112.00)</td>
+                                                <td></td>
+                                                <td><a href="#" class="view-receipt" style="color: #6f42c1; text-decoration: underline;" data-transaction="325432">325432</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pui-mt-10px">
+                                    <strong>Response:</strong>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="pui-mt-20px">
+                                <div class="pui-row">
+                                    <div class="pui-col-md-12">
+                                        <div class="form-group">
+                                            <div class="pui-checkbox">
+                                                <input type="checkbox" id="amountInRange">
+                                                <label for="amountInRange" class="pui-ms-5px">Amount inside BUTTON is the same as the amount above</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-12">
+                                        <div class="form-group">
+                                            <div class="pui-checkbox">
+                                                <input type="checkbox" id="transactionExists">
+                                                <label for="transactionExists" class="pui-ms-5px">Transaction Exists: I understand I am creating another transaction</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-mt-10px">
+                                <button type="button" class="pui-btn pui-btn-primary">Process Payment: $10,260.79</button>
+                                <button type="button" class="pui-btn pui-btn-link pui-ms-10px">Transaction has already been recorded for this order</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+               
                 </div>
             </div>
             <div class="tab-content" id="po">
                 <!-- PO content will go here -->
                 <p>PO content will be displayed here.</p>
+            </div>
+            <div class="tab-content" id="screen-printing">
+                <div class="form-section">
+                    <!-- STEP 1: Style Selection -->
+                    <div class="section-card pui-mb-15px search-promo-products">
+
+                        <div class="pui-row">
+                            <div class="pui-col-md-8">
+                                <div class="search-container">
+                                    <label>Find Style</label>
+                                    <div class="search-input-group">
+                                        <input type="text" id="styleSearch"
+                                            placeholder="Enter style number, description, or keywords...">
+                                        <button type="button" class="search-btn" id="searchStyleBtn">Find</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="pui-row pui-mb-5px">
+                            <div class="pui-col-md-12">
+                                <label><strong>Search Results</strong></label>
+                            </div>
+                        </div>
+                        <div class="search-results pui-mb-none">
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Style</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2 Color Imprint NO Underbase (MCK-2Color) by McKenzie & Co</td>
+                                        <td>MCK-2Color</td>
+                                        <td><button type="button" class="btn-action btn-sm">Select</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6 ft. x 30"Top x 29"H - 4 Sided Standard Stretch Table Throw Dye Sublimation
+                                        </td>
+                                        <td>107108</td>
+                                        <td><button type="button" class="btn-action btn-sm">Select</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="pui-row">
+                        <div class="pui-col-md-12">
+                            <!-- STEP 2: Product Information -->
+                            <div class="section-card pui-mb-15px">
+
+                                <div class="od-product-info pui-mb-15px">
+                                    <h3>2 Color Imprint NO Underbase (MCK-2Color) by McKenzie & Co</h3>
+
+                                </div>
+
+                                <div class="pui-row">
+                                    <div class="pui-col-md-9">
+                                        <div class="form-group">
+                                            <label class="form-label">Line Description:</label>
+                                            <input type="text" class="form-control"
+                                                value="Front Logo - Lion Head 2 Color Flag"
+                                                placeholder="Enter description for this line item">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">File Location:</label>
+                                            <div style="display: flex; align-items: center;">
+                                                <input type="text" class="form-control"
+                                                    value="N:\N\Nance Solutions Inc\Screen Printing\125466 2025 Summer Lion Flag T-Shirt">
+                                                <a href="#" class="add-option-btn-sm pui-ms-5px" title="Browse Files"
+                                                    style="display: flex; align-items: center;gap: 5px;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path
+                                                            d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                                                        <path d="M11 13l9 -9" />
+                                                        <path d="M15 4h5v5" />
+                                                    </svg>
+                                                    Right Click
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="pui-col-md-3">
+                            <div class="flat-goods-image-container pui-text-center">
+                                <img src="assets/images/lion-head.jpg" alt="Product Image" class="product-image">
+                                <div class="pui-mt-10px">
+                                    <a href="#" class="pui-btn pui-btn-link pui-btn-sm">Edit Item</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                <!-- <div class="pui-mt-10px">
+                                <span style="color: #dc3545; font-weight: 600;">Factory Credit Card Processing Fee: 3.00%</span>
+                            </div> -->
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="pui-row">
+                        <div class="pui-col-xl-7">
+                            <!-- STEP 3: Quantity & Pricing -->
+                            <div class="section-card pui-mb-15px">
+                                <!-- <div class="pui-row pui-mb-15px">
+                            <div class="pui-col-md-12">
+                                <h4 class="section-heading">Step 3: Quantity & Pricing Configuration</h4>
+                            </div>
+                        </div> -->
+
+                                <!-- Quick Quantity Setup -->
+                                <div class="quick-quantity-setup pui-row pui-mb-15px">
+                                    <div class="pui-col-md-12">
+                                        <div class="alert alert-info"
+                                            style="background-color: #e8f4f8; border: 1px solid #bee5eb; color: #0c5460; padding: 12px;">
+                                             To automatically set pricing for this item
+                                            below, enter the quantity ordered here:
+                                            <input type="number" class="form-control"
+                                                style="width: 60px; display: inline-block; margin: 0 8px;"
+                                                placeholder="0">
+                                            <button class="pui-btn pui-btn-sm pui-btn-primary">SET PRICING</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pui-row">
+
+                                    <div class="pui-col-md-12">
+                                        <div class="alert alert-warning pui-mb-15px"
+                                            style="background-color: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 8px;">
+                                            <strong>This Item Qualifies For EQP</strong>
+                                        </div>
+
+                                        <!-- Main Pricing Table -->
+                                        <div class="pui-mb-15px">
+                                            <h4 class="pui-mb-10px">Pricing</h4>
+                                            <div class="table-responsive">
+                                                <table class="data-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 15%;"></th>
+                                                            <th style="width: 10%;">Retail</th>
+                                                            <th style="width: 15%;">Code</th>
+                                                            <th style="width: 10%;">Cost</th>
+                                                            <th style="width: 10%;">Disc</th>
+                                                            <th style="width: 10%;">Price</th>
+                                                            <th style="width: 10%;">Qty</th>
+                                                            <th style="width: 12%;">Ext. Price</th>
+                                                            <th style="width: 5%;">Tax</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><strong>Item</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0.0000" step="0.0001"></td>
+                                                            <td>
+                                                                <select class="form-control input-sm">
+                                                                    <option value="">Select Code</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>$0.000</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;"><input
+                                                                        type="number" class="form-control input-sm"
+                                                                        value="0" style="width: 50px;">%</div>
+                                                            </td>
+                                                            <td>$0.0000</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Rush</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0.00" step="0.01"></td>
+                                                            <td></td>
+                                                            <td>$0.00</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                        <tr style="background-color: #ff5252;">
+                                                            <td style="background-color: #ff5252; color: white;">
+                                                                <strong>Setup</strong></td>
+                                                            <td style="background-color: #ff5252; color: white;"><input
+                                                                    type="number" class="form-control input-sm"
+                                                                    value="62.50" step="0.01"></td>
+                                                            <td style="background-color: #ff5252; color: white;">V</td>
+                                                            <td style="background-color: #ff5252; color: white;">$50.00
+                                                            </td>
+                                                            <td style="background-color: #ff5252; color: white;">
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td style="background-color: #ff5252; color: white;">$62.50
+                                                            </td>
+                                                            <td style="background-color: #ff5252; color: white;">
+                                                                <input type="number" class="form-control input-sm"
+                                                                    value="1">
+                                                            </td>
+                                                            <td style="background-color: #ff5252; color: white;">$62.50
+                                                            </td>
+                                                            <td><input type="checkbox" checked></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Reprint</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="31.25" step="0.01"></td>
+                                                            <td>V</td>
+                                                            <td>$25.00</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td>$31.25</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Adtl Color</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0.00" step="0.01"></td>
+                                                            <td></td>
+                                                            <td>$0.00</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>PMS</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0.00" step="0.01"></td>
+                                                            <td></td>
+                                                            <td>$0.00</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Run</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="1.00" step="0.01"></td>
+                                                            <td>V</td>
+                                                            <td>$0.80</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <!-- Color Configuration -->
+                                        <div class="pui-row pui-mb-15px">
+                                            <div class="pui-col-md-12">
+                                                <div style="display: flex; align-items: center;">
+                                                    <label class="pui-mb-none pui-me-10px">No. of Additional Colors to
+                                                        Charge:</label>
+                                                    <select class="form-control pui-me-10px" style="width: 80px;">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                    </select>
+                                                    <small class="text-muted">(This only works with the RUN charge
+                                                        line)</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Additional Charges -->
+                                        <div class="pui-mb-15px">
+
+                                            <div class="table-responsive">
+                                                <table class="data-table">
+                                                    <tbody>
+
+                                                        <colgroup>
+                                                            <col style="width: 15%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 15%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 12%;">
+                                                            <col style="width: 5%;">
+                                                        </colgroup>
+                                                        <tr>
+                                                            <td><strong>Copy Change</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0.00" step="0.01"></td>
+                                                            <td>
+                                                                <select class="form-control input-sm">
+                                                                    <option value="">Select Code</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Layout</strong></td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0.00" step="0.01"></td>
+                                                            <td>
+                                                                <select class="form-control input-sm">
+                                                                    <option value="">Select Code</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td>
+                                                                <div style="display: flex; align-items: center;">
+                                                                    <div class="pui-me-5px">$</div> <input type="number"
+                                                                        class="form-control input-sm" value="0"
+                                                                        style="width: 50px;">
+                                                                </div>
+                                                            </td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="number" class="form-control input-sm"
+                                                                    value="0"></td>
+                                                            <td>$0.00</td>
+                                                            <td><input type="checkbox"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="pui-row pui-mt-10px">
+                                                <div class="pui-col-md-8">
+                                                    <label>Combine layout fee into Item Setup Fee above?
+                                                        <input type="radio" name="combineLayout" value="yes"> Yes
+                                                        <input type="radio" name="combineLayout" value="no" checked> No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Miscellaneous Lines -->
+                                        <div class="pui-mb-15px">
+                                            <div class="pui-row pui-mb-10px">
+                                                <div class="pui-col-md-6">
+                                                    <h4>Miscellaneous Lines</h4>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Container for misc lines -->
+                                            <div id="miscLinesContainer">
+                                                <!-- Default Misc Line 1 -->
+                                                <div class="misc-line default-misc-line pui-mb-15px">
+                                                    <h5 class="pui-mb-10px">Misc Line #1</h5>
+                                                    <div class="table-responsive">
+                                                        <table class="data-table">
+                                                            <colgroup>
+                                                                <col style="width: 15%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 15%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 10%;">
+                                                                <col style="width: 12%;">
+                                                                <col style="width: 5%;">
+                                                            </colgroup>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td colspan="9">
+                                                                        <input type="text"
+                                                                            class="form-control input-sm pui-mt-5px pui-mb-5px"
+                                                                            value="">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 15%;"><strong></strong></td>
+                                                                    <td style="width: 10%;"><input type="number"
+                                                                            class="form-control input-sm" value="0.0000"
+                                                                            step="0.0001"></td>
+                                                                    <td style="width: 15%;">
+                                                                        <select class="form-control input-sm">
+                                                                            <option value="">Select Code</option>
+                                                                        </select>
+                                                                    </td>
+                                                                    <td style="width: 10%;">$0.00</td>
+                                                                    <td style="width: 10%;">
+                                                                        <div style="display: flex; align-items: center;">
+                                                                            <div class="pui-me-5px">$</div> <input type="number"
+                                                                                class="form-control input-sm" value="0"
+                                                                                style="width: 50px;">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="width: 10%;">$0.00</td>
+                                                                    <td style="width: 10%;"><input type="number"
+                                                                            class="form-control input-sm" value="0"></td>
+                                                                    <td style="width: 15%;">$0.00</td>
+                                                                    <td style="width: 5%;"><input type="checkbox"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Add New Misc Line Button -->
+                                            <div class="pui-row pui-mt-10px">
+                                                <div class="pui-col-md-12">
+                                                    <button type="button" id="addMiscLineBtn" class="add-misc-line-btn">
+                                                        <i class="fa fa-plus pui-me-5px"></i>+ Add New Misc Line
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Template for new misc line (hidden) -->
+                                        <template id="miscLineTemplate">
+                                            <div class="misc-line pui-mb-15px pui-mt-15px">
+                                                <h5 class="pui-mb-10px"></h5>
+                                                <div class="table-responsive">
+                                                    <table class="data-table">
+                                                        <colgroup>
+                                                            <col style="width: 15%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 15%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 10%;">
+                                                            <col style="width: 12%;">
+                                                            <col style="width: 5%;">
+                                                        </colgroup>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="9">
+                                                                    <input type="text"
+                                                                        class="form-control input-sm pui-mt-5px pui-mb-5px"
+                                                                        value="">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width: 15%;"><strong></strong></td>
+                                                                <td style="width: 10%;"><input type="number"
+                                                                        class="form-control input-sm" value="0.0000"
+                                                                        step="0.0001"></td>
+                                                                <td style="width: 15%;">
+                                                                    <select class="form-control input-sm">
+                                                                        <option value="">Select Code</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td style="width: 10%;">$0.00</td>
+                                                                <td style="width: 10%;">
+                                                                    <div style="display: flex; align-items: center;">
+                                                                        <div class="pui-me-5px">$</div> <input type="number"
+                                                                            class="form-control input-sm" value="0"
+                                                                            style="width: 50px;">
+                                                                    </div>
+                                                                </td>
+                                                                <td style="width: 10%;">$0.00</td>
+                                                                <td style="width: 10%;"><input type="number"
+                                                                        class="form-control input-sm" value="0"></td>
+                                                                <td style="width: 15%;">$0.00</td>
+                                                                <td style="width: 5%;"><input type="checkbox"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </template>
+
+                                        <!-- Pricing Total -->
+                                        <div class="pui-row pui-mt-15px">
+                                            <div class="pui-col-md-8"></div>
+                                            <div class="pui-col-md-4 pui-text-right">
+                                                <div class="total-item" style="justify-content: flex-end;">
+                                                    <label><strong>TOTAL</strong></label>
+                                                    <div class="total-value"><strong>$62.50</strong></div>
+                                                </div>
+                                                <button
+                                                    class="pui-btn pui-btn-sm pui-btn-secondary pui-mt-5px">Calculate</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-col-xl-5">
+                            <!-- STEP 4: Shipping & Timeline -->
+                            <div class="section-card pui-mb-15px bg-color-2">
+                                <!-- <div class="pui-row pui-mb-15px">
+                            <div class="pui-col-md-12">
+                                <h4 class="section-heading">Step 4: Shipping & Timeline</h4>
+                            </div>
+                        </div> -->
+                                <div class="pui-row">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label>Must Have By:</label>
+                                            <div class="input-group">
+                                                <div class="right-action-group">
+                                                    <input type="text" class="form-control" placeholder="Select date">
+                                                    <button type="button" class="calendar-btn">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                            </rect>
+                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-3">
+                                        <div class="form-group">
+                                            <label>Rush Order:</label>
+                                            <div class="radio-group">
+                                                <label class="radio-label">
+                                                    <input type="radio" name="rush" value="yes"> Yes
+                                                </label>
+                                                <label class="radio-label">
+                                                    <input type="radio" name="rush" value="no" checked> No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="pui-row">
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            <label>Freight Options:
+                                                <button type="button" class="add-option-btn-sm"
+                                                    title="Add New Shipping Method">+ Ship</button>
+                                            </label>
+                                            <select class="form-control">
+                                                <option value="">Select Shipping Method...</option>
+                                                <option value="standard">Standard Shipping</option>
+                                                <option value="expedited">Expedited Shipping</option>
+                                                <option value="overnight">Overnight</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            <label>Drop Ship From Factory:</label>
+                                            <div class="radio-group">
+                                                <label class="radio-label">
+                                                    <input type="radio" name="dropShip" value="yes"> Yes
+                                                </label>
+                                                <label class="radio-label">
+                                                    <input type="radio" name="dropShip" value="no" checked> No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 5: Item Details & Customization -->
+                            <div class="section-card pui-mb-15px">
+
+
+                                <div class="pui-row pui-mb-15px">
+                                    <div class="pui-col-md-5">
+                                        <div class="form-group">
+                                            <label>Item Color:
+                                                <button type="button" class="add-option-btn-sm" title="Add New Color">+
+                                                    Color</button>
+                                            </label>
+                                            <select class="form-control">
+                                                <option value="">Select Color...</option>
+                                                <option value="red">Red</option>
+                                                <option value="blue">Blue</option>
+                                                <option value="white">White</option>
+                                                <option value="black">Black</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-8">
+                                        <div class="form-group pui-mb-none">
+                                            <label>Imprint Location(s):
+                                                <button type="button" class="add-option-btn-sm"
+                                                    title="Add New Location">+ Location</button>
+                                            </label>
+                                            <div>
+                                                <select class="form-control" multiple style="height: 100px; flex: 1;">
+                                                    <option value="">Select Imprint Location...</option>
+                                                    <option value="item-back">Item Back (Screenprinted)(2"W x 3"H)</option>
+                                                    <option value="item-front">Item Front (Screenprinted) (3.5"W x 2"H)</option>
+                                                    <option value="left-chest">Left Chest (Screenprinted) (2"W x 2"H)</option>
+                                                    <option value="left-hip">Left Hip (Screenprinted) (2"W x 2"H)</option>
+                                                    <option value="right-chest">Right Chest (Screenprinted) (2"W x 2"H)</option>
+                                                    <option value="sleeve">Sleeve (Screenprinted) (2"W x 2"H)</option>
+                                                </select>
+                                                <div>
+                                                    <div
+                                                        style="font-size: 12px; color: #666; margin-bottom: 5px;margin-top: 5px;">
+                                                        Hold Ctrl/Cmd + Click to select multiple locations</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pui-row">
+                                    <div class="pui-col-md-12">
+                                        <div class="form-group">
+                                            <label>Layout Notes:</label>
+                                            <textarea class="form-control pui-mb-none" rows="4"
+                                                style="resize: vertical;" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pui-row">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label>Supplier Quote No:</label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-12">
+                                        <div class="form-group">
+                                            <label>General PO Notes:</label>
+                                            <textarea class="form-control" rows="3" style="resize: vertical;"
+                                                placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 6: Template & Finalization -->
+                            <div class="section-card pui-mb-15px">
+
+
+                                <div class="pui-row">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label>Set as Template:</label>
+                                            <div class="radio-group">
+                                                <label class="radio-label">
+                                                    <input type="radio" name="setTemplate" value="yes"> Yes
+                                                </label>
+                                                <label class="radio-label">
+                                                    <input type="radio" name="setTemplate" value="no" checked> No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-8">
+                                        <div class="form-group">
+                                            <label>Template Description:</label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Final Actions -->
+                    <div class="pui-row pui-mt-20px">
+                        <div class="pui-col-md-12 pui-text-center">
+                            <div class="pui-mb-15px">
+                                <!-- <button class="pui-btn pui-btn-sm pui-btn-secondary pui-me-10px">Save as Draft</button>
+                                <button class="pui-btn pui-btn-sm pui-btn-secondary pui-me-10px">Preview Order</button> -->
+                                <button class="pui-btn pui-btn-primary">Add to Order</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -3470,6 +4395,49 @@ Monograms is not responsible for damages to customer provided items. There is an
         </script>
         <script src="script.js"></script>
         <script src="line-items.js"></script>
+        <script>
+            // Toggle credit card selection visibility based on payment method
+            document.addEventListener('DOMContentLoaded', function() {
+                const paymentMethod = document.getElementById('paymentMethod');
+                const creditCardSelection = document.getElementById('creditCardSelection');
+                const creditCardSelect = document.getElementById('creditCardSelect');
+                const expiredCardWarning = document.getElementById('expiredCardWarning');
+                
+                // Initial check
+                toggleCreditCardSelection();
+                
+                // Add event listeners
+                paymentMethod.addEventListener('change', toggleCreditCardSelection);
+                creditCardSelect.addEventListener('change', handleCreditCardSelection);
+                
+                function toggleCreditCardSelection() {
+                    if (paymentMethod.value === 'credit-card') {
+                        creditCardSelection.style.display = 'block';
+                    } else {
+                        creditCardSelection.style.display = 'none';
+                        expiredCardWarning.style.display = 'none';
+                    }
+                }
+                
+                function handleCreditCardSelection() {
+                    const selectedOption = creditCardSelect.options[creditCardSelect.selectedIndex];
+                    const isExpired = selectedOption.getAttribute('data-expired') === 'true';
+                    
+                    if (isExpired && creditCardSelect.value !== '') {
+                        expiredCardWarning.style.display = 'block';
+                    } else {
+                        expiredCardWarning.style.display = 'none';
+                    }
+                }
+                
+                // Function to handle update credit card button click
+                window.updateCreditCard = function() {
+                    // Here you would typically open a modal or redirect to update the credit card
+                    alert('Redirecting to update credit card information...');
+                    // Example: window.location.href = '/update-credit-card';
+                };
+            });
+        </script>
         <link rel="stylesheet" href="styles.css">
 
         <!-- Flat-Goods Edit Modal -->
@@ -3820,6 +4788,77 @@ Monograms is not responsible for damages to customer provided items. There is an
         </div>
         <!-- End Shipment Modal -->
 
+        <!-- Payment Receipt Modal -->
+        <div id="paymentReceiptModal" class="modal" style="display: none;">
+            <div class="modal-content" style="max-width: 800px;">
+                <div class="modal-header">
+                    <h3>Purchase Receipt</h3>
+                    <button type="button" class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body" style="color: #000;">
+                    <table class="purchase-receipt" width="750" border="0" align="center" cellpadding="0" cellspacing="0" style="font-family: Verdana, sans-serif!important;">
+                        <tbody><tr>
+                          <td>
+                          
+                          <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                            <tbody><tr class="style4">
+                              <td height="25" align="center">&nbsp;</td>
+                              <td align="center">&nbsp;</td>
+                            </tr>
+                            <tr class="style4">
+                              <td width="49%" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody><tr>
+                                  <td width="25%"><img src="assets/images/pmlogo300.bmp" width="74"></td>
+                                  <td width="75%" class="style3">Pinpoint Monograms, Inc.<br>
+                                    1425 Linwood Blvd<br>
+                                    Oklahoma City, OK 73106<br>
+                                    405.228.0600</td>
+                                </tr>
+                              </tbody></table></td>
+                              <td width="51%" align="center"><p><strong>Date:</strong> 2-5-2025</p>
+                                <p><strong>Visit Us At: https://www.pinpointus.net</strong></p></td>
+                            </tr>
+                            <tr>
+                              <td colspan="2" align="center" class="style11"><strong><br>
+                                PURCHASE RECEIPT<br>
+                                <br>
+                              </strong></td>
+                              </tr>
+                            <tr class="style4">
+                              <td><strong>Trans Record No:</strong> 43475<br>            <strong>Order No:</strong> 92075<br>            <strong>eOrder No:</strong> abc-11<br>            <strong>Invoice No:</strong> 2434<br>            <strong>Account Name:</strong>  <br></td>
+                              <td><strong>Card Name:</strong> TEST<br>
+                                <strong>Card Type:</strong> Visa<br>
+                                <strong>Approval Code:</strong> <br>
+                                <strong>Transaction No:</strong> 325432<br>
+                                <strong>Total:</strong> ($112.00) <br>
+                                <strong>DECLINED</strong><br></td>
+                            </tr>
+                            <tr>
+                              <td colspan="2" class="style4"><p><em>I authorize Pinpoint 
+                      Monograms, Inc. to charge my credit card above for the amount of 
+                      ($112.00). I testify that I am the authorized user for the above credit 
+                      card. I agree to pay the above amount according to the card issuer 
+                      agreement.</em><br>
+                                <br>
+                              </p>
+                              
+                              </td>
+                              </tr>
+                            
+                          </tbody></table></td>
+                        </tr>
+                        
+                      </tbody></table>
+                      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="pui-btn pui-btn-secondary pui-me-10px">Print</button>
+                    <button type="button" class="pui-btn pui-btn-primary">Email</button>
+                  </div>
+            </div>
+        </div>
+        <!-- End Payment Receipt Modal -->
+
         <script>
             // Function to open shipment modal for adding a new shipment
             function openNewShipmentModal(event) {
@@ -3954,10 +4993,21 @@ Monograms is not responsible for damages to customer provided items. There is an
                 return false;
             }
             
-            // Close modal when clicking the close button
-            document.querySelectorAll('.close-modal').forEach(button => {
-                button.addEventListener('click', function() {
-                    this.closest('.modal').style.display = 'none';
+            // Handle payment receipt modal
+            document.querySelectorAll('.view-receipt').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modal = document.getElementById('paymentReceiptModal');
+                    modal.style.display = 'block';
+                });
+            });
+
+            // Close modal when clicking the close button or outside the modal
+            document.querySelectorAll('.close-modal, .modal').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    if (e.target === this || e.target.classList.contains('close-modal')) {
+                        this.closest('.modal').style.display = 'none';
+                    }
                 });
             });
             

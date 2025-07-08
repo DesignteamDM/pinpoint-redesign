@@ -1388,6 +1388,39 @@ body {
   margin-bottom: 10px;
 }
 
+/* Item Fee Suggestions Dropdown */
+.suggestions-dropdown {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    margin-top: 2px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 6px 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+.suggestion-item:active {
+    background-color: #e9ecef;
+}
+
+/* Make sure the input has relative positioning for the dropdown */
+.item-fee-description {
+    position: relative;
+}
+
 /* Side by side form groups */
 .form-row {
   display: block;

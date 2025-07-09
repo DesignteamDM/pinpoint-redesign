@@ -105,61 +105,92 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // Initialize warehouse table toggle functionality
     function initializeWarehouseTable() {
-        const table = document.querySelector('.warehouse-list-table .data-table');
-        const toggleButton = document.querySelector('.toggle-warehouses');
-        const toggleIcon = document.querySelector('.toggle-icon');
-        const viewAllCheckbox = document.getElementById('viewAllWarehouses');
-        
-        if (!table || !toggleButton) return;
-        
-        // Get all rows except the header and yellow row
-        const toggleableRows = Array.from(table.querySelectorAll('tbody tr:not(.row-yellow)'));
-        
-        // Function to update row visibility
-        const updateRowVisibility = () => {
-            const isExpanded = table.classList.contains('table-expanded');
-            const showAll = viewAllCheckbox && viewAllCheckbox.checked;
-            
-            toggleableRows.forEach(row => {
-                row.style.display = (isExpanded || showAll) ? 'table-row' : 'none';
-            });
-            
-            if (toggleIcon) {
-                const shouldShowToggleMinus = isExpanded || showAll;
-                toggleIcon.textContent = shouldShowToggleMinus ? '−' : '+';
-                
-                // Ensure checkbox matches the toggle state
-                if (viewAllCheckbox) {
-                    viewAllCheckbox.checked = shouldShowToggleMinus;
-                }
-            }
-        };
-        
-        // Set initial state
-        table.classList.remove('table-expanded');
-        if (viewAllCheckbox) viewAllCheckbox.checked = false;
-        updateRowVisibility();
-        
-        // Toggle table expansion when clicking the toggle button
-        toggleButton.addEventListener('click', function() {
-            table.classList.toggle('table-expanded');
-            // Update checkbox to match toggle state
-            if (viewAllCheckbox) {
-                viewAllCheckbox.checked = table.classList.contains('table-expanded');
-            }
-            updateRowVisibility();
+        // First warehouse table
+        setupWarehouseTable({
+            tableSelector: '.warehouse-list-table .data-table',
+            toggleButtonSelector: '.toggle-warehouses',
+            toggleIconSelector: '.toggle-icon',
+            checkboxId: 'viewAllWarehouses'
         });
         
-        // Toggle all warehouses when checkbox is clicked
-        if (viewAllCheckbox) {
-            viewAllCheckbox.addEventListener('change', function() {
-                if (this.checked) {
-                    table.classList.add('table-expanded');
-                } else {
-                    table.classList.remove('table-expanded');
+        // Second warehouse table
+        setupWarehouseTable({
+            tableSelector: '.warehouse-list-table-two .data-table',
+            toggleButtonSelector: '.toggle-warehouses-two',
+            toggleIconSelector: '.toggle-icon-two',
+            checkboxId: 'viewAllWarehouses-two'
+        });
+        
+        function setupWarehouseTable({ tableSelector, toggleButtonSelector, toggleIconSelector, checkboxId }) {
+            const table = document.querySelector(tableSelector);
+            const toggleButton = document.querySelector(toggleButtonSelector);
+            const toggleIcon = document.querySelector(toggleIconSelector);
+            const viewAllCheckbox = document.getElementById(checkboxId);
+            
+            if (!table) return;
+            
+            // Get all rows except the header and yellow row
+            const toggleableRows = Array.from(table.querySelectorAll('tbody tr:not(.row-yellow)'));
+            
+            // Function to update row visibility
+            const updateRowVisibility = (fromCheckbox = false) => {
+                const isExpanded = table.classList.contains('table-expanded');
+                const showAll = viewAllCheckbox && viewAllCheckbox.checked;
+                
+                // Only update the display if we're not coming from checkbox click
+                // to prevent flickering
+                if (!fromCheckbox) {
+                    toggleableRows.forEach(row => {
+                        row.style.display = (isExpanded || showAll) ? 'table-row' : 'none';
+                    });
                 }
-                updateRowVisibility();
-            });
+                
+                if (toggleIcon) {
+                    const shouldShowToggleMinus = isExpanded || showAll;
+                    toggleIcon.textContent = shouldShowToggleMinus ? '−' : '+';
+                }
+            };
+            
+            // Set initial state
+            table.classList.remove('table-expanded');
+            if (viewAllCheckbox) viewAllCheckbox.checked = false;
+            updateRowVisibility();
+            
+            // Toggle table expansion when clicking the toggle button
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function() {
+                    const newState = !table.classList.contains('table-expanded');
+                    table.classList.toggle('table-expanded');
+                    if (viewAllCheckbox) {
+                        viewAllCheckbox.checked = newState;
+                    }
+                    updateRowVisibility();
+                });
+            }
+            
+            // Toggle all warehouses when checkbox is clicked
+            if (viewAllCheckbox) {
+                viewAllCheckbox.addEventListener('change', function() {
+                    const showAll = this.checked;
+                    
+                    // Update display immediately for better responsiveness
+                    toggleableRows.forEach(row => {
+                        row.style.display = showAll ? 'table-row' : 'none';
+                    });
+                    
+                    // Update the table expanded state to match
+                    if (showAll) {
+                        table.classList.add('table-expanded');
+                    } else {
+                        table.classList.remove('table-expanded');
+                    }
+                    
+                    // Update the toggle icon if it exists
+                    if (toggleIcon) {
+                        toggleIcon.textContent = showAll ? '−' : '+';
+                    }
+                });
+            }
         }
     }
     

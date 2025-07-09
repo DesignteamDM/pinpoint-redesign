@@ -3562,6 +3562,14 @@ textarea.form-control {
     text-overflow: ellipsis;
 }
 
+/* Make multiple select elements resizable */
+select[multiple].form-control {
+    resize: vertical;
+    min-height: 100px;
+    min-width: 200px;
+    overflow: auto;
+}
+
 .add-option-btn-sm {
     border: 1px dashed #999;
     color: #0066cc;

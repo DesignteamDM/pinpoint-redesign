@@ -97,11 +97,8 @@
 
 .box-item {
     padding: 10px;
-    border: 1px solid #898989;
-}
-
-.box-item:last-child {
-    border-bottom: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
 }
 
 .box-item-info {
@@ -3682,6 +3679,12 @@ select[multiple].form-control {
 }
 .pui-align-items-center{
   align-items: center;
+}
+.pui-align-self-center{
+  align-self: center;
+}
+.pui-align-self-end{
+  align-self: end;
 }
 .pui-no-wrap{
   white-space: nowrap;

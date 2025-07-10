@@ -1,12 +1,14 @@
 // Item Fees functionality
 class ItemFeesManager {
-    constructor() {
-        this.container = document.getElementById('itemFeesContainer');
-        this.template = document.getElementById('itemFeeTemplate');
-        this.addButton = document.getElementById('addItemFeeBtn');
+    constructor(containerId, templateId, buttonId) {
+        this.container = document.getElementById(containerId);
+        this.template = document.getElementById(templateId);
+        this.addButton = document.getElementById(buttonId);
         this.itemFeeCount = 0;
         
-        this.initializeEventListeners();
+        if (this.addButton) {
+            this.initializeEventListeners();
+        }
     }
 
     initializeEventListeners() {
@@ -82,5 +84,17 @@ class ItemFeesManager {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.itemFeesManager = new ItemFeesManager();
+    // Initialize for Promotional Products tab
+    window.promotionalProductsItemFees = new ItemFeesManager(
+        'itemFeesContainer',
+        'itemFeeTemplate',
+        'addItemFeeBtn'
+    );
+    
+    // Initialize for Screen Printing tab
+    window.screenPrintingItemFees = new ItemFeesManager(
+        'spItemFeesContainer',
+        'spItemFeeTemplate',
+        'spAddItemFeeBtn'
+    );
 });

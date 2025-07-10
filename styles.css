@@ -93,12 +93,14 @@
 
 .box-items {
     margin-top: 10px;
+    padding: 5px 10px;
 }
-
+.box-item-tracking{
+  padding: 5px 10px;
+}
 .box-item {
-    padding: 10px;
-    border: 1px solid #bdbdbd;
-    border-radius: 4px;
+    border: 1px solid #80b4e6;
+    border-radius: 6px;
 }
 
 .box-item-info {
@@ -106,10 +108,18 @@
 }
 
 .box-item-actions {
-    display: flex;
-    gap: 5px;
+    padding: 5px 10px;
 }
-
+.box-item-header{
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: #d2e9ff;
+}
 .tracking-input {
     display: flex;
     margin-top: 10px;
@@ -3076,6 +3086,13 @@ textarea.form-control {
 .pui-me-30px{
     margin-right: 30px !important;
 }
+.pui-p-5px{
+padding: 5px !important;
+}
+.pui-p-10px{
+padding: 10px !important;
+}
+
 /* Flat Goods Table Styles */
 .flat-goods-list .form-section {
   margin-bottom: 20px;
@@ -3694,4 +3711,21 @@ select[multiple].form-control {
   vertical-align: middle;
 }
 
-  
+.main-accordion > .accordion-toggle{
+  background: #e1f0ff;
+  border: 1px solid #a2d1ff;
+  color: #0066cc;
+  border-radius: 4px;
+  margin-bottom: 0!important;
+}
+.main-accordion > .accordion-toggle:hover{
+  background: #bedcfb;
+  border: 1px solid #a2d1ff;
+  color: #0066cc;
+}
+.main-accordion >.accordion-content{
+  padding: 10px;
+  border: 1px solid rgb(221, 221, 221);
+  margin-bottom: 10px;
+  border-top: none;
+}

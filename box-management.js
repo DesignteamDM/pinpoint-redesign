@@ -6,28 +6,28 @@ let currentBoxId = null; // Track the currently selected box for printing
 // Initialize box management
 function initializeBoxManagement() {
     // Load saved data from localStorage if available
-    const savedData = localStorage.getItem('boxManagementData');
-    if (savedData) {
-        const data = JSON.parse(savedData);
-        boxes = data.boxes || [];
-        items = data.items || [];
+    // const savedData = localStorage.getItem('boxManagementData');
+    // if (savedData) {
+    //     const data = JSON.parse(savedData);
+    //     boxes = data.boxes || [];
+    //     items = data.items || [];
         
         // Ensure qtyPacked is in sync with box contents
-        items.forEach(item => {
-            const totalPacked = boxes.reduce((total, box) => {
-                const boxItem = box.items.find(i => i.id === item.id);
-                return total + (boxItem ? boxItem.quantity : 0);
-            }, 0);
+    //     items.forEach(item => {
+    //         const totalPacked = boxes.reduce((total, box) => {
+    //             const boxItem = box.items.find(i => i.id === item.id);
+    //             return total + (boxItem ? boxItem.quantity : 0);
+    //         }, 0);
             
-            item.qtyPacked = totalPacked;
-            if (totalPacked === 0) {
-                delete item.boxId;
-            }
-        });
-    } else {
+    //         item.qtyPacked = totalPacked;
+    //         if (totalPacked === 0) {
+    //             delete item.boxId;
+    //         }
+    //     });
+    // } else {
         // Initialize with sample data or fetch from order details
         initializeSampleItems();
-    }
+    // }
     updateUI();
     
     // Add event listener for print button
@@ -41,12 +41,12 @@ function initializeBoxManagement() {
 // Initialize sample items (replace with actual order items)
 function initializeSampleItems() {
     items = [
-        { id: 1, name: 'T-Shirt', color: 'White', size: 'XL', qtyOrdered: 144, qtyPacked: 0, boxId: null },
-        { id: 2, name: 'T-Shirt', color: 'White', size: '2XL', qtyOrdered: 72, qtyPacked: 0, boxId: null },
-        { id: 3, name: 'T-Shirt', color: 'White', size: '3XL', qtyOrdered: 72, qtyPacked: 0, boxId: null },
-        { id: 4, name: 'T-Shirt', color: 'White', size: 'S', qtyOrdered: 25, qtyPacked: 0, boxId: null },
-        { id: 5, name: 'T-Shirt', color: 'White', size: 'M', qtyOrdered: 50, qtyPacked: 0, boxId: null },
-        { id: 6, name: 'T-Shirt', color: 'White', size: 'L', qtyOrdered: 75, qtyPacked: 0, boxId: null }
+        { id: 1, name: 'Mens Corporate Quarter Snap Up Sweater Fleece', color: 'BLACK/WHITE_001', size: 'XL', qtyOrdered: 144, qtyPacked: 0, boxId: null },
+        { id: 2, name: 'Mens Corporate Quarter Snap Up Sweater Fleece', color: 'BLACK/WHITE_001', size: '2XL', qtyOrdered: 72, qtyPacked: 0, boxId: null },
+        { id: 3, name: 'Mens Corporate Quarter Snap Up Sweater Fleece', color: 'BLACK/WHITE_001', size: '3XL', qtyOrdered: 72, qtyPacked: 0, boxId: null },
+        { id: 4, name: 'Womens Classic Polo Shirt', color: 'BLACK/WHITE_001', size: 'S', qtyOrdered: 25, qtyPacked: 0, boxId: null },
+        { id: 5, name: 'Womens Classic Polo Shirt', color: 'BLACK/WHITE_001', size: 'M', qtyOrdered: 50, qtyPacked: 0, boxId: null },
+        { id: 6, name: 'Womens Classic Polo Shirt', color: 'BLACK/WHITE_001', size: 'L', qtyOrdered: 75, qtyPacked: 0, boxId: null }
     ];
 }
 
@@ -342,17 +342,17 @@ function updateUI() {
     } else {
         boxes.forEach(box => {
             const boxElement = document.createElement('div');
-            boxElement.className = 'box-item pui-p-10px pui-mb-10px';
+            boxElement.className = 'box-item pui-mb-10px';
             
             
             const itemCount = box.items.reduce((total, item) => total + item.quantity, 0);
             
             boxElement.innerHTML = `
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                    <h5 style="margin: 0;">Box ${box.number} (${itemCount} items)</h5>
+                <div class="box-item-header">
+                    <h4 style="margin: 0;">Box ${box.number} (${itemCount} items)</h4>
                     <div>
-                        <button class="btn-action" onclick="deleteBox(${box.id})">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <button class="pui-btn pui-btn-sm pui-btn-link" onclick="deleteBox(${box.id})">
+                        <svg style="display:block" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                                 <path d="M3 6h18"></path>
                                                                 <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
                                                                 <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
@@ -360,24 +360,21 @@ function updateUI() {
                                                                 <line x1="14" x2="14" y1="11" y2="17"></line>
                                                             </svg>
                         </button>
+                        
                     </div>
                 </div>
                 
                 ${box.trackingNumber ? `
-                    <div class="pui-mb-10px">
+                    <div class="box-item-tracking pui-mb-10px">
                         <span class="pui-badge pui-badge-success pui-me-5px">
                             Tracking: ${box.trackingNumber}
-                            <a href="#" onclick="navigator.clipboard.writeText('${box.trackingNumber}'); return false;" 
-                               style="color: white; margin-left: 5px;" 
-                               title="Copy to clipboard">
-                                📋
-                            </a>
+                           
                         </span>
                     </div>
                 ` : ''}
-                <div class="box-items pui-mb-10px">
+                <div class="box-items">
                     ${box.items.length > 0 ? `
-                        <table class="data-table" style="width: 100%;">
+                        <table class="data-table pui-mb-none" style="width: 100%;">
                         <colgroup>
                             <col style="width: 30%;">
                             <col style="width: 30%;">
@@ -419,25 +416,15 @@ function updateUI() {
                         </table>
                     ` : '<p>No items in this box yet.</p>'}
                 </div>
-                <div class="pui-row pui-mb-10px" style="align-items: center;">
-                    <div class="pui-col-md-8">
-                        <input type="text" 
-                               class="form-control form-control-sm" 
-                               id="tracking-${box.id}" 
-                               value="${box.trackingNumber || ''}" 
-                               placeholder="Enter tracking number"
-                        >
-                    </div>
-                    <div class="pui-col-md-4">
-                        <button class="pui-btn pui-btn-sm pui-btn-primary" 
-                                onclick="saveTrackingNumber(${box.id}, document.getElementById('tracking-${box.id}').value)">
-                            Save
-                        </button>
-                        <button class="pui-btn pui-btn-sm pui-btn-secondary pui-ms-10px" 
+                <div class="box-item-actions pui-text-right pui-mb-5px">
+                    
+                    
+                        <button class="pui-btn pui-btn-sm pui-btn-primary pui-ms-10px" 
                                 onclick="saveTrackingNumber(${box.id}, document.getElementById('tracking-${box.id}').value)">
                             Print
                         </button>
-                    </div>
+                        
+                 
                 </div>
             `;
             

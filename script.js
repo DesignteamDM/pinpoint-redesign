@@ -506,14 +506,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const accordionToggles = document.querySelectorAll('.accordion-toggle');
         
         accordionToggles.forEach(toggle => {
-            // Set initial state (all closed)
             const targetId = toggle.getAttribute('data-target');
             const content = document.getElementById(targetId);
             const icon = toggle.querySelector('.accordion-icon');
+            const isActive = toggle.classList.contains('active');
             
             if (content) {
-                content.style.display = 'none';
-                if (icon) icon.textContent = '+';
+                if (isActive) {
+                    content.style.display = 'block';
+                    if (icon) icon.textContent = '-';
+                } else {
+                    content.style.display = 'none';
+                    if (icon) icon.textContent = '+';
+                }
             }
             
             // Add click handler

@@ -6693,13 +6693,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 value="testgeomon1">
                                         </div>
                                     </div> -->
-                                    <div class="pui-col-md-4">
-                                        <div class="form-group">
-                                            <label>Qty Shipped:</label>
-                                            <input type="text" class="form-control" data-field-index="1" value="1">
-                                        </div>
-                                    </div>
-                                    <div class="pui-col-md-4">
+                                    
+                                    <div class="pui-col-md-6">
                                         <div class="form-group">
                                             <label>Freight Cost:</label>
                                             <div class="date-input">
@@ -6708,7 +6703,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="pui-col-md-4">
+                                    <div class="pui-col-md-6">
                                         <div class="form-group">
                                             <label>Freight Billed:</label>
                                             <div class="date-input">
@@ -6911,15 +6906,27 @@ Monograms is not responsible for damages to customer provided items. There is an
                                 modalTitle.textContent = 'Add Shipment';
                             }
 
-                            // Clear all form fields
+                            // Clear all text input fields
                             modal.querySelectorAll('input[type="text"]').forEach(input => {
                                 input.value = '';
                             });
 
-                            // Set default values
-                            modal.querySelector('input[data-field-index="1"]').value = '1'; // Qty
-                            modal.querySelector('input[data-field-index="3"]').value = '0'; // Freight Cost
-                            modal.querySelector('input[data-field-index="6"]').value = '0'; // Freight Billed
+                            // Set default values only for existing fields
+                            const setValueIfExists = (index, value) => {
+                                const element = modal.querySelector(`[data-field-index="${index}"]`);
+                                if (element) {
+                                    element.value = value;
+                                }
+                            };
+
+                            // Set default values for existing fields
+                            setValueIfExists('3', '0'); // Freight Cost
+                            setValueIfExists('6', '0'); // Freight Billed
+                            
+                            // Set default date to today for Date Shipped (field index 7)
+                            const today = new Date();
+                            const formattedDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
+                            setValueIfExists('7', formattedDate);
 
                             // Show modal
                             modal.style.display = 'block';

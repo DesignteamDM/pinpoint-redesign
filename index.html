@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="purchase-receipt.css">
+    <link rel="stylesheet" href="utilities.css">
 </head>
 
 <body>
@@ -3486,6 +3487,12 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 <td>07/25/19</td>
                                                 <td><a href="#">540933743346</a></td>
                                                 <td>
+                                                    <!-- <button class="btn-action" title="View" data-action="view-shipment">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                                                            <circle cx="12" cy="12" r="3"></circle>
+                                                        </svg>
+                                                    </button> -->
                                                     <button class="btn-action" title="Edit"
                                                         onclick="return openEditShipmentModal(event, this.closest('tr'))">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -3856,7 +3863,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 <tr style="background-color: #fff3cd; font-weight: bold;">
                                                     <td><strong>AMOUNT DUE</strong></td>
                                                     <td class="pui-text-right" style="color: #856404;">
-                                                        <strong>$10,260.79</strong></td>
+                                                        <strong>$10,260.79</strong>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -4065,260 +4073,792 @@ Monograms is not responsible for damages to customer provided items. There is an
             </div>
             <div class="tab-content" id="po">
                 <div class="form-section">
-                    <div class="section-card">
-                        <div class="pui-row pui-mb-15px">
-                            <div class="pui-col-md-6">
-                                <h4 class="section-title">PO Verification</h4>
-                            </div>
-                            <div class="pui-col-md-6 pui-text-right">
-                                <button class="pui-btn pui-btn-sm pui-btn-default">
-                                    <i class="fa fa-print pui-me-5px"></i>Print PO
-                                </button>
-                                <button class="pui-btn pui-btn-sm pui-btn-default">
-                                    <i class="fa fa-envelope pui-me-5px"></i>Email PO
-                                </button>
-                            </div>
-                        </div>
+                    <div class="pui-row">
+                        <div class="pui-col-md-12 pui-col-xxl-9">
 
-                        <!-- <div class="alert alert-warning pui-mb-15px">
-                            <i class="fa fa-exclamation-triangle pui-me-5px"></i>
-                            <strong>Warning:</strong> This order is not yet approved. Please verify all information
-                            before approving.
-                        </div> -->
+                            <div class="section-card pui-mb-10px">
+                                <h3 class="section-title">PO Builder for Order # OE-125466</h3>
 
-                        <!-- Order Status -->
-                        <div class="form-group">
-                            <label>Order Status</label>
-                            <div class="right-action-group" style="max-width: 200px;">
-                                <select class="form-control">
-                                    <option selected>Pending Approval</option>
-                                    <option>Approved</option>
-                                    <option>In Production</option>
-                                    <option>Shipped</option>
-                                    <option>Cancelled</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Follow-up Date -->
-                        <div class="form-group">
-                            <label>Follow-up Date</label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <div class="right-action-group">
-                                    <input type="text" class="form-control">
-                                    <button type="button" class="calendar-btn">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pui-checkbox-container" style="margin-top: 5px;">
-                                <input type="checkbox" id="followupComplete">
-                                <label for="followupComplete" class="checkmark"></label>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-
-                        <!-- Release Date -->
-                        <div class="form-group">
-                            <label>Release Date</label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <div class="right-action-group">
-                                    <input type="text" class="form-control">
-                                    <button type="button" class="calendar-btn">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pui-checkbox-container" style="margin-top: 5px;">
-                                <input type="checkbox" id="releaseComplete">
-                                <label for="releaseComplete" class="checkmark"></label>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-
-                        <!-- PO Submitted -->
-                        <div class="form-group">
-                            <label>
-                                <i class="fa fa-exclamation-triangle text-warning pui-me-5px"></i>
-                                PO Submitted
-                            </label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <div class="right-action-group">
-                                    <input type="text" class="form-control">
-                                    <button type="button" class="calendar-btn">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pui-checkbox-container" style="margin-top: 5px;">
-                                <input type="checkbox" id="poSubmittedComplete">
-                                <label for="poSubmittedComplete" class="checkmark"></label>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-
-                        <!-- Art Submitted -->
-                        <div class="form-group">
-                            <label>
-                                <i class="fa fa-check-circle text-success pui-me-5px"></i>
-                                Art Submitted
-                            </label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <div class="right-action-group">
-                                    <input type="text" class="form-control">
-                                    <button type="button" class="calendar-btn">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pui-checkbox-container" style="margin-top: 5px;">
-                                <input type="checkbox" id="artSubmittedComplete">
-                                <label for="artSubmittedComplete" class="checkmark"></label>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-
-                        <!-- Select Line Item -->
-                        <div class="form-group">
-                            <label>Select Line Item</label>
-                            <div class="right-action-group" style="max-width: 300px;">
-                                <select class="form-control">
-                                    <option selected>Select an item...</option>
-                                    <option>Front Logo - Lion Head 2 Color Flag</option>
-                                    <option>Back Logo - Company Name</option>
-                                    <option>Left Sleeve - Small Logo</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Front Logo - Lion Head -->
-                        <div class="form-group">
-                            <label>Front Logo - Lion Head 2 Color Flag</label>
-                            <div class="pui-text-muted pui-mb-10px">Local Art Path: <span
-                                    class="text-primary">/Artwork/ClientName/LionHead_2CF.eps</span></div>
-                        </div>
-
-                        <!-- Order Confirmed -->
-                        <div class="form-group">
-                            <label>Order Confirmed</label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <div class="right-action-group">
-                                    <input type="text" class="form-control">
-                                    <button type="button" class="calendar-btn">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pui-checkbox-container" style="margin-top: 5px;">
-                                <input type="checkbox" id="orderConfirmedComplete">
-                                <label for="orderConfirmedComplete" class="checkmark"></label>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-
-                        <!-- Confirmation Notes -->
-                        <div class="form-group">
-                            <label>Confirmation Notes</label>
-                            <textarea class="form-control" rows="2"
-                                placeholder="Enter confirmation notes..."></textarea>
-                        </div>
-
-                        <!-- Proof Received -->
-                        <div class="form-group">
-                            <label>Proof Received</label>
-                            <div class="input-group" style="max-width: 200px;">
-                                <div class="right-action-group">
-                                    <input type="text" class="form-control">
-                                    <button type="button" class="calendar-btn">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="pui-row pui-mt-5px">
-                                <div class="pui-col-md-6">
-                                    <div class="pui-checkbox-container">
-                                        <input type="checkbox" id="proofApproved">
-                                        <label for="proofApproved" class="checkmark"></label>
-                                        <span>Approved?</span>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-6">
-                                    <div class="pui-checkbox-container">
-                                        <input type="checkbox" id="proofNA">
-                                        <label for="proofNA" class="checkmark"></label>
-                                        <span>N/A</span>
+                                <!-- Line Item Selection -->
+                                <div class="form-group pui-mb-none">
+                                    <label>Select Line Item</label>
+                                    <div class="right-action-group" style="max-width: 400px;">
+                                        <select class="form-control">
+                                            <option>Select a line item...</option>
+                                            <option>2025 Summer Lion Flag T-Shirt</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="section-card-with-grouped-title">
+                                <div class="section-title-grouped">
+                                    <h3>
+                                        Front Logo - Lion Head 2 Color Flag
+                                    </h3>
+                                </div>
+                                <div class="section-card">
+                                    <h4 class="section-heading">PO Verification</h4>
+                                    <div class="pui-message-box pui-mb-10px">
+                                        <span><strong>Apply to all PO's:</strong> Check the boxes next to fields to
+                                            apply values to all purchase orders attached to this order.</span>
+                                    </div>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="section-card">
+                                                <div class="form-group">
+                                                    <label>Order Status</label>
+                                                    <div class="right-action-group">
+                                                        <select class="form-control">
+                                                            <option selected>Pending Approval</option>
+                                                            <option>Backordered</option>
+                                                            <option>Cancelled</option>
+                                                            <option>Closed</option>
+                                                            <option>Credit Hold</option>
+                                                            <option>Holding For Art</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <div
+                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                <label>Follow-up Date</label>
+                                                                <div class="pui-ms-5px">
+                                                                    <input type="checkbox" id="followupComplete">
+                                                                    <label for="followupComplete"
+                                                                        class="checkmark pui-mb-none"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <div class="right-action-group">
+                                                                    <input type="text" class="form-control">
+                                                                    <button type="button" class="calendar-btn">
+                                                                        <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                            fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <rect x="3" y="4" width="18" height="18"
+                                                                                rx="2" ry="2">
+                                                                            </rect>
+                                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                        </svg>
+                                                                    </button>
 
-                        <div class="divider pui-my-15px"></div>
+                                                                </div>
+                                                            </div>
 
-                      
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <div
+                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                <label>Release Date</label>
+                                                                <div class="pui-ms-5px">
+                                                                    <input type="checkbox" id="releaseComplete">
+                                                                    <label for="releaseComplete"
+                                                                        class="checkmark pui-mb-none"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <div class="right-action-group">
+                                                                    <input type="text" class="form-control">
+                                                                    <button type="button" class="calendar-btn">
+                                                                        <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                            fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <rect x="3" y="4" width="18" height="18"
+                                                                                rx="2" ry="2">
+                                                                            </rect>
+                                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <div
+                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                <label>PO Submitted</label>
+                                                                <div class="pui-ms-5px">
+                                                                    <input type="checkbox" id="poSubmittedComplete">
+                                                                    <label for="poSubmittedComplete"
+                                                                        class="checkmark pui-mb-none"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <div class="right-action-group">
+                                                                    <input type="text" class="form-control">
+                                                                    <button type="button" class="calendar-btn">
+                                                                        <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                            fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <rect x="3" y="4" width="18" height="18"
+                                                                                rx="2" ry="2">
+                                                                            </rect>
+                                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                     
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <div
+                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                <label>Art Submitted</label>
+                                                                <div class="pui-ms-5px">
+                                                                    <input type="checkbox" id="artSubmittedComplete">
+                                                                    <label for="artSubmittedComplete"
+                                                                        class="checkmark pui-mb-none"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <div class="right-action-group">
+                                                                    <input type="text" class="form-control">
+                                                                    <button type="button" class="calendar-btn">
+                                                                        <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                            fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <rect x="3" y="4" width="18" height="18"
+                                                                                rx="2" ry="2">
+                                                                            </rect>
+                                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                       
+                                                <div class="form-group">
+                                                    <label>Local Art Path</label>
+                                                    <div class="right-action-group">
+                                                        <input type="text" class="form-control"
+                                                            value="N:\Nance Solutions Inc\Screen Printing\125466 2025 Summer Lion Flag T-Shirt"
+                                                            readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="form-group" style="max-width: 200px;">
+                                                    <div
+                                                        class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                        <label>Order Confirmed</label>
+                                                        <div class="pui-ms-5px">
+                                                            <input type="checkbox" id="orderConfirmedComplete">
+                                                            <label for="orderConfirmedComplete"
+                                                                class="checkmark pui-mb-none"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <div class="right-action-group">
+                                                            <input type="text" class="form-control">
+                                                            <button type="button" class="calendar-btn">
+                                                                <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                    fill="none" stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <rect x="3" y="4" width="18" height="18" rx="2"
+                                                                        ry="2">
+                                                                    </rect>
+                                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                        <div class="pui-row pui-mt-20px">
-                            <div class="pui-col-md-6">
-                                <button class="pui-btn pui-btn-primary pui-me-10px">
-                                    <i class="fa fa-check pui-me-5px"></i>Save PO
-                                </button>
-                                <button class="pui-btn pui-btn-danger">
-                                    <i class="fa fa-times pui-me-5px"></i>Close PO
-                                </button>
+                                                <div class="form-group">
+                                                    <label>Confirmation Notes</label>
+                                                    <textarea class="form-control" rows="3"
+                                                        placeholder="Enter confirmation notes..."></textarea>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <div
+                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                <label>Proof Received</label>
+                                                                <div class="pui-ms-5px">
+                                                                    <input type="checkbox" id="proofReceivedComplete">
+                                                                    <label for="proofReceivedComplete"
+                                                                        class="checkmark pui-mb-none"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group">
+                                                                <div class="right-action-group">
+                                                                    <input type="text" class="form-control">
+                                                                    <button type="button" class="calendar-btn">
+                                                                        <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                            fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <rect x="3" y="4" width="18" height="18"
+                                                                                rx="2" ry="2">
+                                                                            </rect>
+                                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Approved?</label>
+                                                            <div class="pui-mt-5px">
+                                                                <div class="pui-flex">
+                                                                    <div
+                                                                        class="pui-flex pui-checkbox-container pui-d-inline-block pui-me-15px">
+                                                                        <input type="radio" name="proofStatus"
+                                                                            id="proofApprovedYes">
+                                                                        <label for="proofApprovedYes"
+                                                                            class="checkmark pui-ms-5px"></label>
+                                                                        <span>Yes</span>
+                                                                    </div>
+                                                                    <div
+                                                                        class="pui-flex pui-checkbox-container pui-d-inline-block pui-me-15px">
+                                                                        <input type="radio" name="proofStatus"
+                                                                            id="proofApprovedNo">
+                                                                        <label for="proofApprovedNo"
+                                                                            class="checkmark pui-ms-5px"></label>
+                                                                        <span>No</span>
+                                                                    </div>
+                                                                    <span>|</span>
+                                                                    <div
+                                                                        class="pui-flex pui-checkbox-container pui-d-inline-block pui-ms-10px">
+                                                                        <strong>N/A: </strong>
+                                                                        <input type="checkbox" id="proofNA"
+                                                                            class="pui-ms-5px">
+                                                                        <label for="proofNA" class="checkmark"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="form-group">
+                                                    <div
+                                                        class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                        <label>Factory Order No.</label>
+                                                        <div class="pui-ms-5px">
+                                                            <input type="checkbox" id="factoryOrderComplete">
+                                                            <label for="factoryOrderComplete"
+                                                                class="checkmark pui-mb-none"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-action-group">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Factory Ship Date / Pickup Date -->
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Factory Ship Date</label>
+                                                            <div class="input-group" style="max-width: 400px;">
+                                                                <div class="right-action-group"
+                                                                    style="flex: 1; margin-right: 10px;">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="">
+                                                                    <button type="button" class="calendar-btn">
+                                                                        <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                            fill="none" stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <rect x="3" y="4" width="18" height="18"
+                                                                                rx="2" ry="2"></rect>
+                                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <div class="pui-ms-10px">OR</div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Pickup Date</label>
+
+                                                            <div class="right-action-group" style="flex: 1;">
+                                                                <input type="text" class="form-control" placeholder="">
+                                                                <button type="button" class="calendar-btn">
+                                                                    <svg width="16" height="16" viewBox="0 0 24 24"
+                                                                        fill="none" stroke="currentColor"
+                                                                        stroke-width="2" stroke-linecap="round"
+                                                                        stroke-linejoin="round">
+                                                                        <rect x="3" y="4" width="18" height="18" rx="2"
+                                                                            ry="2">
+                                                                        </rect>
+                                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="pui-row ">
+                                                    <div class="pui-col-md-6">
+                                                        <!-- Factory Tracking -->
+                                                        <div class="form-group">
+                                                            <div
+                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                <label>
+
+                                                                    Factory Tracking
+                                                                </label>
+                                                                <div class="pui-ms-5px">
+                                                                    <input type="checkbox" id="factoryTrackingComplete">
+                                                                    <label for="factoryTrackingComplete"
+                                                                        class="checkmark pui-mb-none"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="right-action-group">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <!-- Carrier -->
+                                                        <div class="form-group">
+                                                            <label>
+                                                                Carrier
+                                                                <button class="add-option-btn-sm">+</button>
+                                                            </label>
+                                                            <div class="right-action-group" style="display: flex;">
+                                                                <select class="form-control"
+                                                                    style="flex: 1; margin-right: 5px;">
+                                                                    <option>Select Carrier...</option>
+                                                                    <option>FedEx</option>
+                                                                    <option>UPS</option>
+                                                                    <option>USPS</option>
+                                                                    <option>DHL</option>
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                           
+                                            <div class="section-card">
+                                                <strong>Qty Ordered: 860</strong>
+                                                <!-- Qty. Shipped -->
+                                                <div class="form-group">
+                                                    <label>
+                                                        Qty. Shipped
+                                                    </label>
+                                                    <div class="right-action-group" style="max-width: 150px;">
+                                                        <input type="number" class="form-control" value="0">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Qty. Adj's -->
+                                                <div class="form-group">
+                                                    <label>
+                                                        Qty. Adj's
+                                                    </label>
+                                                    <div class="pui-row">
+                                                        <div class="pui-col-md-4">
+                                                            <div class="pui-row pui-mb-5px">
+                                                                <div class="pui-col-xs-4">Run Qty (0):</div>
+                                                                <div class="pui-col-xs-8">
+                                                                    <input type="number" class="form-control" value="0">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pui-col-md-4">
+                                                            <div class="pui-row pui-mb-5px">
+                                                                <div class="pui-col-xs-4">Misc 1 Qty (1.00):</div>
+                                                                <div class="pui-col-xs-8">
+                                                                    <input type="number" class="form-control"
+                                                                        value="1.00" step="0.01">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pui-col-md-4">
+                                                            <div class="pui-row">
+                                                                <div class="pui-col-xs-4">Misc 2 Qty (1.00):</div>
+                                                                <div class="pui-col-xs-8">
+                                                                    <input type="number" class="form-control"
+                                                                        value="1.00" step="0.01">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <!-- Freight Total -->
+                                                <div>
+                                                    <div class="pui-row">
+                                                        <div class="pui-col-md-4">
+                                                            <div class="form-group">
+                                                                <label>
+                                                                    Freight Total
+                                                                </label>
+                                                                <div class="right-action-group"
+                                                                    style="max-width: 200px;">
+                                                                    <div class="date-input">
+                                                                        <span class="currency-symbol">$</span>
+                                                                        <input type="text" class="form-control"
+                                                                            data-field-index="3" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pui-col-md-4">
+                                                            <div class="form-group">
+
+                                                                <label>Billable Freight Amount:</label>
+                                                                <div class="date-input">
+                                                                    <span class="currency-symbol">$</span>
+                                                                    <input type="text" class="form-control"
+                                                                        data-field-index="3" value="0">
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="pui-col-md-4">
+                                                            <div class="form-group">
+                                                                <label>Total Freight Cost:</label>
+                                                                <strong class="pui-text-success">$0.00</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <!-- Factory Invoice -->
+                                                        <div class="form-group">
+                                                            <label>
+                                                                Factory Invoice
+                                                            </label>
+                                                            <div class="right-action-group" style="max-width: 300px;">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-8">
+                                                        <!-- Quickbooks Invoice -->
+                                                        <div class="form-group">
+                                                            <label>
+                                                                Quickbooks Invoice
+                                                            </label>
+                                                            <div class="right-action-group"
+                                                                style="max-width: 300px; display: flex;">
+                                                                <input type="text" class="form-control"
+                                                                    style="margin-right: 5px;">
+                                                                <a href="#"
+                                                                    class="pui-btn pui-btn-sm pui-btn-default pui-no-wrap">Export To
+                                                                    Quickbooks</a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <!-- Create PO File -->
+                                                <div class="form-group">
+                                                    <label>Create PO File</label>
+                                                    <div class="right-action-group" style="max-width: 400px;">
+                                                        <div class="input-group">
+                                                            <input type="file" class="form-control" accept=".pdf"
+                                                                style="max-width: 250px;">
+                                                            <span class="input-group-text">(PDF Files Only)</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- Notes -->
+                                                <div class="form-group">
+                                                    <label>Notes</label>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                </div>
+
+                                                <!-- Previous Notes -->
+                                                <div class="form-group">
+                                                    <label>Previous Notes</label>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="pui-row pui-mt-20px pui-text-right">
+                                        <div class="pui-col-md-12">
+                                            <button class="pui-btn pui-btn-primary pui-me-10px">
+                                                <i class="fa fa-save pui-me-5px"></i>Save PO
+                                            </button>
+                                            <button class="pui-btn pui-btn-danger">
+                                                <i class="fa fa-times pui-me-5px"></i>Close PO
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    
+                                </div>
+                                
                             </div>
-                            <!-- <div class="pui-col-md-6 pui-text-right">
-                                <button class="pui-btn pui-btn-default pui-me-10px">
-                                    <i class="fa fa-save pui-me-5px"></i>Save Changes
-                                </button>
-                                <button class="pui-btn pui-btn-link">
-                                    <i class="fa fa-history pui-me-5px"></i>View History
-                                </button>
-                            </div> -->
+                            <div class="section-card-with-grouped-title  pui-mt-20px">
+                                <div class="section-title-grouped">
+                                    <h3>
+                                        Front Logo - Lion Head 2 Color Flag
+                                    </h3>
+                                </div>
+                            <!-- New PO Details Section -->
+                            <div class="section-card">
+                                
+
+                                
+                                <div class="pui-row">
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            <label>PO Date</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control"
+                                                    >
+                                                <span class="input-group-addon"><i
+                                                        class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>From</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Subject</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            <label>PPA Number</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ASI Number</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Acct. Number</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="divider pui-my-15px"></div>
+
+                                <div class="pui-row">
+                                    <div class="pui-col-md-6">
+                                        <h5>Billing</h5>
+                                        <div class="form-group">
+                                            <label>Company</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address 2</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="pui-row">
+                                                <div class="pui-col-md-6">
+                                                    <label>City</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>State</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>Zip</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-6">
+                                        <h5>Shipping</h5>
+                                        <div class="form-group">
+                                            <label>Company</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address 2</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="pui-row">
+                                                <div class="pui-col-md-6">
+                                                    <label>City</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>State</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>Zip</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="divider pui-my-15px"></div>
+
+                                <div class="pui-row">
+                                    <div class="pui-col-md-6">
+                                        <h5>Contact Numbers</h5>
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            <label>Fax</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Item Color -->
+                                <div class="form-group">
+                                    <label>Item Color</label>
+                                    <input type="text" class="form-control" value="Black" readonly>
+                                </div>
+
+                              
+
+
+                                <!-- PO Overrides -->
+                                <div class="pui-row pui-mt-15px">
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                           
+                                               
+                                                <label for="poCostOverride">PO Cost Override</label>
+                                            
+                                            <input type="text" class="form-control pui-mt-5px"
+                                                >
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            
+                                                <label for="poQtyOverride">PO Quantity Override</label>
+                                            
+                                            <input type="text" class="form-control pui-mt-5px"
+                                                >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Coupon Code -->
+                                <div class="pui-row pui-mt-15px">
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            <label>Coupon Code(s)</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control"
+                                                    >
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-6">
+                                        <div class="form-group">
+                                            <label>Vendor Coupon</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control"
+                                                    >
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Price Note -->
+                                <div class="form-group pui-mt-15px">
+                                    <label>Price Note</label>
+                                    <textarea class="form-control" rows="3"
+                                        placeholder="Enter price note"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-col-md-3">
+
                         </div>
                     </div>
                 </div>
@@ -5267,7 +5807,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                                             style="display: flex; align-items: center;">
                                                                             <input type="number"
                                                                                 class="form-control input-sm" value="0"
-                                                                                style="width: 50px;">%</div>
+                                                                                style="width: 50px;">%
+                                                                        </div>
                                                                     </td>
                                                                     <td>$0.0000</td>
                                                                     <td><input type="number"
@@ -5312,7 +5853,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                                         style="background-color: #ff5252; color: white;">
                                                                         <input type="number"
                                                                             class="form-control input-sm" value="62.50"
-                                                                            step="0.01"></td>
+                                                                            step="0.01">
+                                                                    </td>
                                                                     <td
                                                                         style="background-color: #ff5252; color: white;">
                                                                         V</td>
@@ -6208,844 +6750,952 @@ Monograms is not responsible for damages to customer provided items. There is an
                     </div>
                 </div>
             </div>
-                    <script>
-                        // Global function to handle color selection
-                        function selectColor(element, colorName) {
-                            // Remove active class from all color options
-                            document.querySelectorAll('.color-option').forEach(opt => {
-                                opt.classList.remove('active');
-                            });
+            <script>
+                // Global function to handle color selection
+                function selectColor(element, colorName) {
+                    // Remove active class from all color options
+                    document.querySelectorAll('.color-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
 
-                            // Add active class to selected color
-                            element.classList.add('active');
+                    // Add active class to selected color
+                    element.classList.add('active');
 
-                            // Update the product image
-                            const productImage = document.querySelector('.flat-good-product-image img');
-                            const currentSrc = productImage.src;
-                            const newSrc = currentSrc.replace(/\/([^\/]+)_model_front\.jpg$/, `/${colorName.toLowerCase().replace(/\s+/g, '')}_model_front.jpg`);
-                            productImage.src = newSrc;
+                    // Update the product image
+                    const productImage = document.querySelector('.flat-good-product-image img');
+                    const currentSrc = productImage.src;
+                    const newSrc = currentSrc.replace(/\/([^\/]+)_model_front\.jpg$/, `/${colorName.toLowerCase().replace(/\s+/g, '')}_model_front.jpg`);
+                    productImage.src = newSrc;
 
-                            // Update the color selected text
-                            document.querySelector('.color-selected').textContent = colorName;
-                        }
+                    // Update the color selected text
+                    document.querySelector('.color-selected').textContent = colorName;
+                }
 
-                        // Handle multiple image uploads and previews
-                        document.addEventListener('DOMContentLoaded', function () {
-                            const imageUpload = document.getElementById('imageUpload');
-                            const imagePreviews = document.getElementById('imagePreviews');
+                // Handle multiple image uploads and previews
+                document.addEventListener('DOMContentLoaded', function () {
+                    const imageUpload = document.getElementById('imageUpload');
+                    const imagePreviews = document.getElementById('imagePreviews');
 
-                            // Store uploaded files
-                            let uploadedFiles = [];
+                    // Store uploaded files
+                    let uploadedFiles = [];
 
-                            imageUpload.addEventListener('change', function (e) {
-                                const files = Array.from(e.target.files);
+                    imageUpload.addEventListener('change', function (e) {
+                        const files = Array.from(e.target.files);
 
-                                files.forEach(file => {
-                                    if (!file.type.startsWith('image/')) return;
+                        files.forEach(file => {
+                            if (!file.type.startsWith('image/')) return;
 
-                                    const reader = new FileReader();
+                            const reader = new FileReader();
 
-                                    reader.onload = function (event) {
-                                        // Create preview container
-                                        const previewContainer = document.createElement('div');
-                                        previewContainer.style.position = 'relative';
-                                        previewContainer.style.width = '30px';
-                                        previewContainer.style.height = '30px';
-                                        previewContainer.style.border = '1px solid #ddd';
-                                        previewContainer.style.borderRadius = '4px';
-                                        previewContainer.style.overflow = 'visible';
-                                        previewContainer.style.flexShrink = '0';
+                            reader.onload = function (event) {
+                                // Create preview container
+                                const previewContainer = document.createElement('div');
+                                previewContainer.style.position = 'relative';
+                                previewContainer.style.width = '30px';
+                                previewContainer.style.height = '30px';
+                                previewContainer.style.border = '1px solid #ddd';
+                                previewContainer.style.borderRadius = '4px';
+                                previewContainer.style.overflow = 'visible';
+                                previewContainer.style.flexShrink = '0';
 
-                                        // Create preview image
-                                        const previewImage = document.createElement('img');
-                                        previewImage.src = event.target.result;
-                                        previewImage.style.width = '100%';
-                                        previewImage.style.height = '100%';
-                                        previewImage.style.objectFit = 'cover';
+                                // Create preview image
+                                const previewImage = document.createElement('img');
+                                previewImage.src = event.target.result;
+                                previewImage.style.width = '100%';
+                                previewImage.style.height = '100%';
+                                previewImage.style.objectFit = 'cover';
 
-                                        // Create remove button
-                                        const removeBtn = document.createElement('button');
-                                        removeBtn.innerHTML = '×';
-                                        removeBtn.style.position = 'absolute';
-                                        removeBtn.style.top = '-5px';
-                                        removeBtn.style.right = '-5px';
-                                        removeBtn.style.background = '#ff4444';
-                                        removeBtn.style.color = 'white';
-                                        removeBtn.style.border = 'none';
-                                        removeBtn.style.borderRadius = '50%';
-                                        removeBtn.style.width = '16px';
-                                        removeBtn.style.height = '16px';
-                                        removeBtn.style.fontSize = '12px';
-                                        removeBtn.style.lineHeight = '14px';
-                                        removeBtn.style.padding = '0';
-                                        removeBtn.style.cursor = 'pointer';
-                                        removeBtn.style.display = 'flex';
-                                        removeBtn.style.alignItems = 'center';
-                                        removeBtn.style.justifyContent = 'center';
+                                // Create remove button
+                                const removeBtn = document.createElement('button');
+                                removeBtn.innerHTML = '×';
+                                removeBtn.style.position = 'absolute';
+                                removeBtn.style.top = '-5px';
+                                removeBtn.style.right = '-5px';
+                                removeBtn.style.background = '#ff4444';
+                                removeBtn.style.color = 'white';
+                                removeBtn.style.border = 'none';
+                                removeBtn.style.borderRadius = '50%';
+                                removeBtn.style.width = '16px';
+                                removeBtn.style.height = '16px';
+                                removeBtn.style.fontSize = '12px';
+                                removeBtn.style.lineHeight = '14px';
+                                removeBtn.style.padding = '0';
+                                removeBtn.style.cursor = 'pointer';
+                                removeBtn.style.display = 'flex';
+                                removeBtn.style.alignItems = 'center';
+                                removeBtn.style.justifyContent = 'center';
 
-                                        // Add event to remove the preview
-                                        removeBtn.addEventListener('click', function (e) {
-                                            e.stopPropagation();
-                                            const index = Array.from(imagePreviews.children).indexOf(previewContainer);
-                                            if (index > -1) {
-                                                uploadedFiles.splice(index, 1);
-                                                previewContainer.remove();
-                                                updateFileInput();
-                                            }
-                                        });
-
-                                        // Add elements to DOM
-                                        previewContainer.appendChild(previewImage);
-                                        previewContainer.appendChild(removeBtn);
-                                        imagePreviews.appendChild(previewContainer);
-
-                                        // Store file data
-                                        uploadedFiles.push({
-                                            file: file,
-                                            dataUrl: event.target.result
-                                        });
-
+                                // Add event to remove the preview
+                                removeBtn.addEventListener('click', function (e) {
+                                    e.stopPropagation();
+                                    const index = Array.from(imagePreviews.children).indexOf(previewContainer);
+                                    if (index > -1) {
+                                        uploadedFiles.splice(index, 1);
+                                        previewContainer.remove();
                                         updateFileInput();
-                                    };
-
-                                    reader.readAsDataURL(file);
+                                    }
                                 });
-                            });
 
-                            // Update the file input with the current files
-                            function updateFileInput() {
-                                const dataTransfer = new DataTransfer();
-                                uploadedFiles.forEach(fileObj => {
-                                    dataTransfer.items.add(fileObj.file);
+                                // Add elements to DOM
+                                previewContainer.appendChild(previewImage);
+                                previewContainer.appendChild(removeBtn);
+                                imagePreviews.appendChild(previewContainer);
+
+                                // Store file data
+                                uploadedFiles.push({
+                                    file: file,
+                                    dataUrl: event.target.result
                                 });
-                                imageUpload.files = dataTransfer.files;
-                            }
-                        });
-                    </script>
-                    <script src="script.js"></script>
-                    <script src="line-items.js"></script>
-                    <script src="email-receipt.js"></script>
-                    <script>
-                        // Toggle credit card selection visibility based on payment method
-                        document.addEventListener('DOMContentLoaded', function () {
-                            const paymentMethod = document.getElementById('paymentMethod');
-                            const creditCardSelection = document.getElementById('creditCardSelection');
-                            const creditCardSelect = document.getElementById('creditCardSelect');
-                            const expiredCardWarning = document.getElementById('expiredCardWarning');
 
-                            // Initial check
-                            toggleCreditCardSelection();
-
-                            // Add event listeners
-                            paymentMethod.addEventListener('change', toggleCreditCardSelection);
-                            creditCardSelect.addEventListener('change', handleCreditCardSelection);
-
-                            function toggleCreditCardSelection() {
-                                if (paymentMethod.value === 'credit-card') {
-                                    creditCardSelection.style.display = 'block';
-                                } else {
-                                    creditCardSelection.style.display = 'none';
-                                    expiredCardWarning.style.display = 'none';
-                                }
-                            }
-
-                            function handleCreditCardSelection() {
-                                const selectedOption = creditCardSelect.options[creditCardSelect.selectedIndex];
-                                const isExpired = selectedOption.getAttribute('data-expired') === 'true';
-
-                                if (isExpired && creditCardSelect.value !== '') {
-                                    expiredCardWarning.style.display = 'block';
-                                } else {
-                                    expiredCardWarning.style.display = 'none';
-                                }
-                            }
-
-                            // Function to handle update credit card button click
-                            window.updateCreditCard = function () {
-                                // Here you would typically open a modal or redirect to update the credit card
-                                alert('Redirecting to update credit card information...');
-                                // Example: window.location.href = '/update-credit-card';
+                                updateFileInput();
                             };
+
+                            reader.readAsDataURL(file);
                         });
-                    </script>
-                    <link rel="stylesheet" href="styles.css">
+                    });
 
-                    <!-- Flat-Goods Edit Modal -->
-                    <div id="flatGoodsModal" class="modal" style="display: none;">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3>Edit Flat-Goods</h3>
-                                <button type="button" class="close-modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="flatGoodsForm">
-                                    <div class="product-title-container">
-                                        <div>
-                                            <h4>Men's Corporate Quarter Snap Up Sweater Fleece</h4>
-                                            <p>BLACK/WHITE_001</p>
-                                        </div>
-                                        <div class="item-image">
-                                            <img src="https://cdnm.sanmar.com/imglib/mresjpg/2022/f2/BC3001_aqua_model_front.jpg"
-                                                alt="Product Image">
-                                        </div>
-                                    </div>
+                    // Update the file input with the current files
+                    function updateFileInput() {
+                        const dataTransfer = new DataTransfer();
+                        uploadedFiles.forEach(fileObj => {
+                            dataTransfer.items.add(fileObj.file);
+                        });
+                        imageUpload.files = dataTransfer.files;
+                    }
+                });
+            </script>
+            <script src="script.js"></script>
+            <script src="line-items.js"></script>
+            <script src="email-receipt.js"></script>
+            <script>
+                // Toggle credit card selection visibility based on payment method
+                document.addEventListener('DOMContentLoaded', function () {
+                    const paymentMethod = document.getElementById('paymentMethod');
+                    const creditCardSelection = document.getElementById('creditCardSelection');
+                    const creditCardSelect = document.getElementById('creditCardSelect');
+                    const expiredCardWarning = document.getElementById('expiredCardWarning');
 
-                                    <div class="size-edit-area">
-                                        <div class="product-styles-order-qty-table">
-                                            <div class="data-table-container">
-                                                <table class="data-table size-qty-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th width="120"></th>
-                                                            <th class="text-center">XS</th>
-                                                            <th class="text-center">S</th>
-                                                            <th class="text-center">M</th>
-                                                            <th class="text-center">L</th>
-                                                            <th class="text-center">XL</th>
-                                                            <th class="text-center">2XL</th>
-                                                            <th class="text-center">3XL</th>
-                                                            <th class="text-center">4XL</th>
-                                                            <th class="text-center">5XL</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="pui-text-left" style="font-weight: bold;">Qty
-                                                            </td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                            <td><input type="number" min="0"
-                                                                    class="form-control input-sm qty-input"
-                                                                    placeholder="0"></td>
-                                                        </tr>
-                                                        <tr class="price-row">
-                                                            <td class="pui-text-left" style="font-weight: bold;">Price
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="price-override-row">
-                                                            <td class="pui-text-left" style="font-weight: bold;">
-                                                                Override Price</td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                            <td><input type="number" min="0" step="0.01"
-                                                                    class="form-control input-sm price-input"
-                                                                    placeholder="0.00">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                    // Initial check
+                    toggleCreditCardSelection();
 
+                    // Add event listeners
+                    paymentMethod.addEventListener('change', toggleCreditCardSelection);
+                    creditCardSelect.addEventListener('change', handleCreditCardSelection);
 
-                                    <div class="totals-row">
+                    function toggleCreditCardSelection() {
+                        if (paymentMethod.value === 'credit-card') {
+                            creditCardSelection.style.display = 'block';
+                        } else {
+                            creditCardSelection.style.display = 'none';
+                            expiredCardWarning.style.display = 'none';
+                        }
+                    }
 
-                                        <div class="total-item">
-                                            <label>GRAND TOTAL :</label>
-                                            <div class="total-value">1</div>
-                                        </div>
-                                    </div>
+                    function handleCreditCardSelection() {
+                        const selectedOption = creditCardSelect.options[creditCardSelect.selectedIndex];
+                        const isExpired = selectedOption.getAttribute('data-expired') === 'true';
 
-                                    <div class="form-group checkbox-group">
-                                        <input type="checkbox" id="taxable" checked>
-                                        <label for="taxable">TAXABLE</label>
-                                    </div>
+                        if (isExpired && creditCardSelect.value !== '') {
+                            expiredCardWarning.style.display = 'block';
+                        } else {
+                            expiredCardWarning.style.display = 'none';
+                        }
+                    }
 
-                                    <div class="form-group">
-                                        <label>Note :</label>
-                                        <textarea class="form-control" rows="3"></textarea>
-                                    </div>
-                                </form>
+                    // Function to handle update credit card button click
+                    window.updateCreditCard = function () {
+                        // Here you would typically open a modal or redirect to update the credit card
+                        alert('Redirecting to update credit card information...');
+                        // Example: window.location.href = '/update-credit-card';
+                    };
+                });
+            </script>
+            <link rel="stylesheet" href="styles.css">
 
+            <!-- Flat-Goods Edit Modal -->
+            <div id="flatGoodsModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Edit Flat-Goods</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="flatGoodsForm">
+                            <div class="product-title-container">
+                                <div>
+                                    <h4>Men's Corporate Quarter Snap Up Sweater Fleece</h4>
+                                    <p>BLACK/WHITE_001</p>
+                                </div>
+                                <div class="item-image">
+                                    <img src="https://cdnm.sanmar.com/imglib/mresjpg/2022/f2/BC3001_aqua_model_front.jpg"
+                                        alt="Product Image">
+                                </div>
                             </div>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close-modal">Cancel</button>
-                                <button type="button" class="btn btn-primary save-changes">Save Changes</button>
+                            <div class="size-edit-area">
+                                <div class="product-styles-order-qty-table">
+                                    <div class="data-table-container">
+                                        <table class="data-table size-qty-table">
+                                            <thead>
+                                                <tr>
+                                                    <th width="120"></th>
+                                                    <th class="text-center">XS</th>
+                                                    <th class="text-center">S</th>
+                                                    <th class="text-center">M</th>
+                                                    <th class="text-center">L</th>
+                                                    <th class="text-center">XL</th>
+                                                    <th class="text-center">2XL</th>
+                                                    <th class="text-center">3XL</th>
+                                                    <th class="text-center">4XL</th>
+                                                    <th class="text-center">5XL</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pui-text-left" style="font-weight: bold;">Qty
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                    <td><input type="number" min="0"
+                                                            class="form-control input-sm qty-input" placeholder="0">
+                                                    </td>
+                                                </tr>
+                                                <tr class="price-row">
+                                                    <td class="pui-text-left" style="font-weight: bold;">Price
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                </tr>
+                                                <tr class="price-override-row">
+                                                    <td class="pui-text-left" style="font-weight: bold;">
+                                                        Override Price</td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                    <td><input type="number" min="0" step="0.01"
+                                                            class="form-control input-sm price-input"
+                                                            placeholder="0.00">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="totals-row">
+
+                                <div class="total-item">
+                                    <label>GRAND TOTAL :</label>
+                                    <div class="total-value">1</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="taxable" checked>
+                                <label for="taxable">TAXABLE</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Note :</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                        <button type="button" class="btn btn-primary save-changes">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping History Modal -->
+            <div id="shippingHistoryModal" class="modal" style="display: none;">
+                <div class="modal-content" style="max-width: 900px;">
+                    <div class="modal-header">
+                        <h3>Shipping History</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="shipping-history-form">
+                                <div class="shipping-history-form-row">
+                                    <label class="pui-mr-10px">Fedex Tracking No.</label>
+                                    <select class="form-control shipping-history-tracking-select">
+                                        <option>92075 - 720933748836</option>
+                                    </select>
+
+                                </div>
+                                <div class="shipping-history-buttons">
+                                    <label class="shipping-history-delivered-checkbox">
+                                        <input type="checkbox"> Delivered
+                                    </label>
+                                    <button class="btn btn-primary">
+                                        Add New
+                                    </button>
+                                    <button class="btn">
+                                        Print History
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="shipping-history-list">
+
+
+                            <!-- Entry 1 - Delivered -->
+                            <div class="shipping-entry delivered">
+                                <div class="shipping-date">Thursday, 04/30/2020 09:30 AM</div>
+                                <div class="shipping-details">
+                                    <div class="status delivered"><span>Delivered</span></div>
+                                    <div class="location">Location: <span>123 Main St, Oklahoma City, OK
+                                            73102</span></div>
+                                    <div class="signed-by">Signed For By: <span>John Smith (Front Door)</span>
+                                    </div>
+                                    <div class="reason">Reason Description: <span>Left at front door - Signature
+                                            service not requested</span></div>
+                                    <div class="service">Service: <span>FedEx Home Delivery</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Entry 2 -->
+                            <div class="shipping-entry">
+                                <div class="shipping-date">Wednesday, 04/29/2020 06:10 AM</div>
+                                <div class="shipping-details">
+                                    <div class="location">Location: <span>Oklahoma City, OK</span></div>
+                                    <div class="status"><span>In Transit</span></div>
+                                    <div class="signed-by">Signed For By: <span>John Doe</span></div>
+                                    <div class="reason">Reason Description: <span>Out for delivery</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Entry 3 -->
+                            <div class="shipping-entry">
+                                <div class="shipping-date">Wednesday, 04/29/2020 06:05 AM</div>
+                                <div class="shipping-details">
+                                    <div class="location">Location: <span>Dallas, TX</span></div>
+                                    <div class="status"><span>In Transit</span></div>
+                                    <div class="signed-by">Signed For By: <span>-</span></div>
+                                    <div class="reason">Reason Description: <span>Departed from facility</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Entry 4 -->
+                            <div class="shipping-entry">
+                                <div class="shipping-date">Tuesday, 04/28/2020 11:20 PM</div>
+                                <div class="shipping-details">
+                                    <div class="location">Location: <span>Dallas, TX</span></div>
+                                    <div class="status"><span>Processing</span></div>
+                                    <div class="reason">Reason Description: <span>Package received at
+                                            facility</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Shipping History Modal -->
-                    <div id="shippingHistoryModal" class="modal" style="display: none;">
-                        <div class="modal-content" style="max-width: 900px;">
-                            <div class="modal-header">
-                                <h3>Shipping History</h3>
-                                <button type="button" class="close-modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
+                </div>
+            </div>
+            <!-- End Shipping History Modal -->
+
+            <!-- Shipment Modal -->
+            <div id="shipmentModal" class="modal" style="display: none;">
+                <div class="modal-content" style="max-width: 600px;">
+                    <div class="modal-header">
+                        <h3>Add Shipment</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pui-row" id="lineItemsDropdownContainer" style="display: none;">
+                            <div class="pui-col-md-12">
                                 <div class="form-group">
-                                    <div class="shipping-history-form">
-                                        <div class="shipping-history-form-row">
-                                            <label class="pui-mr-10px">Fedex Tracking No.</label>
-                                            <select class="form-control shipping-history-tracking-select">
-                                                <option>92075 - 720933748836</option>
-                                            </select>
-
-                                        </div>
-                                        <div class="shipping-history-buttons">
-                                            <label class="shipping-history-delivered-checkbox">
-                                                <input type="checkbox"> Delivered
-                                            </label>
-                                            <button class="btn btn-primary">
-                                                Add New
-                                            </button>
-                                            <button class="btn">
-                                                Print History
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="shipping-history-list">
-
-
-                                    <!-- Entry 1 - Delivered -->
-                                    <div class="shipping-entry delivered">
-                                        <div class="shipping-date">Thursday, 04/30/2020 09:30 AM</div>
-                                        <div class="shipping-details">
-                                            <div class="status delivered"><span>Delivered</span></div>
-                                            <div class="location">Location: <span>123 Main St, Oklahoma City, OK
-                                                    73102</span></div>
-                                            <div class="signed-by">Signed For By: <span>John Smith (Front Door)</span>
-                                            </div>
-                                            <div class="reason">Reason Description: <span>Left at front door - Signature
-                                                    service not requested</span></div>
-                                            <div class="service">Service: <span>FedEx Home Delivery</span></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Entry 2 -->
-                                    <div class="shipping-entry">
-                                        <div class="shipping-date">Wednesday, 04/29/2020 06:10 AM</div>
-                                        <div class="shipping-details">
-                                            <div class="location">Location: <span>Oklahoma City, OK</span></div>
-                                            <div class="status"><span>In Transit</span></div>
-                                            <div class="signed-by">Signed For By: <span>John Doe</span></div>
-                                            <div class="reason">Reason Description: <span>Out for delivery</span></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Entry 3 -->
-                                    <div class="shipping-entry">
-                                        <div class="shipping-date">Wednesday, 04/29/2020 06:05 AM</div>
-                                        <div class="shipping-details">
-                                            <div class="location">Location: <span>Dallas, TX</span></div>
-                                            <div class="status"><span>In Transit</span></div>
-                                            <div class="signed-by">Signed For By: <span>-</span></div>
-                                            <div class="reason">Reason Description: <span>Departed from facility</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Entry 4 -->
-                                    <div class="shipping-entry">
-                                        <div class="shipping-date">Tuesday, 04/28/2020 11:20 PM</div>
-                                        <div class="shipping-details">
-                                            <div class="location">Location: <span>Dallas, TX</span></div>
-                                            <div class="status"><span>Processing</span></div>
-                                            <div class="reason">Reason Description: <span>Package received at
-                                                    facility</span></div>
-                                        </div>
-                                    </div>
+                                    <label>Select Box:</label>
+                                    <select class="form-control" id="lineItemsSelect">
+                                        <option value="">-- Select Box --</option>
+                                        <option value="4533">Box 1</option>
+                                        <option value="5533">Box 2</option>
+                                        <option value="112">Box 3</option>
+                                    </select>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                    <!-- End Shipping History Modal -->
-
-                    <!-- Shipment Modal -->
-                    <div id="shipmentModal" class="modal" style="display: none;">
-                        <div class="modal-content" style="max-width: 600px;">
-                            <div class="modal-header">
-                                <h3>Add Shipment</h3>
-                                <button type="button" class="close-modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="pui-row" id="lineItemsDropdownContainer" style="display: none;">
-                                    <div class="pui-col-md-12">
-                                        <div class="form-group">
-                                            <label>Select Box:</label>
-                                            <select class="form-control" id="lineItemsSelect">
-                                                <option value="">-- Select Box --</option>
-                                                <option value="4533">Box 1</option>
-                                                <option value="5533">Box 2</option>
-                                                <option value="112">Box 3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pui-row">
-                                    <!-- <div class="pui-col-md-12">
+                        <div class="pui-row">
+                            <!-- <div class="pui-col-md-12">
                                         <div class="form-group">
                                             <label>Item:</label>
                                             <input type="text" class="form-control" data-field-index="0"
                                                 value="testgeomon1">
                                         </div>
                                     </div> -->
-                                    
-                                    <div class="pui-col-md-6">
-                                        <div class="form-group">
-                                            <label>Freight Cost:</label>
-                                            <div class="date-input">
-                                                <span class="currency-symbol">$</span>
-                                                <input type="text" class="form-control" data-field-index="3" value="0">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pui-col-md-6">
-                                        <div class="form-group">
-                                            <label>Freight Billed:</label>
-                                            <div class="date-input">
-                                                <span class="currency-symbol">$</span>
-                                                <input type="text" class="form-control" data-field-index="6" value="0">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pui-col-md-6">
-                                        <div class="form-group">
-                                            <label>Date Shipped:</label>
-                                            <div class="date-input">
-                                                <input type="text" class="form-control" data-field-index="7"
-                                                    value="03/07/2025">
-                                                <button type="button" class="calendar-btn">
-                                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                                                        height="24" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pui-col-md-6">
-                                        <div class="form-group">
-                                            <label>Origin:</label>
-                                            <select class="form-control" data-field-index="8">
-                                                <option>Factory</option>
-                                                <option>Warehouse</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="pui-col-md-6">
-                                        <div class="form-group">
-                                            <label>Tracking:</label>
-                                            <input type="text" class="form-control" data-field-index="10">
-                                        </div>
-                                    </div>
-                                    <div class="pui-col-md-6">
-                                        <div class="form-group">
-                                            <label class="d-flex align-items-center">
-                                                Carrier:
-                                                <button type="button" class="add-option-btn-sm ms-2"
-                                                    title="Add Carrier">+</button>
-                                            </label>
-                                            <select class="form-control mt-2">
-                                                <option>Select Carrier...</option>
-                                                <option>FedEx</option>
-                                                <option>UPS</option>
-                                                <option>USPS</option>
-                                            </select>
-                                        </div>
-                                    </div>
 
+                            <div class="pui-col-md-6">
+                                <div class="form-group">
+                                    <label>Freight Cost:</label>
+                                    <div class="date-input">
+                                        <span class="currency-symbol">$</span>
+                                        <input type="text" class="form-control" data-field-index="3" value="0">
+                                    </div>
                                 </div>
-
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary pui-me-10px">Add</button>
-                                <button type="button" class="btn btn-primary">Add & Close</button>
+                            <div class="pui-col-md-6">
+                                <div class="form-group">
+                                    <label>Freight Billed:</label>
+                                    <div class="date-input">
+                                        <span class="currency-symbol">$</span>
+                                        <input type="text" class="form-control" data-field-index="6" value="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="form-group">
+                                    <label>Date Shipped:</label>
+                                    <div class="date-input">
+                                        <input type="text" class="form-control" data-field-index="7" value="03/07/2025">
+                                        <button type="button" class="calendar-btn">
+                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="form-group">
+                                    <label>Origin:</label>
+                                    <select class="form-control" data-field-index="8">
+                                        <option>Factory</option>
+                                        <option>Warehouse</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="form-group">
+                                    <label>Tracking:</label>
+                                    <input type="text" class="form-control" data-field-index="10">
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center">
+                                        Carrier:
+                                        <button type="button" class="add-option-btn-sm ms-2"
+                                            title="Add Carrier">+</button>
+                                    </label>
+                                    <select class="form-control mt-2">
+                                        <option>Select Carrier...</option>
+                                        <option>FedEx</option>
+                                        <option>UPS</option>
+                                        <option>USPS</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary pui-me-10px">Add</button>
+                        <button type="button" class="btn btn-primary">Add & Close</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Shipment Modal -->
+
+            <!-- Shipment Details Modal -->
+            <div id="shipmentDetailsModal" class="modal" style="display: none;">
+                <div class="modal-content" style="max-width: 1000px;">
+                    <div class="modal-header">
+                        <h3>Shipment Details</h3>
+                        <span class="close-modal" onclick="closeShipmentDetailsModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="pui-row">
+                            <div class="pui-col-md-6">
+                                <div class="info-group">
+                                    <label>Freight Cost</label>
+                                    <div class="info-value" id="freightCost">-</div>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="info-group">
+                                    <label>Freight Billed</label>
+                                    <div class="info-value" id="freightBilled">-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-row pui-mt-15">
+                            <div class="pui-col-md-4">
+                                <div class="info-group">
+                                    <label>Date Shipped</label>
+                                    <div class="info-value" id="dateShipped">-</div>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-4">
+                                <div class="info-group">
+                                    <label>Origin</label>
+                                    <div class="info-value" id="shipmentOrigin">-</div>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-4">
+                                <div class="info-group">
+                                    <label>Carrier</label>
+                                    <div class="info-value" id="shipmentCarrier">-</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-row pui-mt-15">
+                            <div class="pui-col-md-12">
+                                <div class="info-group">
+                                    <label>Tracking Number</label>
+                                    <div class="info-value">
+                                        <span id="trackingNumber">-</span>
+                                        <button class="pui-btn pui-btn-secondary pui-ml-10" id="trackShipmentBtn">
+                                            Track
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pui-row pui-mt-20px">
+                            <div class="pui-col-md-12">
+                                <h4 class="pui-mb-10px">Box Contents</h4>
+                                <div class="table-responsive">
+                                    <table class="data-table" id="boxContentsTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Color</th>
+                                                <th>Size</th>
+                                                <th>Qty</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>Mens Corporate Quarter Snap Up Sweater Fleece</td>
+                                                <td>BLACK/WHITE_001</td>
+                                                <td>XL</td>
+                                                <td>144</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>Mens Corporate Quarter Snap Up Sweater Fleece</td>
+                                                <td>BLACK/WHITE_001</td>
+                                                <td>2XL</td>
+                                                <td>72</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>Mens Corporate Quarter Snap Up Sweater Fleece</td>
+                                                <td>BLACK/WHITE_001</td>
+                                                <td>3XL</td>
+                                                <td>72</td>
+
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End Shipment Modal -->
-
-                    <!-- Payment Receipt Modal -->
-                    <div id="paymentReceiptModal" class="modal" style="display: none;">
-                        <div class="modal-content" style="max-width: 800px;">
-                            <div class="modal-header">
-                                <h3>Purchase Receipt</h3>
-                                <button type="button" class="close-modal">&times;</button>
-                            </div>
-                            <div class="modal-body" style="color: #000;">
-                                <table class="purchase-receipt" width="750" border="0" align="center" cellpadding="0"
-                                    cellspacing="0" style="font-family: Verdana, sans-serif!important;">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-
-                                                <table width="100%" border="0" cellspacing="0" cellpadding="4">
-                                                    <tbody>
-                                                        <tr class="style4">
-                                                            <td height="25" align="center">&nbsp;</td>
-                                                            <td align="center">&nbsp;</td>
-                                                        </tr>
-                                                        <tr class="style4">
-                                                            <td width="49%" align="center">
-                                                                <table width="100%" border="0" cellspacing="0"
-                                                                    cellpadding="0">
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td width="25%"><img
-                                                                                    src="assets/images/pmlogo300.bmp"
-                                                                                    width="74"></td>
-                                                                            <td width="75%" class="style3">Pinpoint
-                                                                                Monograms, Inc.<br>
-                                                                                1425 Linwood Blvd<br>
-                                                                                Oklahoma City, OK 73106<br>
-                                                                                405.228.0600</td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </td>
-                                                            <td width="51%" align="center">
-                                                                <p><strong>Date:</strong> 2-5-2025</p>
-                                                                <p><strong>Visit Us At:
-                                                                        https://www.pinpointus.net</strong></p>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2" align="center" class="style11"><strong><br>
-                                                                    PURCHASE RECEIPT<br>
-                                                                    <br>
-                                                                </strong></td>
-                                                        </tr>
-                                                        <tr class="style4">
-                                                            <td><strong>Trans Record No:</strong> 43475<br>
-                                                                <strong>Order No:</strong> 92075<br> <strong>eOrder
-                                                                    No:</strong> abc-11<br> <strong>Invoice No:</strong>
-                                                                2434<br> <strong>Account Name:</strong> <br></td>
-                                                            <td><strong>Card Name:</strong> TEST<br>
-                                                                <strong>Card Type:</strong> Visa<br>
-                                                                <strong>Approval Code:</strong> <br>
-                                                                <strong>Transaction No:</strong> 325432<br>
-                                                                <strong>Total:</strong> ($112.00) <br>
-                                                                <strong>DECLINED</strong><br>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="2" class="style4">
-                                                                <p><em>I authorize Pinpoint
-                                                                        Monograms, Inc. to charge my credit card above
-                                                                        for the amount of
-                                                                        ($112.00). I testify that I am the authorized
-                                                                        user for the above credit
-                                                                        card. I agree to pay the above amount according
-                                                                        to the card issuer
-                                                                        agreement.</em><br>
-                                                                    <br>
-                                                                </p>
-
-                                                            </td>
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="pui-btn pui-btn-secondary pui-me-10px">Print</button>
-                                <button type="button" class="pui-btn pui-btn-primary">Email</button>
-                            </div>
-                        </div>
+                    <div class="modal-footer">
+                        <button class="pui-btn pui-btn-secondary" onclick="closeShipmentDetailsModal()">Close</button>
+                        <button class="pui-btn pui-btn-primary" onclick="printPackingSlip()">Print Packing Slip</button>
                     </div>
-                    <!-- End Payment Receipt Modal -->
+                </div>
+            </div>
+            <!-- End Shipment Details Modal -->
 
-                    <script>
-                        // Function to open shipment modal for adding a new shipment
-                        function openNewShipmentModal(event) {
-                            if (event) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                                event.stopImmediatePropagation();
-                            }
+            <!-- Payment Receipt Modal -->
+            <div id="paymentReceiptModal" class="modal" style="display: none;">
+                <div class="modal-content" style="max-width: 800px;">
+                    <div class="modal-header">
+                        <h3>Purchase Receipt</h3>
+                        <button type="button" class="close-modal">&times;</button>
+                    </div>
+                    <div class="modal-body" style="color: #000;">
+                        <table class="purchase-receipt" width="750" border="0" align="center" cellpadding="0"
+                            cellspacing="0" style="font-family: Verdana, sans-serif!important;">
+                            <tbody>
+                                <tr>
+                                    <td>
 
-                            // Hide any other open modals
-                            document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                                            <tbody>
+                                                <tr class="style4">
+                                                    <td height="25" align="center">&nbsp;</td>
+                                                    <td align="center">&nbsp;</td>
+                                                </tr>
+                                                <tr class="style4">
+                                                    <td width="49%" align="center">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="25%"><img
+                                                                            src="assets/images/pmlogo300.bmp"
+                                                                            width="74"></td>
+                                                                    <td width="75%" class="style3">Pinpoint
+                                                                        Monograms, Inc.<br>
+                                                                        1425 Linwood Blvd<br>
+                                                                        Oklahoma City, OK 73106<br>
+                                                                        405.228.0600</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td width="51%" align="center">
+                                                        <p><strong>Date:</strong> 2-5-2025</p>
+                                                        <p><strong>Visit Us At:
+                                                                https://www.pinpointus.net</strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" align="center" class="style11"><strong><br>
+                                                            PURCHASE RECEIPT<br>
+                                                            <br>
+                                                        </strong></td>
+                                                </tr>
+                                                <tr class="style4">
+                                                    <td><strong>Trans Record No:</strong> 43475<br>
+                                                        <strong>Order No:</strong> 92075<br> <strong>eOrder
+                                                            No:</strong> abc-11<br> <strong>Invoice No:</strong>
+                                                        2434<br> <strong>Account Name:</strong> <br>
+                                                    </td>
+                                                    <td><strong>Card Name:</strong> TEST<br>
+                                                        <strong>Card Type:</strong> Visa<br>
+                                                        <strong>Approval Code:</strong> <br>
+                                                        <strong>Transaction No:</strong> 325432<br>
+                                                        <strong>Total:</strong> ($112.00) <br>
+                                                        <strong>DECLINED</strong><br>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" class="style4">
+                                                        <p><em>I authorize Pinpoint
+                                                                Monograms, Inc. to charge my credit card above
+                                                                for the amount of
+                                                                ($112.00). I testify that I am the authorized
+                                                                user for the above credit
+                                                                card. I agree to pay the above amount according
+                                                                to the card issuer
+                                                                agreement.</em><br>
+                                                            <br>
+                                                        </p>
 
-                            const modal = document.getElementById('shipmentModal');
-                            if (!modal) {
-                                console.error('Shipment modal not found');
-                                return false;
-                            }
+                                                    </td>
+                                                </tr>
 
-                            // Show the line items dropdown for new shipments
-                            const lineItemsContainer = document.getElementById('lineItemsDropdownContainer');
-                            if (lineItemsContainer) {
-                                lineItemsContainer.style.display = 'block';
-                            }
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
 
-                            // Reset form
-                            const form = modal.querySelector('form');
-                            if (form) {
-                                form.reset();
-                            }
+                            </tbody>
+                        </table>
 
-                            // Set modal title to Add Shipment
-                            const modalTitle = modal.querySelector('h3');
-                            if (modalTitle) {
-                                modalTitle.textContent = 'Add Shipment';
-                            }
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="pui-btn pui-btn-secondary pui-me-10px">Print</button>
+                        <button type="button" class="pui-btn pui-btn-primary">Email</button>
+                    </div>
+                </div>
+            </div>
+            <!-- End Payment Receipt Modal -->
 
-                            // Clear all text input fields
-                            modal.querySelectorAll('input[type="text"]').forEach(input => {
-                                input.value = '';
-                            });
+            <script>
+                // Function to open shipment modal for adding a new shipment
+                function openNewShipmentModal(event) {
+                    if (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        event.stopImmediatePropagation();
+                    }
 
-                            // Set default values only for existing fields
-                            const setValueIfExists = (index, value) => {
-                                const element = modal.querySelector(`[data-field-index="${index}"]`);
-                                if (element) {
-                                    element.value = value;
-                                }
-                            };
+                    // Hide any other open modals
+                    document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
 
-                            // Set default values for existing fields
-                            setValueIfExists('3', '0'); // Freight Cost
-                            setValueIfExists('6', '0'); // Freight Billed
-                            
-                            // Set default date to today for Date Shipped (field index 7)
-                            const today = new Date();
-                            const formattedDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
-                            setValueIfExists('7', formattedDate);
+                    const modal = document.getElementById('shipmentModal');
+                    if (!modal) {
+                        console.error('Shipment modal not found');
+                        return false;
+                    }
 
-                            // Show modal
-                            modal.style.display = 'block';
+                    // Show the line items dropdown for new shipments
+                    const lineItemsContainer = document.getElementById('lineItemsDropdownContainer');
+                    if (lineItemsContainer) {
+                        lineItemsContainer.style.display = 'block';
+                    }
+
+                    // Reset form
+                    const form = modal.querySelector('form');
+                    if (form) {
+                        form.reset();
+                    }
+
+                    // Set modal title to Add Shipment
+                    const modalTitle = modal.querySelector('h3');
+                    if (modalTitle) {
+                        modalTitle.textContent = 'Add Shipment';
+                    }
+
+                    // Clear all text input fields
+                    modal.querySelectorAll('input[type="text"]').forEach(input => {
+                        input.value = '';
+                    });
+
+                    // Set default values only for existing fields
+                    const setValueIfExists = (index, value) => {
+                        const element = modal.querySelector(`[data-field-index="${index}"]`);
+                        if (element) {
+                            element.value = value;
+                        }
+                    };
+
+                    // Set default values for existing fields
+                    setValueIfExists('3', '0'); // Freight Cost
+                    setValueIfExists('6', '0'); // Freight Billed
+
+                    // Set default date to today for Date Shipped (field index 7)
+                    const today = new Date();
+                    const formattedDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
+                    setValueIfExists('7', formattedDate);
+
+                    // Show modal
+                    modal.style.display = 'block';
+                    return false;
+                }
+
+                // Function to open shipment modal for editing
+                function openEditShipmentModal(event, row) {
+                    // Prevent default behavior and stop propagation
+                    if (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        event.stopImmediatePropagation();
+                    }
+
+                    // Hide any other open modals
+                    document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+
+                    const cells = row.cells;
+                    const modal = document.getElementById('shipmentModal');
+
+                    if (!modal) {
+                        console.error('Shipment modal not found');
+                        return false;
+                    }
+
+                    // Hide the line items dropdown for edit mode
+                    const lineItemsContainer = document.getElementById('lineItemsDropdownContainer');
+                    if (lineItemsContainer) {
+                        lineItemsContainer.style.display = 'none';
+                    }
+
+                    // Set modal title to Edit Shipment
+                    const modalTitle = modal.querySelector('h3');
+                    if (modalTitle) {
+                        modalTitle.textContent = 'Edit Shipment';
+                    }
+
+                    // Helper function to safely set input value
+                    const setInputValue = (selector, value) => {
+                        const element = modal.querySelector(selector);
+                        if (element) {
+                            element.value = value || '';
+                        } else {
+                            console.warn('Element not found:', selector);
                             return false;
                         }
+                        return true;
+                    };
 
-                        // Function to open shipment modal for editing
-                        function openEditShipmentModal(event, row) {
-                            // Prevent default behavior and stop propagation
-                            if (event) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                                event.stopImmediatePropagation();
+                    // Map cell indices to field selectors
+                    const fieldMap = {
+                        0: 'input[data-field-index="0"]', // Item
+                        1: 'input[data-field-index="1"]', // Qty Shipped
+                        2: 'input[data-field-index="3"]', // Freight Cost (first $ input)
+                        3: 'input[data-field-index="6"]', // Freight Billed (second $ input)
+                        4: 'select[data-field-index="8"]', // Origin
+                        7: 'input[data-field-index="10"]'  // Tracking
+                    };
+
+                    // Populate modal with row data
+                    Object.entries(fieldMap).forEach(([cellIndex, selector]) => {
+                        if (cells[cellIndex]) {
+                            let value = cells[cellIndex].textContent.trim();
+
+                            // Special handling for currency values
+                            if (cellIndex === '2' || cellIndex === '3') {
+                                value = value.replace(/[^0-9.]/g, '') || '0';
                             }
 
-                            // Hide any other open modals
-                            document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
-
-                            const cells = row.cells;
-                            const modal = document.getElementById('shipmentModal');
-
-                            if (!modal) {
-                                console.error('Shipment modal not found');
-                                return false;
+                            // Special handling for tracking link
+                            if (cellIndex === '6' && cells[cellIndex].querySelector('a')) {
+                                value = cells[cellIndex].querySelector('a').textContent;
                             }
 
-                            // Hide the line items dropdown for edit mode
-                            const lineItemsContainer = document.getElementById('lineItemsDropdownContainer');
-                            if (lineItemsContainer) {
-                                lineItemsContainer.style.display = 'none';
-                            }
-
-                            // Set modal title to Edit Shipment
-                            const modalTitle = modal.querySelector('h3');
-                            if (modalTitle) {
-                                modalTitle.textContent = 'Edit Shipment';
-                            }
-
-                            // Helper function to safely set input value
-                            const setInputValue = (selector, value) => {
-                                const element = modal.querySelector(selector);
-                                if (element) {
-                                    element.value = value || '';
-                                } else {
-                                    console.warn('Element not found:', selector);
-                                    return false;
-                                }
-                                return true;
-                            };
-
-                            // Map cell indices to field selectors
-                            const fieldMap = {
-                                0: 'input[data-field-index="0"]', // Item
-                                1: 'input[data-field-index="1"]', // Qty Shipped
-                                2: 'input[data-field-index="3"]', // Freight Cost (first $ input)
-                                3: 'input[data-field-index="6"]', // Freight Billed (second $ input)
-                                4: 'select[data-field-index="8"]', // Origin
-                                7: 'input[data-field-index="10"]'  // Tracking
-                            };
-
-                            // Populate modal with row data
-                            Object.entries(fieldMap).forEach(([cellIndex, selector]) => {
-                                if (cells[cellIndex]) {
-                                    let value = cells[cellIndex].textContent.trim();
-
-                                    // Special handling for currency values
-                                    if (cellIndex === '2' || cellIndex === '3') {
-                                        value = value.replace(/[^0-9.]/g, '') || '0';
-                                    }
-
-                                    // Special handling for tracking link
-                                    if (cellIndex === '6' && cells[cellIndex].querySelector('a')) {
-                                        value = cells[cellIndex].querySelector('a').textContent;
-                                    }
-
-                                    setInputValue(selector, value);
-                                }
-                            });
-
-                            // Set default values if not present
-                            if (!setInputValue(fieldMap[1], cells[1]?.textContent || '1')) {
-                                setInputValue('input[type="text"]:nth-child(2)', '1'); // Fallback for Qty
-                            }
-
-                            // Show modal
-                            modal.style.display = 'block';
-                            return false;
+                            setInputValue(selector, value);
                         }
+                    });
 
-                        // Handle payment receipt modal
-                        document.querySelectorAll('.view-receipt').forEach(link => {
-                            link.addEventListener('click', function (e) {
-                                e.preventDefault();
-                                const modal = document.getElementById('paymentReceiptModal');
-                                modal.style.display = 'block';
-                            });
-                        });
+                    // Set default values if not present
+                    if (!setInputValue(fieldMap[1], cells[1]?.textContent || '1')) {
+                        setInputValue('input[type="text"]:nth-child(2)', '1'); // Fallback for Qty
+                    }
 
-                        // Close modal when clicking the close button or outside the modal
-                        document.querySelectorAll('.close-modal, .modal').forEach(element => {
-                            element.addEventListener('click', function (e) {
-                                if (e.target === this || e.target.classList.contains('close-modal')) {
-                                    this.closest('.modal').style.display = 'none';
-                                }
-                            });
-                        });
+                    // Show modal
+                    modal.style.display = 'block';
+                    return false;
+                }
 
-                        // Close modal when clicking outside of it
-                        window.addEventListener('click', function (event) {
-                            if (event.target.classList.contains('modal')) {
-                                event.target.style.display = 'none';
-                            }
-                        });
+                // Handle payment receipt modal
+                document.querySelectorAll('.view-receipt').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const modal = document.getElementById('paymentReceiptModal');
+                        modal.style.display = 'block';
+                    });
+                });
 
-                        // Initialize edit buttons
-                        document.addEventListener('DOMContentLoaded', function () {
-                            // Initialize Add Shipment button
-                            const addShipmentBtn = document.querySelector('.pui-btn-primary');
-                            if (addShipmentBtn && !addShipmentBtn.onclick) {
-                                addShipmentBtn.addEventListener('click', openNewShipmentModal);
-                            }
+                // Close modal when clicking the close button or outside the modal
+                document.querySelectorAll('.close-modal, .modal').forEach(element => {
+                    element.addEventListener('click', function (e) {
+                        if (e.target === this || e.target.classList.contains('close-modal')) {
+                            this.closest('.modal').style.display = 'none';
+                        }
+                    });
+                });
 
-                            // Initialize Edit buttons
-                            const editButtons = document.querySelectorAll('#shipmentHistoryTable .btn-action[title="Edit"]');
-                            editButtons.forEach(button => {
-                                // Remove any existing click handlers
-                                const newButton = button.cloneNode(true);
-                                button.parentNode.replaceChild(newButton, button);
+                // Close modal when clicking outside of it
+                window.addEventListener('click', function (event) {
+                    if (event.target.classList.contains('modal')) {
+                        event.target.style.display = 'none';
+                    }
+                });
 
-                                // Add new click handler
-                                newButton.addEventListener('click', function (event) {
-                                    const row = this.closest('tr');
-                                    return openEditShipmentModal(event, row);
-                                }, true); // Use capture phase to ensure we get the event first
-                            });
-                        });
-                    </script>
-                    <script src="box-management.js"></script>
-                    <script src="item-fees.js"></script>
+                // Initialize edit buttons
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize Add Shipment button
+                    const addShipmentBtn = document.querySelector('.pui-btn-primary');
+                    if (addShipmentBtn && !addShipmentBtn.onclick) {
+                        addShipmentBtn.addEventListener('click', openNewShipmentModal);
+                    }
+
+                    // Initialize Edit buttons
+                    const editButtons = document.querySelectorAll('#shipmentHistoryTable .btn-action[title="Edit"]');
+                    editButtons.forEach(button => {
+                        // Remove any existing click handlers
+                        const newButton = button.cloneNode(true);
+                        button.parentNode.replaceChild(newButton, button);
+
+                        // Add new click handler
+                        newButton.addEventListener('click', function (event) {
+                            const row = this.closest('tr');
+                            return openEditShipmentModal(event, row);
+                        }, true); // Use capture phase to ensure we get the event first
+                    });
+                });
+            </script>
+            <script src="box-management.js"></script>
+            <script src="item-fees.js"></script>
 </body>
 
 </html>

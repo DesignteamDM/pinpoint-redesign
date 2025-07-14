@@ -760,7 +760,214 @@ function setupMiscLines() {
 // Initialize misc lines after the page is fully loaded
 window.addEventListener('load', function() {
     setupMiscLines();
+    
+    // Add click handler for closing modals when clicking outside
+    window.addEventListener('click', function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    // Add event delegation for view shipment buttons and track buttons
+    document.addEventListener('click', function(event) {
+        // Handle view shipment button
+        const viewBtn = event.target.closest('.btn-action[title="View"]');
+        if (viewBtn) {
+            event.preventDefault();
+            const row = viewBtn.closest('tr');
+            if (row) {
+                openViewShipmentModal(event, row);
+            }
+            return;
+        }
+        
+        // Handle track shipment button
+        const trackBtn = event.target.closest('#trackShipmentBtn');
+        if (trackBtn) {
+            trackShipment(event);
+        }
+    });
 });
+
+// Shipment Details Modal Functions
+function openViewShipmentModal(event, row) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    // Hide any other open modals
+    document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+
+    const modal = document.getElementById('shipmentDetailsModal');
+    if (!modal) {
+        console.error('Shipment details modal not found');
+        return false;
+    }
+
+    // Get data from the row
+    const cells = row.cells;
+    if (cells.length >= 8) { // Ensure we have enough cells
+        // Set basic shipment info
+        setInfoValue('freightCost', cells[2]?.textContent.trim() || '$0.00');
+        setInfoValue('freightBilled', cells[3]?.textContent.trim() || '$0.00');
+        setInfoValue('dateShipped', cells[6]?.textContent.trim() || 'Not specified');
+        setInfoValue('shipmentOrigin', cells[5]?.textContent.trim() || 'Not specified');
+        
+        // Extract carrier and tracking from the tracking cell
+        const trackingCell = cells[7];
+        let trackingNumber = '';
+        let carrier = '';
+        
+        if (trackingCell) {
+            const trackingLink = trackingCell.querySelector('a');
+            trackingNumber = trackingLink ? trackingLink.textContent.trim() : trackingCell.textContent.trim();
+            
+            // Try to determine carrier from tracking number format
+            if (trackingNumber) {
+                if (/^1Z/.test(trackingNumber)) {
+                    carrier = 'UPS';
+                } else if (/^\d{12}$/.test(trackingNumber)) {
+                    carrier = 'FedEx';
+                } else if (/^\d{20,22}$/.test(trackingNumber)) {
+                    carrier = 'USPS';
+                } else {
+                    carrier = 'Unknown';
+                }
+            }
+        }
+        
+        setInfoValue('trackingNumber', trackingNumber || 'Not provided');
+        setInfoValue('shipmentCarrier', carrier);
+        
+        // For demo purposes, we'll add some sample box contents
+        // In a real app, this would come from an API or data store
+        populateBoxContents();
+    }
+
+    // Show the modal
+    modal.style.display = 'block';
+    return false;
+}
+
+// Helper function to set info values
+function setInfoValue(id, value) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.textContent = value;
+    }
+}
+
+function closeShipmentDetailsModal() {
+    const modal = document.getElementById('shipmentDetailsModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+function trackShipment(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    const trackingElement = document.getElementById('trackingNumber');
+    const carrierElement = document.getElementById('shipmentCarrier');
+    
+    if (!trackingElement || !carrierElement) return;
+    
+    const trackingNumber = trackingElement.textContent.trim();
+    const carrier = carrierElement.textContent.trim().toLowerCase();
+    
+    if (!trackingNumber || trackingNumber === 'Not provided' || trackingNumber === '-') {
+        alert('No tracking number available');
+        return;
+    }
+    
+    let trackingUrl = '';
+    
+    // Determine tracking URL based on carrier
+    switch(carrier.toLowerCase()) {
+        case 'ups':
+            trackingUrl = `https://www.ups.com/track?tracknum=${trackingNumber}`;
+            break;
+        case 'fedex':
+            trackingUrl = `https://www.fedex.com/fedextrack/?tracknumbers=${trackingNumber}`;
+            break;
+        case 'usps':
+            trackingUrl = `https://tools.usps.com/go/TrackConfirmAction?tLabels=${trackingNumber}`;
+            break;
+        default:
+            // Try to determine carrier from tracking number format
+            if (/^1Z/i.test(trackingNumber)) {
+                trackingUrl = `https://www.ups.com/track?tracknum=${trackingNumber}`;
+            } else if (/^\d{12}$/.test(trackingNumber)) {
+                trackingUrl = `https://www.fedex.com/fedextrack/?tracknumbers=${trackingNumber}`;
+            } else if (/^\d{20,22}$/.test(trackingNumber)) {
+                trackingUrl = `https://tools.usps.com/go/TrackConfirmAction?tLabels=${trackingNumber}`;
+            } else {
+                alert('Unable to determine carrier for tracking');
+                return;
+            }
+    }
+    
+    // Open tracking in a new tab
+    window.open(trackingUrl, '_blank');
+}
+
+function populateBoxContents() {
+    // This is sample data - in a real app, this would come from your data store
+    const sampleBoxContents = [
+        { itemNumber: 'ABC123', description: 'T-Shirt', color: 'Red', size: 'L', quantity: 2, price: 19.99 },
+        { itemNumber: 'DEF456', description: 'Hoodie', color: 'Black', size: 'M', quantity: 1, price: 49.99 },
+        { itemNumber: 'GHI789', description: 'Cap', color: 'Blue', size: 'OS', quantity: 3, price: 14.99 }
+    ];
+    
+    const tbody = document.getElementById('boxContentsBody');
+    if (!tbody) return;
+    
+    // Clear existing rows
+    tbody.innerHTML = '';
+    
+    // Calculate subtotal
+    let subtotal = 0;
+    
+    // Add rows for each item
+    sampleBoxContents.forEach(item => {
+        const row = document.createElement('tr');
+        const itemTotal = item.quantity * item.price;
+        subtotal += itemTotal;
+        
+        row.innerHTML = `
+            <td>${item.itemNumber}</td>
+            <td>${item.description}</td>
+            <td>${item.color}</td>
+            <td>${item.size}</td>
+            <td>${item.quantity}</td>
+            <td class="pui-text-right">$${item.price.toFixed(2)}</td>
+            <td class="pui-text-right">$${itemTotal.toFixed(2)}</td>
+        `;
+        
+        tbody.appendChild(row);
+    });
+    
+    // Update subtotal
+    const subtotalElement = document.getElementById('boxSubtotal');
+    if (subtotalElement) {
+        subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    }
+}
+
+function printPackingSlip() {
+    // This would typically open a print dialog with a formatted packing slip
+    // For now, we'll just alert the user
+    alert('Printing packing slip...');
+    // In a real implementation, you would open a print dialog here
+    // window.print();
+}
 
     // Add click handler for the search button
     const searchBtn = document.querySelector('.search-btn');

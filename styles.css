@@ -3489,6 +3489,13 @@ padding: 10px !important;
 .pui-btn-secondary:hover {
   background-color: #e6e6e6;
 }
+.pui-btn-danger {
+  background-color: #ff4444;
+  color: white;
+}
+.pui-btn-danger:hover {
+  background-color: #cc0000;
+}
 
 /* Color Grid and Options */
 .color-grid {

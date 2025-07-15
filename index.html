@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Details</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="order-notes.css">
     <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="purchase-receipt.css">
     <link rel="stylesheet" href="utilities.css">
@@ -4953,82 +4954,220 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <textarea class="form-control" rows="3"></textarea>
                                         </div>
                                     </div>
-<div class="section-card pui-mt-10px">
-        <div class="pui-row">
-            <div class="pui-col-md-6">
-                <div class="form-group">
-                    <label>Payment</label>
-                    <input type="text" class="form-control" value="Net; Please call to verify ship date and total charges.">
-                </div>
-            </div>
-            <div class="pui-col-md-6">
-                <div class="form-group">
-                    <label>Artwork</label>
-                    <input type="text" class="form-control" value="Artwork has been emailed to: leonard@leonardsloan.com">
-                </div>
-            </div>
-        </div>
-        <div class="pui-row">
-            <div class="pui-col-md-2">
-                <div class="form-group">
-                    <label>Art Sent By</label>
-                    <select class="form-control">
-                        <option>Email</option>
-                        <option>FTP</option>
-                        <option>Hightail</option>
-                    </select>
-                </div>
-            </div>
-            <div class="pui-col-md-10">
-                <div class="form-group">
-                    <label>Confirmation Request</label>
-                    <input type="text" class="form-control" value="Order Confirmation Requested.<BR>Please email to: orders@pinpointus.com or fax to: 405.228.0517.">
-                </div>
-            </div>
-        </div>
-</div>
-<div class="section-card pui-mt-10px">
-    <div class="form-group">
-        <label>General Note</label>
-        <textarea class="form-control" rows="3">Please make sure sleeve logos are printed at correct size. They were incorrect last year.
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label>Payment</label>
+                                                    <input type="text" class="form-control"
+                                                        value="Net; Please call to verify ship date and total charges.">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label>Artwork</label>
+                                                    <input type="text" class="form-control"
+                                                        value="Artwork has been emailed to: leonard@leonardsloan.com">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-2">
+                                                <div class="form-group">
+                                                    <label>Art Sent By</label>
+                                                    <select class="form-control">
+                                                        <option>Email</option>
+                                                        <option>FTP</option>
+                                                        <option>Hightail</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-10">
+                                                <div class="form-group">
+                                                    <label>Confirmation Request</label>
+                                                    <input type="text" class="form-control"
+                                                        value="Order Confirmation Requested.<BR>Please email to: orders@pinpointus.com or fax to: 405.228.0517.">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="form-group">
+                                            <label>General Note</label>
+                                            <textarea class="form-control" rows="3">Please make sure sleeve logos are printed at correct size. They were incorrect last year.
         </textarea>
-    </div>
-    <div class="form-group" style="margin-top: 20px;">
-        <label style="font-weight: 600; color: #2c3e50; margin-bottom: 10px; display: block;">Upgrade Freight?</label>
-        <div style="display: flex; gap: 20px; align-items: center; background: #f8f9fa; padding: 15px; border-left: 4px solid #5ca8f8;">
-            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                <input type="radio" name="upgrade-freight" value="yes" style="transform: scale(1.2);">
-                <span>Yes</span>
-            </label>
-            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                <input type="radio" name="upgrade-freight" value="no" checked style="transform: scale(1.2);">
-                <span>No</span>
-            </label>
-            <div style="margin-left: 20px; font-size: 0.95em; color: #666;">
-                <strong>Note:</strong> Authorized to upgrade freight as needed to ensure RUSH order arrives by MUST HAVE DATE.
-            </div>
-        </div>
-    </div>
-</div>
-<div class="pui-row pui-mt-20px pui-text-right">
-    <div class="pui-col-md-12">
-        <button class="pui-btn pui-btn-primary pui-me-10px">
-            Save PO
-        </button>
-        <button class="pui-btn pui-btn-secondary pui-me-10px">
-            Close PO
-        </button>
-        <button class="pui-btn pui-btn-danger">
-            Delete PO
-        </button>
-    </div>
-</div>
+                                        </div>
+                                        <div class="form-group" style="margin-top: 20px;">
+                                            <label
+                                                style="font-weight: 600; color: #2c3e50; margin-bottom: 10px; display: block;">Upgrade
+                                                Freight?</label>
+                                            <div
+                                                style="display: flex; gap: 20px; align-items: center; background: #f8f9fa; padding: 15px; border-left: 4px solid #5ca8f8;">
+                                                <label
+                                                    style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                    <input type="radio" name="upgrade-freight" value="yes"
+                                                        style="transform: scale(1.2);">
+                                                    <span>Yes</span>
+                                                </label>
+                                                <label
+                                                    style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                                    <input type="radio" name="upgrade-freight" value="no" checked
+                                                        style="transform: scale(1.2);">
+                                                    <span>No</span>
+                                                </label>
+                                                <div style="margin-left: 20px; font-size: 0.95em; color: #666;">
+                                                    <strong>Note:</strong> Authorized to upgrade freight as needed to
+                                                    ensure RUSH order arrives by MUST HAVE DATE.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-row pui-mt-20px pui-text-right">
+                                        <div class="pui-col-md-12">
+                                            <button class="pui-btn pui-btn-primary pui-me-10px">
+                                                Save PO
+                                            </button>
+                                            <button class="pui-btn pui-btn-secondary pui-me-10px">
+                                                Close PO
+                                            </button>
+                                            <button class="pui-btn pui-btn-danger">
+                                                Delete PO
+                                            </button>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
-                            <div class="pui-col-md-3">
-
-                            </div>
+                            
+                        </div>
+                        <div class="pui-col-xxl-3">
+                               
+                                    <div class="order-notes-container">
+                                        <div class="order-number">ORDER #: 125466</div>
+                                        <div class="pinpoint-notes">PINPOINT NOTES PRIVATE</div>
+                                        <div class="order-details-notes">Pricing for this order, based on min 860 shirts. 1.4285 (E)
+                                            --------------------------------- After printing order -
+                                            need to split into 2 orders OKC: 2/3 of the order ---------
+                                            --------------------------- Ohio: 1/3 of the order
+                                        </div>
+                                        <div class="item-master-notes-header">ITEM MASTER NOTES</div>
+                                        <div class="item-master-notes">
+                                            MUST Add $35.00 Art Charge Setup is Spot Separation 
+                                            Setup Charge $25.00/Color for 60-200 mesh screens (no 
+                                            fades/shadows) If artwork contains fades or shadows, add 
+                                            $5.00 to setup charge for 240-355 mesh Screens.
+                                            Resetup Is $20.00/Color for 60-200 mesh screens (no 
+                                            fades/shadows)/If fades or shadow...
+                                            <a href="#" class="more-link">(+ More)</a>
+                                        </div>
+                                        <div class="item-layout-notes-header">ITEM LAYOUT NOTES</div>
+                                        <div class="item-layout-notes">
+                                            Use layout from order: 121576. Changing flag to a 2 color 
+                                            fade. Fade Navy to Red ----------------------------------
+                                            Last year's sleeves were printed at the wrong size. Need 
+                                            to make sure this years are printed correctly.
+                                        </div>
+                                        <div class="item-description-header">ITEM DESCRIPTION</div>
+                                        <div class="item-description">
+                                            2 Color screen printed Imprint without Underbase. Printed 
+                                            in plastisol or waterbase inks or discharge inks. High 
+                                            quality low cure ink to prevent dye migration, specifically 
+                                            for polyester shirts to prevent dye migration in the 
+                                            polyester. Upcharge for print on Sweatshirts and Hoodies 
+                                            per shirt. Additional Setup charge for Sleeve prints. Can 
+                                            print up to 16.5" h on front or back for oversized print 
+                                            charge. Items requiring low cure inks will have a PMS 
+                                            Charge for each color except white or black. LS-Printing
+                                        </div>
+                                        <div class="factory-po-notes">
+                                            Factory Po Notes :3rd Party Freight Charges: 2.75
+                                            (z) per box 1/4 Zips/Half Zips count as sweatshirts
+                                            - must have sweatshirt pricing added. ------- Max
+                                            oversize screen: 17" w x 1.85" h
+                                        </div>
+                                        <div class="order-notes-public-header">ORDER NOTES PUBLIC</div>
+                                        <div class="order-notes-public">
+                                            2025-06-26 - Inventory Check | In Stock ----------------
+                                            ------- Fold, Bag & Tag Shirts ---------------------
+                                        </div>
+                                        <div class="item-pricing-header">ITEM PRICING</div>
+                                        <div class="item-pricing">
+                                            <table class="pricing-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>QTY</th>
+                                                        <th>Price</th>
+                                                        <th>Cost</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="alt-row">
+                                                        <td>24</td>
+                                                        <td>$4.7500 (C)</td>
+                                                        <td>2.8500</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>48</td>
+                                                        <td>$4.4200 (C)</td>
+                                                        <td>2.6520</td>
+                                                    </tr>
+                                                    <tr class="alt-row">
+                                                        <td>72</td>
+                                                        <td>$3.6700 (C)</td>
+                                                        <td>2.2020</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>144</td>
+                                                        <td>$3.4200 (C)</td>
+                                                        <td>2.0520</td>
+                                                    </tr>
+                                                    <tr class="alt-row">
+                                                        <td>288</td>
+                                                        <td>$2.8400 (C)</td>
+                                                        <td>1.7040</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>600</td>
+                                                        <td>$2.3900 (D)</td>
+                                                        <td>1.5535</td>
+                                                    </tr>
+                                                    <tr class="alt-row">
+                                                        <td>1200</td>
+                                                        <td>$2.1500 (E)</td>
+                                                        <td>1.5050</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1500</td>
+                                                        <td>$1.7900 (E)</td>
+                                                        <td>1.2530</td>
+                                                    </tr>
+                                                    <tr class="alt-row">
+                                                        <td>3000</td>
+                                                        <td>$1.5800 (E)</td>
+                                                        <td>1.1060</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6000</td>
+                                                        <td>$1.4300 (E)</td>
+                                                        <td>1.0010</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        
+                                        <div class="po-tracker-header">PO TRACKER</div>
+                                        <div class="po-tracker-content">
+                                            <div class="po-tracker-item">
+                                                <div class="po-tracker-title">PO: <a href="#" class="po-link">2 Color Imprint NO Underbase (White)</a></div>
+                                                <div class="po-tracker-description">Front Logo - Lion Head 2 Color Flag</div>
+                                                <div class="po-progress-bar">
+                                                    <div class="po-progress-inner"></div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                
                         </div>
                     </div>
                 </div>

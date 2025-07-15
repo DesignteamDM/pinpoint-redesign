@@ -475,3 +475,6 @@ align-middle {
         display: inline-block !important;
     }
 }
+.text-danger{
+    color:red; text-decoration:blink; font-size:16px
+}

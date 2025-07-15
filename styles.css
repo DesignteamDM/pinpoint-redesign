@@ -3814,3 +3814,14 @@ select[multiple].form-control {
 .pui-text-success{
   color: #2e7d32;
 }
+.big-warning-title{
+  color:red; background-color:yellow; text-decoration:blink; font-size:18px;font-weight: bold;
+  padding: 5px; border-radius: 4px 4px 0px 0px; text-align: center;
+}
+.label-validation-icon{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}

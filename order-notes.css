@@ -3,7 +3,12 @@
     font-family: Arial, sans-serif;
     border: 1px solid #ccc;
     border-radius: 3px;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: height 0.3s ease;
+    position: sticky;
+    top: 180px;
+    max-height: 85vh; /* Fallback if JS fails */
 }
 
 .order-number {
@@ -50,7 +55,7 @@
 
 .item-master-notes,
 .item-layout-notes,
-.item-description {
+.order-details-notes .item-description {
     background-color: #fff;
     color: #000;
     font-size: 14px;

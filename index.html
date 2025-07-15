@@ -4085,11 +4085,17 @@ Monograms is not responsible for damages to customer provided items. There is an
                                 <!-- Line Item Selection -->
                                 <div class="form-group pui-mb-none">
                                     <label>Select Line Item</label>
-                                    <div class="right-action-group" style="max-width: 400px;">
-                                        <select class="form-control">
-                                            <option>Select a line item...</option>
-                                            <option selected>2025 Summer Lion Flag T-Shirt</option>
-                                        </select>
+                                    <div class="right-action-group">
+                                        <select name="sellineid" class="form-control" id="sellineid" tabindex="1">
+
+          <option value="25121">LS-2Color 2 Color Imprint NO Underbase (White) - QTY: 860</option>
+          <option value="25121">&nbsp;&nbsp;&nbsp; - Front Logo - Lion Head 2 Color Flag</option>
+          <option value="25121">----------------------------------------------</option>
+          
+              <option value="25122">LS-1Color 1 Color Imprint NO Underbase (White) - QTY: 860</option>
+              <option value="25122">&nbsp;&nbsp;&nbsp; - Sleeve Logo - NSI nancesi.com</option>
+              <option value="25122">----------------------------------------------</option>
+              </select>
                                     </div>
                                 </div>
                                     </div>
@@ -4131,6 +4137,10 @@ Monograms is not responsible for damages to customer provided items. There is an
                                 </div>
                                 
                             </div>
+                            <p class="text-danger text-center pui-p-10px">
+                                Factory PO NOTES : 3rd Party Freight Charges: 2.75 (z) per box 1/4 Zips/Half Zips count as sweatshirts - must have sweatshirt pricing added. -------- Max oversize screen: 17" w x 1.85" h
+                            </p>
+                            <div class="big-warning-title">Multi Item</div>
                             <div class="section-card-with-grouped-title">
                                 <div class="section-title-grouped">
                                     <h3>
@@ -4138,7 +4148,11 @@ Monograms is not responsible for damages to customer provided items. There is an
                                     </h3>
                                 </div>
                                 <div class="section-card">
-                                    <h4 class="section-heading">PO Verification</h4>
+                                    <div class="section-heading">
+                                    <h4>PO Verification</h4>
+                                    
+                                    </div>
+                                    
                                     <div class="pui-message-box pui-mb-10px">
                                         <span><strong>Apply to all PO's:</strong> Check the boxes next to fields to
                                             apply values to all purchase orders attached to this order.</span>
@@ -4163,7 +4177,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <div
-                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                class="pui-flex pui-align-items-center">
                                                                 <label>Follow-up Date</label>
                                                                 <div class="pui-ms-5px">
                                                                     <input type="checkbox" id="followupComplete">
@@ -4196,7 +4210,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <div
-                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                class="pui-flex pui-align-items-center">
                                                                 <label>Release Date</label>
                                                                 
                                                             </div>
@@ -4227,8 +4241,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <div
-                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
-                                                                <label>PO Submitted</label>
+                                                                class="pui-flex pui-align-items-center">
+                                                                <label><img class="label-validation-icon" src="assets/images/icon_caution.gif">PO Submitted</label>
                                                                 <div class="pui-ms-5px">
                                                                     <input type="checkbox" id="poSubmittedComplete">
                                                                     <label for="poSubmittedComplete"
@@ -4259,8 +4273,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <div
-                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
-                                                                <label>Art Submitted</label>
+                                                                class="pui-flex pui-align-items-center">
+                                                                <label><img class="label-validation-icon" src="assets/images/icon_caution.gif">Art Submitted</label>
                                                                 <div class="pui-ms-5px">
                                                                     <input type="checkbox" id="artSubmittedComplete">
                                                                     <label for="artSubmittedComplete"
@@ -4290,8 +4304,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <div class="pui-flex pui-align-items-center pui-justify-content-between">
-<label>Local Art Path</label>
+                                                    <div class="pui-flex pui-align-items-center">
+<label><img class="label-validation-icon" src="assets/images/sm_checkmark.jpg">Local Art Path</label>
 <div class="pui-ms-5px">
                                                                     <input type="checkbox" id="followupComplete">
                                                                     <label for="followupComplete" class="checkmark pui-mb-none"></label>
@@ -4301,15 +4315,15 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="right-action-group">
                                                         <input type="text" class="form-control"
                                                             value="N:\Nance Solutions Inc\Screen Printing\125466 2025 Summer Lion Flag T-Shirt"
-                                                            readonly>
+                                                            >
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="section-card pui-mt-10px">
                                                 <div class="form-group" style="max-width: 200px;">
                                                     <div
-                                                        class="pui-flex pui-align-items-center pui-justify-content-between">
-                                                        <label>Order Confirmed</label>
+                                                        class="pui-flex pui-align-items-center">
+                                                        <label><img class="label-validation-icon" src="assets/images/icon_caution.gif">Order Confirmed</label>
                                                         <div class="pui-ms-5px">
                                                             <input type="checkbox" id="orderConfirmedComplete">
                                                             <label for="orderConfirmedComplete"
@@ -4336,7 +4350,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 </div>
 
                                                 <div class="form-group">
-                                                              <div class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                              <div class="pui-flex pui-align-items-center">
                                                     <label>Confirmation Notes</label>
                                                     <div class="pui-ms-5px">
                                                                     <input type="checkbox" id="followupComplete">
@@ -4350,8 +4364,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <div
-                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
-                                                                <label>Proof Received</label>
+                                                                class="pui-flex pui-align-items-center">
+                                                                <label><img class="label-validation-icon" src="assets/images/icon_caution.gif">Proof Received</label>
                                                                 <div class="pui-ms-5px">
                                                                     <input type="checkbox" id="proofReceivedComplete">
                                                                     <label for="proofReceivedComplete"
@@ -4418,7 +4432,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <div class="section-card pui-mt-10px">
                                                 <div class="form-group">
                                                     <div
-                                                        class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                        class="pui-flex pui-align-items-center">
                                                         <label>Factory Order No.</label>
                                                         <div class="pui-ms-5px">
                                                             <input type="checkbox" id="factoryOrderComplete">
@@ -4435,8 +4449,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 <div class="pui-row">
                                                     <div class="pui-col-md-6">
                                                         <div class="form-group">
-                                                            <div class="pui-flex pui-align-items-center pui-justify-content-between">
-                                                            <label>Factory Ship Date</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                            <label><img class="label-validation-icon" src="assets/images/icon_caution.gif">Factory Ship Date</label>
                                                             <div class="pui-ms-5px">
                                                                 <input type="checkbox" id="factoryShipComplete">
                                                                 <label for="factoryShipComplete"
@@ -4469,7 +4483,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     </div>
                                                     <div class="pui-col-md-6">
                                                         <div class="form-group">
-                                                            <div class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                            <div class="pui-flex pui-align-items-center">
                                                             <label>Pickup Date</label>
                                                             <div class="pui-ms-5px">
                                                                 <input type="checkbox" id="pickupDateComplete">
@@ -4503,9 +4517,9 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                         <!-- Factory Tracking -->
                                                         <div class="form-group">
                                                             <div
-                                                                class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                                class="pui-flex pui-align-items-center">
                                                                 <label>
-
+<img class="label-validation-icon" src="assets/images/icon_caution.gif">
                                                                     Factory Tracking
                                                                 </label>
                                                                 <div class="pui-ms-5px">
@@ -4552,6 +4566,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                 <!-- Qty. Shipped -->
                                                 <div class="form-group">
                                                     <label>
+                                                        <img class="label-validation-icon" src="assets/images/icon_caution.gif">
                                                         Qty. Shipped
                                                     </label>
                                                     <div class="right-action-group" style="max-width: 150px;">
@@ -4601,6 +4616,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                         <div class="pui-col-md-3">
                                                             <div class="form-group">
                                                                 <label>
+                                                                    <img class="label-validation-icon" src="assets/images/icon_caution.gif">
                                                                     Freight Total
                                                                 </label>
                                                                 <div class="right-action-group"
@@ -4640,8 +4656,9 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="pui-col-md-4">
                                                         <!-- Factory Invoice -->
                                                         <div class="form-group">
-                                                            <div class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                            <div class="pui-flex pui-align-items-center">
                                                             <label>
+                                                                <img class="label-validation-icon" src="assets/images/icon_caution.gif">
                                                                 Factory Invoice
                                                             </label>
                                                             <div class="pui-ms-5px">
@@ -4659,8 +4676,9 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                     <div class="pui-col-md-8">
                                                         <!-- Quickbooks Invoice -->
                                                         <div class="form-group">
-                                                            <div class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                            <div class="pui-flex pui-align-items-center">
                                                             <label>
+                                                                <img class="label-validation-icon" src="assets/images/icon_caution.gif">
                                                                 Quickbooks Invoice
                                                             </label>
                                                             <div class="pui-ms-5px">
@@ -4688,7 +4706,8 @@ Monograms is not responsible for damages to customer provided items. There is an
                                             <div class="section-card pui-mt-10px">
                                                 <!-- Create PO File -->
                                                 <div class="form-group">
-                                                    <label>Create PO File</label>
+                                                    <label>
+                                                        <img class="label-validation-icon" src="assets/images/icon_caution.gif">Create PO File</label>
                                                     <div class="right-action-group" style="max-width: 400px;">
                                                         <div class="input-group">
                                                             <input type="file" class="form-control" accept=".pdf"
@@ -4701,7 +4720,7 @@ Monograms is not responsible for damages to customer provided items. There is an
 
                                                 <!-- Notes -->
                                                 <div class="form-group">
-                                                    <div class="pui-flex pui-align-items-center pui-justify-content-between">
+                                                    <div class="pui-flex pui-align-items-center">
                                                     <label>Notes</label>
 <div class="pui-ms-5px">
                                                                     <input type="checkbox" id="followupComplete">
@@ -7288,6 +7307,7 @@ Monograms is not responsible for damages to customer provided items. There is an
             <script src="script.js"></script>
             <script src="line-items.js"></script>
             <script src="email-receipt.js"></script>
+            <script src="order-notes.js"></script>
             <script>
                 // Toggle credit card selection visibility based on payment method
                 document.addEventListener('DOMContentLoaded', function () {

@@ -4085,7 +4085,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                     <div class="right-action-group" style="max-width: 400px;">
                                         <select class="form-control">
                                             <option>Select a line item...</option>
-                                            <option>2025 Summer Lion Flag T-Shirt</option>
+                                            <option selected>2025 Summer Lion Flag T-Shirt</option>
                                         </select>
                                     </div>
                                 </div>
@@ -4553,7 +4553,7 @@ Monograms is not responsible for damages to customer provided items. There is an
                                                         <div class="pui-col-md-4">
                                                             <div class="form-group">
 
-                                                                <label>Billable Freight Amount:</label>
+                                                                <label>Billable Freight Amount</label>
                                                                 <div class="date-input">
                                                                     <span class="currency-symbol">$</span>
                                                                     <input type="text" class="form-control"
@@ -4661,143 +4661,202 @@ Monograms is not responsible for damages to customer provided items. There is an
                                     </h3>
                                 </div>
                                 <!-- New PO Details Section -->
-                                <div class="section-card">
-
-
-
+                                 <div class="section-card">
+                                    <div class="section-card pui-mb-10px">
                                     <div class="pui-row">
-                                        <div class="pui-col-md-6">
+                                        <div class="pui-col-md-3">
                                             <div class="form-group">
                                                 <label>PO Date</label>
-                                                <div class="input-group">
+                                                <div class="right-action-group">
                                                     <input type="text" class="form-control">
-                                                    <span class="input-group-addon"><i
-                                                            class="fa fa-calendar"></i></span>
+                                                    <button type="button" class="calendar-btn">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                        </svg>
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label>From</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Subject</label>
-                                                <input type="text" class="form-control">
-                                            </div>
                                         </div>
-                                        <div class="pui-col-md-6">
+                                        <div class="pui-col-md-3">
                                             <div class="form-group">
                                                 <label>PPA Number</label>
                                                 <input type="text" class="form-control">
                                             </div>
+                                        </div>
+                                        <div class="pui-col-md-3">
                                             <div class="form-group">
                                                 <label>ASI Number</label>
                                                 <input type="text" class="form-control">
                                             </div>
+                                        </div>
+                                        <div class="pui-col-md-3">
                                             <div class="form-group">
                                                 <label>Acct. Number</label>
                                                 <input type="text" class="form-control">
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="divider pui-my-15px"></div>
-
-                                    <div class="pui-row">
                                         <div class="pui-col-md-6">
-                                            <h5>Billing</h5>
                                             <div class="form-group">
-                                                <label>Company</label>
+                                                <label>From</label>
                                                 <input type="text" class="form-control">
                                             </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
                                             <div class="form-group">
-                                                <label>Contact</label>
+                                                <label>Subject</label>
                                                 <input type="text" class="form-control">
                                             </div>
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address 2</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="pui-row">
-                                                    <div class="pui-col-md-6">
-                                                        <label>City</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="pui-col-md-3">
-                                                        <label>State</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="pui-col-md-3">
-                                                        <label>Zip</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pui-row">
+                                    <div class="pui-col-md-6">
+<div class="section-card">
+                                        <h4>Billing</h4>
+                                        <div class="form-group">
+                                            <label>Company</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address 2</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="pui-row">
+                                                <div class="pui-col-md-6">
+                                                    <label>City</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>State</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>Zip</label>
+                                                    <input type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="pui-col-md-6">
-                                            <h5>Shipping</h5>
-                                            <div class="form-group">
-                                                <label>Company</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Contact</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address 2</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="pui-row">
-                                                    <div class="pui-col-md-6">
-                                                        <label>City</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="pui-col-md-3">
-                                                        <label>State</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="pui-col-md-3">
-                                                        <label>Zip</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
+</div>
+                                    </div>
+                                    <div class="pui-col-md-6">
+<div class="section-card">
+                                        <h4>Shipping</h4>
+                                        <div class="form-group">
+                                            <label>Company</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address 2</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="pui-row">
+                                                <div class="pui-col-md-6">
+                                                    <label>City</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>State</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="pui-col-md-3">
+                                                    <label>Zip</label>
+                                                    <input type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
+</div>
                                     </div>
+                                </div>
 
-                                    <div class="divider pui-my-15px"></div>
+<div class="section-card pui-mt-20px">
+    <h4>Contact Numbers</h4>
+    <div class="pui-row">
+        <div class="pui-col-md-6">
+            
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control">
+            </div>
 
-                                    <div class="pui-row">
-                                        <div class="pui-col-md-6">
-                                            <h5>Contact Numbers</h5>
-                                            <div class="form-group">
-                                                <label>Phone</label>
-                                                <input type="text" class="form-control">
-                                            </div>
+        </div>
+        <div class="pui-col-md-6">
+            <div class="form-group">
+                <label>Fax</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-card pui-mt-10px">
+    <!-- Item Color -->
+    <div class="form-group">
+        <label>Item Color</label>
+        <input type="text" class="form-control" value="Black" readonly>
+    </div>
+    <div class="form-group">
+        <label>Imprints</label>
+        <div class="data-table-container">
+            <table class="data-table">
+                <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 30%;">
+                    <col style="width: 40%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Imprint</th>
+                        <th>Color</th>
+                        <th>Art File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Item Front (Screenprinted)</td>
+                        <td>Navy PMS 281C/Red PMS 186C</td>
+                        <td>
+                            <div class="input-group">
+                                <input type="text" class="form-control" value="OE-125466 Lion Head Flag T-Shirt Front Logo.eps" readonly>
+                               
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-                                        </div>
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label>Fax</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Item Color -->
-                                    <div class="form-group">
-                                        <label>Item Color</label>
-                                        <input type="text" class="form-control" value="Black" readonly>
-                                    </div>
+                                 </div>
+                                <div class="section-card">
+                                    
+
+                                    
+
+                                    
+                                    
 
 
 

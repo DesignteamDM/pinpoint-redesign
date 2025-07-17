@@ -474,27 +474,26 @@
             });
             
             // Create grouped bar chart for monthly sales (June and July)
+            // Create bar chart for monthly sales (July only)
             const monthCtx = document.getElementById('monthSalesChart').getContext('2d');
             const monthSalesChart = new Chart(monthCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['June', 'July'],
+                    labels: ['July 2024', 'July 2025'],
                     datasets: [
                         {
-                            label: '2024',
-                            data: [salesData['2024'].june, salesData['2024'].july],
-                            backgroundColor: 'rgba(25, 118, 210, 0.9)',   // Darker blue
-                            borderColor: 'rgba(13, 71, 161, 1)',      // Even darker blue border
+                            label: 'Monthly Sales',
+                            data: [salesData['2024'].july, salesData['2025'].july],
+                            backgroundColor: [
+                                'rgba(25, 118, 210, 0.9)',   // Blue for 2024
+                                'rgba(211, 47, 47, 0.9)'     // Red for 2025
+                            ],
+                            borderColor: [
+                                'rgba(13, 71, 161, 1)',      // Blue border
+                                'rgba(183, 28, 28, 1)'       // Red border
+                            ],
                             borderWidth: 1,
-                            barPercentage: 0.8
-                        },
-                        {
-                            label: '2025',
-                            data: [salesData['2025'].june, salesData['2025'].july],
-                            backgroundColor: 'rgba(211, 47, 47, 0.9)',  // Darker red
-                            borderColor: 'rgba(183, 28, 28, 1)',        // Even darker red border
-                            borderWidth: 1,
-                            barPercentage: 0.8
+                            barPercentage: 0.7
                         }
                     ]
                 },
@@ -504,7 +503,7 @@
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Monthly Sales Comparison',
+                            text: 'Monthly Sales Comparison (July)',
                             font: {
                                 size: 14
                             }
@@ -512,20 +511,13 @@
                         tooltip: {
                             callbacks: {
                                 label: function(context) {
-                                    const label = context.dataset.label || '';
                                     const value = context.raw;
-                                    return `${label}: ${formatCurrency(value)}`;
+                                    return `${context.label}: ${formatCurrency(value)}`;
                                 }
                             }
                         },
                         legend: {
-                            position: 'bottom',
-                            labels: {
-                                boxWidth: 12,
-                                font: {
-                                    size: 10
-                                }
-                            }
+                            display: false
                         }
                     },
                     scales: {

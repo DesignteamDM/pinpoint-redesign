@@ -117,15 +117,34 @@
                 </div>
                 <div class="header-right">
                     <div class="user-info">
-                        <span class="user-name">John Doe</span>
+                        <span class="user-name">Bobby Prestridge</span>
                         <div class="user-avatar">
-                            <span>JD</span>
-                        </div>
+                            <div class="dropdown user-avatar-dropdown">
+                                <span class="user-avatar" id="userAvatarBtn">BP</span>
+                                <div class="dropdown-content" id="userDropdown" style="display:none; position:absolute; right:0; top:40px; background:#fff; border:1px solid #ddd; border-radius:6px; min-width:120px; box-shadow:0 2px 8px rgba(0,0,0,0.08); z-index:100;">
+                                    <a href="login.html" class="dropdown-logout" style="display:block; padding:10px 16px; color:#d32f2f; text-decoration:none; font-weight:500;">Logout</a>
+                                </div>
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var avatarBtn = document.getElementById('userAvatarBtn');
+                                    var dropdown = document.getElementById('userDropdown');
+                                    if (avatarBtn && dropdown) {
+                                        avatarBtn.addEventListener('click', function (e) {
+                                            e.stopPropagation();
+                                            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                                        });
+                                        document.addEventListener('click', function () {
+                                            dropdown.style.display = 'none';
+                                        });
+                                    }
+                                });
+                            </script>
                     </div>
                 </div>
             </header>
   <div class="dashboard-content">
-        <div class="new-ui-container">
+        <div class="new-ui-container card">
             <div class="order-header">
                 <div class="order-id">OE-92075</div>
                 <div class="action-buttons">

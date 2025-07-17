@@ -1,5 +1,138 @@
 // Dashboard functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Order count data for OKFFA and BBRGear.com
+    const orderCountData = {
+        OKFFA: {
+            '2024': [120, 135, 140, 150, 160, 170, 180, 175, 165, 155, 145, 130],
+            '2025': [110, 125, 130, 140, 150, 160, 170, 165, 155, 145, 135, 120]
+        },
+        BBRGear: {
+            '2024': [60, 70, 75, 80, 85, 90, 95, 92, 88, 84, 80, 75],
+            '2025': [55, 65, 70, 75, 80, 85, 90, 88, 84, 80, 76, 72]
+        }
+    };
+
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    // Chart initialization
+    const orderCountBarCanvas = document.getElementById('orderCountBarChart');
+    let orderCountBarChart;
+    let currentFilter = 'OKFFA';
+
+    function renderOrderCountBarChart(filter) {
+        const okffaData = orderCountData.OKFFA;
+        const bbrData = orderCountData.BBRGear;
+        let datasets = [];
+        if (filter === 'OKFFA') {
+            datasets = [
+                {
+                    label: '2024',
+                    data: okffaData['2024'],
+                    backgroundColor: 'rgba(25, 118, 210, 0.85)',
+                    borderColor: 'rgba(13, 71, 161, 1)',
+                    borderWidth: 2
+                },
+                {
+                    label: '2025',
+                    data: okffaData['2025'],
+                    backgroundColor: 'rgba(255, 193, 7, 0.85)',
+                    borderColor: 'rgba(255, 193, 7, 1)',
+                    borderWidth: 2
+                }
+            ];
+        } else if (filter === 'BBRGear.com') {
+            datasets = [
+                {
+                    label: '2024',
+                    data: bbrData['2024'],
+                    backgroundColor: 'rgba(76, 175, 80, 0.85)',
+                    borderColor: 'rgba(56, 142, 60, 1)',
+                    borderWidth: 2
+                },
+                {
+                    label: '2025',
+                    data: bbrData['2025'],
+                    backgroundColor: 'rgba(255, 99, 132, 0.85)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2
+                }
+            ];
+        }
+        if (orderCountBarChart) {
+            orderCountBarChart.destroy();
+        }
+        orderCountBarChart = new Chart(orderCountBarCanvas.getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            boxWidth: 14,
+                            font: { size: 12 }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: filter + ' Monthly Order Counts',
+                        font: { size: 15 }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.dataset.label}: ${context.raw}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Order Count'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Month'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Initial render
+    renderOrderCountBarChart('OKFFA');
+
+    // Button event listeners
+    const okffaBtn = document.getElementById('okffaFilterBtn');
+    const bbrgearBtn = document.getElementById('bbrgearFilterBtn');
+    if (okffaBtn) {
+        okffaBtn.addEventListener('click', function() {
+            renderOrderCountBarChart('OKFFA');
+            okffaBtn.style.background = '#1976d2';
+            okffaBtn.style.color = '#fff';
+            bbrgearBtn.style.background = '#fff';
+            bbrgearBtn.style.color = '#388e3c';
+        });
+    }
+    if (bbrgearBtn) {
+        bbrgearBtn.addEventListener('click', function() {
+            renderOrderCountBarChart('BBRGear.com');
+            bbrgearBtn.style.background = '#388e3c';
+            bbrgearBtn.style.color = '#fff';
+            okffaBtn.style.background = '#fff';
+            okffaBtn.style.color = '#1976d2';
+        });
+    }
     // Elements
     const sidebar = document.getElementById('sidebar');
     const sidebarToggle = document.getElementById('sidebarToggle');
@@ -142,6 +275,55 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // No need to prevent default as we want the href to work
             // to redirect to login page
+        });
+    }
+    // Bright Store Order Split Pie Chart
+    const brightStorePie = document.getElementById('brightStorePieChart');
+    if (brightStorePie) {
+        const brightStorePieCtx = brightStorePie.getContext('2d');
+        new Chart(brightStorePieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['OKFFA', 'BBR'],
+                datasets: [{
+                    data: [80, 20],
+                    backgroundColor: [
+                        'rgba(255, 193, 7, 0.85)', // Amber
+                        'rgba(76, 175, 80, 0.85)'  // Green
+                    ],
+                    borderColor: [
+                        'rgba(255, 193, 7, 1)',
+                        'rgba(76, 175, 80, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 16,
+                            font: { size: 13 }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'OKFFA vs BBR Split',
+                        font: { size: 15 }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw;
+                                return `${label}: ${value}%`;
+                            }
+                        }
+                    }
+                }
+            }
         });
     }
 });

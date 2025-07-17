@@ -2343,7 +2343,7 @@ textarea.form-control {
 .order-header {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 58px; /* Height of the top menu */
+  top: -20px; /* Height of the top menu */
   z-index: 90;
   background: #fff;
   -webkit-backface-visibility: hidden; /* Fix for flickering in Safari */
@@ -2354,7 +2354,7 @@ textarea.form-control {
 .tabs {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 120px; /* Height of top menu + order header */
+  top: 46px; /* Height of top menu + order header */
   z-index: 89; /* One less than header */
   background-color: white;
   padding-top: 10px;
@@ -3573,6 +3573,23 @@ padding: 10px !important;
 }
 .section-card.bg-color-2{
   background-color: #F0E6CF;
+}
+.card{
+  background: #fff;
+    padding: 15px;
+    border: 1px solid #cdcdcd;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 1px 2px 0px #e6e6e6dd;
+  -moz-box-shadow: 1px 1px 2px 0px #e6e6e6dd;
+  box-shadow: 1px 1px 2px 0px #e6e6e6dd;
+}
+.card-title{
+  font-size: 14px;
+  font-weight: bold;
+  color: #20325a;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
 }
 .expand-all-container{
     display: inline-block;

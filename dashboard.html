@@ -186,7 +186,7 @@
                     <div class="pui-row">
                         <div class="pui-col-md-6">
                             <div class="card pui-mb-15px">
-                                <h3 class="card-title">Sales Recap</h3>
+                                <h3 class="card-title" style="margin-bottom:0;">Sales Recap</h3>
                                 <div class="sales-recap-content">
                                     <div class="charts-container" style="display: flex; justify-content: space-between;">
                                         <div style="position: relative; height: 300px; width: 48%;">
@@ -195,6 +195,15 @@
                                         <div style="position: relative; height: 300px; width: 48%;">
                                             <canvas id="monthSalesChart"></canvas>
                                         </div>
+                                    </div>
+                                    <div class="sales-recap-links" style="text-align:center; margin-top:10px;">
+                                        <a href="#" style="display:inline-flex; align-items:center; gap:5px; background:#fff; color:#1976d2; font-size:0.88em; font-weight:500; border:1px solid #1976d2; border-radius:4px; padding:4px 10px; cursor:pointer; box-shadow:0 1px 3px rgba(25,118,210,0.08); transition:background 0.2s, color 0.2s; text-decoration:none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-refresh" style="vertical-align:middle;">
+                                                <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+                                                <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+                                            </svg>
+                                            <span>RE-CALCULATE SALES RECAP</span>
+                                        </a>
                                     </div>
                                     <!-- <div class="sales-recap-summary" style="margin-top: 15px;">
                                         <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 5px;">
@@ -224,7 +233,7 @@
                             <div class="card pui-mb-15px">
                                 <h3 class="card-title">Revenue Recap</h3>
                                 <div class="revenue-recap-content">
-                                    <div style="position: relative; height: 300px;">
+                                    <div style="position: relative; height: 330px;">
                                         <canvas id="revenueChart"></canvas>
                                     </div>
                                 </div>

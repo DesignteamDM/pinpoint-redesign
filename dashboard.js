@@ -133,19 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Check if user is logged in
-    const checkAuthStatus = function() {
-        // This is a simple check, you would typically use more secure authentication
-        const isLoggedIn = sessionStorage.getItem('isLoggedIn') || localStorage.getItem('rememberedUsername');
-        
-        if (!isLoggedIn) {
-            // Redirect to login page if not logged in
-            window.location.href = 'login.html';
-        }
-    };
-    
-    // Call auth check
-    checkAuthStatus();
     
     // Set username from localStorage if available
     const userNameElement = document.querySelector('.user-name');

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pinpoint Customer Portal</title>
+    <script>
+        // Clear any authentication state
+        sessionStorage.clear();
+        localStorage.clear();
+        
+        // Force redirect to dashboard
+        window.location.href = 'dashboard.html';
+        
+        // Prevent any further redirects
+        window.onbeforeunload = null;
+        window.onunload = null;
+    </script>
+</head>
+<body>
+    <p>Redirecting to dashboard...</p>
+</body>
+</html>

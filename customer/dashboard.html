@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Pinpoint</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../utilities.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (Drawer) -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../assets/images/pinpoint_logo.png" alt="Pinpoint Logo">
+                    <h4>Customer Portal</h4>
+                </div>
+                
+            </div>
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="active">
+                            <a href="dashboard.html" data-title="Dashboard">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                     
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <a href="login.html" class="logout-btn" data-title="Logout">
+                    <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span class="menu-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="user-name">Bobby Prestridge</span>
+                        <div class="user-avatar">
+                            <div class="dropdown user-avatar-dropdown">
+                                <span class="user-avatar" id="userAvatarBtn">BP</span>
+                                <div class="dropdown-content" id="userDropdown" style="display:none; position:absolute; right:0; top:40px; background:#fff; border:1px solid #ddd; border-radius:6px; min-width:120px; box-shadow:0 2px 8px rgba(0,0,0,0.08); z-index:100;">
+                                    <a href="login.html" class="dropdown-logout" style="display:block; padding:10px 16px; color:#d32f2f; text-decoration:none; font-weight:500;">Logout</a>
+                                </div>
+                            </div>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var avatarBtn = document.getElementById('userAvatarBtn');
+                                    var dropdown = document.getElementById('userDropdown');
+                                    if (avatarBtn && dropdown) {
+                                        avatarBtn.addEventListener('click', function (e) {
+                                            e.stopPropagation();
+                                            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                                        });
+                                        document.addEventListener('click', function () {
+                                            dropdown.style.display = 'none';
+                                        });
+                                    }
+                                });
+                            </script>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Welcome Banner -->
+                <!-- <div class="welcome-banner">
+                    <div class="welcome-content">
+                        <h2>Welcome back, John!</h2>
+                        <p>Here's what's happening with your orders and account today.</p>
+                        <button class="btn btn-primary">Place New Order</button>
+                    </div>
+                    <div class="welcome-illustration">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                </div> -->
+
+                <!-- Quick Stats -->
+                <div class="pui-row">
+                    <div class="pui-col-md-4">
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background-color: #e3f2fd;">
+                                <i class="fas fa-shopping-cart" style="color: #1976d2;"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Active Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pui-col-md-4">
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background-color: #e8f5e9;">
+                                <i class="fas fa-check-circle" style="color: #388e3c;"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">45</span>
+                                <span class="stat-label">Completed Orders</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pui-col-md-4">
+                        <div class="card stat-card">
+                            <div class="stat-icon" style="background-color: #fff3e0;">
+                                <i class="fas fa-file-invoice-dollar" style="color: #f57c00;"></i>
+                            </div>
+                            <div class="stat-details">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Pending Quotes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="pui-row">
+                    <div class="pui-col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Recent Orders</h4>
+                            </div>
+                            <div class="order-cards-container">
+                                <!-- Order Card 1 -->
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div class="order-number">Order #ORD-2023-0012</div>
+                                        <div class="order-date">Jun 15, 2023</div>
+                                    </div>
+                                    <div class="order-status status-shipped">Shipped</div>
+                                    <div class="tracking-number">
+                                        <i class="fas fa-truck"></i>
+                                        <span>Tracking #:<a href="#"> 1Z999AA1234567890</a></span>
+                                    </div>
+                                    <div class="order-items">
+                                        <div class="order-item">
+                                            <div class="item-name">Left Chest - Northcutt's Icon</div>
+                                            <div class="item-quantity">Qty: 100</div>
+                                        </div>
+                                        <div class="order-item">
+                                            <div class="item-name">Aluminum Decals KISS110102 Kempco A.</div>
+                                            <div class="item-quantity">Qty: 20</div>
+                                        </div>
+                                    </div>
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="amount">$1,245.00</span>
+                                    </div>
+                                  
+                                </div>
+
+                                <!-- Order Card 2 -->
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div class="order-number">Order #ORD-2023-0011</div>
+                                        <div class="order-date">Jun 10, 2023</div>
+                                    </div>
+                                    <div class="order-status status-processing">Processing</div>
+                                    <div class="tracking-number">
+                                        <i class="fas fa-box"></i>
+                                        <span>Tracking #: <a href="#"> Not available yet</a></span>
+                                    </div>
+                                    <div class="order-items">
+                                        <div class="order-item">
+                                            <div class="item-name">Equestrian Dressage Horse Event Roc...</div>
+                                            <div class="item-quantity">Qty: 1</div>
+                                        </div>
+                                        <div class="order-item">
+                                            <div class="item-name">Purina 2025 Horse Ambassador T-Shirt</div>
+                                            <div class="item-quantity">Qty: 3</div>
+                                        </div>
+                                    </div>
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="amount">$845.00</span>
+                                    </div>
+                                  
+                                </div>
+
+                                <!-- Order Card 3 -->
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div class="order-number">Order #ORD-2023-0010</div>
+                                        <div class="order-date">May 28, 2023</div>
+                                    </div>
+                                    <div class="order-status status-delivered">Delivered</div>
+                                    <div class="tracking-number">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Delivered on May 30, 2023</span>
+                                    </div>
+                                    <div class="order-items">
+                                        <div class="order-item">
+                                            <div class="item-name">Equestrian Dressage Horse Event Roc...</div>
+                                            <div class="item-quantity">Qty: 1</div>
+                                        </div>
+                                        <div class="order-item">
+                                            <div class="item-name">OKCNM Poncho Order</div>
+                                            <div class="item-quantity">Qty: 1</div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="order-total">
+                                        <span>Total:</span>
+                                        <span class="amount">$2,150.00</span>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Status Chart -->
+                    <div class="pui-col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Order Status</h4>
+                            </div>
+                            <div id="orderStatusChart" style="height: 300px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <!-- <div class="pui-row">
+                    <div class="pui-col-md-12">
+                        <div class="card">
+                            <h3 class="card-title">Quick Actions</h3>
+                            <div class="quick-actions">
+                                <a href="new-order.html" class="quick-action">
+                                    <div class="action-icon" style="background-color: #e3f2fd;">
+                                        <i class="fas fa-plus" style="color: #1976d2;"></i>
+                                    </div>
+                                    <span>New Order</span>
+                                </a>
+                                <a href="request-quote.html" class="quick-action">
+                                    <div class="action-icon" style="background-color: #e8f5e9;">
+                                        <i class="fas fa-file-invoice" style="color: #388e3c;"></i>
+                                    </div>
+                                    <span>Request Quote</span>
+                                </a>
+                                <a href="track-order.html" class="quick-action">
+                                    <div class="action-icon" style="background-color: #fff3e0;">
+                                        <i class="fas fa-truck" style="color: #f57c00;"></i>
+                                    </div>
+                                    <span>Track Order</span>
+                                </a>
+                                <a href="support.html" class="quick-action">
+                                    <div class="action-icon" style="background-color: #f3e5f5;">
+                                        <i class="fas fa-headset" style="color: #8e24aa;"></i>
+                                    </div>
+                                    <span>Get Support</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../dashboard.js"></script>
+    <script>
+
+        // Initialize user dropdown
+        document.addEventListener('DOMContentLoaded', function () {
+            var avatarBtn = document.getElementById('userAvatarBtn');
+            var dropdown = document.getElementById('userDropdown');
+            if (avatarBtn && dropdown) {
+                avatarBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                });
+                document.addEventListener('click', function () {
+                    dropdown.style.display = 'none';
+                });
+            }
+        });
+
+        // Initialize charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Order Status Chart
+            var options = {
+                series: [25, 15, 10, 5],
+                chart: {
+                    type: 'donut',
+                    height: 300
+                },
+                labels: ['Processing', 'Shipped', 'Delivered', 'On Hold'],
+                colors: ['#4CAF50', '#2196F3', '#9C27B0', '#FF9800'],
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#orderStatusChart"), options);
+            chart.render();
+        });
+
+        // Prevent any redirects
+        window.onbeforeunload = null;
+        window.onunload = null;
+    </script>
+</body>
+</html>

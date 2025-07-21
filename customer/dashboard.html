@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/styles/sidebar.css">
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
 </head>
 
 <body>
@@ -40,9 +42,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="settings.html" data-title="Settings">
+                            <a href="profile.html" data-title="Profile">
                                 <svg class="icon"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg>
-                                <span class="menu-text">Settings</span>
+                                <span class="menu-text">Profile</span>
                             </a>
                         </li>
                     </ul>
@@ -82,24 +84,11 @@
                             <div class="dropdown user-avatar-dropdown">
                                 <span class="user-avatar" id="userAvatarBtn">CM</span>
                                 <div class="dropdown-content" id="userDropdown" style="display:none; position:absolute; right:0; top:40px; background:#fff; border:1px solid #ddd; border-radius:6px; min-width:120px; box-shadow:0 2px 8px rgba(0,0,0,0.08); z-index:100;">
+                                    <a href="profile.html" class="dropdown-profile" style="display:block; padding:10px 16px; color:#000; text-decoration:none; font-weight:500;">Profile</a>
                                     <a href="login.html" class="dropdown-logout" style="display:block; padding:10px 16px; color:#d32f2f; text-decoration:none; font-weight:500;">Logout</a>
                                 </div>
                             </div>
-                            <script>
-                                document.addEventListener('DOMContentLoaded', function () {
-                                    var avatarBtn = document.getElementById('userAvatarBtn');
-                                    var dropdown = document.getElementById('userDropdown');
-                                    if (avatarBtn && dropdown) {
-                                        avatarBtn.addEventListener('click', function (e) {
-                                            e.stopPropagation();
-                                            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                                        });
-                                        document.addEventListener('click', function () {
-                                            dropdown.style.display = 'none';
-                                        });
-                                    }
-                                });
-                            </script>
+                            
                     </div>
                 </div>
             </header>

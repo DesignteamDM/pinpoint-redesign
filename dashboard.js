@@ -169,9 +169,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // Bright Store Order Split Pie Chart
     const brightStorePie = document.getElementById('brightStorePieChart');
-    if (brightStorePie) {
+    if (brightStorePie && brightStorePie.getContext) {
         const brightStorePieCtx = brightStorePie.getContext('2d');
-        new Chart(brightStorePieCtx, {
+        if (brightStorePieCtx) {
+            new Chart(brightStorePieCtx, {
             type: 'pie',
             data: {
                 labels: ['OKFFA', 'BBR'],
@@ -214,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             }
-        });
+            });
+        }
     }
 });

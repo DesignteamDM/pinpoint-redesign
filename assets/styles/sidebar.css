@@ -1,0 +1,90 @@
+
+/* Submenu styles */
+.sidebar-nav .submenu {
+    display: none;
+    background: #1a2642;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    transition: max-height 0.2s;
+    overflow: hidden;
+}
+
+/* Show submenu on hover for desktop */
+.sidebar-nav li:hover > .submenu,
+.sidebar-nav li:focus-within > .submenu {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 180px;
+    background: #1a2642;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 100;
+    border-radius: 6px;
+    padding: 0;
+}
+
+.sidebar-nav ul ul.submenu {
+    left: 100%;
+    top: 0;
+}
+
+.sidebar-nav ul li {
+    position: relative;
+}
+
+.sidebar-nav ul ul.submenu li {
+    position: relative;
+}
+
+.sidebar-nav ul ul.submenu a {
+    color: #fff;
+    padding: 10px 16px;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #22305a;
+    background: #1a2642;
+}
+.sidebar-nav ul ul.submenu a:hover {
+    background: #22305a;
+}
+
+.sidebar-nav li.open > .submenu {
+    display: block;
+}
+
+.sidebar-nav .submenu li a {
+    padding-left: 35px;
+    font-size: 0.97em;
+    background: none;
+}
+
+.sidebar-nav .submenu .submenu li a {
+    padding-left: 55px;
+    font-size: 0.95em;
+}
+
+.sidebar-nav li.has-submenu > a::after {
+    content: '▸';
+    margin-left: auto;
+    font-size: 0.9em;
+    transition: transform 0.2s;
+}
+
+.sidebar-nav li.open > a::after {
+    transform: rotate(90deg);
+}
+
+.sidebar-nav .submenu .submenu {
+    background: #17203a;
+}
+
+@media (max-width: 768px) {
+    .sidebar-nav .submenu {
+        background: #18254a;
+    }
+    .sidebar-nav .submenu .submenu {
+        background: #151e36;
+    }
+}

@@ -15,64 +15,151 @@
         const mainContent = document.querySelector('.main-content');
         
         // Set initial state based on screen size and saved preference
-        if (window.innerWidth <= 768) {
+        const isMobileView = window.innerWidth <= 768;
+        
+        if (isMobileView) {
             // On mobile, sidebar is hidden by default
-            sidebar.classList.remove('active');
+            sidebar.classList.add('mobile-hidden');
+            if (mainContent) {
+                mainContent.style.marginLeft = '0';
+                mainContent.style.width = '100%';
+            }
+            document.body.classList.remove('sidebar-collapsed');
         } else {
             // On desktop, check user preference from localStorage, default to collapsed
             const sidebarState = localStorage.getItem('sidebarState') || 'collapsed';
             
             if (sidebarState === 'collapsed') {
                 document.body.classList.add('sidebar-collapsed');
-                mainContent.classList.add('full-width');
+                if (mainContent) {
+                    mainContent.classList.add('full-width');
+                }
             } else {
                 document.body.classList.remove('sidebar-collapsed');
-                mainContent.classList.remove('full-width');
+                if (mainContent) {
+                    mainContent.classList.remove('full-width');
+                }
             }
         }
         // Initialize the sidebar
         function initializeSidebar() {
             // Toggle sidebar on all screen sizes
             if (sidebarToggle) {
-                sidebarToggle.addEventListener('click', function() {
-                    const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
+                sidebarToggle.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevent event from bubbling up
+                    const isMobileView = window.innerWidth <= 768;
                     
-                    // Toggle full-width class on main content
-                    if (mainContent) {
-                        mainContent.classList.toggle('full-width', isCollapsed);
+                    if (isMobileView) {
+                        // Toggle mobile sidebar visibility
+                        const wasVisible = sidebar.classList.contains('mobile-visible');
+                        sidebar.classList.toggle('mobile-visible');
                         
-                        // Adjust margin for main content
-                        if (isCollapsed) {
-                            mainContent.style.marginLeft = '60px';
-                            mainContent.style.width = 'calc(100% - 60px)';
+                        // Toggle overlay for mobile
+                        const overlay = document.querySelector('.sidebar-overlay');
+                        
+                        if (!wasVisible) {
+                            // Create overlay if it doesn't exist and sidebar is opening
+                            const newOverlay = document.createElement('div');
+                            newOverlay.className = 'sidebar-overlay active';
+                            document.body.appendChild(newOverlay);
+                            
+                            // Close sidebar when clicking overlay
+                            newOverlay.addEventListener('click', function() {
+                                closeMobileSidebar();
+                            });
+                            
+                            // Prevent body scroll when sidebar is open
+                            document.body.classList.add('sidebar-open');
+                            
+                            // Add click outside handler
+                            document.addEventListener('click', handleClickOutside);
                         } else {
-                            mainContent.style.marginLeft = '250px';
-                            mainContent.style.width = 'calc(100% - 250px)';
+                            // If closing the sidebar
+                            if (overlay) {
+                                overlay.remove();
+                            }
+                            document.body.classList.remove('sidebar-open');
+                            document.removeEventListener('click', handleClickOutside);
                         }
+                    } else {
+                        // Desktop behavior
+                        const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
+                        
+                        // Toggle full-width class on main content
+                        if (mainContent) {
+                            mainContent.classList.toggle('full-width', isCollapsed);
+                            
+                            // Adjust margin for main content
+                            if (isCollapsed) {
+                                mainContent.style.marginLeft = '60px';
+                                mainContent.style.width = 'calc(100% - 60px)';
+                            } else {
+                                mainContent.style.marginLeft = '250px';
+                                mainContent.style.width = 'calc(100% - 250px)';
+                            }
+                        }
+                        
+                        // Save user preference
+                        localStorage.setItem('sidebarState', isCollapsed ? 'collapsed' : 'expanded');
                     }
-                    
-                    // Save user preference
-                    localStorage.setItem('sidebarState', isCollapsed ? 'collapsed' : 'expanded');
                 });
                 
-                // Initialize the sidebar state from localStorage
-                const sidebarState = localStorage.getItem('sidebarState') || 'expanded';
-                if (sidebarState === 'collapsed') {
-                    document.body.classList.add('sidebar-collapsed');
-                    if (mainContent) {
-                        mainContent.classList.add('full-width');
-                        mainContent.style.marginLeft = '60px';
-                        mainContent.style.width = 'calc(100% - 60px)';
+                // Initialize the sidebar state from localStorage (desktop only)
+                if (window.innerWidth > 768) {
+                    const sidebarState = localStorage.getItem('sidebarState') || 'expanded';
+                    if (sidebarState === 'collapsed') {
+                        document.body.classList.add('sidebar-collapsed');
+                        if (mainContent) {
+                            mainContent.classList.add('full-width');
+                            mainContent.style.marginLeft = '60px';
+                            mainContent.style.width = 'calc(100% - 60px)';
+                        }
+                    } else if (mainContent) {
+                        mainContent.style.marginLeft = '250px';
+                        mainContent.style.width = 'calc(100% - 250px)';
                     }
-                } else if (mainContent) {
-                    mainContent.style.marginLeft = '250px';
-                    mainContent.style.width = 'calc(100% - 250px)';
                 }
             }
         }
         
+        // Handle click outside the sidebar
+        function handleClickOutside(event) {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            // Check if click is outside both sidebar and toggle button
+            if (sidebar && !sidebar.contains(event.target) && 
+                sidebarToggle && !sidebarToggle.contains(event.target)) {
+                closeMobileSidebar();
+            }
+        }
+        
+        // Close sidebar function
+        function closeMobileSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (sidebar) {
+                sidebar.classList.remove('mobile-visible');
+            }
+            
+            if (overlay) {
+                overlay.remove();
+            }
+            
+            // Re-enable body scrolling and remove event listeners
+            document.body.classList.remove('sidebar-open');
+            document.removeEventListener('click', handleClickOutside);
+        }
+        
         // Call the initialization function
         initializeSidebar();
+        
+        // Add event listener to close button
+        const closeSidebarBtn = document.getElementById('closeSidebar');
+        if (closeSidebarBtn) {
+            closeSidebarBtn.addEventListener('click', closeMobileSidebar);
+        }
         
         // Make header dot in collapsed mode also toggle the sidebar
         const sidebarHeader = document.querySelector('.sidebar-header');

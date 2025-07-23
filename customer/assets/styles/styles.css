@@ -4007,3 +4007,17 @@ select[multiple].form-control {
   color: #0066cc;
 }
     
+.address-actions{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.address-actions .default-badge{
+  padding: 2px 10px;
+  background-color: #d6eaff;
+  color: #1e498f;
+  border-radius: 12px;
+}
+.address-actions .btn-icon{
+  margin-left: 5px;
+}

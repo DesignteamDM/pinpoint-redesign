@@ -3441,7 +3441,8 @@ padding: 10px !important;
 }
 /* pui buttons */
 .pui-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   width: auto;
   line-height: 17px;
   padding: 6px 8px;
@@ -3474,6 +3475,9 @@ padding: 10px !important;
 
 .pui-btn:hover .icon {
   fill: #333;
+}
+.pui-btn-icon{
+    margin-right: 5px;
 }
 .pui-btn-primary {
   background-color: #0066cc;
@@ -3761,6 +3765,153 @@ select[multiple].form-control {
   display: inline-block;
   vertical-align: middle;
 }
+/* Pagination Styles */
+.pagination-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 4px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 28px;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+}
+
+.pagination-btn:not(:disabled):hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.pagination-btn svg {
+    margin: 0 4px;
+}
+
+.pagination-btn.prev svg {
+    margin-right: 6px;
+}
+
+.pagination-btn.next svg {
+    margin-left: 6px;
+}
+
+.pagination-numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pagination-number {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #cdd1d4;
+    background-color: #fff;
+    color: #707070;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.pagination-number:hover:not(.active) {
+    background-color: #f1f1f1;
+}
+
+.pagination-number.active {
+    background-color: #fff;
+    border-color: #2866cc;
+    color: #2866cc;
+    font-weight: 500;
+}
+
+.pagination-ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #6c757d;
+    user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pagination {
+        gap: 4px;
+    }
+    
+    .pagination-btn {
+        min-width: auto;
+        padding: 4px 4px;
+    }
+    
+    .pagination-btn span {
+        display: none;
+    }
+}
+
+/* Breadcrumb Styles */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  color: #6c757d;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb a {
+  color: #47515a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: #495057;
+}
+
+.breadcrumb .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.breadcrumb .separator {
+  margin: 0 0.5rem;
+  color: #adb5bd;
+}
+
+.breadcrumb > * + *::before {
+  content: "/";
+  color: #adb5bd;
+  margin: 0 0.5rem;
+}
+
 .pui-checkbox label{
   margin-left: 5px;
   display: inline-block;
@@ -3842,6 +3993,51 @@ select[multiple].form-control {
   vertical-align: middle;
   margin-right: 5px;
 }
-.submenu{
-  display: none;
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #435e9a;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.listing-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.pui-input-group{
+  display: flex;
+  align-items: center;
+}
+.pui-input-group input{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right: none;
+  height: 32px;
+}
+.pui-input-group button{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  height: 32px;
+}
+.main-content-inner{
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
 }

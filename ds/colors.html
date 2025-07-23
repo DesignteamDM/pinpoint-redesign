@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Colors</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+        }
+        
+        .color-swatch {
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .color-info { 
+            padding: 1rem; 
+            border-top: 1px solid var(--border-gray);
+        }
+        
+        .color-name { 
+            font-weight: 600; 
+            margin-bottom: 0.25rem; 
+            color: var(--dark-gray);
+        }
+        
+        .color-value { 
+            font-family: monospace; 
+            font-size: 0.875rem; 
+            color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .copy-btn {
+            background: var(--light-gray);
+            border: 1px solid var(--border-gray);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .copy-btn:hover { 
+            background: var(--border-gray); 
+        }
+        
+        .copy-btn.copied { 
+            background: var(--primary-500); 
+            color: white; 
+            border-color: var(--primary-500); 
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-gray);
+        }
+    </style>
+</head>
+<body>
+    <div class="ds-container">
+        <!-- Sidebar Navigation -->
+        <div class="ds-sidebar">
+            <div class="ds-sidebar-header">
+                <h1 class="ds-sidebar-title">Pinpoint DS</h1>
+            </div>
+            <nav class="ds-sidebar-nav">
+                <div class="ds-nav-section">
+                    <div class="ds-nav-title">Foundations</div>
+                    <a href="colors.html" class="ds-nav-link active">Colors</a>
+                    <a href="typography.html" class="ds-nav-link">Typography</a>
+                </div>
+                <div class="ds-nav-section">
+                    <div class="ds-nav-title">Components</div>
+                    <a href="buttons.html" class="ds-nav-link">Buttons</a>
+                    <a href="form-fields.html" class="ds-nav-link">Form Fields</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <main class="ds-main">
+            <div class="ds-page-header">
+                <h1 class="ds-page-title">Colors</h1>
+                <p class="ds-page-description">Color palette and usage guidelines for the Pinpoint application.</p>
+            </div>
+
+            <div class="ds-card">
+                <h2 class="ds-card-title">Color Palette</h2>
+                <p>Our color palette is designed to be accessible and consistent across the application.</p>
+                <div class="section">
+                    <h3 class="section-title">Primary Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--primary-500)">Primary 500</div>
+                            <div class="color-info">
+                                <div class="color-name">Primary 500</div>
+                                <div class="color-value">#2a93d5 <button class="copy-btn" onclick="copyToClipboard('#2a93d5', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--primary-700)">Primary 700</div>
+                            <div class="color-info">
+                                <div class="color-name">Primary 700</div>
+                                <div class="color-value">#1976d2 <button class="copy-btn" onclick="copyToClipboard('#1976d2', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--dark-blue)">Dark Blue</div>
+                            <div class="color-info">
+                                <div class="color-name">Dark Blue</div>
+                                <div class="color-value">#040f28 <button class="copy-btn" onclick="copyToClipboard('#040f28', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--navy);">Navy</div>
+                            <div class="color-info">
+                                <div class="color-name">Navy</div>
+                                <div class="color-value">#20325a <button class="copy-btn" onclick="copyToClipboard('#20325a', event)">Copy</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Neutral Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--white); color: #333; border: 1px solid var(--border-gray);">White</div>
+                            <div class="color-info">
+                                <div class="color-name">White</div>
+                                <div class="color-value">#ffffff <button class="copy-btn" onclick="copyToClipboard('#ffffff', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--light-gray); color: #333;">Light Gray</div>
+                            <div class="color-info">
+                                <div class="color-name">Light Gray</div>
+                                <div class="color-value">#f5f5f5 <button class="copy-btn" onclick="copyToClipboard('#f5f5f5', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--border-gray); color: #333;">Border Gray</div>
+                            <div class="color-info">
+                                <div class="color-name">Border Gray</div>
+                                <div class="color-value">#dee2e6 <button class="copy-btn" onclick="copyToClipboard('#dee2e6', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--medium-gray);">Medium Gray</div>
+                            <div class="color-info">
+                                <div class="color-name">Medium Gray</div>
+                                <div class="color-value">#6c757d <button class="copy-btn" onclick="copyToClipboard('#6c757d', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--dark-gray);">Dark Gray</div>
+                            <div class="color-info">
+                                <div class="color-name">Dark Gray</div>
+                                <div class="color-value">#333333 <button class="copy-btn" onclick="copyToClipboard('#333333', event)">Copy</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Status Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--success)">Success</div>
+                            <div class="color-info">
+                                <div class="color-name">Success</div>
+                                <div class="color-value">#388e3c <button class="copy-btn" onclick="copyToClipboard('#388e3c', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--error)">Error</div>
+                            <div class="color-info">
+                                <div class="color-name">Error</div>
+                                <div class="color-value">#d32f2f <button class="copy-btn" onclick="copyToClipboard('#d32f2f', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--warning); color: #333;">Warning</div>
+                            <div class="color-info">
+                                <div class="color-name">Warning</div>
+                                <div class="color-value">#ffc107 <button class="copy-btn" onclick="copyToClipboard('#ffc107', event)">Copy</button></div>
+                            </div>
+                        </div>
+                        
+                        <div class="color-card">
+                            <div class="color-swatch" style="background: var(--info);">Info</div>
+                            <div class="color-info">
+                                <div class="color-name">Info</div>
+                                <div class="color-value">#00CCFF <button class="copy-btn" onclick="copyToClipboard('#00CCFF', event)">Copy</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function copyToClipboard(text, event) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show copied state
+                const buttons = document.querySelectorAll('.copy-btn');
+                buttons.forEach(btn => {
+                    if (btn.textContent === 'Copied!') {
+                        btn.textContent = 'Copy';
+                        btn.classList.remove('copied');
+                    }
+                });
+                
+                const clickedButton = event.target;
+                clickedButton.textContent = 'Copied!';
+                clickedButton.classList.add('copied');
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    clickedButton.textContent = 'Copy';
+                    clickedButton.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

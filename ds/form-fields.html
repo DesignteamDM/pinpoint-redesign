@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Form Fields</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        /* Form field styles */
+        .form-preview { max-width: 800px; margin: 0 auto; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--dark-gray); }
+        
+        /* Input styling */
+        .form-control {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--dark-gray);
+            background-color: #fff;
+            border: 1px solid var(--border-gray);
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            height: 38px; /* Standard height */
+        }
+        
+        /* Small input */
+        .form-control-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            height: 32px;
+        }
+        
+        /* Large input */
+        .form-control-lg {
+            padding: 0.75rem 1rem;
+            font-size: 1.25rem;
+            height: 48px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-500);
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(42, 147, 213, 0.25);
+        }
+        
+        /* Form layouts */
+        .form-row { display: flex; flex-wrap: wrap; margin: 0 -0.75rem; }
+        .form-col { flex: 1 0 0%; padding: 0 0.75rem; margin-bottom: 1rem; }
+        
+        /* Form sections */
+        .section-title { font-size: 1.25rem; margin-bottom: 1rem; color: var(--dark-gray); font-weight: 500; }
+        
+        /* Code examples */
+        .code-example {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="ds-container">
+        <!-- Sidebar Navigation -->
+        <div class="ds-sidebar">
+            <div class="ds-sidebar-header">
+                <h1 class="ds-sidebar-title">Pinpoint DS</h1>
+            </div>
+            <nav class="ds-sidebar-nav">
+                <div class="ds-nav-section">
+                    <div class="ds-nav-title">Foundations</div>
+                    <a href="colors.html" class="ds-nav-link">Colors</a>
+                    <a href="typography.html" class="ds-nav-link">Typography</a>
+                </div>
+                <div class="ds-nav-section">
+                    <div class="ds-nav-title">Components</div>
+                    <a href="buttons.html" class="ds-nav-link">Buttons</a>
+                    <a href="form-fields.html" class="ds-nav-link active">Form Fields</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <main class="ds-main">
+            <div class="ds-page-header">
+                <h1 class="ds-page-title">Form Fields</h1>
+                <p class="ds-page-description">Form field styles and variations used throughout the Pinpoint application.</p>
+            </div>
+
+            <!-- Text Inputs -->
+            <div class="ds-card">
+                <h2 class="ds-card-title">Text Inputs</h2>
+                <p>Text inputs allow users to enter text or numbers.</p>
+                
+                <div class="form-preview">
+                    <div class="form-group">
+                        <label for="exampleInput">Text Input</label>
+                        <input type="text" class="form-control" id="exampleInput" placeholder="Enter text">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="smallInput">Small Input</label>
+                                <input type="text" class="form-control form-control-sm" id="smallInput" placeholder="Small input">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="largeInput">Large Input</label>
+                                <input type="text" class="form-control form-control-lg" id="largeInput" placeholder="Large input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="ds-card">
+                <h2 class="ds-card-title">Textarea</h2>
+                <p>Textareas are used for longer text entries.</p>
+                
+                <div class="form-preview">
+                    <div class="form-group">
+                        <label for="exampleTextarea">Textarea</label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter your message"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Menus -->
+            <div class="ds-card">
+                <h2 class="ds-card-title">Select Menus</h2>
+                <p>Select menus allow users to choose one option from a dropdown list.</p>
+                
+                <div class="form-preview">
+                    <div class="form-group">
+                        <label for="exampleSelect">Select Menu</label>
+                        <select class="form-control" id="exampleSelect">
+                            <option value="">Select an option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Layout -->
+            <div class="ds-card">
+                <h2 class="ds-card-title">Form Layout</h2>
+                <p>Examples of form layouts using the grid system.</p>
+                
+                <div class="form-preview">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First name">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last name">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

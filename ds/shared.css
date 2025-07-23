@@ -1,0 +1,72 @@
+/* Design System Shared Styles */
+:root {
+    /* Colors */
+    --primary-500: #2a93d5;
+    --primary-700: #1976d2;
+    --dark-blue: #040f28;
+    --navy: #20325a;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --border-gray: #dee2e6;
+    --medium-gray: #6c757d;
+    --dark-gray: #333333;
+    --success: #388e3c;
+    --error: #d32f2f;
+    --warning: #ffc107;
+    --info: #00CCFF;
+    
+    /* Typography */
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --text-base: 1rem;
+    --text-sm: 0.875rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --leading-normal: 1.5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); line-height: var(--leading-normal); color: var(--dark-gray); background: var(--light-gray); display: flex; min-height: 100vh; }
+
+/* Layout */
+.ds-container { display: flex; min-height: 100vh; width: 100%; }
+
+/* Sidebar */
+.ds-sidebar {
+    width: 240px;
+    background: var(--dark-blue);
+    color: white;
+    padding: 1.5rem 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.ds-sidebar-header { padding: 0 1.5rem 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1rem; }
+.ds-sidebar-title { font-size: 1.125rem; font-weight: 600; margin: 0; color: white; }
+.ds-sidebar-nav { padding: 0 1rem; }
+.ds-nav-section { margin-bottom: 1rem; }
+.ds-nav-title { color: var(--medium-gray); font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; padding: 0 1rem; margin-bottom: 0.5rem; }
+.ds-nav-link { display: flex; align-items: center; padding: 0.5rem 1rem; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-radius: 0.25rem; margin: 0.25rem 0; transition: all 0.2s; }
+.ds-nav-link:hover { background: rgba(255, 255, 255, 0.1); color: white; }
+.ds-nav-link.active { background: var(--primary-500); color: white; font-weight: 500; }
+
+/* Main Content */
+.ds-main { flex: 1; margin-left: 240px; padding: 2rem; max-width: calc(100% - 240px); }
+.ds-page-header { margin-bottom: 2rem; }
+.ds-page-title { font-size: 1.875rem; font-weight: 700; color: var(--dark-blue); margin-bottom: 0.5rem; }
+.ds-page-description { color: var(--medium-gray); font-size: 1.125rem; margin: 0; }
+
+/* Cards */
+.ds-card { background: white; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06); padding: 1.5rem; margin-bottom: 1.5rem; }
+.ds-card-header { margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-gray); }
+.ds-card-title { font-size: 1.25rem; font-weight: 600; margin: 0; color: var(--dark-blue); }
+
+/* Utilities */
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Library - Logos - Pinpoint Order Details</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/utilities.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
+    <style>
+        
+        .logo-preview {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 5px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 4px;
+        }
+
+
+        
+
+        
+
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+    
+            
+            .action-buttons {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (Drawer) - Reused from dashboard.html -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="assets/images/pinpoint_logo.png" alt="Pinpoint Logo">
+                    <h4>Pinpoint Order Control System</h4>
+                </div>
+                <button id="closeSidebar" class="sidebar-close">
+                    <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="dashboard.html" data-title="Dashboard">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="order-entry.html" data-title="Order Entry">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span class="menu-text">Orders</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-title="Customers">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span class="menu-text">Customers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-title="Vendors">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                                <span class="menu-text">Vendors</span>
+                            </a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#" class="menu-item" data-title="Reports">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <path d="M8 13h2"/>
+                                    <path d="M8 17h2"/>
+                                    <path d="M16 13h-2"/>
+                                    <path d="M16 17h-2"/>
+                                </svg>
+                                <span class="menu-text">Reports</span>
+                                <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <!-- Orders -->
+                                <li>
+                                    <a href="#" class="menu-item">
+                                       
+                                        <span class="menu-text">Orders</span>
+                                    </a>
+                                </li>
+                                
+                                <!-- Vendors -->
+                                <li>
+                                    <a href="#" class="menu-item">
+                                        
+                                        <span class="menu-text">Vendors</span>
+                                    </a>
+                                </li>
+                                
+                                <!-- Customers -->
+                                <li class="has-submenu">
+                                    <a href="#" class="menu-item">
+                                       
+                                        <span class="menu-text">Customers</span>
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="#" class="menu-item">Customer Details</a></li>
+                                        <li><a href="#" class="menu-item">Shipping Addresses</a></li>
+                                        <li><a href="#" class="menu-item">Order History</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <!-- BBR Reports -->
+                                <li class="has-submenu">
+                                    <a href="#" class="menu-item">
+                                        
+                                        <span class="menu-text">BBR Reports</span>
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="#" class="menu-item">Jacket Report</a></li>
+                                        <li><a href="#" class="menu-item">Jacket Shipping Report</a></li>
+                                        <li><a href="#" class="menu-item">Order Contact Report</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <!-- Delivery Status -->
+                                <li>
+                                    <a href="#" class="menu-item">
+                                        
+                                        <span class="menu-text">Delivery Status</span>
+                                    </a>
+                                </li>
+                                      
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#" data-title="Bright Store">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <path d="M9 22V12h6v10"></path>
+                                            <path d="M9 10l3-3 3 3"></path>
+                                            <path d="M9 5l3-3 3 3"></path>
+                                        </svg>
+                                        <span class="menu-text">Bright Store</span>
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="#" class="menu-item">Fetch Orders</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#" data-title="Utilities">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                        </svg>
+                                        <span class="menu-text">Utilities</span>
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li class="has-submenu">
+                                            <a href="#" class="menu-item">Artwork Library
+                                                <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                                </svg>
+                                            </a>
+                                            <ul class="submenu">
+                                                <li class="active"><a href="artwork-library-logos.html" class="menu-item">Logos</a></li>
+                                                <li><a href="artwork-library-text.html" class="menu-item">Text</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="menu-item">Holiday List</a></li>
+                                        <li><a href="#" class="menu-item">Default Values</a></li>
+                                        <li><a href="#" class="menu-item">Notes</a></li>
+                                        <li><a href="#" class="menu-item">Mail Recipients</a></li>
+                                        <li><a href="#" class="menu-item">Item Reminder Rules</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#" data-title="T-Hub Integrations">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M4 9h16"></path>
+                                            <path d="M4 15h16"></path>
+                                            <path d="M10 3L8 21"></path>
+                                            <path d="M16 3l-2 18"></path>
+                                        </svg>
+                                        <span class="menu-text">T-Hub Integrations</span>
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="#" class="menu-item">USA E-Pay to T-Hub</a></li>
+                                        <li><a href="#" class="menu-item">Lightspeed to T-Hub</a></li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <a href="login.html" class="logout-btn" data-title="Logout">
+                    <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span class="menu-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="user-name">Bobby Prestridge</span>
+                        <div class="user-avatar">BP</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="main-content-inner">
+                
+                <div class="listing-header">
+                   <div class="listing-header-left">
+                    <nav class="breadcrumb pui-mb-5px" aria-label="breadcrumb">
+                        <a href="dashboard.html" class="pui-link">
+                            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            
+                        </a>
+                        <a href="#" class="pui-link">Utilities</a>
+                        <a href="#" class="pui-link">Artwork Library</a>
+                        <span>Logos</span>
+                    </nav>
+
+                    <h2>Artwork Library - Logos</h2>
+                    </div>
+                    <div class="listing-header-right">
+                        <a class="pui-btn pui-btn-secondary pui-me-5px" href="artwork-library-logo-specifications.html" >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="pui-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Add Logo Specification
+                        </a>
+                    <button class="pui-btn pui-btn-primary" id="addLogoBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="pui-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Add Logo
+                    </button>
+                    
+                </div>
+                </div>
+                <div class="card">
+                    
+<!-- Search and pagination-->
+ <div class="listing-header">
+    <div class="listing-header-left">
+        <div class="pui-input-group">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search Logos...">
+            <button class="pui-btn pui-btn-secondary" id="searchButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+        </div>
+    </div>
+    <div class="listing-header-right">
+        <div class="pagination-container">
+            <div class="pagination">
+                <button class="pagination-btn prev" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    
+                </button>
+                <div class="pagination-numbers">
+                    <button class="pagination-number active">1</button>
+                    <button class="pagination-number">2</button>
+                    <button class="pagination-number">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-number">10</button>
+                </div>
+                <button class="pagination-btn next">
+                   
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <colgroup>
+                                <col span="1" style="width: 5%;">
+                                <col span="1" style="width: 20%;">
+                                <col span="1" style="width: 20%;">
+                                <col span="1" style="width: 10%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Preview</th>
+                                    <th>Logo Name</th>
+                                    
+                                    <th>File Type</th>
+                                    
+                                    
+                                    
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="assets/images/item-logos/item-logo-1.jpg" alt="Company Logo" class="logo-preview"></td>
+                                    <td>Home Renew Chest Logo</td>
+                                    <td>PNG</td>
+                                    
+                                    
+                                    <td>
+                                        <div>
+                                            <button class="btn-action" title="Edit">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                    </path>
+                                                </svg></button>
+                                                <button class="btn-action" title="Delete">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M3 6h18"></path>
+                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                    </svg></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="assets/images/item-logos/item-logo-2.jpg" alt="Product Badge" class="logo-preview"></td>
+                                    <td>Home Renew Cap Logo r1</td>
+                                    <td>PNG</td>
+                                    
+                                    
+                                    <td>
+                                        <div>
+                                            <button class="btn-action" title="Edit">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                    </path>
+                                                </svg></button>
+                                                <button class="btn-action" title="Delete">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M3 6h18"></path>
+                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                    </svg></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="assets/images/item-logos/item-logo-3.jpg" alt="Event Logo" class="logo-preview"></td>
+                                    <td>NSI Sleeve Logo R1.</td>
+                                    <td>JPG</td>
+                                    
+                                    <td>
+                                        <div>
+                                            <button class="btn-action" title="Edit">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                    </path>
+                                                </svg></button>
+                                                <button class="btn-action" title="Delete">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M3 6h18"></path>
+                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                    </svg></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Add more logo entries as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Logo Modal -->
+    <div id="addLogoModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3>Add New Logo</h3>
+                <span class="close-modal" onclick="closeAddLogoModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="addLogoForm">
+                    <div class="form-group pui-mb-15px">
+                        <label>Upload Logo <span class="required">*</span></label>
+                        <div class="file-upload-container">
+                            <input type="file" id="logoFile" class="file-upload-input" accept="image/*" required>
+                            <div class="file-upload-preview" id="logoPreview">
+                                <div class="file-upload-placeholder">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    <p>Click to upload or drag and drop</p>
+                                    <p class="file-upload-hint">PNG, JPG up to 5MB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group pui-mb-15px">
+                        <label for="logoName">Logo Name <span class="required">*</span></label>
+                        <input type="text" id="logoName" class="form-control" placeholder="Enter logo name" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer pui-p-15px pui-pt-0">
+                <button class="pui-btn pui-btn-secondary pui-mr-10px" onclick="closeAddLogoModal()">Cancel</button>
+                <button class="pui-btn pui-btn-primary" onclick="saveLogo()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/scripts/sidebar.js"></script>
+    <script src="assets/scripts/dashboard.js"></script>
+    <script>
+        // Initialize when DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize file upload preview
+            initFileUploadPreview();
+            
+            // Add Logo button click handler
+            document.getElementById('addLogoBtn').addEventListener('click', openAddLogoModal);
+            
+            // Add event listeners for action buttons
+            document.addEventListener('click', function(e) {
+                // Edit button
+                if (e.target.closest('.btn-edit')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const row = e.target.closest('tr');
+                    editLogo(row);
+                }
+                
+                // Delete button
+                if (e.target.closest('.btn-delete')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const row = e.target.closest('tr');
+                    deleteLogo(row);
+                }
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target.classList.contains('modal')) {
+                    closeAddLogoModal();
+                }
+            });
+        });
+        
+        // Open Add Logo Modal
+        function openAddLogoModal() {
+            document.getElementById('addLogoModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            document.getElementById('logoName').focus();
+        }
+
+        // Close Add Logo Modal
+        function closeAddLogoModal() {
+            document.getElementById('addLogoModal').style.display = 'none';
+            document.body.style.overflow = '';
+            // Reset form
+            document.getElementById('addLogoForm').reset();
+            // Reset preview
+            const preview = document.getElementById('logoPreview');
+            preview.innerHTML = `
+                <div class="file-upload-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Click to upload or drag and drop</p>
+                    <p class="file-upload-hint">PNG, JPG up to 5MB</p>
+                </div>`;
+        }
+        
+        // Initialize file upload preview
+        function initFileUploadPreview() {
+            const fileInput = document.getElementById('logoFile');
+            const preview = document.getElementById('logoPreview');
+            
+            if (!fileInput || !preview) return;
+            
+            // Handle file selection
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    // Check file type
+                    if (!file.type.match('image.*')) {
+                        alert('Please select an image file (JPEG, PNG)');
+                        return;
+                    }
+                    
+                    // Check file size (5MB max)
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('File size should not exceed 5MB');
+                        return;
+                    }
+                    
+                    // Create preview
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        preview.innerHTML = `
+                            <div class="file-upload-preview-img">
+                                <img src="${e.target.result}" alt="Logo Preview">
+                                <button type="button" class="remove-image" onclick="event.stopPropagation(); this.closest('.file-upload-preview').innerHTML = document.querySelector('.file-upload-placeholder').outerHTML; document.getElementById('logoFile').value = '';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>`;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Handle drag and drop
+            preview.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.add('dragover');
+            });
+            
+            preview.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.remove('dragover');
+            });
+            
+            preview.addEventListener('drop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.remove('dragover');
+                
+                if (e.dataTransfer.files.length) {
+                    fileInput.files = e.dataTransfer.files;
+                    // Trigger change event
+                    const event = new Event('change');
+                    fileInput.dispatchEvent(event);
+                }
+            });
+            
+            // Click on preview to trigger file input
+            preview.addEventListener('click', function(e) {
+                if (!e.target.closest('.remove-image')) {
+                    fileInput.click();
+                }
+            });
+        }
+
+
+
+
+    
+    </script>
+    <style>
+        /* Add styles for file upload preview */
+        .file-upload-container {
+            margin-top: 8px;
+        }
+        
+        .file-upload-input {
+            display: none;
+        }
+        
+        .file-upload-preview {
+            border: 2px dashed #dee2e6;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+        
+        .file-upload-preview:hover, 
+        .file-upload-preview.dragover {
+            border-color: #0d6efd;
+            background-color: #f0f7ff;
+        }
+        
+        .file-upload-placeholder {
+            color: #6c757d;
+        }
+        
+        .file-upload-placeholder svg {
+            margin-bottom: 10px;
+            color: #adb5bd;
+        }
+        
+        .file-upload-hint {
+            font-size: 0.8em;
+            color: #adb5bd;
+            margin-top: 5px;
+        }
+        
+        .file-upload-preview-img {
+            position: relative;
+            max-width: 100%;
+        }
+        
+        .file-upload-preview-img img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 4px;
+        }
+        
+        .remove-image {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 24px;
+            height: 24px;
+            background: #dc3545;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+        }
+        
+        .remove-image:hover {
+            background: #bb2d3b;
+        }
+        
+        .remove-image svg {
+            width: 12px;
+            height: 12px;
+        }
+        
+    </style>
+</body>
+
+</html>

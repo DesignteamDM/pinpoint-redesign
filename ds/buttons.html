@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Buttons</title>
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .button-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .button-preview {
+            margin-bottom: 1rem;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .button-code {
+            background: var(--light-gray);
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+        
+        /* Button Base */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        /* Button Variants */
+        .btn-primary { 
+            background: var(--primary-500); 
+            color: white; 
+            border-color: var(--primary-700);
+        }
+        .btn-primary:hover { 
+            background: var(--primary-700); 
+            border-color: var(--primary-900);
+        }
+        
+        .btn-secondary { 
+            background: white; 
+            border: 1px solid var(--border-gray);
+            color: var(--dark-gray);
+        }
+        .btn-secondary:hover { 
+            background: var(--light-gray); 
+            border-color: var(--medium-gray);
+        }
+        
+        .btn-success { 
+            background: var(--success); 
+            color: white;
+            border-color: #2e7d32;
+        }
+        .btn-success:hover {
+            background: #2e7d32;
+        }
+        
+        .btn-danger { 
+            background: var(--error); 
+            color: white;
+            border-color: #c62828;
+        }
+        .btn-danger:hover {
+            background: #c62828;
+        }
+        
+        .btn-warning { 
+            background: var(--warning); 
+            color: var(--dark-gray);
+            border-color: #ffb300;
+        }
+        .btn-warning:hover {
+            background: #ffb300;
+        }
+        
+        .btn-info { 
+            background: var(--info); 
+            color: white;
+            border-color: #00b8d4;
+        }
+        .btn-info:hover {
+            background: #00b8d4;
+        }
+        
+        /* Outline Buttons */
+        .btn-outline {
+            background: transparent;
+            border: 1px solid currentColor;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-500);
+            border-color: var(--primary-500);
+        }
+        .btn-outline-primary:hover {
+            background: rgba(42, 147, 213, 0.1);
+        }
+        
+        .btn-outline-secondary {
+            color: var(--medium-gray);
+            border-color: var(--border-gray);
+        }
+        .btn-outline-secondary:hover {
+            background: var(--light-gray);
+        }
+        
+        /* Link Buttons */
+        .btn-link {
+            background: transparent;
+            border: none;
+            color: var(--primary-500);
+            text-decoration: underline;
+            padding: 0.25rem 0.5rem;
+        }
+        .btn-link:hover {
+            color: var(--primary-700);
+            text-decoration: none;
+            background: rgba(42, 147, 213, 0.1);
+        }
+        
+        /* Icon Only Buttons */
+        .btn-icon-only {
+            width: 2.25rem;
+            height: 2.25rem;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .btn-icon-only svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            flex-shrink: 0;
+        }
+        .btn-icon-only.btn-sm {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+        .btn-icon-only.btn-sm svg {
+            width: 1rem;
+            height: 1rem;
+        }
+        .btn-icon-only.btn-lg {
+            width: 2.75rem;
+            height: 2.75rem;
+        }
+        .btn-icon-only.btn-lg svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        
+        /* Button Sizes */
+        .btn-xs { 
+            padding: 0.125rem 0.375rem; 
+            font-size: 0.6875rem; 
+            line-height: 1.3;
+        }
+        .btn-sm { 
+            padding: 0.25rem 0.5rem; 
+            font-size: 0.75rem; 
+            line-height: 1.5;
+        }
+        .btn { 
+            padding: 0.5rem 1rem; 
+            font-size: 0.875rem; 
+            line-height: 1.5;
+        }
+        .btn-lg { 
+            padding: 0.75rem 1.5rem; 
+            font-size: 1rem; 
+            line-height: 1.5;
+        }
+        .btn-xl { 
+            padding: 1rem 2rem; 
+            font-size: 1.125rem; 
+            line-height: 1.5;
+        }
+        
+        /* Button States */
+        .btn:disabled { 
+            opacity: 0.6; 
+            cursor: not-allowed; 
+            pointer-events: none;
+        }
+        .btn-block { 
+            display: block; 
+            width: 100%;
+        }
+        
+        /* Icon Button */
+        .btn-icon { 
+            gap: 0.5rem; 
+        }
+        .btn-icon svg { 
+            width: 16px; 
+            height: 16px; 
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="ds-container">
+        <!-- Sidebar Navigation -->
+        <div class="ds-sidebar">
+            <div class="ds-sidebar-header">
+                <h1 class="ds-sidebar-title">Pinpoint DS</h1>
+            </div>
+            <nav class="ds-sidebar-nav">
+                <div class="ds-nav-section">
+                    <div class="ds-nav-title">Foundations</div>
+                    <a href="colors.html" class="ds-nav-link">Colors</a>
+                    <a href="typography.html" class="ds-nav-link">Typography</a>
+                </div>
+                <div class="ds-nav-section">
+                    <div class="ds-nav-title">Components</div>
+                    <a href="buttons.html" class="ds-nav-link active">Buttons</a>
+                    <a href="form-fields.html" class="ds-nav-link">Form Fields</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <main class="ds-main">
+            <div class="ds-page-header">
+                <h1 class="ds-page-title">Buttons</h1>
+                <p class="ds-page-description">Button styles and variations used throughout the Pinpoint application.</p>
+            </div>
+
+            <div class="ds-card">
+                <h2 class="ds-card-title">Button Variants</h2>
+                <p>Use the appropriate button style to communicate the action's importance.</p>
+                
+                <div class="button-grid">
+                    <!-- Primary Button -->
+                    <div class="button-card">
+                        <h3>Primary Button</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-primary">Primary Action</button>
+                            <button class="btn btn-primary" disabled>Disabled</button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-primary"&gt;Primary Action&lt;/button&gt;
+                            &lt;button class="btn btn-primary" disabled&gt;Disabled&lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- Outline Buttons -->
+                    <div class="button-card">
+                        <h3>Outline Buttons</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-outline btn-outline-primary">Primary</button>
+                            <button class="btn btn-outline btn-outline-secondary">Secondary</button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-outline btn-outline-primary"&gt;Primary&lt;/button&gt;
+                            &lt;button class="btn btn-outline btn-outline-secondary"&gt;Secondary&lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- Link Buttons -->
+                    <div class="button-card">
+                        <h3>Link Buttons</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-link">Regular Link</button>
+                            <button class="btn btn-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                                    <path d="M11 13l9 -9" />
+                                    <path d="M15 4h5v5" />
+                                </svg>
+                                With Icon
+                            </button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-link"&gt;Regular Link&lt;/button&gt;
+                            &lt;button class="btn btn-link"&gt;
+                                &lt;svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"&gt;
+                                    &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+                                    &lt;path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /&gt;
+                                    &lt;path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /&gt;
+                                    &lt;path d="M16 5l3 3" /&gt;
+                                &lt;/svg&gt;
+                                With Icon
+                            &lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- Icon Only Buttons -->
+                    <div class="button-card">
+                        <h3>Icon Only Buttons</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-primary btn-icon-only" title="Edit">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                    <path d="M16 5l3 3" />
+                                </svg>
+                                
+                            </button>
+                            <button class="btn btn-secondary btn-icon-only" title="Delete">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M4 7l16 0" />
+                                    <path d="M10 11l0 6" />
+                                    <path d="M14 11l0 6" />
+                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                </svg>
+                                
+                            </button>
+                            <button class="btn btn-outline-secondary btn-icon-only" title="Settings">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                                </svg>
+                                
+                            </button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-primary btn-icon-only" title="Edit"&gt;
+                                &lt;svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"&gt;
+                                    &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+                                    &lt;path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /&gt;
+                                    &lt;path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /&gt;
+                                    &lt;path d="M16 5l3 3" /&gt;
+                                &lt;/svg&gt;
+                                &lt;span class="sr-only"&gt;Edit&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class="btn btn-secondary btn-icon-only" title="Delete"&gt;
+                                &lt;svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"&gt;
+                                    &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+                                    &lt;path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /&gt;
+                                    &lt;path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /&gt;
+                                    &lt;path d="M16 5l3 3" /&gt;
+                                &lt;/svg&gt;
+                                &lt;span class="sr-only"&gt;Delete&lt;/span&gt;
+                            &lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- Secondary Button -->
+                    <div class="button-card">
+                        <h3>Secondary Button</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-secondary">Secondary Action</button>
+                            <button class="btn btn-secondary" disabled>Disabled</button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+                            &lt;button class="btn btn-secondary" disabled&gt;Disabled&lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- Status Buttons -->
+                    <div class="button-card">
+                        <h3>Status Buttons</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-success">Success</button>
+                            <button class="btn btn-danger">Danger</button>
+                            <button class="btn btn-warning">Warning</button>
+                            <button class="btn btn-info">Info</button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+                            &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+                            &lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+                            &lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- Sizes -->
+                    <div class="button-card">
+                        <h3>Button Sizes</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-primary btn-sm">Small</button>
+                            <button class="btn btn-primary">Default</button>
+                            <button class="btn btn-primary btn-lg">Large</button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+                            &lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
+                            &lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- With Icons -->
+                    <div class="button-card">
+                        <h3>With Icons</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-primary btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                    <polyline points="7 3 7 8 15 8"></polyline>
+                                </svg>
+                                Save
+                            </button>
+                            <button class="btn btn-secondary btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Search
+                            </button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-primary btn-icon"&gt;
+                                &lt;svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"&gt;
+                                    &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/&gt;
+                                    &lt;path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /&gt;
+                                    &lt;path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /&gt;
+                                    &lt;path d="M16 5l3 3" /&gt;
+                                &lt;/svg&gt;
+                                Save
+                            &lt;/button&gt;
+                        </div>
+                    </div>
+                    
+                    <!-- Block Button -->
+                    <div class="button-card">
+                        <h3>Block Button</h3>
+                        <div class="button-preview">
+                            <button class="btn btn-primary btn-block">Full Width Button</button>
+                        </div>
+                        <div class="button-code">
+                            &lt;button class="btn btn-primary btn-block"&gt;Full Width Button&lt;/button&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -4,15 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f7fa;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.dashboard-container {
-    display: flex;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 /* Sidebar Styles */
@@ -219,6 +211,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .sidebar-header .logo img {
@@ -268,7 +261,7 @@ body {
     display: flex;
     align-items: center;
     padding: 12px 15px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255);
     text-decoration: none;
     transition: all 0.3s;
     font-weight: 600;
@@ -315,13 +308,22 @@ body.sidebar-collapsed .sidebar-footer {
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible; /* Changed from hidden to visible to allow sticky positioning */
     position: relative;
     background-color: #f5f7fa;
 }
 
+/* Ensure content area scrolls while header stays fixed */
+.dashboard-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
 /* Header Styles */
 .dashboard-header {
+    position: sticky;
+    top: 0;
     height: 64px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -329,7 +331,8 @@ body.sidebar-collapsed .sidebar-footer {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    z-index: 100;
+    z-index: 900; /* Lower than sidebar */
+    width: 100%;
 }
 
 .header-left {
@@ -527,11 +530,14 @@ body.sidebar-collapsed .sidebar-footer {
         top: 0;
         transform: translateX(-100%);
         width: 250px;
-        z-index: 1000;
+        z-index: 1100; /* Higher than header */
         box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+        height: 100vh;
+        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
     }
     
-    .sidebar.active {
+    .sidebar:not(.collapsed) {
         transform: translateX(0);
     }
     

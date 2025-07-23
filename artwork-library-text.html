@@ -520,10 +520,18 @@
                     </div>
                     <div class="form-group pui-mb-15px">
                         <label for="specType">Specification Type <span class="required">*</span></label>
-                        <select id="specType" class="form-control" required>
-                            <option value="screen_printing" selected>Screen Printing</option>
-                            <option value="embroidery">Embroidery</option>
-                        </select>
+                        <div class="pui-radio-group pui-flex">
+                            <label class="pui-radio">
+                                <input type="radio" name="personalizationMethod" value="screenprinting" checked="">
+                                <span class="pui-radio-checkmark"></span>
+                                Screenprinting
+                            </label>
+                            <label class="pui-radio pui-ms-10px">
+                                <input type="radio" name="personalizationMethod" value="embroidery">
+                                <span class="pui-radio-checkmark"></span>
+                                Embroidery
+                            </label>
+                        </div>
                     </div>
                     <div class="pui-row">
                         <div class="pui-col-md-12">

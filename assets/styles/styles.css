@@ -1858,7 +1858,7 @@ button {
   padding: 15px;
 }
 
-.form-section h4.section-heading {
+.form-section h4.section-heading, .form-section .section-heading {
   margin-top: 0;
   margin-bottom: 15px;
   padding-bottom: 8px;
@@ -1869,9 +1869,6 @@ button {
 }
 .form-section .section-heading h4 {
   margin-top: 0;
-  margin-bottom: 15px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #bdbdbd;
   color: #333;
   font-size: 14px;
   font-weight: 600;

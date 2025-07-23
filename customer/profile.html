@@ -136,7 +136,13 @@
                                 <li data-tab="billing">
                                     <a href="#billing">
                                         <i class="fas fa-credit-card"></i>
-                                        <span>Billing & Shipping</span>
+                                        <span>Shipping Details</span>
+                                    </a>
+                                </li>
+                                <li data-tab="taxExempt">
+                                    <a href="#taxExempt">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span>Tax Information</span>
                                     </a>
                                 </li>
                                 <li data-tab="password">
@@ -223,6 +229,122 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="phone-buttons-container">
+                                            <button type="button" class="add-phone-btn">+ Add another phone
+                                                number</button>
+                                            <button type="button" class="show-more-phones" style="display: none;">Show
+                                                more phone numbers</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-6">
+                                    <div class="section-card pui-mb-10px">
+                                        <div class="section-heading">
+                                            <h4>Billing Information</h4>
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="companyName">Company Name</label>
+                                                    <input type="text" id="companyName" value="Waketower Pro"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="contactFirstName">Contact First Name</label>
+                                                    <input type="text" id="contactFirstName" value="Chuck"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="contactLastName">Contact Last Name</label>
+                                                    <input type="text" id="contactLastName" value="McGuire"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addressLine1">Address Line 1</label>
+                                                    <input type="text" id="addressLine1" value="417 Sherwood Dr."
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addressLine2">Address Line 2</label>
+                                                    <input type="text" id="addressLine2" value="" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="city">City</label>
+                                                    <input type="text" id="city" value="Norman" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="state">State</label>
+                                                    <input type="text" id="state" value="OK" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="zipCode">Zip Code</label>
+                                                    <input type="text" id="zipCode" value="73072" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" id="email" value="mcguire7654@gmail.com"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-3">
+                                                <div class="form-group">
+                                                    <label for="phoneType">Phone Type</label>
+                                                    <select id="phoneType" class="form-control">
+                                                        <option value="home">Home</option>
+                                                        <option value="work">Work</option>
+                                                        <option value="cell">Cell</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="phone">Phone Number</label>
+                                                    <input type="tel" id="phone" value="405.255.7668"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-3">
+                                                <div class="form-group">
+                                                    <label for="ext">Ext</label>
+                                                    <input type="tel" id="ext" value="" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="phone-buttons-container">
+                                            <button type="button" class="add-phone-btn">+ Add another phone
+                                                number</button>
+                                            <button type="button" class="show-more-phones" style="display: none;">Show
+                                                more phone numbers</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -306,6 +428,75 @@
                                 <button type="button" class="pui-btn pui-btn-primary pui-ms-5px">Save Changes</button>
                             </div> -->
                         </div>
+                        <!-- Tax Exempt Tab Content -->
+                        <div class="settings-container" id="taxExemptTab" style="display: none;">
+                            <div class="pui-row">
+                                <div class="pui-col-md-6">
+                                    <div class="section-card">
+                                        <div class="section-heading">
+                                            <h4>Tax Exemption Status</h4>
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-12">
+                                                <div class="form-group">
+                                                    <label>Are you tax exempt?</label>
+                                                    <div class="radio-group">
+                                                        <label class="radio-label">
+                                                            <input type="radio" name="taxExempt" id="taxExemptYes" value="yes">
+                                                            <span class="radio-custom"></span>
+                                                            <span>Yes</span>
+                                                        </label>
+                                                        <label class="radio-label">
+                                                            <input type="radio" name="taxExempt" id="taxExemptNo" value="no" checked>
+                                                            <span class="radio-custom"></span>
+                                                            <span>No</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="taxExemptionForm" style="display: none;">
+                                            <div class="pui-row">
+                                                <div class="pui-col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="permitNo">Permit No</label>
+                                                        <input type="text" id="permitNo" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="pui-col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="permitNumber">Expired Date</label>
+                                                        <input type="date" id="permitNumber" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="pui-col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="taxExemptState">State</label>
+                                                        <select id="taxExemptState" class="form-control">
+                                                            <option value="">Select State</option>
+                                                            <!-- State options will be populated by JavaScript -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="exemptionDocument">Upload Exemption Certificate</label>
+                                                        <input type="file" id="exemptionDocument" class="form-control">
+                                                        <small class="form-text text-muted">Accepted file types: PDF, JPG, PNG (Max size: 5MB)</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings-actions pui-mt-10px text-right">
+                                <button type="button" class="pui-btn pui-btn-secondary">Cancel</button>
+                                <button type="button" class="pui-btn pui-btn-primary pui-ms-5px">Save Changes</button>
+                            </div>
+                        </div>
+
                         <!-- Password Tab Content -->
                         <div class="settings-container" id="passwordTab" style="display: none;">
                             <div class="pui-row">
@@ -347,6 +538,125 @@
                                 <button type="button" class="pui-btn pui-btn-primary pui-ms-5px">Save Changes</button>
                             </div>
                         </div>
+                        <div id="taxExemptTab" style="display: none;">
+                            <div class="pui-row">
+                                <div class="pui-col-md-6">
+                                    <div class="section-card pui-mb-10px">
+                                        <div class="section-heading">
+                                            <h4>Tax Information</h4>
+                                        </div>
+            
+                                        <div class="form-group">
+                                            <label for="taxExempt">Tax Exempt</label>
+                                            <div class="form-check-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="taxExempt"
+                                                        id="taxExemptYes" value="yes" checked="">
+                                                    <label class="form-check-label" for="taxExemptYes">Yes</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="taxExempt"
+                                                        id="taxExemptNo" value="no">
+                                                    <label class="form-check-label" for="taxExemptNo">No</label>
+                                                </div>
+                                            </div>
+            
+                                            <!-- Tax Exemption Form (initially hidden) -->
+                                            <div id="taxExemptionForm"
+                                                style="display: block; margin-top: 20px; padding: 15px; background-color: rgb(248, 249, 250); border-radius: 4px;">
+            
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="permitNumber">Permit No</label>
+                                                            <input type="text" id="permitNumber" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="permitNumber">Expired Date</label>
+                                                            <input type="date" id="permitNumber" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="taxExemptState">State</label>
+                                                            <select id="taxExemptState" class="form-control">
+                                                                <option value="">Select State</option>
+                                                                <option value="AL">Alabama</option>
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="AZ">Arizona</option>
+                                                                <option value="AR">Arkansas</option>
+                                                                <option value="CA">California</option>
+                                                                <option value="CO">Colorado</option>
+                                                                <option value="CT">Connecticut</option>
+                                                                <option value="DE">Delaware</option>
+                                                                <option value="FL">Florida</option>
+                                                                <option value="GA">Georgia</option>
+                                                                <option value="HI">Hawaii</option>
+                                                                <option value="ID">Idaho</option>
+                                                                <option value="IL">Illinois</option>
+                                                                <option value="IN">Indiana</option>
+                                                                <option value="IA">Iowa</option>
+                                                                <option value="KS">Kansas</option>
+                                                                <option value="KY">Kentucky</option>
+                                                                <option value="LA">Louisiana</option>
+                                                                <option value="ME">Maine</option>
+                                                                <option value="MD">Maryland</option>
+                                                                <option value="MA">Massachusetts</option>
+                                                                <option value="MI">Michigan</option>
+                                                                <option value="MN">Minnesota</option>
+                                                                <option value="MS">Mississippi</option>
+                                                                <option value="MO">Missouri</option>
+                                                                <option value="MT">Montana</option>
+                                                                <option value="NE">Nebraska</option>
+                                                                <option value="NV">Nevada</option>
+                                                                <option value="NH">New Hampshire</option>
+                                                                <option value="NJ">New Jersey</option>
+                                                                <option value="NM">New Mexico</option>
+                                                                <option value="NY">New York</option>
+                                                                <option value="NC">North Carolina</option>
+                                                                <option value="ND">North Dakota</option>
+                                                                <option value="OH">Ohio</option>
+                                                                <option value="OK">Oklahoma</option>
+                                                                <option value="OR">Oregon</option>
+                                                                <option value="PA">Pennsylvania</option>
+                                                                <option value="RI">Rhode Island</option>
+                                                                <option value="SC">South Carolina</option>
+                                                                <option value="SD">South Dakota</option>
+                                                                <option value="TN">Tennessee</option>
+                                                                <option value="TX">Texas</option>
+                                                                <option value="UT">Utah</option>
+                                                                <option value="VT">Vermont</option>
+                                                                <option value="VA">Virginia</option>
+                                                                <option value="WA">Washington</option>
+                                                                <option value="WV">West Virginia</option>
+                                                                <option value="WI">Wisconsin</option>
+                                                                <option value="WY">Wyoming</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="taxExemptDocument">Tax Permit Document </label>
+                                                            <input type="file" id="taxExemptDocument"
+                                                                class="form-control">
+                                                            <small class="text-muted">Accepted file types: PDF</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings-actions pui-mt-10px text-right">
+                                <button type="button" class="pui-btn pui-btn-secondary">Cancel</button>
+                                <button type="button" class="pui-btn pui-btn-primary pui-ms-5px">Save Changes</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -364,110 +674,7 @@
             </div>
             <div class="modal-body">
                 <div class="pui-row">
-                    <div class="pui-col-lg-12">
-                        <div class="section-card pui-mb-10px">
-                            <div class="section-heading">
-                                <h4>Billing Information</h4>
-                            </div>
-                            <div class="pui-row">
-                                <div class="pui-col-md-6">
-                                    <div class="form-group">
-                                        <label for="companyName">Company Name</label>
-                                        <input type="text" id="companyName" value="Waketower Pro"
-                                            class="form-control">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="pui-row">
-                                <div class="pui-col-md-6">
-                                    <div class="form-group">
-                                        <label for="contactFirstName">Contact First Name</label>
-                                        <input type="text" id="contactFirstName" value="Chuck"
-                                            class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-6">
-                                    <div class="form-group">
-                                        <label for="contactLastName">Contact Last Name</label>
-                                        <input type="text" id="contactLastName" value="McGuire"
-                                            class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pui-row">
-                                <div class="pui-col-md-6">
-                                    <div class="form-group">
-                                        <label for="addressLine1">Address Line 1</label>
-                                        <input type="text" id="addressLine1" value="417 Sherwood Dr."
-                                            class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-6">
-                                    <div class="form-group">
-                                        <label for="addressLine2">Address Line 2</label>
-                                        <input type="text" id="addressLine2" value="" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pui-row">
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="city">City</label>
-                                        <input type="text" id="city" value="Norman" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="state">State</label>
-                                        <input type="text" id="state" value="OK" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-4">
-                                    <div class="form-group">
-                                        <label for="zipCode">Zip Code</label>
-                                        <input type="text" id="zipCode" value="73072" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pui-row">
-                                <div class="pui-col-md-6">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email" value="mcguire7654@gmail.com"
-                                            class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pui-row">
-                                <div class="pui-col-md-3">
-                                    <div class="form-group">
-                                        <label for="phoneType">Phone Type</label>
-                                        <select id="phoneType" class="form-control">
-                                            <option value="home">Home</option>
-                                            <option value="work">Work</option>
-                                            <option value="cell">Cell</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-6">
-                                    <div class="form-group">
-                                        <label for="phone">Phone Number</label>
-                                        <input type="tel" id="phone" value="405.255.7668"
-                                            class="form-control">
-                                    </div>
-                                </div>
-                                <div class="pui-col-md-3">
-                                    <div class="form-group">
-                                        <label for="ext">Ext</label>
-                                        <input type="tel" id="ext" value="" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="pui-col-lg-12">
                         <div class="section-card">
                             <div class="section-heading">
@@ -533,113 +740,7 @@
                                 </div>
                             </div>
 
-                            <div class="section-heading">
-                                <h4>Tax Information</h4>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="taxExempt">Tax Exempt</label>
-                                <div class="form-check-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="taxExempt"
-                                            id="taxExemptYes" value="yes" checked="">
-                                        <label class="form-check-label" for="taxExemptYes">Yes</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="taxExempt"
-                                            id="taxExemptNo" value="no">
-                                        <label class="form-check-label" for="taxExemptNo">No</label>
-                                    </div>
-                                </div>
-
-                                <!-- Tax Exemption Form (initially hidden) -->
-                                <div id="taxExemptionForm"
-                                    style="display: block; margin-top: 20px; padding: 15px; background-color: rgb(248, 249, 250); border-radius: 4px;">
-
-                                    <div class="pui-row">
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label for="permitNumber">Permit No</label>
-                                                <input type="text" id="permitNumber" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label for="permitNumber">Expired Date</label>
-                                                <input type="date" id="permitNumber" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label for="taxExemptState">State</label>
-                                                <select id="taxExemptState" class="form-control">
-                                                    <option value="">Select State</option>
-                                                    <option value="AL">Alabama</option>
-                                                    <option value="AK">Alaska</option>
-                                                    <option value="AZ">Arizona</option>
-                                                    <option value="AR">Arkansas</option>
-                                                    <option value="CA">California</option>
-                                                    <option value="CO">Colorado</option>
-                                                    <option value="CT">Connecticut</option>
-                                                    <option value="DE">Delaware</option>
-                                                    <option value="FL">Florida</option>
-                                                    <option value="GA">Georgia</option>
-                                                    <option value="HI">Hawaii</option>
-                                                    <option value="ID">Idaho</option>
-                                                    <option value="IL">Illinois</option>
-                                                    <option value="IN">Indiana</option>
-                                                    <option value="IA">Iowa</option>
-                                                    <option value="KS">Kansas</option>
-                                                    <option value="KY">Kentucky</option>
-                                                    <option value="LA">Louisiana</option>
-                                                    <option value="ME">Maine</option>
-                                                    <option value="MD">Maryland</option>
-                                                    <option value="MA">Massachusetts</option>
-                                                    <option value="MI">Michigan</option>
-                                                    <option value="MN">Minnesota</option>
-                                                    <option value="MS">Mississippi</option>
-                                                    <option value="MO">Missouri</option>
-                                                    <option value="MT">Montana</option>
-                                                    <option value="NE">Nebraska</option>
-                                                    <option value="NV">Nevada</option>
-                                                    <option value="NH">New Hampshire</option>
-                                                    <option value="NJ">New Jersey</option>
-                                                    <option value="NM">New Mexico</option>
-                                                    <option value="NY">New York</option>
-                                                    <option value="NC">North Carolina</option>
-                                                    <option value="ND">North Dakota</option>
-                                                    <option value="OH">Ohio</option>
-                                                    <option value="OK">Oklahoma</option>
-                                                    <option value="OR">Oregon</option>
-                                                    <option value="PA">Pennsylvania</option>
-                                                    <option value="RI">Rhode Island</option>
-                                                    <option value="SC">South Carolina</option>
-                                                    <option value="SD">South Dakota</option>
-                                                    <option value="TN">Tennessee</option>
-                                                    <option value="TX">Texas</option>
-                                                    <option value="UT">Utah</option>
-                                                    <option value="VT">Vermont</option>
-                                                    <option value="VA">Virginia</option>
-                                                    <option value="WA">Washington</option>
-                                                    <option value="WV">West Virginia</option>
-                                                    <option value="WI">Wisconsin</option>
-                                                    <option value="WY">Wyoming</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label for="taxExemptDocument">Tax Permit Document </label>
-                                                <input type="file" id="taxExemptDocument"
-                                                    class="form-control">
-                                                <small class="text-muted">Accepted file types: PDF</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
 

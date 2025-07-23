@@ -1366,6 +1366,13 @@ body {
   border: 1px solid #ccc;
   font-weight: bold;
 }
+.data-table-sub-cell-value{
+  font-size: 13px;
+  color: #666;
+}
+.data-table-row-alter{
+  background-color: #f3f9fe;
+}
 /* Warehouse Table Specific */
 .warehouse-list-table .table-responsive {
   overflow-x: auto;

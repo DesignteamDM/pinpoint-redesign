@@ -204,7 +204,7 @@
     top: 0;
     height: 100%;
     width: 25%;
-    background-image: url('assets/images/pmark.png');
+    background-image: url('../images/pmark.png');
     background-size: auto 100%;
     background-repeat: repeat-x;
 }

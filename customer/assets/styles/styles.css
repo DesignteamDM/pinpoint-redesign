@@ -1471,6 +1471,10 @@ body {
   border: 1px solid #ccc;
   font-weight: bold;
 }
+.data-table-sub-cell-value{
+  font-size: 14px;
+  color: #666;
+}
 /* Warehouse Table Specific */
 .warehouse-list-table .table-responsive {
   overflow-x: auto;

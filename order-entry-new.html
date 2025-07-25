@@ -379,7 +379,7 @@
                         <button class="tab-btn active" data-tab="customer-details">Customer Details</button>
                         <button class="tab-btn" data-tab="order-details">Order Details</button>
                         <button class="tab-btn" data-tab="flat-goods">Flat Goods</button>
-                        <button class="tab-btn" data-tab="screen-printing">Screen Printing</button>
+                        <!-- <button class="tab-btn" data-tab="screen-printing">Screen Printing</button> -->
                         <button class="tab-btn" data-tab="promotional-products">Promotional Products</button>
                         <button class="tab-btn" data-tab="payment-details">Payment Details</button>
                         <button class="tab-btn" data-tab="shipment-details">Shipment Details</button>
@@ -4109,7 +4109,19 @@ width: auto
                                 <div class="form-group pui-mb-20px">
                                     <label>Preview</label>
                                     <div class="personalization-preview">
-                                        <img src="https://cdnm.sanmar.com/imglib/mresjpg/2022/f2/BC3001_aqua_model_front.jpg" alt="Preview">
+                                        <img id="previewImage" src="assets/images/flat-goods/BC3001_aqua_flat_front.jpg" alt="Preview" style="width: 100%; display: block;">
+                                        <img id="backImage" src="assets/images/flat-goods/BC3001_aqua_flat_back.jpg" alt="Preview Back" style="display: none; width: 100%;">
+                                    </div>
+                                    <div class="form-group pui-mt-10px">
+                                        <label>Location</label>
+                                        <select class="form-control" id="previewLocation" onchange="updatePreviewImage()">
+                                            <option value="item-back">Item Back</option>
+                                            <option value="item-front" selected>Item Front</option>
+                                            <option value="left-chest">Left Chest</option>
+                                            <option value="left-hip">Left Hip</option>
+                                            <option value="right-chest">Right Chest</option>
+                                            <option value="sleeve">Sleeve</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -8424,6 +8436,31 @@ width: auto
             
             inactiveBtn.classList.remove('pui-btn-primary');
             inactiveBtn.classList.add('pui-btn-outline');
+        }
+
+        // Function to update preview image based on location selection
+        function updatePreviewImage() {
+            const location = document.getElementById('previewLocation').value;
+            const previewImage = document.getElementById('previewImage');
+            const backImage = document.getElementById('backImage');
+            
+            // Reset images
+            previewImage.style.display = 'none';
+            backImage.style.display = 'none';
+            
+            // Show the appropriate image based on selection
+            if (location === 'item-front') {
+                previewImage.style.display = 'block';
+                previewImage.src = 'assets/images/flat-goods/BC3001_aqua_flat_front.jpg';
+            } else if (location === 'item-back') {
+                backImage.style.display = 'block';
+                backImage.src = 'assets/images/flat-goods/BC3001_aqua_flat_back.jpg';
+            } else {
+                // For other locations, we'll use the front image by default
+                // You can add specific images for other locations when available
+                previewImage.style.display = 'block';
+                previewImage.src = 'assets/images/flat-goods/BC3001_aqua_flat_front.jpg';
+            }
         }
 
         // Initialize the modal functionality when the DOM is fully loaded

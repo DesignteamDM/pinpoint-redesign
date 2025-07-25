@@ -2423,15 +2423,25 @@
                                     <div class="pui-col-md-3">
                                         <div class="personalization-item">
                                             <div class="personalization-title">Line 1</div>
-                                            <div class="personalization-type">Screenprinting</div>
-                                            <div class="personalization-dimensions">Width: 5 CM, Height: 5 CM</div>
-                                            <div class="personalization-colors">
-                                                <span class="color-label">Background Color</span>
-                                                <div class="color-boxes">
-                                                    <span class="color-box" style="background-color: #FF0000;" title="Red"></span>
-                                                 </div>
+                                            <div class="pui-row">
+                                                <div class="pui-col-md-8">
+                                                    <div class="personalization-type">Screenprinting</div>
+                                                    <div class="personalization-dimensions">Width: 5 CM, Height: 5 CM</div>
+                                                    <div class="personalization-colors">
+                                                        <span class="color-label">Background Color</span>
+                                                        <div class="color-boxes">
+                                                            <span class="color-box" style="background-color: #FF0000;" title="Red"></span>
+                                                         </div>
+                                                    </div>
+                                                    <div class="personalization-price">Price: $28.00</div>
+                                                </div>
+                                                <div class="pui-col-md-4">
+                                                    <div class="personalization-item-image">
+                                                        <img src="assets/images/flat-goods/custom-flatgood-image.png" alt=""/>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="personalization-price">Price: $28.00</div>
+                                            
                                         </div>
                                         <style>
                                             .form-section{
@@ -8548,6 +8558,11 @@ width: auto
                     // Hide dimensions and color options for text
                     document.getElementById('logoDimensions').style.display = 'none';
                     document.getElementById('colorOptions').style.display = 'none';
+                    // Hide logo preview when switching to Text type
+                    const logoPreview = document.getElementById('logoPreviewOverlay');
+                    if (logoPreview) {
+                        logoPreview.style.display = 'none';
+                    }
                 });
 
                 // Initialize with logo selected by default

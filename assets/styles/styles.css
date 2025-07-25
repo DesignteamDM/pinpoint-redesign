@@ -4058,3 +4058,14 @@ select[multiple].form-control {
   height: 100%;
   object-fit: contain;
 }
+.personalization-item-image{
+  width: 75px;
+  height: 75px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+}
+.personalization-item-image img{
+  width: 100%;
+  object-fit: contain;
+}

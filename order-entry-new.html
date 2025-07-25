@@ -2415,7 +2415,7 @@
                                         <h4>Personalization</h4>
                                     </div>
                                     <div class="pui-col-md-2 text-right">
-                                        <button type="button" class="pui-btn pui-btn-primary" onclick="openPersonalizationModal()">Add New Personalization</button>
+                                        <button class="pui-btn pui-btn-primary" onclick="openPersonalizationModal(); return false;">Add New Personalization</button>
                                     </div>
                                 </div>
                                 </div>
@@ -2434,165 +2434,8 @@
                                             <div class="personalization-price">Price: $28.00</div>
                                         </div>
                                         <style>
-                                            .form-section {
-                                                margin-bottom: 0px;
-                                            }
-                                            
-                                            /* Personalization Modal Styles */
-                                            .pui-tabs {
-                                                display: flex;
-                                                border-bottom: 1px solid #dee2e6;
-                                                margin-bottom: 15px;
-                                            }
-                                            
-                                            .pui-tab {
-                                                padding: 8px 16px;
-                                                background: none;
-                                                border: none;
-                                                border-bottom: 2px solid transparent;
-                                                cursor: pointer;
-                                                color: #6c757d;
-                                                font-weight: 500;
-                                                transition: all 0.2s;
-                                            }
-                                            
-                                            .pui-tab.active {
-                                                color: #2c7be5;
-                                                border-bottom-color: #2c7be5;
-                                            }
-                                            
-                                            .pui-tab:hover:not(.active) {
-                                                color: #495057;
-                                                border-bottom-color: #dee2e6;
-                                            }
-                                            
-                                            .tab-content {
-                                                display: none;
-                                            }
-                                            
-                                            .tab-content.active {
-                                                display: block;
-                                            }
-                                            
-                                            .pui-btn-group {
-                                                display: inline-flex;
-                                                border-radius: 4px;
-                                                overflow: hidden;
-                                                border: 1px solid #dee2e6;
-                                            }
-                                            
-                                            .pui-btn-outline {
-                                                background: #fff;
-                                                border: 1px solid #dee2e6;
-                                                color: #6c757d;
-                                                padding: 6px 12px;
-                                                cursor: pointer;
-                                                transition: all 0.2s;
-                                            }
-                                            
-                                            .pui-btn-outline:not(:last-child) {
-                                                border-right: none;
-                                            }
-                                            
-                                            .pui-btn-outline.active {
-                                                background-color: #2c7be5;
-                                                color: #fff;
-                                                border-color: #2c7be5;
-                                            }
-                                            
-                                            .logo-selection-container {
-                                                border: 1px solid #dee2e6;
-                                                border-radius: 4px;
-                                                padding: 15px;
-                                                margin-bottom: 15px;
-                                            }
-                                            
-                                            .logos-grid {
-                                                display: grid;
-                                                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-                                                gap: 15px;
-                                                margin-bottom: 15px;
-                                            }
-                                            
-                                            .logo-item {
-                                                border: 2px solid transparent;
-                                                border-radius: 4px;
-                                                padding: 10px;
-                                                text-align: center;
-                                                cursor: pointer;
-                                                transition: all 0.2s;
-                                            }
-                                            
-                                            .logo-item:hover, .logo-item.selected {
-                                                border-color: #2c7be5;
-                                                background-color: #f8f9fa;
-                                            }
-                                            
-                                            .logo-image {
-                                                width: 80px;
-                                                height: 80px;
-                                                margin: 0 auto 8px;
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background-color: #f8f9fa;
-                                                border: 1px solid #e9ecef;
-                                                border-radius: 4px;
-                                                overflow: hidden;
-                                            }
-                                            
-                                            .logo-image img {
-                                                max-width: 100%;
-                                                max-height: 100%;
-                                                object-fit: contain;
-                                            }
-                                            
-                                            .logo-name {
-                                                font-size: 12px;
-                                                color: #495057;
-                                                white-space: nowrap;
-                                                overflow: hidden;
-                                                text-overflow: ellipsis;
-                                            }
-                                            
-                                            .upload-logo-option {
-                                                padding: 10px;
-                                                border-top: 1px dashed #dee2e6;
-                                                margin-top: 15px;
-                                                padding-top: 15px;
-                                            }
-                                            
-                                            .logo-preview-container {
-                                                border: 1px solid #dee2e6;
-                                                border-radius: 4px;
-                                                padding: 15px;
-                                                min-height: 200px;
-                                                display: flex;
-                                                align-items: center;
-                                                justify-content: center;
-                                                background-color: #f8f9fa;
-                                            }
-                                            
-                                            .no-preview {
-                                                color: #6c757d;
-                                                font-style: italic;
-                                            }
-                                            
-                                            .input-group {
-                                                display: flex;
-                                            }
-                                            
-                                            .input-group-text {
-                                                padding: 6px 12px;
-                                                font-size: 14px;
-                                                font-weight: 400;
-                                                line-height: 1.5;
-                                                color: #495057;
-                                                text-align: center;
-                                                white-space: nowrap;
-                                                background-color: #e9ecef;
-                                                border: 1px solid #ced4da;
-                                                border-radius: 4px 0 0 4px;
+                                            .form-section{
+margin-bottom: 0px;
                                             }
                                             .personalization-item {
                                                 background-color: #ffffff;
@@ -3962,318 +3805,313 @@
         
                     <!-- Personalization Modal -->
                     <div id="personalizationModal" class="modal" style="display: none;">
-                        <div class="modal-content" style="max-width: 800px;">
+                        <div class="modal-content" style="max-width: 900px;">
                             <div class="modal-header">
                                 <h3>Add New Personalization</h3>
                                 <span class="close-modal" onclick="closePersonalizationModal()">&times;</span>
                             </div>
                             <div class="modal-body">
-                                <div class="pui-row pui-mb-20px">
-                                    <div class="pui-col-md-12">
-                                        <label class="pui-mb-10px">Personalization Type</label>
-                                        <div class="pui-tabs">
-                                            <button type="button" class="pui-tab active" data-target="logo-tab">Logo</button>
-                                            <button type="button" class="pui-tab" data-target="text-tab">Text</button>
-                                        </div>
+                                <div class="pui-row">
+                                    <div class="pui-col-md-7">
+
+                                    
+                                <!-- Personalization type selection (Logo/Text) -->
+                                <div class="form-group pui-mb-20px">
+                                    <label class="pui-mb-10px">Personalization Type</label>
+                                    <div class="pui-btn-group" role="group">
+                                        <button type="button" class="pui-btn pui-btn-primary" data-type="logo">Logo</button>
+                                        <button type="button" class="pui-btn pui-btn-outline" data-type="text">Text</button>
                                     </div>
                                 </div>
+                                <style>
+                                    /* Style for the active state of personalization type buttons */
+                                    .pui-btn-group .pui-btn-primary {
+                                        background-color: #2866cc;
+                                        color: white;
+                                        border-color: #2866cc;
+                                    }
+                                    .pui-btn-group .pui-btn-outline {
+                                        background-color: transparent;
+                                        color: #2866cc;
+                                        border-color: #2866cc;
+                                    }
+                                    .pui-btn-group .pui-btn-outline:hover {
+                                        background-color: #f8f9fa;
+                                    }
+                                    /* Ensure consistent styling for decoration method buttons */
+                                    .decoration-method-group .pui-btn {
+                                        min-width: 120px;
+                                        text-align: center;
+                                    }
+                                    .color-option-sm{
+width: auto
+                                    }
+                                </style>
 
-                                <!-- Logo Personalization Tab -->
-                                <div id="logo-tab" class="tab-content active">
-                                    <div class="pui-row pui-mb-15px">
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label>Logo Type</label>
-                                                <div class="pui-btn-group">
-                                                    <button type="button" class="pui-btn pui-btn-outline active" data-type="screenprinting">Screenprinting</button>
-                                                    <button type="button" class="pui-btn pui-btn-outline" data-type="embroidery">Embroidery</button>
-                                                </div>
-                                            </div>
+                                <!-- Logo Options (initially visible) -->
+                                <div id="logoOptions">
+                                    <div class="form-group pui-mb-20px">
+                                        <label class="pui-mb-10px">Personalization Method</label>
+                                        <div class="pui-radio-group pui-flex">
+                                            <label class="pui-radio">
+                                                <input type="radio" name="personalizationMethod" value="screenprinting" checked>
+                                                <span class="pui-radio-checkmark"></span>
+                                                Screenprinting
+                                            </label>
+                                            <label class="pui-radio pui-ms-10px">
+                                                <input type="radio" name="personalizationMethod" value="embroidery">
+                                                <span class="pui-radio-checkmark"></span>
+                                                Embroidery
+                                            </label>
                                         </div>
                                     </div>
 
-                                    <div class="pui-row pui-mb-15px">
-                                        <div class="pui-col-md-12">
-                                            <label>Select Logo</label>
-                                            <div class="logo-selection-container">
-                                                <!-- Logos will be loaded here -->
-                                                <div class="logos-grid">
-                                                    <!-- Logo items will be added dynamically -->
-                                                </div>
-                                                <div class="upload-logo-option pui-text-center">
-                                                    <label class="pui-btn pui-btn-outline">
-                                                        <input type="file" id="logoUpload" accept="image/*" style="display: none;">
-                                                        <svg class="icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                                            <polyline points="17 8 12 3 7 8"></polyline>
-                                                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    <div class="form-group pui-mb-20px">
+                                        <label class="pui-mb-10px">Logos Library</label>
+                                        <div class="logo-library" id="logoGrid">
+                                            <div class="logo-item" tabindex="0">
+                                                <div class="logo-thumbnail">
+                                                    <img src="assets/images/item-logos/item-logo-1.jpg" alt="Logo 1">
+                                                    <div class="logo-selection">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-check">
+                                                            <path d="M5 12l5 5l10 -10"></path>
                                                         </svg>
-                                                        Upload New Logo
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="pui-row">
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label>Dimensions</label>
-                                                <div class="pui-row">
-                                                    <div class="pui-col-md-6">
-                                                        <input type="text" class="form-control" id="logoWidth" placeholder="Width" readonly>
-                                                    </div>
-                                                    <div class="pui-col-md-6">
-                                                        <input type="text" class="form-control" id="logoHeight" placeholder="Height" readonly>
                                                     </div>
                                                 </div>
+                                                <div class="logo-name">Logo 1</div>
                                             </div>
-                                        </div>
-                                        <div class="pui-col-md-6">
-                                            <div class="form-group">
-                                                <label>Price</label>
-                                                <div class="input-group">
-                                                    <span class="input-group-text">$</span>
-                                                    <input type="text" class="form-control" id="logoPrice" readonly>
+                                            <div class="logo-item" tabindex="0">
+                                                <div class="logo-thumbnail">
+                                                    <img src="assets/images/item-logos/item-logo-2.jpg" alt="Logo 2">
+                                                    <div class="logo-selection">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-check">
+                                                            <path d="M5 12l5 5l10 -10"></path>
+                                                        </svg>
+                                                    </div>
                                                 </div>
+                                                <div class="logo-name">Logo 2</div>
+                                            </div>
+                                            <div class="logo-item" tabindex="0">
+                                                <div class="logo-thumbnail">
+                                                    <img src="assets/images/item-logos/item-logo-3.jpg" alt="Logo 3">
+                                                    <div class="logo-selection">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-check">
+                                                            <path d="M5 12l5 5l10 -10"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="logo-name">Logo 3</div>
+                                            </div>
+                                            <div class="logo-item" tabindex="0">
+                                                <div class="logo-thumbnail">
+                                                    <img src="assets/images/item-logos/item-logo-4.jpg" alt="Logo 4">
+                                                    <div class="logo-selection">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-check">
+                                                            <path d="M5 12l5 5l10 -10"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="logo-name">Logo 4</div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="pui-row pui-mt-15px">
-                                        <div class="pui-col-md-12">
-                                            <label>Preview</label>
-                                            <div class="logo-preview-container">
-                                                <img id="logoPreview" src="" alt="Logo Preview" style="max-width: 200px; max-height: 150px; display: none;">
-                                                <div id="noPreview" class="no-preview">No logo selected</div>
+                                        <style>
+                                            .logo-library {
+                                                display: inline-flex;
+                                                flex-wrap: wrap;
+                                                gap: 15px;
+                                                margin-bottom: 15px;
+                                                background: #f0f7ff;
+                                                padding: 10px;
+                                                border: 1px solid #b3c9e2;
+                                                border-radius: 4px; 
+                                            }
+                                            .logo-item {
+                                                width: 100px;
+                                                cursor: pointer;
+                                                text-align: center;
+                                                transition: all 0.2s ease;
+                                            }
+                                            .logo-item:focus {
+                                                /* outline: 2px solid #0066cc; */
+                                                outline-offset: 2px;
+                                            }
+                                            .logo-thumbnail {
+                                                position: relative;
+                                                width: 100%;
+                                                height: 100px;
+                                                background: #ffffff;
+                                                border: 1px solid #e0e0e0;
+                                                border-radius: 4px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                padding: 10px;
+                                                margin-bottom: 8px;
+                                                transition: all 0.2s ease;
+                                            }
+                                            .logo-item:hover .logo-thumbnail {
+                                                border-color: #0066cc;
+                                                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                                            }
+                                            .logo-item.selected .logo-thumbnail {
+                                                border-color: #0066cc;
+                                                background-color: #ffffff;
+                                            }
+                                            .logo-thumbnail img {
+                                                max-width: 100%;
+                                                max-height: 100%;
+                                                object-fit: contain;
+                                            }
+                                            .logo-selection {
+                                                position: absolute;
+                                                top: 5px;
+                                                right: 5px;
+                                                width: 20px;
+                                                height: 20px;
+                                                background: #0066cc;
+                                                border-radius: 50%;
+                                                display: none;
+                                                align-items: center;
+                                                justify-content: center;
+                                                color: white;
+                                                font-size: 12px;
+                                            }
+                                            .logo-item.selected .logo-selection {
+                                                display: flex;
+                                            }
+                                            .logo-name {
+                                                font-size: 12px;
+                                                color: #333;
+                                                white-space: nowrap;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                            }
+                                        </style>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                const logoItems = document.querySelectorAll('.logo-item');
+                                                
+                                                logoItems.forEach(item => {
+                                                    item.addEventListener('click', function() {
+                                                        // Remove selected class from all items
+                                                        logoItems.forEach(i => i.classList.remove('selected'));
+                                                        // Add selected class to clicked item
+                                                        this.classList.add('selected');
+                                                    });
+                                                    
+                                                    // Add keyboard navigation
+                                                    item.addEventListener('keydown', function(e) {
+                                                        if (e.key === 'Enter' || e.key === ' ') {
+                                                            e.preventDefault();
+                                                            this.click();
+                                                        }
+                                                    });
+                                                });
+                                            });
+                                        </script>
+                                        <button type="button" class="pui-btn pui-btn-secondary pui-mt-10px" id="uploadLogoBtn">
+                                            <i class="fas fa-upload"></i> Upload New Logo
+                                        </button>
+                                        <input type="file" id="logoUpload" accept="image/*" style="display: none;">
+                                        
+                                        <!-- Uploaded Logo Preview -->
+                                        <div id="uploadedLogoPreview" class="logo-preview-container" style="display: none; margin-top: 15px;">
+                                            <div class="logo-item" tabindex="0">
+                                                <div class="logo-thumbnail">
+                                                    <img id="logoPreview" src="#" alt="Uploaded Logo">
+                                                    <div class="logo-selection">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-check">
+                                                            <path d="M5 12l5 5l10 -10"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="logo-name">Uploaded Logo</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Text Personalization Tab -->
-                                <div id="text-tab" class="tab-content" style="display: none;">
-                                    <div class="pui-row">
-                                        <div class="pui-col-md-12">
-                                            <div class="form-group">
-                                                <label>Text</label>
-                                                <input type="text" class="form-control" id="personalizationText" placeholder="Enter text">
-                                            </div>
-                                        </div>
+                                <!-- Text Options (initially hidden) -->
+                                <div id="textOptions" style="display: none;">
+                                    <div class="form-group pui-mb-20px">
+                                        <label for="personalizationText">Text to Personalize</label>
+                                        <input type="text" id="personalizationText" class="form-control" placeholder="Enter text">
                                     </div>
-                                    <!-- Additional text personalization fields will go here -->
+                                    <div class="form-group pui-mb-20px">
+                                        <label>Font Style</label>
+                                        <select class="form-control">
+                                            <option>Arial</option>
+                                            <option>Times New Roman</option>
+                                            <option>Helvetica</option>
+                                        </select>
+                                    </div>
                                 </div>
+<div class="pui-row">
+    <div class="pui-col-md-4">
+<!-- Common fields for both logo and text -->
+<div class="form-group pui-mb-20px">
+    <label>Dimensions</label>
+    <select class="form-control">
+        <option value="">Select Dimensions</option>
+        <option value="110x100">110 x 100 cm</option>
+        <option value="134x33">134 x 33 cm</option>
+        <option value="150x75">150 x 75 cm</option>
+        <option value="200x100">200 x 100 cm</option>
+        <option value="custom">Custom</option>
+    </select>
+</div>
+    </div>
+    <div class="pui-col-md-8">
+        <div class="form-group pui-mb-20px">
+            <label>Colors</label>
+            <div class="color-selection">
+                <div class="color-option color-option-sm selected">
+                    <div class="color-box" style="background-color: #FF0000;"></div>
+                   
+                </div>
+                <div class="color-option color-option-sm">
+                    <div class="color-box" style="background-color: #0000FF;"></div>
+                 
+                </div>
+                <div class="color-option color-option-sm">
+                    <div class="color-box" style="background-color: #00FF00;"></div>
+                   
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+                                
+                              
+
+                              
+
+                                <div class="form-group pui-mb-20px">
+                                    <label>Price</label>
+                                    <div class="selected-price">
+                                        <strong>$0.00</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-5">
+                                <div class="form-group pui-mb-20px">
+                                    <label>Preview</label>
+                                    <div class="personalization-preview">
+                                        <img src="https://cdnm.sanmar.com/imglib/mresjpg/2022/f2/BC3001_aqua_model_front.jpg" alt="Preview">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="pui-btn pui-btn-secondary" onclick="closePersonalizationModal()">Cancel</button>
-                                <button type="button" class="pui-btn pui-btn-primary" id="savePersonalization">Add Personalization</button>
+                                <button type="button" class="pui-btn pui-btn-primary" id="savePersonalization">Save Personalization</button>
                             </div>
                         </div>
                     </div>
-                    
-                    <script>
-                    // Sample logo data - In a real app, this would come from your API
-                    const sampleLogos = [
-                        { id: 1, name: 'Company Logo', src: 'assets/images/logo1.png', width: '5cm', height: '5cm', price: '28.00' },
-                        { id: 2, name: 'Mascot', src: 'assets/images/logo2.png', width: '4cm', height: '4cm', price: '25.00' },
-                        { id: 3, name: 'Icon', src: 'assets/images/logo3.png', width: '3cm', height: '3cm', price: '22.00' },
-                        { id: 4, name: 'Badge', src: 'assets/images/logo4.png', width: '6cm', height: '6cm', price: '30.00' },
-                    ];
 
-                    // Open Personalization Modal
-                    function openPersonalizationModal() {
-                        document.getElementById('personalizationModal').style.display = 'block';
-                        loadLogos();
-                        setupEventListeners();
-                    }
-
-                    // Close Personalization Modal
-                    function closePersonalizationModal() {
-                        document.getElementById('personalizationModal').style.display = 'none';
-                        resetForm();
-                    }
-
-                    // Load logos into the grid
-                    function loadLogos() {
-                        const logosGrid = document.querySelector('.logos-grid');
-                        if (!logosGrid) return;
-
-                        logosGrid.innerHTML = '';
-                        
-                        sampleLogos.forEach(logo => {
-                            const logoItem = document.createElement('div');
-                            logoItem.className = 'logo-item';
-                            logoItem.innerHTML = `
-                                <div class="logo-image">
-                                    <img src="${logo.src}" alt="${logo.name}" data-logo='${JSON.stringify(logo)}'>
-                                </div>
-                                <div class="logo-name">${logo.name}</div>
-                            `;
-                            logosGrid.appendChild(logoItem);
-                        });
-                    }
-
-                    // Setup event listeners for the modal
-                    function setupEventListeners() {
-                        // Tab switching
-                        document.querySelectorAll('.pui-tab').forEach(tab => {
-                            tab.addEventListener('click', function() {
-                                // Update active tab
-                                document.querySelectorAll('.pui-tab').forEach(t => t.classList.remove('active'));
-                                this.classList.add('active');
-                                
-                                // Show corresponding content
-                                const targetId = this.getAttribute('data-target');
-                                document.querySelectorAll('.tab-content').forEach(content => {
-                                    content.style.display = 'none';
-                                });
-                                document.getElementById(targetId).style.display = 'block';
-                            });
-                        });
-
-                        // Logo type selection
-                        document.querySelectorAll('[data-type]').forEach(btn => {
-                            btn.addEventListener('click', function() {
-                                document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
-                                this.classList.add('active');
-                            });
-                        });
-
-                        // Logo selection
-                        document.addEventListener('click', function(e) {
-                            const logoImg = e.target.closest('.logo-item img');
-                            if (logoImg) {
-                                // Update selected state
-                                document.querySelectorAll('.logo-item').forEach(item => {
-                                    item.classList.remove('selected');
-                                });
-                                logoImg.closest('.logo-item').classList.add('selected');
-                                
-                                // Update preview and details
-                                const logoData = JSON.parse(logoImg.getAttribute('data-logo'));
-                                updateLogoDetails(logoData);
-                            }
-                        });
-
-                        // File upload
-                        document.getElementById('logoUpload').addEventListener('change', function(e) {
-                            const file = e.target.files[0];
-                            if (file) {
-                                const reader = new FileReader();
-                                reader.onload = function(event) {
-                                    // Create a new logo object for the uploaded file
-                                    const newLogo = {
-                                        id: 'uploaded-' + Date.now(),
-                                        name: file.name.replace(/\.[^/.]+$/, ''), // Remove extension
-                                        src: event.target.result,
-                                        width: 'Custom',
-                                        height: 'Custom',
-                                        price: '30.00' // Default price for custom uploads
-                                    };
-                                    
-                                    // Update the UI with the new logo
-                                    updateLogoDetails(newLogo);
-                                    
-                                    // Show the preview
-                                    const preview = document.getElementById('logoPreview');
-                                    preview.src = newLogo.src;
-                                    preview.style.display = 'block';
-                                    document.getElementById('noPreview').style.display = 'none';
-                                    
-                                    // Reset the file input
-                                    e.target.value = '';
-                                };
-                                reader.readAsDataURL(file);
-                            }
-                        });
-
-                        // Save personalization
-                        document.getElementById('savePersonalization').addEventListener('click', function() {
-                            // Get the active tab
-                            const activeTab = document.querySelector('.pui-tab.active').getAttribute('data-target');
-                            
-                            if (activeTab === 'logo-tab') {
-                                const selectedLogo = document.querySelector('.logo-item.selected');
-                                if (!selectedLogo) {
-                                    alert('Please select a logo or upload a new one');
-                                    return;
-                                }
-                                
-                                // In a real app, you would save the personalization here
-                                const logoData = JSON.parse(selectedLogo.querySelector('img').getAttribute('data-logo'));
-                                const logoType = document.querySelector('[data-type].active').getAttribute('data-type');
-                                
-                                // For demo purposes, just log the data
-                                console.log('Saving logo personalization:', {
-                                    type: logoType,
-                                    logo: logoData,
-                                    width: document.getElementById('logoWidth').value,
-                                    height: document.getElementById('logoHeight').value,
-                                    price: document.getElementById('logoPrice').value
-                                });
-                                
-                                // Close the modal
-                                closePersonalizationModal();
-                                
-                                // Show success message
-                                alert('Personalization added successfully!');
-                            } else {
-                                // Handle text personalization
-                                const text = document.getElementById('personalizationText').value.trim();
-                                if (!text) {
-                                    alert('Please enter some text');
-                                    return;
-                                }
-                                
-                                // In a real app, you would save the text personalization here
-                                console.log('Saving text personalization:', { text });
-                                
-                                // Close the modal
-                                closePersonalizationModal();
-                                
-                                // Show success message
-                                alert('Text personalization added successfully!');
-                            }
-                        });
-                    }
-
-                    // Update logo details in the form
-                    function updateLogoDetails(logoData) {
-                        document.getElementById('logoWidth').value = logoData.width;
-                        document.getElementById('logoHeight').value = logoData.height;
-                        document.getElementById('logoPrice').value = logoData.price;
-                        
-                        const preview = document.getElementById('logoPreview');
-                        preview.src = logoData.src;
-                        preview.style.display = 'block';
-                        document.getElementById('noPreview').style.display = 'none';
-                    }
-
-                    // Reset the form
-                    function resetForm() {
-                        document.getElementById('logoWidth').value = '';
-                        document.getElementById('logoHeight').value = '';
-                        document.getElementById('logoPrice').value = '';
-                        document.getElementById('personalizationText').value = '';
-                        
-                        const preview = document.getElementById('logoPreview');
-                        preview.src = '';
-                        preview.style.display = 'none';
-                        document.getElementById('noPreview').style.display = 'block';
-                        
-                        document.querySelectorAll('.logo-item').forEach(item => {
-                            item.classList.remove('selected');
-                        });
-                    }
-                    
-                    // Close modal when clicking outside
-                    window.onclick = function(event) {
-                        if (event.target.classList.contains('modal')) {
-                            closePersonalizationModal();
-                        }
-                    };
-                    </script>
-                    
                     <!-- Box Management Modal -->
                     <div id="boxManagementModal" class="modal" style="display: none;">
                         <div class="modal-content" style="max-width: 1000px;">
@@ -8517,6 +8355,209 @@
     <script src="assets/scripts/line-items.js"></script>
     <script src="assets/scripts/email-receipt.js"></script>
     <script src="assets/scripts/order-notes.js"></script>
+    <script>
+        // Personalization Modal Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Open personalization modal when Add New Personalization button is clicked
+            const addPersonalizationBtn = document.querySelector('.add-personalization-container .pui-btn-primary');
+            if (addPersonalizationBtn) {
+                addPersonalizationBtn.addEventListener('click', openPersonalizationModal);
+            }
+
+            // Close modal when clicking the close button or outside the modal
+            const modal = document.getElementById('personalizationModal');
+            if (modal) {
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        closePersonalizationModal();
+                    }
+                });
+            }
+        });
+
+        // Open personalization modal
+        function openPersonalizationModal() {
+            const modal = document.getElementById('personalizationModal');
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                loadLogos();
+            }
+        }
+
+        // Close personalization modal
+        function closePersonalizationModal() {
+            const modal = document.getElementById('personalizationModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        
+
+        // Update decoration method (screenprinting/embroidery)
+        function updateDecorationMethod(method) {
+            // This function is now defined in the DOMContentLoaded event listener
+            // to have access to the button elements
+            console.log('Decoration method updated to:', method);
+            // You can add specific logic here based on the selected method
+        }
+
+        // Global function to update button styles
+        function updateButtonStyles(activeBtn, inactiveBtn) {
+            if (!activeBtn || !inactiveBtn) return;
+            // Update button classes
+            activeBtn.classList.remove('pui-btn-outline');
+            activeBtn.classList.add('pui-btn-primary');
+            
+            inactiveBtn.classList.remove('pui-btn-primary');
+            inactiveBtn.classList.add('pui-btn-outline');
+        }
+
+        // Initialize the modal functionality when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle between logo and text options
+            const logoBtn = document.querySelector('[data-type="logo"]');
+            const textBtn = document.querySelector('[data-type="text"]');
+            const logoOptions = document.getElementById('logoOptions');
+            const textOptions = document.getElementById('textOptions');
+
+            if (logoBtn && textBtn && logoOptions && textOptions) {
+                logoBtn.addEventListener('click', function() {
+                    updateButtonStyles(logoBtn, textBtn);
+                    logoOptions.style.display = 'block';
+                    textOptions.style.display = 'none';
+                });
+
+                textBtn.addEventListener('click', function() {
+                    updateButtonStyles(textBtn, logoBtn);
+                    textOptions.style.display = 'block';
+                    logoOptions.style.display = 'none';
+                });
+            }
+
+            // Toggle between screenprinting and embroidery
+            const screenprintingBtn = document.querySelector('[data-method="screenprinting"]');
+            const embroideryBtn = document.querySelector('[data-method="embroidery"]');
+
+            function updateDecorationMethod(method) {
+                if (method === 'screenprinting') {
+                    updateButtonStyles(screenprintingBtn, embroideryBtn);
+                } else {
+                    updateButtonStyles(embroideryBtn, screenprintingBtn);
+                }
+                console.log('Decoration method updated to:', method);
+            }
+
+            if (screenprintingBtn && embroideryBtn) {
+                // Set initial state
+                updateDecorationMethod('screenprinting');
+                
+                // Initialize event listeners
+                screenprintingBtn.addEventListener('click', function() {
+                    updateDecorationMethod('screenprinting');
+                });
+
+                embroideryBtn.addEventListener('click', function() {
+                    updateDecorationMethod('embroidery');
+                });
+            }
+
+            // Handle logo upload and preview
+            const uploadBtn = document.getElementById('uploadLogoBtn');
+            const fileInput = document.getElementById('logoUpload');
+            const logoPreview = document.getElementById('logoPreview');
+            const uploadedLogoPreview = document.getElementById('uploadedLogoPreview');
+            const logoItems = document.querySelectorAll('.logo-item');
+
+            if (uploadBtn && fileInput) {
+                uploadBtn.addEventListener('click', function() {
+                    fileInput.click();
+                });
+
+                fileInput.addEventListener('change', function(e) {
+                    if (e.target.files.length > 0) {
+                        const file = e.target.files[0];
+                        const reader = new FileReader();
+
+                        reader.onload = function(event) {
+                            // Show the uploaded logo preview
+                            logoPreview.src = event.target.result;
+                            uploadedLogoPreview.style.display = 'block';
+                            
+                            // Select the uploaded logo
+                            document.querySelectorAll('.logo-item').forEach(item => {
+                                item.classList.remove('selected');
+                            });
+                            uploadedLogoPreview.querySelector('.logo-item').classList.add('selected');
+                            
+                            // Here you would typically upload the file to the server
+                            console.log('File selected:', file);
+                        };
+
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                // Handle click on logo items (including the uploaded logo)
+                document.querySelectorAll('.logo-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        document.querySelectorAll('.logo-item').forEach(i => i.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                });
+            }
+
+            // Handle color selection
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+
+            // Save personalization
+            const saveBtn = document.getElementById('savePersonalization');
+            if (saveBtn) {
+                saveBtn.addEventListener('click', function() {
+                    // Get all the form values
+                    const personalizationType = document.querySelector('[data-type].active').dataset.type;
+                    const decorationMethod = document.querySelector('[data-method].active')?.dataset.method || '';
+                    const selectedLogo = document.querySelector('.logo-item.selected');
+                    const logoName = selectedLogo ? selectedLogo.querySelector('span').textContent : '';
+                    const width = document.querySelector('input[placeholder="Width"]').value;
+                    const height = document.querySelector('input[placeholder="Height"]').value;
+                    const selectedColor = document.querySelector('.color-option.selected');
+                    const colorName = selectedColor ? selectedColor.querySelector('span').textContent : '';
+                    const price = document.querySelector('input[placeholder="0.00"]').value;
+
+                    // Create a new personalization item
+                    if (personalizationType === 'logo' && !logoName) {
+                        alert('Please select a logo');
+                        return;
+                    }
+
+                    // Here you would typically save the personalization to your database
+                    console.log('Saving personalization:', {
+                        type: personalizationType,
+                        method: decorationMethod,
+                        logo: logoName,
+                        width,
+                        height,
+                        color: colorName,
+                        price
+                    });
+
+                    // For now, just show a success message and close the modal
+                    alert('Personalization saved successfully!');
+                    closePersonalizationModal();
+                });
+            }
+        });
+    </script>
+
     <script src="assets/scripts/order-entry.js"></script>
     <script src="assets/scripts/box-management.js"></script>
     <script src="assets/scripts/item-fees.js"></script>

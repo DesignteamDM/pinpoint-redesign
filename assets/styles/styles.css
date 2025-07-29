@@ -2360,7 +2360,6 @@ textarea.form-control {
   position: sticky;
   top: 46px; /* Height of top menu + order header */
   z-index: 89; /* One less than header */
-  background-color: white;
   padding-top: 10px;
   -webkit-backface-visibility: hidden; /* Fix for flickering in Safari */
   backface-visibility: hidden;
@@ -4068,4 +4067,8 @@ select[multiple].form-control {
 .personalization-item-image img{
   width: 100%;
   object-fit: contain;
+}
+.tab-content-inner{
+  padding: 15px;
+  background-color: #fff;
 }

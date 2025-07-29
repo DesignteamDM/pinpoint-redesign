@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders - Pinpoint Order Control System</title>
+    <title>Customer Entry - Pinpoint Order Control System</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/styles/utilities.css">
     <link rel="stylesheet" href="assets/styles/dashboard.css">
@@ -299,390 +299,448 @@
                                 </svg>
 
                             </a>
-                            <span>Orders</span>
+                            <a href="customers.html" class="pui-link">
+                            <span>Customers</span>
+                            </a>
+                            <span>A & M Ranch</span>
                         </nav>
 
-                        <h2>Order Center</h2>
+                        <h2>A & M Ranch</h2>
                     </div>
                     <div class="listing-header-right">
 
-                        <a class="pui-btn pui-btn-primary" href="order-entry-new.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="pui-btn-icon" width="16" height="16"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                            Add Order Entry
-                        </a>
 
                     </div>
                 </div>
+                
                 <div class="pui-row">
                     <div class="pui-col-md-12">
                         <div class="card">
+<div class="pui-row">
+    <div class="pui-col-md-6">
+        <div class="section-card pui-mb-10px">
+            <div class="form-group">
+                <label for="company">Company <span class="required">*</span></label>
+                <input type="text" id="company" class="form-control">
+            </div>
+<h4>Contact Information</h4>
+            <div class="pui-row">
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="first-name">First Name <span class="required">*</span></label>
+                        <input type="text" id="first-name" class="form-control">
+                    </div>
+                </div>
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="last-name">Last Name <span class="required">*</span></label>
+                        <input type="text" id="last-name" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="pui-row">
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" class="form-control">
+                    </div>
+                </div>
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group phone-group">
+                <label>Phone</label>
+                <select class="form-control area-code">
+                    <option>USA (+1)</option>
+                    <option>UK (+44)</option>
+                    <option>Canada (+1)</option>
+                    <option>India (+91)</option>
+                     <option>Australia (+61)</option>
+                     <option>China (+86)</option>
+                     <option>France (+33)</option>
+                     <option>Germany (+49)</option>
+                     <option>Italy (+39)</option>
+                     <option>Japan (+81)</option>
+                     <option>South Africa (+27)</option>
+                     <option>Spain (+34)</option>
+                     <option>United Kingdom (+44)</option>
+                </select>
+                <div class="phone-inputs-container">
+                    <div class="phone-inputs" style="display: flex;">
+                        <select class="phone-type">
+                            <option>Cell</option>
+                        </select>
+                        <input class="phone-number" type="text" value="405.255.7668">
+                        <span class="phone-ext">Ext.</span>
+                        <input class="ext-input" type="text">
+                    </div>
+                    <div class="phone-inputs" style="display: flex;">
+                        <select class="phone-type">
+                            <option>Cell</option>
+                        </select>
+                        <input class="phone-number" type="text" value="405.255.7668">
+                        <span class="phone-ext">Ext.</span>
+                        <input class="ext-input" type="text">
+                    </div>
+                </div>
+                <div class="phone-buttons-container">
+                    <button type="button" class="add-phone-btn">+ Add another phone
+                        number</button>
+                    <button type="button" class="show-more-phones" style="display: none;">Show
+                        more phone numbers</button>
+                </div>
+            </div>
+           <div class="pui-row">
+            <div class="pui-col-md-2">
+                <div class="form-group">
+                    <label for="taxRate">Tax Rate?</label>
+                    <div class="input-group pui-flex pui-align-items-center">
+                        <input type="text" id="taxRate" class="form-control">
+                        <span class="input-group-text pui-ms-5px">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pui-col-md-3">
+                <div class="form-group">
+                    <label for="taxExempt">Tax Exempt?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="taxExemptYes" name="taxExempt" value="yes">
+                        <label for="taxExemptYes">Yes</label>
+                        <input type="radio" id="taxExemptNo" name="taxExempt" value="no">
+                        <label for="taxExemptNo">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="pui-col-md-3">  
+                <div class="form-group">
+                    <label for="poRequired">PO Required? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <input type="radio" id="poRequiredYes" name="poRequired" value="yes">
+                        <label for="poRequiredYes">Yes</label>
+                        <input type="radio" id="poRequiredNo" name="poRequired" value="no">
+                        <label for="poRequiredNo">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="pui-col-md-4">
+                <div class="form-group">
+                    <label for="paymentTerms">Payment Terms <span class="required">*</span></label>
+                    <select id="paymentTerms" class="form-control">
+                        <option value="">Select Payment Terms</option>
+                        <option value="account">Account</option>
+                        <option value="cash">Cash</option>
+                        <option value="cod">COD</option>
+                    </select>
+                </div>
+            </div>
+           </div>
+          
 
-                            <!-- Search and pagination-->
+           
+
+        </div>
+        <div class="section-card">
+            <h4 class="section-heading">Pricing Category</h4>
+            <div class="pui-row">
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="caps">Caps<span class="required">*</span></label>
+                        <select id="caps" class="form-control">
+                            <option value="">Select Caps</option>
+                            <option value="cost">Cost</option>
+                            <option value="retail">Retail</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="apparel">Apparel<span class="required">*</span></label>
+                        <select id="apparel" class="form-control">
+                            <option value="">Select Apparel</option>
+                            <option value="cost">Cost</option>
+                            <option value="retail">Retail</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="screenprinting">Screenprinting<span class="required">*</span></label>
+                        <select id="screenprinting" class="form-control">
+                            <option value="">Select Screenprinting</option>
+                            <option value="cost">Cost</option>
+                            <option value="retail">Retail</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pui-col-md-6">
+                    <div class="form-group">
+                        <label for="qbId">QB ID<span class="required">*</span></label>
+                        <input type="text" id="qbId" class="form-control">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="section-card pui-mt-10px">
+            <div class="form-group">
+                <label for="localFolderPath">Local Folder Path <span class="required">*</span></label>
+                <input type="text" id="localFolderPath" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="customerType">Customer Type <span class="required">*</span><button type="button" class="add-option-btn-sm" title="Add New">+</button></label>
+                <select id="customerType" class="form-control">
+                    <option value="">Select Customer Type</option>
+                    <option value="retail">Association</option>
+                    <option value="wholesale">BBRGear</option>
+                    <option value="wholesale">Cargil</option>
+                </select>
+            </div>
+            <h4>User List</h4>
+            <div class="pui-row">
+                <div class="pui-col-md-3">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span class="required">*</span></label>
+                        <input type="text" id="firstName" class="form-control">
+                    </div>
+                </div>
+                <div class="pui-col-md-3">
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input type="text" id="lastName" class="form-control">
+                    </div>
+                </div>
+                <div class="pui-col-md-3">
+                    <div class="form-group">
+                        <label for="username">Username <span class="required">*</span></label>
+                        <input type="text" id="username" class="form-control">
+                    </div>
+                </div>
+                <div class="pui-col-md-3">
+                    <div class="form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <input type="password" id="password" class="form-control">
+                    </div>
+                </div>
+                <div class="pui-col-md-3">
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                </div>
+                <div class="pui-col-md-3">
+                    <!-- Master access checkbox-->
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="masterAccess" class="form-control">
+                        <label for="masterAccess">Master Access</label>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pui-col-md-6">
+<div class="section-card">
+    <h4 class="section-heading">Billing Addresss</h4>
+    <div class="form-group">
+        <label for="billingCompany">Billing Company</label>
+        <input type="text" id="billingCompany" class="form-control">
+    </div>
+    <h4>Billing Contact</h4>
+    <div class="pui-row">
+        <div class="pui-col-md-6">
+            <div class="form-group">
+                <label for="billingFirstName">First Name</label>
+                <input type="text" id="billingFirstName" class="form-control">
+            </div>
+        </div>
+        <div class="pui-col-md-6">
+            <div class="form-group">
+                <label for="billingLastName">Last Name</label>
+                <input type="text" id="billingLastName" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="pui-row">
+        <div class="pui-col-md-6">
+            <div class="form-group">
+                <label for="billingLine1">Line 1</label>
+                <input type="text" id="billingLine1" class="form-control">
+            </div>
+        </div>
+        <div class="pui-col-md-6">
+            <div class="form-group">
+                <label for="billingLine2">Line 2</label>
+                <input type="text" id="billingLine2" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="form-group city-state-zip">
+        <div>
+            <label>City</label>
+            <input type="text" id="billingCity" class="form-control">
+        </div>
+        <div>
+            <label>State</label>
+            <input type="text" id="billingState" class="form-control">
+        </div>
+        <div>
+            <label>Zip</label>
+            <input type="text" id="billingZip" class="form-control">
+        </div>
+    </div>
+    <!-- Email -->
+    <div class="form-group">
+        <label for="billingEmail">Email</label>
+        <input type="email" id="billingEmail" class="form-control">
+    </div>
+    <!-- Phone group -->
+    <div class="form-group phone-group">
+        <label>Billing Phone</label>
+        <select class="form-control area-code">
+            <option>USA (+1)</option>
+            <option>UK (+44)</option>
+            <option>Canada (+1)</option>
+            <option>India (+91)</option>
+             <option>Australia (+61)</option>
+             <option>China (+86)</option>
+             <option>France (+33)</option>
+             <option>Germany (+49)</option>
+             <option>Italy (+39)</option>
+             <option>Japan (+81)</option>
+             <option>South Africa (+27)</option>
+             <option>Spain (+34)</option>
+             <option>United Kingdom (+44)</option>
+        </select>
+        <div class="phone-inputs-container">
+            <div class="phone-inputs" style="display: flex;">
+                <select class="phone-type">
+                    <option>Cell</option>
+                </select>
+                <input class="phone-number" type="text" value="405.255.7668">
+                <span class="phone-ext">Ext.</span>
+                <input class="ext-input" type="text">
+            </div>
+            <div class="phone-inputs" style="display: flex;">
+                <select class="phone-type">
+                    <option>Cell</option>
+                </select>
+                <input class="phone-number" type="text" value="405.255.7668">
+                <span class="phone-ext">Ext.</span>
+                <input class="ext-input" type="text">
+            </div>
+        </div>
+        <div class="phone-buttons-container">
+            <button type="button" class="add-phone-btn">+ Add another phone
+                number</button>
+            <button type="button" class="show-more-phones" style="display: none;">Show
+                more phone numbers</button>
+        </div>
+    </div>
+    
+</div>
+<div class="section-card pui-mt-10px">
+    <div class="pui-row">
+        <div class="pui-col-md-12">
+            <div class="pui-flex pui-align-items-center">
+            <h4 class="section-heading">Shipping Address</h4>
+            <div class="checkbox-group pui-ms-10px">
+                <input type="checkbox" id="sameAsBilling">
+                <label for="sameAsBilling" class="pui-mb-none">Same as billing</label>
+            </div>
+        </div>
+        </div>
+        
+         
+        
+    </div>
+    <div class="pui-row">
+        <div class="pui-col-md-6">
+            <div class="form-group">
+                <label for="shippingLine1">Line 1</label>
+                <input type="text" id="shippingLine1" class="form-control">
+            </div>
+        </div>
+        <div class="pui-col-md-6">
+            <div class="form-group">
+                <label for="shippingLine2">Line 2</label>
+                <input type="text" id="shippingLine2" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="form-group city-state-zip">
+        <div>
+            <label>City</label>
+            <input type="text" id="shippingCity" class="form-control">
+        </div>
+        <div>
+            <label>State</label>
+            <input type="text" id="shippingState" class="form-control">
+        </div>
+        <div>
+            <label>Zip</label>
+            <input type="text" id="shippingZip" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="shippingEmail">Email</label>
+        <input type="email" id="shippingEmail" class="form-control">
+    </div>
+    <div class="form-group phone-group">
+        <label>Shipping Phone</label>
+        <select class="form-control area-code">
+            <option>USA (+1)</option>
+            <option>UK (+44)</option>
+            <option>Canada (+1)</option>
+            <option>India (+91)</option>
+             <option>Australia (+61)</option>
+             <option>China (+86)</option>
+             <option>France (+33)</option>
+             <option>Germany (+49)</option>
+             <option>Italy (+39)</option>
+             <option>Japan (+81)</option>
+             <option>South Africa (+27)</option>
+             <option>Spain (+34)</option>
+             <option>United Kingdom (+44)</option>
+        </select>
+        <div class="phone-inputs-container">
+            <div class="phone-inputs" style="display: flex;">
+                <select class="phone-type">
+                    <option>Cell</option>
+                </select>
+                <input class="phone-number" type="text" value="405.255.7668">
+                <span class="phone-ext">Ext.</span>
+                <input class="ext-input" type="text">
+            </div>
+            <div class="phone-inputs" style="display: flex;">
+                <select class="phone-type">
+                    <option>Cell</option>
+                </select>
+                <input class="phone-number" type="text" value="405.255.7668">
+                <span class="phone-ext">Ext.</span>
+                <input class="ext-input" type="text">
+            </div>
+        </div>
+        <div class="phone-buttons-container">
+            <button type="button" class="add-phone-btn">+ Add another phone
+                number</button>
+            <button type="button" class="show-more-phones" style="display: none;">Show
+                more phone numbers</button>
+        </div>
+    </div>
+   
+    
+</div>
+    </div>
+</div>
+<!-- Add customer button right aligned -->
+<div class="text-right pui-mt-15px">
+<button type="button" class="pui-btn pui-btn-primary pui-btn-lg">Add Customer</button>
+</div>
                             
-                            <div class="listing-header">
-                                <div class="listing-header-left pui-flex">
-                                    <div class="pui-input-group pui-me-10px">
-                                        <input type="text" id="searchInput" class="form-control" placeholder="Find Order" style="min-width: 200px;">
-                                        <button class="pui-btn pui-btn-secondary" id="searchButton"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <circle cx="11" cy="11" r="8"></circle>
-                                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                            </svg></button>
-                                    </div>
-                                    <!-- Select Status -->
-                                     <select id="statusSelect" class="form-control">
-                                        <option value="all">All</option>
-                                        <option value="backorder">Backordered</option>
-                                        <option value="cancelled">Cancelled</option>
-                                        <option value="closed">Closed</option>
-                                        <option value="credit_hold">Credit Hold</option>
-                                        <option value="holding_for_art">Holding For Art</option>
-                                        <option value="new">New</option>
-                                     
-                                        <option value="pending_approval">Pending Approval</option>
-                                        <option value="released">Released</option>
-                                        <option value="shipped">Shipped</option>
-                                        <option value="show_corrections">Show Corrections</option>
-                                        <option value="waiting_customer_response">Waiting Customer Response</option>
-                                    </select>
-                                </div>
-                                <div class="listing-header-right">
-                                    <div class="pagination-container">
-                                        <div class="pagination">
-                                            <button class="pagination-btn prev" disabled>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <polyline points="15 18 9 12 15 6"></polyline>
-                                                </svg>
-        
-                                            </button>
-                                            <div class="pagination-numbers">
-                                                <button class="pagination-number active">1</button>
-                                                <button class="pagination-number">2</button>
-                                                <button class="pagination-number">3</button>
-                                                <span class="pagination-ellipsis">...</span>
-                                                <button class="pagination-number">10</button>
-                                            </div>
-                                            <button class="pagination-btn next">
-        
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="table-responsive">
-                                <table class="data-table">
-                                    <colgroup>
-                                        <col span="1" style="width: 5%;">
-                                        <col span="1" style="width: 30%;">
-                                        <col span="1" style="width: 10%;">
-                                        <col span="1" style="width: 10%;">
-                                        <col span="1" style="width: 10%;">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>Order</th>
-                                            <th>Customer</th>
-                                            <th>Order Type</th>
-                                            <th>Order Status</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="order-entry.html">125499</a>
-                                                <br>
-                                                <span class="data-table-sub-cell-value">7/22/25</span>
-                                            </td>
-                                            <td>
-                                                <strong>Oklahoma City Police Association (Ed Hill)</strong>
-                                                <br>
-                                                <span class="data-table-sub-cell-value">Item(s): (OCPD Word Cloud 20-oz Water Bottle)</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge">Promotional</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending Approval</span>
-                                                <span class="data-table-sub-cell-value">7/22/25</span>
-                                            </td>
-                                            <td>
-
-                                                <div class="btn-group">
-                                                    
-                                                    <button class="btn-action" title="View Order">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                            <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
-                                                        
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
-                                                        <div class="dropdown pui-ms-5px">
-                                                            <button class="btn-action" title="More" onclick="toggleDropdown(this)">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                                    <path d="m6 9 6 6 6-6"/>
-                                                                </svg>
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a href="#" class="dropdown-item">Build PO</a>
-                                                                <a href="#" class="dropdown-item">New Approval</a>
-                                                                <a href="#" class="dropdown-item">Email PO</a>
-                                                                <a href="#" class="dropdown-item">Process Payment</a>
-                                                                <a href="#" class="dropdown-item">Export to Quickbooks</a>
-                                                                <a href="#" class="dropdown-item">Change Customer</a>
-                                                                <a href="#" class="dropdown-item">Duplicate Order</a>
-                                                            </div>
-                                                        </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="data-table-row-alter">
-                                            <td>
-                                                <a href="order-entry.html">125500</a>
-                                                <br>
-                                                <span class="data-table-sub-cell-value">7/2/25</span>
-                                            </td>
-                                            <td>
-                                                <strong>Waketower Pro (Chuck McGuire)</strong>
-                                                <br>
-                                                <span class="data-table-sub-cell-value">Item(s): (nil)</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge">Artwork</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-new">New</span>
-                                                <span class="data-table-sub-cell-value">7/2/25</span>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button class="btn-action" title="View Order">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                            <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M3 6h18"></path>
-                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                    </svg></button>
-                                                    </button>
-                                                    <div class="dropdown pui-ms-5px">
-                                                        <button class="btn-action" title="More" onclick="toggleDropdown(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path d="m6 9 6 6 6-6"/>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a href="#" class="dropdown-item">Build PO</a>
-                                                            <a href="#" class="dropdown-item">New Approval</a>
-                                                            <a href="#" class="dropdown-item">Email PO</a>
-                                                            <a href="#" class="dropdown-item">Process Payment</a>
-                                                            <a href="#" class="dropdown-item">Export to Quickbooks</a>
-                                                            <a href="#" class="dropdown-item">Change Customer</a>
-                                                            <a href="#" class="dropdown-item">Duplicate Order</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="order-entry.html">125498</a>
-                                                <br>
-                                                <span class="data-table-sub-cell-value">7/2/25</span>
-                                            </td>
-                                            <td>
-                                                <strong>Oklahoma City Police Association (Ed Hill)</strong>
-                                                <div class="data-table-sub-cell-value">Item(s): (Shot Glass - OCPD Badge Logo)</div>
-                                                
-                                            </td>
-                                            <td>
-                                                <span class="badge">Promotional</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-pending">Pending Approval</span>
-                                                <span class="data-table-sub-cell-value">7/22/25</span>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button class="btn-action" title="View Order">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                            <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M3 6h18"></path>
-                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                    </svg></button>
-                                                    </button>
-                                                    <div class="dropdown pui-ms-5px">
-                                                        <button class="btn-action" title="More" onclick="toggleDropdown(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path d="m6 9 6 6 6-6"/>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a href="#" class="dropdown-item">Build PO</a>
-                                                            <a href="#" class="dropdown-item">New Approval</a>
-                                                            <a href="#" class="dropdown-item">Email PO</a>
-                                                            <a href="#" class="dropdown-item">Process Payment</a>
-                                                            <a href="#" class="dropdown-item">Export to Quickbooks</a>
-                                                            <a href="#" class="dropdown-item">Change Customer</a>
-                                                            <a href="#" class="dropdown-item">Duplicate Order</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="po-row">
-                                            <td></td>
-                                            <td>
-                                                <div class="po-tracker-item">
-                                                    <div class="po-tracker-title">PO: <a href="#" class="po-link">1.75 Oz. Tapered Shot Glass</a></div>
-                                                    <div class="po-tracker-description">Shot Glass - OCPD Badge Logo (Last activity: 07/02/2025)</div>
-                                                    <div class="po-progress-bar">
-                                                        <div class="po-progress-inner" style="width: 65%;"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="po-tracker-item">
-                                                    <div class="po-tracker-title">PO: <a href="#" class="po-link">1.75 Oz. Tapered Shot Glass</a></div>
-                                                    <div class="po-tracker-description">Shot Glass - OCPD Badge Logo (Last activity: 07/02/2025)</div>
-                                                    <div class="po-progress-bar">
-                                                        <div class="po-progress-inner" style="width: 65%;"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td colspan="3"></td>
-                                        </tr>
-                                        <tr class="data-table-row-alter">
-                                            <td>
-                                                <a href="order-entry.html">125497</a>
-                                                <br>
-                                                <span class="data-table-sub-cell-value">7/2/25</span>
-                                            </td>
-                                            <td>
-                                                <strong>Oklahoma Custom Coating (Trent Tiger)</strong>
-                                                <br>
-                                                <span class="data-table-sub-cell-value">Item(s): (Ecoats Apparel - Tulsa)</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge">Apparel</span>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-new">New</span>
-                                                <span class="data-table-sub-cell-value">7/22/25</span>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button class="btn-action" title="View Order">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                            <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M3 6h18"></path>
-                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                    </svg></button>
-                                                    </button>
-                                                    <div class="dropdown pui-ms-5px">
-                                                        <button class="btn-action" title="More" onclick="toggleDropdown(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path d="m6 9 6 6 6-6"/>
-                                                            </svg>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a href="#" class="dropdown-item">Build PO</a>
-                                                            <a href="#" class="dropdown-item">New Approval</a>
-                                                            <a href="#" class="dropdown-item">Email PO</a>
-                                                            <a href="#" class="dropdown-item">Process Payment</a>
-                                                            <a href="#" class="dropdown-item">Export to Quickbooks</a>
-                                                            <a href="#" class="dropdown-item">Change Customer</a>
-                                                            <a href="#" class="dropdown-item">Duplicate Order</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </div>
                   

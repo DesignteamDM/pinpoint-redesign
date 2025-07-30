@@ -4072,3 +4072,21 @@ select[multiple].form-control {
   padding: 15px;
   background-color: #fff;
 }
+.search-order-input{
+  display: flex;
+  align-items: center;
+}
+.search-order-input input{
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  height: 32px;
+  border: 1px solid #d3d3d3;
+}
+.search-order-input button{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid #d3d3d3;
+  height: 32px;
+  border-left: none;
+}

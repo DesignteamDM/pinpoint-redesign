@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Entry - Pinpoint Order Control System</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/utilities.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/sidebar.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar (Drawer) - Reused from dashboard.html -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="assets/images/pinpoint_logo.png" alt="Pinpoint Logo">
+                    <h4>Pinpoint Order Control System</h4>
+                </div>
+                <button id="closeSidebar" class="sidebar-close">
+                    <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="dashboard.html" data-title="Dashboard">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="orders.html" data-title="Orders">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                <span class="menu-text">Orders</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="customers.html" data-title="Customers">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span class="menu-text">Customers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="vendors.html" data-title="Vendors">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                                <span class="menu-text">Vendors</span>
+                            </a>
+                        </li>
+                        <!-- Products -->
+                        <li>
+                            <a href="products.html" data-title="Products">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" fill="currentColor" />
+                                    <path d="M8 14l-4 2l8 4l8 -4l-4 -2" />
+                                    <path d="M8 10l-4 2l8 4l8 -4l-4 -2" />
+                                </svg>
+                                <span class="menu-text">Products</span>
+                            </a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#" class="menu-item" data-title="Reports">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                    <path d="M8 13h2" />
+                                    <path d="M8 17h2" />
+                                    <path d="M16 13h-2" />
+                                    <path d="M16 17h-2" />
+                                </svg>
+                                <span class="menu-text">Reports</span>
+                                <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <!-- Orders -->
+                                <li>
+                                    <a href="#" class="menu-item">
+
+                                        <span class="menu-text">Orders</span>
+                                    </a>
+                                </li>
+
+                                <!-- Vendors -->
+                                <li>
+                                    <a href="#" class="menu-item">
+
+                                        <span class="menu-text">Vendors</span>
+                                    </a>
+                                </li>
+                                
+
+                                <!-- Customers -->
+                                <li class="has-submenu">
+                                    <a href="#" class="menu-item">
+
+                                        <span class="menu-text">Customers</span>
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="#" class="menu-item">Customer Details</a></li>
+                                        <li><a href="#" class="menu-item">Shipping Addresses</a></li>
+                                        <li><a href="#" class="menu-item">Order History</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- BBR Reports -->
+                                <li class="has-submenu">
+                                    <a href="#" class="menu-item">
+
+                                        <span class="menu-text">BBR Reports</span>
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="#" class="menu-item">Jacket Report</a></li>
+                                        <li><a href="#" class="menu-item">Jacket Shipping Report</a></li>
+                                        <li><a href="#" class="menu-item">Order Contact Report</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Delivery Status -->
+                                <li>
+                                    <a href="#" class="menu-item">
+
+                                        <span class="menu-text">Delivery Status</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#" data-title="Bright Store">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <path d="M9 22V12h6v10"></path>
+                                    <path d="M9 10l3-3 3 3"></path>
+                                    <path d="M9 5l3-3 3 3"></path>
+                                </svg>
+                                <span class="menu-text">Bright Store</span>
+                                <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="#" class="menu-item">Fetch Orders</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#" data-title="Utilities">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    <path
+                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                </svg>
+                                <span class="menu-text">Utilities</span>
+                                <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="#" class="menu-item">Artwork Library
+                                        <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li class="active"><a href="artwork-library-logos.html"
+                                                class="menu-item">Logos</a></li>
+                                        <li><a href="artwork-library-text.html" class="menu-item">Text</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="menu-item">Holiday List</a></li>
+                                <li><a href="#" class="menu-item">Default Values</a></li>
+                                <li><a href="#" class="menu-item">Notes</a></li>
+                                <li><a href="#" class="menu-item">Mail Recipients</a></li>
+                                <li><a href="#" class="menu-item">Item Reminder Rules</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#" data-title="T-Hub Integrations">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 9h16"></path>
+                                    <path d="M4 15h16"></path>
+                                    <path d="M10 3L8 21"></path>
+                                    <path d="M16 3l-2 18"></path>
+                                </svg>
+                                <span class="menu-text">T-Hub Integrations</span>
+                                <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="#" class="menu-item">USA E-Pay to T-Hub</a></li>
+                                <li><a href="#" class="menu-item">Lightspeed to T-Hub</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    </li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <a href="login.html" class="logout-btn" data-title="Logout">
+                    <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span class="menu-text">Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="sidebar-toggle">
+                        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="user-name">Bobby Prestridge</span>
+                        <div class="user-avatar">BP</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="main-content-inner">
+
+                <div class="listing-header">
+                    <div class="listing-header-left">
+                        <nav class="breadcrumb" aria-label="breadcrumb">
+                            <a href="dashboard.html" class="pui-link">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+
+                            </a>
+                            <a href="vendors.html" class="pui-link">Vendors</a>
+                            <span>Vendor Entry</span>
+                        </nav>
+
+                        <h2>Vendor Entry</h2>
+                    </div>
+                    <div class="listing-header-right">
+                        
+                        
+
+                    </div>
+                </div>
+                <div class="pui-row">
+                    <div class="pui-col-md-12">
+                        <div class="card">
+                            <div class="section-card">
+                                <div class="pui-row">
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="vendor-name">Vendor</label>
+                                            <input class="form-control" type="text" id="vendor-name" name="vendor-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vendor-line">Vendor Line (Sep. by comma)</label>
+                                            <input class="form-control" type="text" id="vendor-line" name="vendor-line">
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-8">
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <input class="form-control" type="text" id="phone" name="phone">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="phone">Ext. or Opt.</label>
+                                                    <input class="form-control" type="text" id="phone" name="phone">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input class="form-control" type="email" id="email" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="account-number">Account #</label>
+                                            <input class="form-control" type="text" id="account-number" name="account-number">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vendor-category">Vendor category</label>
+                                            <select class="form-control" id="vendor-category" name="vendor-category">
+                                                <option value="">Select</option>
+                                                <option value="1">Promotional</option>
+                                                <option value="2">Apparel</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input class="form-control" type="text" id="username" name="username">
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="form-group">
+                                            <label for="mail-address">Mail Address</label>
+                                            <input class="form-control" type="text" id="mail-address" name="mail-address">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="shipping-address">Shipping Address</label>
+                                            <input class="form-control" type="text" id="shipping-address" name="shipping-address">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fax">Fax</label>
+                                            <input class="form-control" type="text" id="fax" name="fax">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="website">Website</label>
+                                            <input class="form-control" type="text" id="website" name="website">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sage-number">Sage #</label>
+                                            <input class="form-control" type="text" id="sage-number" name="sage-number">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="asi-number">ASI #</label>
+                                            <input class="form-control" type="text" id="asi-number" name="asi-number">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="passcode">Passcode</label>
+                                            <input class="form-control" type="text" id="passcode" name="passcode">
+                                        </div>
+                                    </div>
+                                    <div class="pui-col-md-4">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="city">City</label>
+                                                    <input class="form-control" type="text" id="city" name="city">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-3">
+                                                <div class="form-group">
+                                                    <label for="state">State</label>
+                                                    <input class="form-control" type="text" id="state" name="state">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-2">
+                                                <div class="form-group">
+                                                    <label for="zip">Zip</label>
+                                                    <input class="form-control" type="text" id="zip" name="zip">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-2">
+                                                <div class="form-group">
+                                                    <label for="country">Country</label>
+                                                    <input class="form-control" type="text" id="country" name="country">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="city">City</label>
+                                                    <input class="form-control" type="text" id="city" name="city">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-3">
+                                                <div class="form-group">
+                                                    <label for="state">State</label>
+                                                    <input class="form-control" type="text" id="state" name="state">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-2">
+                                                <div class="form-group">
+                                                    <label for="zip">Zip</label>
+                                                    <input class="form-control" type="text" id="zip" name="zip">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-2">
+                                                <div class="form-group">
+                                                    <label for="country">Country</label>
+                                                    <input class="form-control" type="text" id="country" name="country">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-8">
+                                                <div class="form-group">
+                                                    <label for="">Toll-Free</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="">Ext. or Opt</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Email Art to</label>
+                                            <input class="form-control" type="text" id="" name="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">PPAI</label>
+                                            <input class="form-control" type="text" id="" name="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Time Zone</label>
+                                            <select class="form-control">
+                                                <option value="">Select Time Zone</option>
+                                                <option value="">China - 11</option>
+                                                <option value="">Alaska - 5</option>
+                                                <option value="">Pacific - 2</option>
+                                                <option value="">Mountain - 1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-row">
+                                <div class="pui-col-md-4">
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Credit Card Processing Fee</label>
+                                                    <!-- Radio group Yes/No-->
+                                                     <div class="radio-group">
+                                                    <div class="form-check pui-flex pui-align-items-center">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check pui-flex pui-align-items-center">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Percentage</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <!-- Setup Fee's Waived? Yes/No radio buttons -->
+                                                    <label for="">Setup Fee's Waived?</label>
+                                                    <div class="pui-flex pui-align-items-center">
+                                                    <div class="form-check pui-flex pui-align-items-center">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check pui-flex pui-align-items-center pui-ms-5px">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <!-- End Quantity Pricing (EQP) Yes/No radio buttons-->
+                                                    <label for="">End Quantity Pricing (EQP)</label>
+                                                    <div class="pui-flex pui-align-items-center">
+                                                    
+                                                    <div class="form-check pui-flex pui-align-items-center">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check pui-flex pui-align-items-center pui-ms-5px">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                            No (See Notes)
+                                                        </label>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Rush Phone</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Rush Art Email</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Rush Fax</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Rush PO Email</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Terms</label>
+                                                    <input type="text" class="form-control" name="" id="">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Factory to Zip 73102 Transit Days</label>
+                                                    <div class="pui-flex pui-align-items-center">
+                                                        <input type="text" class="form-control" name="" id="" style="width: 100px;">
+                                                        <a href="#" class="pui-ms-5px">UPS</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-12">
+                                                <div class="form-group">
+                                                    <!-- Does Vendor Send Art Proofs? Yes/No Radio Buttons -->
+                                                     <label for="">Does Vendor Send Art Proofs?</label>
+                                                     <div class="pui-flex pui-align-items-center">
+                                                        <div class="form-check pui-flex pui-align-items-center">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-8">
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="">Inside Vendor Rep</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Inside Vendor Rep Fax</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <!-- AIM Notes -->
+                                                <div class="form-group">
+                                                    <label for="">AIM Notes</label>
+                                                    <textarea class="form-control" id="" name=""></textarea>
+                                                </div>
+        
+                                            </div>
+                                            <div class="pui-col-md-5">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-5">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep Phone</label>
+                                                            <!-- Phone code list -->
+                                                            <select class="form-control">
+                                                                <option value="">Select</option>
+                                                                <option value="">USA (+1)</option>
+                                                                <option value="">UK (+44)</option>
+                                                                <option value="">Alaska (+99)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="">Ext. or Opt</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-2">
+        
+                                                        <div class="form-group">
+                                                            <label for="">-</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Outside Vendor Rep Email</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <!-- AIM Exclusions -->
+                                                <div class="form-group">
+                                                    <label for="">AIM Exclusions
+                                                        (use commas to seperate multiple values)</label>
+                                                    <textarea class="form-control" id="" name=""></textarea>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="pui-col-md-3">
+                                                <div class="form-group">
+                                                    <label for="">AIM Vendor Rep Cell Phone</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <!-- Member of AIM checkbox -->
+                                                <div class="form-group pui-flex pui-align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="" name="">
+                                                    <label class="form-check-label pui-mb-none pui-ms-5px" for="">Member of AIM</label>
+                                                </div>
+                                                <!-- No exclusions checkbox -->
+                                                <div class="form-group pui-flex pui-align-items-center">
+                                                    <input class="form-check-input" type="checkbox" id="" name="">
+                                                    <label class="form-check-label pui-mb-none pui-ms-5px" for="">No Exclusions</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                <!-- PO Delivery Method Email/Fax Radio buttons -->
+                                                 <label for="">PO Delivery Method</label>
+                                                 <div class="pui-flex pui-align-items-center">
+                                                    <div class="form-check pui-flex pui-align-items-center">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault1">
+                                                            Email
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check pui-flex pui-align-items-center pui-ms-5px">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                            Fax
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="form-group">
+                                               <!-- Factory PO Notes -->
+                                                <label for="">Factory PO Notes</label>
+                                                <textarea class="form-control" name="" id="" cols="10" rows="5"></textarea>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="">PO Email</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">	File Formats Not Accepted (use commas to seperate file formats)</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <!-- Rating A to F radio buttons -->
+                                                     <label for="">Rating</label>
+                                                     <div class="pui-flex pui-align-items-center">
+                                                        <div class="form-check pui-flex pui-align-items-center">
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault1">
+                                                                A
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                                B
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                                C
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                                D
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                                E
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px" for="flexRadioDefault2">
+                                                                F
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                <!-- All Formats Accepted checkbox -->
+                                                <div class="form-check pui-flex pui-align-items-center">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                    <label class="form-check-label pui-mb-none pui-ms-5px" for="flexCheckDefault">
+                                                        All Formats Accepted
+                                                    </label>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-row">
+                                <div class="pui-col-md-6">
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="">Federal EIN Number</label>
+                                                    <div class="pui-flex pui-align-items-center">
+                                                    <input type="text" class="form-control" name="" id="" style="width: 150px;">
+                                                    <!-- N/A checkbox -->
+                                                     <div class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                                         <label class="form-check-label pui-mb-none pui-ms-5px" for="flexCheckDefault">
+                                                             N/A
+                                                         </label>
+                                                     </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="">Accounting Email</label>
+                                                    <input type="text" class="form-control" name="" id="">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                <!-- W-9 Document file upload -->
+                                                 <label for="">W-9 Document</label>
+                                                 <input type="file" class="form-control" name="" id="">
+                                             </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     <div class="section-card pui-mt-10px">
+                                        <div class="form-group">
+                                            <label for="">Standard Print Colors (Seperate By Commas)</label>
+                                            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-6">
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="">Vendor Free Rush PO Title</label>
+                                                    <input type="text" class="form-control" name="" id="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-12">
+                                                <div class="form-group">
+                                                    <label for="">Notes</label>
+                                                    <textarea class="form-control" name="" id="" rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                           
+                            
+                           
+                            
+                           
+                            
+                            <!-- Add Vendor Button right aligned -->
+                             <div class="pui-row">
+                                <div class="pui-col-md-12">
+                                    <div class="text-right pui-mt-15px">
+                                        <button type="button" class="pui-btn pui-btn-primary">Add Vendor</button>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+ 
+    
+    <script>
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+                    dropdown.classList.remove('show');
+                });
+            }
+        });
+        
+        // Toggle dropdown
+        function toggleDropdown(button) {
+            event.stopPropagation();
+            const dropdown = button.closest('.dropdown');
+            const isOpen = dropdown.classList.contains('show');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown').forEach(function(d) {
+                if (d !== dropdown) d.classList.remove('show');
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('show', !isOpen);
+        }
+        
+        // Close dropdown when clicking an item
+        document.querySelectorAll('.dropdown-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                this.closest('.dropdown').classList.remove('show');
+            });
+        });
+    </script>
+    <script src="assets/scripts/sidebar.js"></script>
+    <script src="assets/scripts/dashboard.js"></script>
+   
+   
+</body>
+
+</html>

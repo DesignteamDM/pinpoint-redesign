@@ -79,6 +79,20 @@
                                 <span class="menu-text">Vendors</span>
                             </a>
                         </li>
+                        <!-- Products -->
+                        <li>
+                            <a href="products.html" data-title="Products">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" fill="currentColor" />
+                                    <path d="M8 14l-4 2l8 4l8 -4l-4 -2" />
+                                    <path d="M8 10l-4 2l8 4l8 -4l-4 -2" />
+                                </svg>
+                                <span class="menu-text">Products</span>
+                            </a>
+                        </li>
                         <li class="has-submenu">
                             <a href="#" class="menu-item" data-title="Reports">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -306,7 +320,7 @@
                     </div>
                     <div class="listing-header-right">
                         
-                        <button class="pui-btn pui-btn-primary">
+                        <a href="vendor-entry.html" class="pui-btn pui-btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" class="pui-btn-icon" width="16" height="16"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -314,208 +328,141 @@
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                             </svg>
                             Add New Vendor
-                        </button>
+                        </a>
 
                     </div>
                 </div>
                 <div class="pui-row">
                     <div class="pui-col-md-12">
                         <div class="card">
-
-                            <!-- Search and pagination-->
+                           <!-- Search and pagination-->
                             
-                            <div class="listing-header">
-                                <div class="listing-header-left pui-flex">
-                                    <div class="pui-input-group pui-me-10px">
-                                        <input type="text" id="searchInput" class="form-control" placeholder="Find Vendor" style="min-width: 200px;">
-                                        
-                                        <button class="pui-btn pui-btn-secondary" id="searchButton"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <circle cx="11" cy="11" r="8"></circle>
-                                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                            </svg></button>
-                                    </div>
+                           <div class="listing-header">
+                            <div class="listing-header-left pui-flex">
+                                <div class="pui-input-group pui-me-10px">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Find Vendor" style="min-width: 200px;">
                                     
-
+                                    <button class="pui-btn pui-btn-secondary" id="searchButton"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg></button>
                                 </div>
-                                <div class="listing-header-right">
-                                    <div class="pagination-container">
-                                        <div class="pagination">
-                                            <button class="pagination-btn prev" disabled>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <polyline points="15 18 9 12 15 6"></polyline>
-                                                </svg>
-        
-                                            </button>
-                                            <div class="pagination-numbers">
-                                                <button class="pagination-number active">1</button>
-                                                <button class="pagination-number">2</button>
-                                                <button class="pagination-number">3</button>
-                                                <span class="pagination-ellipsis">...</span>
-                                                <button class="pagination-number">10</button>
-                                            </div>
-                                            <button class="pagination-btn next">
-        
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                                </svg>
-                                            </button>
+                                
+
+                            </div>
+                            <div class="listing-header-right">
+                                <div class="pagination-container">
+                                    <div class="pagination">
+                                        <button class="pagination-btn prev" disabled>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="15 18 9 12 15 6"></polyline>
+                                            </svg>
+    
+                                        </button>
+                                        <div class="pagination-numbers">
+                                            <button class="pagination-number active">1</button>
+                                            <button class="pagination-number">2</button>
+                                            <button class="pagination-number">3</button>
+                                            <span class="pagination-ellipsis">...</span>
+                                            <button class="pagination-number">10</button>
                                         </div>
+                                        <button class="pagination-btn next">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-        
-                            <div class="table-responsive">
-                                <table class="data-table">
-                                    <colgroup>
-                                        <col span="1" style="width: 15%;">
-                                        <col span="1" style="width: 15%;">
-                                        <col span="1" style="width: 15%;">
-                                        <col span="1" style="width: 15%;">
-                                        <col span="1" style="width: 15%;">
-                                        <col span="1" style="width: 15%;">
-                                        <col span="1" style="width: 15%;">
-                                        <col span="1" style="width: 15%;">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>Vendor</th>
-                                            <th>Contact</th>
-                                            <th>Location</th>
-                                            <th>Customer No.</th>
-                                            <th>Art Email</th>
-                                            <th>Catalog</th>
-                                            <th>Expires on</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <a href="vendor-details.html">H2O Direct</a>
-                                                <br>
-                                                <span>Sage: 12345</span>
-                                                <br>
-                                                <span>PPAI: 43835</span>
-                                                <br>
-                                                <span>ASI: 38844</span>
-                                            </td>
-                                            <td>
-                                                <strong>Jerre Bodin</strong>
-                                                <br>
-                                                <span>Phone: 815.786.6495</span>
-                                                <br>
-                                                <span>Fax: 815.274.6096</span>
-                                              
-                                            </td>
-                                            <td>
-                                                305 NW 5th Street, Suite 1662
-                                                Oklahoma City, OK 73101
-                                            </td>
-                                            <td>
-                                                99999
-                                            </td>
-                                            <td>
-                                                jerre@h2odirectlink.com
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
+                        </div>
+    
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <colgroup>
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 15%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Vendor</th>
+                                        <th>Contact</th>
+                                        <th>Location</th>
+                                        <th>Customer No.</th>
+                                        <th>Art Email</th>
+                                        <th>Catalog</th>
+                                        <th>Expires on</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="vendor-details.html">H2O Direct</a>
+                                            <br>
+                                            <span>Sage: 12345</span>
+                                            <br>
+                                            <span>PPAI: 43835</span>
+                                            <br>
+                                            <span>ASI: 38844</span>
+                                        </td>
+                                        <td>
+                                            <strong>Jerre Bodin</strong>
+                                            <br>
+                                            <span>Phone: 815.786.6495</span>
+                                            <br>
+                                            <span>Fax: 815.274.6096</span>
+                                          
+                                        </td>
+                                        <td>
+                                            305 NW 5th Street, Suite 1662
+                                            Oklahoma City, OK 73101
+                                        </td>
+                                        <td>
+                                            99999
+                                        </td>
+                                        <td>
+                                            jerre@h2odirectlink.com
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
 
-                                                <div class="btn-group">
+                                            <div class="btn-group">
+                                                
+                                                <button class="btn-action" title="View Order">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                                    </svg>
+                                                </button>
+                                                <button class="btn-action" title="Edit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                        </path>
+                                                    </svg></button>
                                                     
-                                                    <button class="btn-action" title="View Order">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                            <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg></button>
-                                                        
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M3 6h18"></path>
-                                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                            <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                            <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                        </svg></button>
-                                                        
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="data-table-row-alter">
-                                            <td>
-                                                <a href="vendor-details.html">Haas-Jordan</a>
-                                                <br>
-                                                <span>Sage: 55463</span>
-                                                <br>
-                                                <span>PPAI: 113502</span>
-                                                <br>
-                                                <span>ASI: </span>
-                                            </td>
-                                            <td>
-                                                <strong>Karen O'Brien</strong>
-                                                <br>
-                                                <span>Phone: 405.306.4647</span>
-                                                <br>
-                                                <span>Toll Free: 800.222.2222</span>
-                                                <br>
-                                                <span>Fax: 405.306.4647</span>
-                                              
-                                            </td>
-                                            <td>
-                                                6509 Angola Road
-                                                Holland, OH 43528
-                                            </td>
-                                            <td>
-                                                70991
-                                            </td>
-                                            <td>
-                                                info@haas-jordan.com
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button class="btn-action" title="View Order">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                            <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Edit">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                            </path>
-                                                        </svg>
-                                                    </button>
-                                                    <button class="btn-action" title="Delete">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                <button class="btn-action" title="Delete">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                         <path d="M3 6h18"></path>
@@ -524,23 +471,23 @@
                                                         <line x1="10" x2="10" y1="11" y2="17"></line>
                                                         <line x1="14" x2="14" y1="11" y2="17"></line>
                                                     </svg></button>
-                                                    </button>
                                                     
-                                                </div>
-                                            </td>
-                                        </tr>
-                                       <tr>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="data-table-row-alter">
                                         <td>
-                                            <a href="vendor-details.html">Hamm & Copper Hat Company</a>
-                                                <br>
-                                                <span>Sage: </span>
-                                                <br>
-                                                <span>PPAI: </span>
-                                                <br>
-                                                <span>ASI: </span>
+                                            <a href="vendor-details.html">Haas-Jordan</a>
+                                            <br>
+                                            <span>Sage: 55463</span>
+                                            <br>
+                                            <span>PPAI: 113502</span>
+                                            <br>
+                                            <span>ASI: </span>
                                         </td>
                                         <td>
-                                           
+                                            <strong>Karen O'Brien</strong>
+                                            <br>
                                             <span>Phone: 405.306.4647</span>
                                             <br>
                                             <span>Toll Free: 800.222.2222</span>
@@ -549,13 +496,21 @@
                                           
                                         </td>
                                         <td>
-                                            516 Lannius Road
-Dodd City, TX 75438
+                                            6509 Angola Road
+                                            Holland, OH 43528
                                         </td>
-                                        <td>99999</td>
-                                        <td>hchatco@outlook.com</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            70991
+                                        </td>
+                                        <td>
+                                            info@haas-jordan.com
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="btn-action" title="View Order">
@@ -586,10 +541,68 @@ Dodd City, TX 75438
                                                 
                                             </div>
                                         </td>
-                                       </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    </tr>
+                                   <tr>
+                                    <td>
+                                        <a href="vendor-details.html">Hamm & Copper Hat Company</a>
+                                            <br>
+                                            <span>Sage: </span>
+                                            <br>
+                                            <span>PPAI: </span>
+                                            <br>
+                                            <span>ASI: </span>
+                                    </td>
+                                    <td>
+                                       
+                                        <span>Phone: 405.306.4647</span>
+                                        <br>
+                                        <span>Toll Free: 800.222.2222</span>
+                                        <br>
+                                        <span>Fax: 405.306.4647</span>
+                                      
+                                    </td>
+                                    <td>
+                                        516 Lannius Road
+Dodd City, TX 75438
+                                    </td>
+                                    <td>99999</td>
+                                    <td>hchatco@outlook.com</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button class="btn-action" title="View Order">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                                    <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn-action" title="Edit">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
+                                                    </path>
+                                                </svg>
+                                            </button>
+                                            <button class="btn-action" title="Delete">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M3 6h18"></path>
+                                                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                <line x1="14" x2="14" y1="11" y2="17"></line>
+                                            </svg></button>
+                                            </button>
+                                            
+                                        </div>
+                                    </td>
+                                   </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         </div>
                     </div>
                   
@@ -598,297 +611,6 @@ Dodd City, TX 75438
             </div>
         </div>
     </div>
-
-    <!-- Add Logo Modal -->
-    <div id="addLogoModal" class="modal" style="display: none;">
-        <div class="modal-content" style="max-width: 700px;">
-            <div class="modal-header">
-                <h3>Add New Logo Specification</h3>
-                <span class="close-modal" onclick="closeAddLogoModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="addLogoForm">
-                    
-                    
-                    
-                    <div class="form-group pui-mb-15px">
-                        <label for="specType">Specification Type <span class="required">*</span></label>
-                        <select id="specType" class="form-control" onchange="toggleSpecificationFields()" required>
-                            <option value="screen_printing" selected>Screen Printing</option>
-                            <option value="embroidery">Embroidery</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Screen Printing Fields -->
-                    <div id="screenPrintingFields">
-                        <div class="pui-row">
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="width">Width (cm) <span class="required">*</span></label>
-                                    <input type="number" id="width" class="form-control" step="0.1" min="0" required>
-                                </div>
-                            </div>
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="height">Height (cm) <span class="required">*</span></label>
-                                    <input type="number" id="height" class="form-control" step="0.1" min="0" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pui-mb-15px">
-                            <label>Background Colors <span class="required">*</span> <button type="button" class="add-option-btn-sm" title="Add New">+</button></label>
-                            <div class="color-picker">
-                                <div class="color-options">
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="red" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #ff0000;" title="Red"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="yellow" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #ffff00;" title="Yellow"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="blue" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #0000ff;" title="Blue"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="green" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #008000;" title="Green"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="white" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #ffffff; border: 1px solid #ddd;" title="White"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="black" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #000000;" title="Black"></span>
-                                    </label>
-                                </div>
-                                <input type="hidden" id="bgColors" name="bgColors" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="price">Price ($) <span class="required">*</span></label>
-                            <input type="number" id="price" class="form-control" step="0.01" min="0" required>
-                        </div>
-                    </div>
-                    
-                    <!-- Embroidery Fields (initially hidden) -->
-                    <div id="embroideryFields" style="display: none;">
-                        <div class="pui-row">
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="stitchCount">Stitch Count <span class="required">*</span></label>
-                                    <input type="number" id="stitchCount" class="form-control" min="0" required>
-                                </div>
-                            </div>
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="size">Size (e.g., 100x100) <span class="required">*</span></label>
-                                    <input type="text" id="size" class="form-control" placeholder="Enter size (e.g., 100x100)" required>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="pui-row">
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="trims">No. of Trims <span class="required">*</span></label>
-                                    <input type="number" id="trims" class="form-control" min="0" required>
-                                </div>
-                            </div>
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="colorChanges">No. of Color Changes <span class="required">*</span></label>
-                                    <input type="number" id="colorChanges" class="form-control" min="0" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="embroideryPrice">Price ($) <span class="required">*</span></label>
-                            <input type="number" id="embroideryPrice" class="form-control" step="0.01" min="0" required>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer pui-p-15px pui-pt-0">
-                <button type="button" class="pui-btn pui-btn-secondary pui-mr-10px" onclick="closeAddLogoModal()">Cancel</button>
-                <button type="button" class="pui-btn pui-btn-primary" onclick="saveLogo()">Save</button>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        .badge {
-            background-color: #c7e2ff;
-            color: rgb(10, 54, 109);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        .badge.badge-pending{
-            background-color: #ffe390;
-            color: #7a5a05;
-        }
-        .badge.badge-approved{
-            background-color: #218838;
-            color: #218838;
-        }
-        .badge.badge-rejected{
-            background-color: #ffebee;
-            color: #c82333;
-        }
-        .badge {
-            background-color: #f0f4f8;
-            color: #486581;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-            display: inline-block;
-        }
-        .badge.badge-new {
-            background-color: #e3f2fd;
-            color: #1565c0;
-        }
-        .badge.badge-pending {
-            background-color: #fff8e1;
-            color: #ff8f00;
-        }
-        .badge.badge-shipped {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-        }
-        .badge.badge-credit-hold {
-            background-color: #fff3e0;
-            color: #ef6c00;
-        }
-        .btn-group {
-            display: flex;
-            gap: 4px;
-        }
-        .btn-action {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            width: 28px;
-            height: 28px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: #666;
-            transition: all 0.2s;
-        }
-        .btn-action:hover {
-            background-color: #f5f5f5;
-        }
-        
-        /* PO Progress Bar Styles */
-        .po-tracker-item {
-            background-color: #f0f4f8;
-            border-radius: 4px;
-            padding: 8px;
-            margin-top: 8px;
-            border: 1px solid #c1cbd4;
-            margin-bottom: 5px;
-        }
-        
-        .po-tracker-title {
-            font-size: 14px;
-            font-weight: 500;
-            color: #495057;
-            margin-bottom: 4px;
-        }
-        
-        .po-tracker-title .po-link {
-            color: #0c5298;
-            text-decoration: none;
-        }
-        
-        .po-tracker-title .po-link:hover {
-            text-decoration: underline;
-        }
-        
-        .po-tracker-description {
-            font-size: 13px;
-            color: #404b55;
-            margin-bottom: 6px;
-        }
-        
-        .po-progress-bar {
-            height: 8px;
-            background-color: #fff;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .po-progress-inner {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            background-image: url('assets/images/pmark.png');
-            background-size: 14px 6px;
-            background-repeat: repeat;
-            border-radius: 3px;
-        }
-        
-        
-        .btn-action:hover {
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        
-        /* Dropdown Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: #fff;
-            min-width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            border: 1px solid #e0e0e0;
-            z-index: 1000;
-            margin-top: 4px;
-            padding: 4px 0;
-        }
-        
-        .dropdown.show .dropdown-menu {
-            display: block;
-        }
-        
-        .dropdown-item {
-            display: block;
-            padding: 8px 16px;
-            color: #333;
-            text-decoration: none;
-            font-size: 13px;
-            transition: background-color 0.2s;
-        }
-        
-        .dropdown-item:hover {
-            background-color: #f5f8fa;
-            color: #0c5298;
-        }
-        
-        .dropdown-item.text-danger {
-            color: #dc3545;
-        }
-        
-        .dropdown-item.text-danger:hover {
-            background-color: #f8d7da;
-        }
-    </style>
     
     <script>
         // Close dropdowns when clicking outside

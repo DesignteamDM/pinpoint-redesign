@@ -93,6 +93,21 @@
                                 <span class="menu-text">Products</span>
                             </a>
                         </li>
+                        <!-- Shipping Manager -->
+                        <li>
+                            <a href="shipping-manager.html" data-title="Shipping Manager">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                    <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                    <path d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                                    <path d="M3 9l4 0" />
+                                </svg>
+                                <span class="menu-text">Shipping Manager</span>
+                            </a>
+                        </li>
                         <li class="has-submenu">
                             <a href="#" class="menu-item" data-title="Reports">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -128,7 +143,6 @@
                                         <span class="menu-text">Vendors</span>
                                     </a>
                                 </li>
-
 
                                 <!-- Customers -->
                                 <li class="has-submenu">
@@ -173,7 +187,7 @@
                                         <span class="menu-text">Delivery Status</span>
                                     </a>
                                 </li>
-
+                                <li><a href="production-email.html" class="menu-item">Production Email </a></li>
                             </ul>
                         </li>
                         <li class="has-submenu">
@@ -194,9 +208,17 @@
                                 </svg>
                             </a>
                             <ul class="submenu">
-                                <li><a href="#" class="menu-item">Fetch Orders</a></li>
+
+                                <li><a href="webserver-81.html" class="menu-item">Webserver: 82</a></li>
+                                <li><a href="webserver-82-orders-history.html" class="menu-item">82 Orders History</a>
+                                </li>
+                                <li><a href="fetch-orders-by-store.html" class="menu-item">Fetch Orders By Store</a>
+                                </li>
+                                <li><a href="fetch-orders-by-number.html" class="menu-item">Fetch Orders By Number</a>
+                                </li>
                             </ul>
                         </li>
+
                         <li class="has-submenu">
                             <a href="#" data-title="Utilities">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -223,19 +245,46 @@
                                         </svg>
                                     </a>
                                     <ul class="submenu">
-                                        <li class="active"><a href="artwork-library-logos.html"
-                                                class="menu-item">Logos</a></li>
+                                        <li><a href="artwork-library-logos.html" class="menu-item">Logos</a></li>
                                         <li><a href="artwork-library-text.html" class="menu-item">Text</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" class="menu-item">Holiday List</a></li>
-                                <li><a href="#" class="menu-item">Default Values</a></li>
-                                <li><a href="#" class="menu-item">Notes</a></li>
-                                <li><a href="#" class="menu-item">Mail Recipients</a></li>
-                                <li><a href="#" class="menu-item">Item Reminder Rules</a></li>
+                                <li><a href="holiday-list.html" class="menu-item">Holiday List</a></li>
+                                <li class="has-submenu"><a href="#" class="menu-item">Settings <svg class="menu-arrow"
+                                            width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg></a>
+                                    <ul class="submenu">
+                                        <li><a href="default-values-settings.html" class="menu-item">Default Values</a>
+                                        </li>
+                                        <li><a href="notes-settings.html" class="menu-item">Notes</a></li>
+                                    </ul>
+
+                                </li>
+
+                                <li><a href="attribute-tables.html" class="menu-item">Attribute
+                                        Tables
+                                       
+                                    </a>
+                                   
+                                </li>
+
+
+                                <li><a href="item-reminder-rules.html" class="menu-item">Item Reminder Rules</a></li>
+                                <li><a href="catalogs.html" class="menu-item">Catalogs</a></li>
+                                <li><a href="manage-customer-type.html" class="menu-item">Manage Customer Type</a></li>
+                                <li><a href="catalog-mail-recipients.html" class="menu-item">Catalog Mail Recipients</a>
+                                </li>
+
+                                <li><a href="email-center.html" class="menu-item">Email Center</a></li>
+                                <li><a href="holiday-list.html" class="menu-item">Holiday List </a></li>
+                                <li><a href="price-code-list.html" class="menu-item">Price Code List </a></li>
+                                <li><a href="size-list.html" class="menu-item">Size List</a></li>
+
                             </ul>
                         </li>
-                        <li class="has-submenu">
+                        <li>
                             <a href="#" data-title="T-Hub Integrations">
                                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -245,17 +294,10 @@
                                     <path d="M10 3L8 21"></path>
                                     <path d="M16 3l-2 18"></path>
                                 </svg>
-                                <span class="menu-text">T-Hub Integrations</span>
-                                <svg class="menu-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
+                                <span class="menu-text">Convert Lightspeed to T-Hub </span>
+
                             </a>
-                            <ul class="submenu">
-                                <li><a href="#" class="menu-item">USA E-Pay to T-Hub</a></li>
-                                <li><a href="#" class="menu-item">Lightspeed to T-Hub</a></li>
-                            </ul>
+
                         </li>
 
                     </ul>
@@ -293,6 +335,15 @@
 
                 </div>
                 <div class="header-right">
+                    <div class="search-order-input pui-me-15px">
+                        <input type="text" class="form-control" placeholder="Find order...">
+                        <button class="btn pui-btn-secondary pui-btn-icon">
+                            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" />
+                            </svg>
+                        </button>
+                    </div>
                     <div class="user-info">
                         <span class="user-name">Bobby Prestridge</span>
                         <div class="user-avatar">BP</div>
@@ -329,12 +380,13 @@
                 <div class="pui-row">
                     <div class="pui-col-md-12">
                         <div class="tabs">
-                            <button class="tab-btn active" data-tab="register-vendor-tab">Register Vendor</button>
+                            <button class="tab-btn active" data-tab="register-vendor-tab">Vendor Details</button>
                             <button class="tab-btn" data-tab="current-products-tab">Current Products</button>
                         </div>
                         <div class="tab-content active" id="register-vendor-tab" style="display: block;">
                             <div class="tab-content-inner">
                                 <div>
+                                    <!-- <div class="pui-alert pui-alert-warning pui-mb-10px">Vendor Needs To Be Updated: Please Enter 'File Formats Not Accepted'/Select 'All Formats Accepted'</div> -->
                                     <div class="section-card">
                                         <div class="pui-row">
                                             <div class="pui-col-md-4">
@@ -686,93 +738,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="pui-col-md-8">
                                             <div class="section-card pui-mt-10px">
                                                 <div class="pui-row">
-                                                    <div class="pui-col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="">Inside Vendor Rep</label>
-                                                            <input class="form-control" type="text" id="" name="">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="">Inside Vendor Rep Fax</label>
-                                                            <input class="form-control" type="text" id="" name="">
-                                                        </div>
-                                                        <!-- AIM Notes -->
-                                                        <div class="form-group">
-                                                            <label for="">AIM Notes</label>
-                                                            <textarea class="form-control" id="" name=""></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="pui-col-md-5">
-                                                        <div class="pui-row">
-                                                            <div class="pui-col-md-5">
-                                                                <div class="form-group">
-                                                                    <label for="">Inside Vendor Rep Phone</label>
-                                                                    <!-- Phone code list -->
-                                                                    <select class="form-control">
-                                                                        <option value="">Select</option>
-                                                                        <option value="">USA (+1)</option>
-                                                                        <option value="">UK (+44)</option>
-                                                                        <option value="">Alaska (+99)</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="pui-col-md-3">
-                                                                <div class="form-group">
-                                                                    <label for="">Ext. or Opt</label>
-                                                                    <input class="form-control" type="text" id=""
-                                                                        name="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="pui-col-md-2">
-
-                                                                <div class="form-group">
-                                                                    <label for="">-</label>
-                                                                    <input class="form-control" type="text" id=""
-                                                                        name="">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="">Outside Vendor Rep Email</label>
-                                                            <input class="form-control" type="text" id="" name="">
-                                                        </div>
-                                                        <!-- AIM Exclusions -->
-                                                        <div class="form-group">
-                                                            <label for="">AIM Exclusions
-                                                                (use commas to seperate multiple values)</label>
-                                                            <textarea class="form-control" id="" name=""></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="pui-col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="">AIM Vendor Rep Cell Phone</label>
-                                                            <input class="form-control" type="text" id="" name="">
-                                                        </div>
-                                                        <!-- Member of AIM checkbox -->
-                                                        <div class="form-group pui-flex pui-align-items-center">
-                                                            <input class="form-check-input" type="checkbox" id=""
-                                                                name="">
-                                                            <label class="form-check-label pui-mb-none pui-ms-5px"
-                                                                for="">Member of AIM</label>
-                                                        </div>
-                                                        <!-- No exclusions checkbox -->
-                                                        <div class="form-group pui-flex pui-align-items-center">
-                                                            <input class="form-check-input" type="checkbox" id=""
-                                                                name="">
-                                                            <label class="form-check-label pui-mb-none pui-ms-5px"
-                                                                for="">No Exclusions</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="section-card pui-mt-10px">
-                                                <div class="pui-row">
-                                                    <div class="pui-col-md-4">
+                                                    <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <!-- PO Delivery Method Email/Fax Radio buttons -->
                                                             <label for="">PO Delivery Method</label>
@@ -806,7 +774,7 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="pui-col-md-4">
+                                                    <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <label for="">PO Email</label>
                                                             <input class="form-control" type="text" id="" name="">
@@ -816,8 +784,19 @@
                                                                 seperate file formats)</label>
                                                             <input class="form-control" type="text" id="" name="">
                                                         </div>
+                                                        <div class="form-group">
+                                                            <!-- All Formats Accepted checkbox -->
+                                                            <div class="form-check pui-flex pui-align-items-center">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                                    for="flexCheckDefault">
+                                                                    All Formats Accepted
+                                                                </label>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="pui-col-md-4">
+                                                    <div class="pui-col-md-6">
                                                         <div class="form-group">
                                                             <!-- Rating A to F radio buttons -->
                                                             <label for="">Rating</label>
@@ -883,20 +862,237 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                       
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-8">
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Inside Vendor</h4>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
                                                         <div class="form-group">
-                                                            <!-- All Formats Accepted checkbox -->
-                                                            <div class="form-check pui-flex pui-align-items-center">
-                                                                <input class="form-check-input" type="checkbox" value=""
-                                                                    id="flexCheckDefault">
-                                                                <label class="form-check-label pui-mb-none pui-ms-5px"
-                                                                    for="flexCheckDefault">
-                                                                    All Formats Accepted
-                                                                </label>
+                                                            <label for="">Inside Vendor Rep</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-5">
+                                                        <div class="pui-row">
+                                                            <div class="pui-col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="">Inside Vendor Rep Phone</label>
+                                                                    <!-- Phone code list -->
+                                                                    <select class="form-control">
+                                                                        <option value="">Select</option>
+                                                                        <option value="">USA (+1)</option>
+                                                                        <option value="">UK (+44)</option>
+                                                                        <option value="">Alaska (+99)</option>
+                                                                    </select>
+                                                                </div>
                                                             </div>
+                                                            <div class="pui-col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="">Ext. or Opt</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+
+                                                                <div class="form-group">
+                                                                    <label for="">-</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep Cell Phone</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep Fax</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep Email</label>
+                                                            <input class="form-control" type="email" id="" name="">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Outside Vendor</h4>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-5">
+                                                        <div class="pui-row">
+                                                            <div class="pui-col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="">Outside Vendor Rep Phone</label>
+                                                                    <!-- Phone code list -->
+                                                                    <select class="form-control">
+                                                                        <option value="">Select</option>
+                                                                        <option value="">USA (+1)</option>
+                                                                        <option value="">UK (+44)</option>
+                                                                        <option value="">Alaska (+99)</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="">Ext. or Opt</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+
+                                                                <div class="form-group">
+                                                                    <label for="">-</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep Cell Phone</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep Fax</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep Email</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">AIM Vendor</h4>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-5">
+                                                        <div class="pui-row">
+                                                            <div class="pui-col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="">AIM Vendor Rep Phone</label>
+                                                                    <!-- Phone code list -->
+                                                                    <select class="form-control">
+                                                                        <option value="">Select</option>
+                                                                        <option value="">USA (+1)</option>
+                                                                        <option value="">UK (+44)</option>
+                                                                        <option value="">Alaska (+99)</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="">Ext. or Opt</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+
+                                                                <div class="form-group">
+                                                                    <label for="">-</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep Cell Phone</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep Fax</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep Email</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <!-- Member of AIM checkbox -->
+                                                        <div class="form-group pui-flex pui-align-items-center">
+                                                            <input class="form-check-input" type="checkbox" id=""
+                                                                name="">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="">Member of AIM</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Notes</label>
+                                                            <textarea class="form-control" id="" name=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Exclusions
+                                                                (use commas to seperate multiple values)</label>
+                                                            <textarea class="form-control" id="" name=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <!-- No exclusions checkbox -->
+                                                        <div class="form-group pui-flex pui-align-items-center">
+                                                            <input class="form-check-input" type="checkbox" id=""
+                                                                name="">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="">No Exclusions</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                          
                                         </div>
                                     </div>
                                     <div class="pui-row">

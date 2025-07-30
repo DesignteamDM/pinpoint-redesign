@@ -4090,3 +4090,17 @@ select[multiple].form-control {
   height: 32px;
   border-left: none;
 }
+.pui-alert{
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.pui-alert-warning{
+  background-color: #fff3f5;
+  border: 1px solid #ffb1b9;
+  color: #dc3545;
+}
+.section-card-title{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}

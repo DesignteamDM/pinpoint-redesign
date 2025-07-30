@@ -4,45 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artwork Library - Logos - Pinpoint Order Details</title>
+    <title>Customer Entry - Pinpoint Order Control System</title>
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/styles/utilities.css">
     <link rel="stylesheet" href="assets/styles/dashboard.css">
     <link rel="stylesheet" href="assets/styles/sidebar.css">
-    <style>
-        
-        .logo-preview {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            background-color: #f8f9fa;
-            padding: 5px;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 4px;
-        }
-
-
-        
-
-        
-
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-    
-            
-            .action-buttons {
-                margin-top: 10px;
-                width: 100%;
-                justify-content: flex-end;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -359,13 +325,14 @@
             <header class="dashboard-header">
                 <div class="header-left">
                     <button id="sidebarToggle" class="sidebar-toggle">
-                        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
                             <line x1="3" y1="6" x2="21" y2="6"></line>
                             <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
                     </button>
-                    
+
                 </div>
                 <div class="header-right">
                     <div class="search-order-input pui-me-15px">
@@ -386,447 +353,374 @@
 
             <!-- Page Content -->
             <div class="main-content-inner">
-                
-                <div class="listing-header">
-                   <div class="listing-header-left">
-                    <nav class="breadcrumb" aria-label="breadcrumb">
-                        <a href="dashboard.html" class="pui-link">
-                            <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            
-                        </a>
-                        <a href="#" class="pui-link">Utilities</a>
-                        <a href="#" class="pui-link">Artwork Library</a>
-                        <span>Logos</span>
-                    </nav>
 
-                    <h2>Artwork Library - Logos</h2>
+                <div class="listing-header">
+                    <div class="listing-header-left">
+                        <nav class="breadcrumb" aria-label="breadcrumb">
+                            <a href="dashboard.html" class="pui-link">
+                                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+
+                            </a>
+                            <a href="customers.html" class="pui-link">
+                            <span>Customers</span>
+                            </a>
+                            <span>A & M Ranch</span>
+                        </nav>
+
+                        <h2>A & M Ranch</h2>
                     </div>
                     <div class="listing-header-right">
-                        <a class="pui-btn pui-btn-secondary pui-me-5px" href="artwork-library-logo-specifications.html" >
-                            <svg xmlns="http://www.w3.org/2000/svg" class="pui-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                            </svg>
-                            Add Logo Specification
-                        </a>
-                    <button class="pui-btn pui-btn-primary" id="addLogoBtn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="pui-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                        Add Logo
-                    </button>
-                    
-                </div>
-                </div>
-                <div class="card">
-                    
-<!-- Search and pagination-->
- <div class="listing-header">
-    <div class="listing-header-left">
-        <div class="pui-input-group">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search Logos...">
-            <button class="pui-btn pui-btn-secondary" id="searchButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
-        </div>
-    </div>
-    <div class="listing-header-right">
-        <div class="pagination-container">
-            <div class="pagination">
-                <button class="pagination-btn prev" disabled>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                    
-                </button>
-                <div class="pagination-numbers">
-                    <button class="pagination-number active">1</button>
-                    <button class="pagination-number">2</button>
-                    <button class="pagination-number">3</button>
-                    <span class="pagination-ellipsis">...</span>
-                    <button class="pagination-number">10</button>
-                </div>
-                <button class="pagination-btn next">
-                   
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
 
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <colgroup>
-                                <col span="1" style="width: 5%;">
-                                <col span="1" style="width: 20%;">
-                                <col span="1" style="width: 20%;">
-                                <col span="1" style="width: 10%;">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>Preview</th>
-                                    <th>Logo Name</th>
-                                    
-                                    <th>File Type</th>
-                                    
-                                    
-                                    
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><img src="assets/images/item-logos/item-logo-1.jpg" alt="Company Logo" class="logo-preview"></td>
-                                    <td>Home Renew Chest Logo</td>
-                                    <td>PNG</td>
-                                    
-                                    
-                                    <td>
-                                        <div>
-                                            <button class="btn-action" title="Edit">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                    </path>
-                                                </svg></button>
-                                                <button class="btn-action" title="Delete">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M3 6h18"></path>
-                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                    </svg></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="assets/images/item-logos/item-logo-2.jpg" alt="Product Badge" class="logo-preview"></td>
-                                    <td>Home Renew Cap Logo r1</td>
-                                    <td>PNG</td>
-                                    
-                                    
-                                    <td>
-                                        <div>
-                                            <button class="btn-action" title="Edit">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                    </path>
-                                                </svg></button>
-                                                <button class="btn-action" title="Delete">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M3 6h18"></path>
-                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                    </svg></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><img src="assets/images/item-logos/item-logo-3.jpg" alt="Event Logo" class="logo-preview"></td>
-                                    <td>NSI Sleeve Logo R1.</td>
-                                    <td>JPG</td>
-                                    
-                                    <td>
-                                        <div>
-                                            <button class="btn-action" title="Edit">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z">
-                                                    </path>
-                                                </svg></button>
-                                                <button class="btn-action" title="Delete">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M3 6h18"></path>
-                                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
-                                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                                                        <line x1="10" x2="10" y1="11" y2="17"></line>
-                                                        <line x1="14" x2="14" y1="11" y2="17"></line>
-                                                    </svg></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- Add more logo entries as needed -->
-                            </tbody>
-                        </table>
+
                     </div>
                 </div>
+                
+                <div class="pui-row">
+                    <div class="pui-col-md-12">
+                        <div class="card">
+
+<p>Page will be updated soon</p>
+                            
+                        </div>
+                    </div>
+                  
+                </div>
+                
             </div>
         </div>
     </div>
 
     <!-- Add Logo Modal -->
     <div id="addLogoModal" class="modal" style="display: none;">
-        <div class="modal-content" style="max-width: 600px;">
+        <div class="modal-content" style="max-width: 700px;">
             <div class="modal-header">
-                <h3>Add New Logo</h3>
+                <h3>Add New Logo Specification</h3>
                 <span class="close-modal" onclick="closeAddLogoModal()">&times;</span>
             </div>
             <div class="modal-body">
                 <form id="addLogoForm">
+                    
+                    
+                    
                     <div class="form-group pui-mb-15px">
-                        <label>Upload Logo <span class="required">*</span></label>
-                        <div class="file-upload-container">
-                            <input type="file" id="logoFile" class="file-upload-input" accept="image/*" required>
-                            <div class="file-upload-preview" id="logoPreview">
-                                <div class="file-upload-placeholder">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                        <polyline points="17 8 12 3 7 8"></polyline>
-                                        <line x1="12" y1="3" x2="12" y2="15"></line>
-                                    </svg>
-                                    <p>Click to upload or drag and drop</p>
-                                    <p class="file-upload-hint">PNG, JPG up to 5MB</p>
+                        <label for="specType">Specification Type <span class="required">*</span></label>
+                        <select id="specType" class="form-control" onchange="toggleSpecificationFields()" required>
+                            <option value="screen_printing" selected>Screen Printing</option>
+                            <option value="embroidery">Embroidery</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Screen Printing Fields -->
+                    <div id="screenPrintingFields">
+                        <div class="pui-row">
+                            <div class="pui-col-md-6">
+                                <div class="form-group pui-mb-15px">
+                                    <label for="width">Width (cm) <span class="required">*</span></label>
+                                    <input type="number" id="width" class="form-control" step="0.1" min="0" required>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="form-group pui-mb-15px">
+                                    <label for="height">Height (cm) <span class="required">*</span></label>
+                                    <input type="number" id="height" class="form-control" step="0.1" min="0" required>
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group pui-mb-15px">
+                            <label>Background Colors <span class="required">*</span> <button type="button" class="add-option-btn-sm" title="Add New">+</button></label>
+                            <div class="color-picker">
+                                <div class="color-options">
+                                    <label class="color-option">
+                                        <input type="checkbox" name="bgColors" value="red" class="color-checkbox">
+                                        <span class="color-swatch" style="background-color: #ff0000;" title="Red"></span>
+                                    </label>
+                                    <label class="color-option">
+                                        <input type="checkbox" name="bgColors" value="yellow" class="color-checkbox">
+                                        <span class="color-swatch" style="background-color: #ffff00;" title="Yellow"></span>
+                                    </label>
+                                    <label class="color-option">
+                                        <input type="checkbox" name="bgColors" value="blue" class="color-checkbox">
+                                        <span class="color-swatch" style="background-color: #0000ff;" title="Blue"></span>
+                                    </label>
+                                    <label class="color-option">
+                                        <input type="checkbox" name="bgColors" value="green" class="color-checkbox">
+                                        <span class="color-swatch" style="background-color: #008000;" title="Green"></span>
+                                    </label>
+                                    <label class="color-option">
+                                        <input type="checkbox" name="bgColors" value="white" class="color-checkbox">
+                                        <span class="color-swatch" style="background-color: #ffffff; border: 1px solid #ddd;" title="White"></span>
+                                    </label>
+                                    <label class="color-option">
+                                        <input type="checkbox" name="bgColors" value="black" class="color-checkbox">
+                                        <span class="color-swatch" style="background-color: #000000;" title="Black"></span>
+                                    </label>
+                                </div>
+                                <input type="hidden" id="bgColors" name="bgColors" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price ($) <span class="required">*</span></label>
+                            <input type="number" id="price" class="form-control" step="0.01" min="0" required>
+                        </div>
                     </div>
-                    <div class="form-group pui-mb-15px">
-                        <label for="logoName">Logo Name <span class="required">*</span></label>
-                        <input type="text" id="logoName" class="form-control" placeholder="Enter logo name" required>
+                    
+                    <!-- Embroidery Fields (initially hidden) -->
+                    <div id="embroideryFields" style="display: none;">
+                        <div class="pui-row">
+                            <div class="pui-col-md-6">
+                                <div class="form-group pui-mb-15px">
+                                    <label for="stitchCount">Stitch Count <span class="required">*</span></label>
+                                    <input type="number" id="stitchCount" class="form-control" min="0" required>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="form-group pui-mb-15px">
+                                    <label for="size">Size (e.g., 100x100) <span class="required">*</span></label>
+                                    <input type="text" id="size" class="form-control" placeholder="Enter size (e.g., 100x100)" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pui-row">
+                            <div class="pui-col-md-6">
+                                <div class="form-group pui-mb-15px">
+                                    <label for="trims">No. of Trims <span class="required">*</span></label>
+                                    <input type="number" id="trims" class="form-control" min="0" required>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="form-group pui-mb-15px">
+                                    <label for="colorChanges">No. of Color Changes <span class="required">*</span></label>
+                                    <input type="number" id="colorChanges" class="form-control" min="0" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="embroideryPrice">Price ($) <span class="required">*</span></label>
+                            <input type="number" id="embroideryPrice" class="form-control" step="0.01" min="0" required>
+                        </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer pui-p-15px pui-pt-0">
-                <button class="pui-btn pui-btn-secondary pui-mr-10px" onclick="closeAddLogoModal()">Cancel</button>
-                <button class="pui-btn pui-btn-primary" onclick="saveLogo()">Save</button>
+                <button type="button" class="pui-btn pui-btn-secondary pui-mr-10px" onclick="closeAddLogoModal()">Cancel</button>
+                <button type="button" class="pui-btn pui-btn-primary" onclick="saveLogo()">Save</button>
             </div>
         </div>
     </div>
 
-    <script src="assets/scripts/sidebar.js"></script>
-    <script src="assets/scripts/dashboard.js"></script>
+    <style>
+        .badge {
+            background-color: #c7e2ff;
+            color: rgb(10, 54, 109);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .badge.badge-pending{
+            background-color: #ffe390;
+            color: #7a5a05;
+        }
+        .badge.badge-approved{
+            background-color: #218838;
+            color: #218838;
+        }
+        .badge.badge-rejected{
+            background-color: #ffebee;
+            color: #c82333;
+        }
+        .badge {
+            background-color: #f0f4f8;
+            color: #486581;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+        }
+        .badge.badge-new {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        .badge.badge-pending {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+        .badge.badge-shipped {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .badge.badge-credit-hold {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        .btn-group {
+            display: flex;
+            gap: 4px;
+        }
+        .btn-action {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #666;
+            transition: all 0.2s;
+        }
+        .btn-action:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* PO Progress Bar Styles */
+        .po-tracker-item {
+            background-color: #f0f4f8;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 8px;
+            border: 1px solid #c1cbd4;
+            margin-bottom: 5px;
+        }
+        
+        .po-tracker-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 4px;
+        }
+        
+        .po-tracker-title .po-link {
+            color: #0c5298;
+            text-decoration: none;
+        }
+        
+        .po-tracker-title .po-link:hover {
+            text-decoration: underline;
+        }
+        
+        .po-tracker-description {
+            font-size: 13px;
+            color: #404b55;
+            margin-bottom: 6px;
+        }
+        
+        .po-progress-bar {
+            height: 8px;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .po-progress-inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-image: url('assets/images/pmark.png');
+            background-size: 14px 6px;
+            background-repeat: repeat;
+            border-radius: 3px;
+        }
+        
+        
+        .btn-action:hover {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            z-index: 1000;
+            margin-top: 4px;
+            padding: 4px 0;
+        }
+        
+        .dropdown.show .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            transition: background-color 0.2s;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #f5f8fa;
+            color: #0c5298;
+        }
+        
+        .dropdown-item.text-danger {
+            color: #dc3545;
+        }
+        
+        .dropdown-item.text-danger:hover {
+            background-color: #f8d7da;
+        }
+    </style>
+    
     <script>
-        // Initialize when DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize file upload preview
-            initFileUploadPreview();
-            
-            // Add Logo button click handler
-            document.getElementById('addLogoBtn').addEventListener('click', openAddLogoModal);
-            
-            // Add event listeners for action buttons
-            document.addEventListener('click', function(e) {
-                // Edit button
-                if (e.target.closest('.btn-edit')) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const row = e.target.closest('tr');
-                    editLogo(row);
-                }
-                
-                // Delete button
-                if (e.target.closest('.btn-delete')) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const row = e.target.closest('tr');
-                    deleteLogo(row);
-                }
-            });
-            
-            // Close modal when clicking outside
-            window.addEventListener('click', function(e) {
-                if (e.target.classList.contains('modal')) {
-                    closeAddLogoModal();
-                }
-            });
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+                    dropdown.classList.remove('show');
+                });
+            }
         });
         
-        // Open Add Logo Modal
-        function openAddLogoModal() {
-            document.getElementById('addLogoModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            document.getElementById('logoName').focus();
-        }
-
-        // Close Add Logo Modal
-        function closeAddLogoModal() {
-            document.getElementById('addLogoModal').style.display = 'none';
-            document.body.style.overflow = '';
-            // Reset form
-            document.getElementById('addLogoForm').reset();
-            // Reset preview
-            const preview = document.getElementById('logoPreview');
-            preview.innerHTML = `
-                <div class="file-upload-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="17 8 12 3 7 8"></polyline>
-                        <line x1="12" y1="3" x2="12" y2="15"></line>
-                    </svg>
-                    <p>Click to upload or drag and drop</p>
-                    <p class="file-upload-hint">PNG, JPG up to 5MB</p>
-                </div>`;
+        // Toggle dropdown
+        function toggleDropdown(button) {
+            event.stopPropagation();
+            const dropdown = button.closest('.dropdown');
+            const isOpen = dropdown.classList.contains('show');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown').forEach(function(d) {
+                if (d !== dropdown) d.classList.remove('show');
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('show', !isOpen);
         }
         
-        // Initialize file upload preview
-        function initFileUploadPreview() {
-            const fileInput = document.getElementById('logoFile');
-            const preview = document.getElementById('logoPreview');
-            
-            if (!fileInput || !preview) return;
-            
-            // Handle file selection
-            fileInput.addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    // Check file type
-                    if (!file.type.match('image.*')) {
-                        alert('Please select an image file (JPEG, PNG)');
-                        return;
-                    }
-                    
-                    // Check file size (5MB max)
-                    if (file.size > 5 * 1024 * 1024) {
-                        alert('File size should not exceed 5MB');
-                        return;
-                    }
-                    
-                    // Create preview
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        preview.innerHTML = `
-                            <div class="file-upload-preview-img">
-                                <img src="${e.target.result}" alt="Logo Preview">
-                                <button type="button" class="remove-image" onclick="event.stopPropagation(); this.closest('.file-upload-preview').innerHTML = document.querySelector('.file-upload-placeholder').outerHTML; document.getElementById('logoFile').value = '';">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                                    </svg>
-                                </button>
-                            </div>`;
-                    };
-                    reader.readAsDataURL(file);
-                }
+        // Close dropdown when clicking an item
+        document.querySelectorAll('.dropdown-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                this.closest('.dropdown').classList.remove('show');
             });
-            
-            // Handle drag and drop
-            preview.addEventListener('dragover', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.classList.add('dragover');
-            });
-            
-            preview.addEventListener('dragleave', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.classList.remove('dragover');
-            });
-            
-            preview.addEventListener('drop', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.classList.remove('dragover');
-                
-                if (e.dataTransfer.files.length) {
-                    fileInput.files = e.dataTransfer.files;
-                    // Trigger change event
-                    const event = new Event('change');
-                    fileInput.dispatchEvent(event);
-                }
-            });
-            
-            // Click on preview to trigger file input
-            preview.addEventListener('click', function(e) {
-                if (!e.target.closest('.remove-image')) {
-                    fileInput.click();
-                }
-            });
-        }
-
-
-
-
-    
+        });
     </script>
-    <style>
-        /* Add styles for file upload preview */
-        .file-upload-container {
-            margin-top: 8px;
-        }
-        
-        .file-upload-input {
-            display: none;
-        }
-        
-        .file-upload-preview {
-            border: 2px dashed #dee2e6;
-            border-radius: 6px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-        }
-        
-        .file-upload-preview:hover, 
-        .file-upload-preview.dragover {
-            border-color: #0d6efd;
-            background-color: #f0f7ff;
-        }
-        
-        .file-upload-placeholder {
-            color: #6c757d;
-        }
-        
-        .file-upload-placeholder svg {
-            margin-bottom: 10px;
-            color: #adb5bd;
-        }
-        
-        .file-upload-hint {
-            font-size: 0.8em;
-            color: #adb5bd;
-            margin-top: 5px;
-        }
-        
-        .file-upload-preview-img {
-            position: relative;
-            max-width: 100%;
-        }
-        
-        .file-upload-preview-img img {
-            max-width: 100%;
-            max-height: 200px;
-            border-radius: 4px;
-        }
-        
-        .remove-image {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 24px;
-            height: 24px;
-            background: #dc3545;
-            border: none;
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            padding: 0;
-        }
-        
-        .remove-image:hover {
-            background: #bb2d3b;
-        }
-        
-        .remove-image svg {
-            width: 12px;
-            height: 12px;
-        }
-        
-    </style>
+    <script src="assets/scripts/sidebar.js"></script>
+    <script src="assets/scripts/dashboard.js"></script>
+   
+   
 </body>
 
 </html>

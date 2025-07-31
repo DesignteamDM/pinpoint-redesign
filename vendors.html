@@ -400,7 +400,7 @@
                            <!-- Search and pagination-->
                             
                            <div class="listing-header">
-                            <div class="listing-header-left pui-flex">
+                            <div class="listing-header-left pui-flex pui-align-items-center">
                                 <div class="pui-input-group pui-me-10px">
                                     <input type="text" id="searchInput" class="form-control" placeholder="Find Vendor" style="min-width: 200px;">
                                     
@@ -412,7 +412,11 @@
                                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                         </svg></button>
                                 </div>
-                                
+                                <!-- Hide Inactive vendors checkbox -->
+                                <div class="pui-checkbox  pui-me-10px">
+                                    <input type="checkbox" id="hideInactive">
+                                    <label class="pui-mb-none" for="hideInactive">Hide Inactive Vendors</label>
+                                </div>
 
                             </div>
                             <div class="listing-header-right">

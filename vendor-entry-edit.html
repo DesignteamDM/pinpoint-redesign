@@ -114,7 +114,8 @@
                             </a>
                             <ul class="submenu">
                                 <li>
-                                    <a class="menu-item" href="shipping-manager-export-auto.html">Export Auto shipping </a>
+                                    <a class="menu-item" href="shipping-manager-export-auto.html">Export Auto shipping
+                                    </a>
                                 </li>
                             </ul>
                         </li>
@@ -275,9 +276,9 @@
 
                                 <li><a href="attribute-tables.html" class="menu-item">Attribute
                                         Tables
-                                       
+
                                     </a>
-                                   
+
                                 </li>
 
 
@@ -376,27 +377,1241 @@
 
                             </a>
                             <a href="vendors.html" class="pui-link">Vendors</a>
-                            <span>Vendor Entry Edit</span>
+                            <span>H2O Direct</span>
                         </nav>
 
-                        <h2>Vendor Entry Edit</h2>
+                        <h2>H2O Direct</h2>
                     </div>
-                    <div class="listing-header-right">
-
-
+                    <div class="listing-header-right pui-flex pui-align-items-center">
+                        <p class="text-muted pui-me-10px"><i>Created: 03/30/2018</i></p>
+                        <div class="action-buttons">
+                            
+                      
+                            <button class="action-btn close-order">
+                                Delete
+                            </button>
+                            
+                        </div>
+                        
 
                     </div>
                 </div>
                 <div class="pui-row">
                     <div class="pui-col-md-12">
-                        <div class="card">
-                            <p>Page will be added soon</p>
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="register-vendor-tab">Vendor Details</button>
+                            <button class="tab-btn" data-tab="current-products-tab">Current Products</button>
                         </div>
+                        <div class="tab-content active" id="register-vendor-tab" style="display: block;">
+                            <div class="tab-content-inner">
+                                <div>
+                                    <div class="pui-alert pui-alert-warning pui-mb-10px">Vendor Needs To Be Updated:
+                                        Please Enter 'File Formats Not Accepted'/Select 'All Formats Accepted'</div>
+                                    <div class="section-card">
+                                        <div class="pui-row">
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="vendor-name">Vendor</label>
+                                                    <input class="form-control" type="text" id="vendor-name"
+                                                        name="vendor-name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="vendor-line">Vendor Line (Sep. by comma)</label>
+                                                    <input class="form-control" type="text" id="vendor-line"
+                                                        name="vendor-line">
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-8">
+                                                        <div class="form-group">
+                                                            <label for="phone">Phone</label>
+                                                            <input class="form-control" type="text" id="phone"
+                                                                name="phone">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="phone">Ext. or Opt.</label>
+                                                            <input class="form-control" type="text" id="phone"
+                                                                name="phone">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input class="form-control" type="email" id="email" name="email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="account-number">Account #</label>
+                                                    <input class="form-control" type="text" id="account-number"
+                                                        name="account-number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="vendor-category">Vendor category</label>
+                                                    <select class="form-control" id="vendor-category"
+                                                        name="vendor-category">
+                                                        <option value="">Select</option>
+                                                        <option value="1">Promotional</option>
+                                                        <option value="2">Apparel</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="website">Website</label>
+                                                    <a href="">h2odirectlink.com</a>
+                                                </div>
+
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <label for="mail-address">Mail Address</label>
+                                                    <input class="form-control" type="text" id="mail-address"
+                                                        name="mail-address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="shipping-address">Shipping Address</label>
+                                                    <input class="form-control" type="text" id="shipping-address"
+                                                        name="shipping-address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="fax">Fax</label>
+                                                    <input class="form-control" type="text" id="fax" name="fax">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="website">Website</label>
+                                                    <input class="form-control" type="text" id="website" name="website">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="sage-number">Sage #</label>
+                                                    <input class="form-control" type="text" id="sage-number"
+                                                        name="sage-number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="asi-number">ASI #</label>
+                                                    <input class="form-control" type="text" id="asi-number"
+                                                        name="asi-number">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="username">Username</label>
+                                                    <input class="form-control" type="text" id="username"
+                                                        name="username">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="city">City</label>
+                                                            <input class="form-control" type="text" id="city"
+                                                                name="city">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="state">State</label>
+                                                            <input class="form-control" type="text" id="state"
+                                                                name="state">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-2">
+                                                        <div class="form-group">
+                                                            <label for="zip">Zip</label>
+                                                            <input class="form-control" type="text" id="zip" name="zip">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-2">
+                                                        <div class="form-group">
+                                                            <label for="country">Country</label>
+                                                            <input class="form-control" type="text" id="country"
+                                                                name="country">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="city">City</label>
+                                                            <input class="form-control" type="text" id="city"
+                                                                name="city">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="state">State</label>
+                                                            <input class="form-control" type="text" id="state"
+                                                                name="state">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-2">
+                                                        <div class="form-group">
+                                                            <label for="zip">Zip</label>
+                                                            <input class="form-control" type="text" id="zip" name="zip">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-2">
+                                                        <div class="form-group">
+                                                            <label for="country">Country</label>
+                                                            <input class="form-control" type="text" id="country"
+                                                                name="country">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-8">
+                                                        <div class="form-group">
+                                                            <label for="">Toll-Free</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Ext. or Opt</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Email Art to</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">PPAI</label>
+                                                    <input class="form-control" type="text" id="" name="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Time Zone</label>
+                                                    <select class="form-control">
+                                                        <option value="">Select Time Zone</option>
+                                                        <option value="">China - 11</option>
+                                                        <option value="">Alaska - 5</option>
+                                                        <option value="">Pacific - 2</option>
+                                                        <option value="">Mountain - 1</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="passcode">Passcode</label>
+                                                    <input class="form-control" type="text" id="passcode"
+                                                        name="passcode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-4">
+                                            <div class="section-card pui-mt-10px" style="background: #ffdede;">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">Credit Card Processing Fee</label>
+                                                            <!-- Radio group Yes/No-->
+                                                            <div class="radio-group">
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault1">
+                                                                        Yes
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault2">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">Percentage</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <!-- Setup Fee's Waived? Yes/No radio buttons -->
+                                                            <label for="">Setup Fee's Waived?</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault1">
+                                                                        Yes
+                                                                    </label>
+                                                                </div>
+                                                                <div
+                                                                    class="form-check pui-flex pui-align-items-center pui-ms-5px">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault2">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <!-- End Quantity Pricing (EQP) Yes/No radio buttons-->
+                                                            <label for="">End Quantity Pricing (EQP)</label>
+                                                            <div class="pui-flex pui-align-items-center">
+
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault1">
+                                                                        Yes
+                                                                    </label>
+                                                                </div>
+                                                                <div
+                                                                    class="form-check pui-flex pui-align-items-center pui-ms-5px">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault2">
+                                                                        No (See Notes)
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <!-- EQP Discount -->
+                                                        <div class="form-group">
+                                                            <label for="">EQP Discount</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <!-- EQP Expires Date -->
+                                                        <div class="form-group">
+                                                            <label for="">EQP Expires</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">Rush Phone</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Rush Art Email</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">Rush Fax</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Rush PO Email</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <!-- PO Delivery Method Email/Fax Radio buttons -->
+                                                            <label for="">PO Delivery Method</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault1">
+                                                                        Email
+                                                                    </label>
+                                                                </div>
+                                                                <div
+                                                                    class="form-check pui-flex pui-align-items-center pui-ms-5px">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault2">
+                                                                        Fax
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <label for="">Terms</label>
+                                                            <input type="text" class="form-control" name="" id="">
+                                                        </div>
+                                                        <!-- PO Special Pricing Code: -->
+                                                        <div class="form-group">
+                                                            <label for="">PO Special Pricing Code (This will appear
+                                                                below the pricing on PO's)</label>
+                                                            <input type="text" class="form-control" name="" id="">
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">PO Email</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                        <!-- Attach PO as PDF Yes/No radio buttons -->
+                                                        <div class="form-group">
+                                                            <label for="">Attach PO as PDF</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault1">
+                                                                        Yes
+                                                                    </label>
+                                                                </div>
+                                                                <div
+                                                                    class="form-check pui-flex pui-align-items-center pui-ms-5px">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault2">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for=""> File Formats Not Accepted (use commas to
+                                                                seperate file formats)</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <!-- All Formats Accepted checkbox -->
+                                                            <div class="form-check pui-flex pui-align-items-center">
+                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                    id="flexCheckDefault">
+                                                                <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                                    for="flexCheckDefault">
+                                                                    All Formats Accepted
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <!-- Factory PO Notes -->
+                                                    <label for="">Factory PO Notes</label>
+                                                    <textarea class="form-control" name="" id="" cols="10"
+                                                        rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-8">
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Inside Vendor</h4>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-5">
+                                                        <div class="pui-row">
+                                                            <div class="pui-col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="">Inside Vendor Rep Phone</label>
+                                                                    <!-- Phone code list -->
+                                                                    <select class="form-control">
+                                                                        <option value="">Select</option>
+                                                                        <option value="">USA (+1)</option>
+                                                                        <option value="">UK (+44)</option>
+                                                                        <option value="">Alaska (+99)</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="">Ext. or Opt</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+
+                                                                <div class="form-group">
+                                                                    <label for="">-</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep Cell Phone</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep Fax</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Inside Vendor Rep Email</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Outside Vendor</h4>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-5">
+                                                        <div class="pui-row">
+                                                            <div class="pui-col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="">Outside Vendor Rep Phone</label>
+                                                                    <!-- Phone code list -->
+                                                                    <select class="form-control">
+                                                                        <option value="">Select</option>
+                                                                        <option value="">USA (+1)</option>
+                                                                        <option value="">UK (+44)</option>
+                                                                        <option value="">Alaska (+99)</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="">Ext. or Opt</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+
+                                                                <div class="form-group">
+                                                                    <label for="">-</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep Cell Phone</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep Fax</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Outside Vendor Rep Email</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">AIM Vendor</h4>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-5">
+                                                        <div class="pui-row">
+                                                            <div class="pui-col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="">AIM Vendor Rep Phone</label>
+                                                                    <!-- Phone code list -->
+                                                                    <select class="form-control">
+                                                                        <option value="">Select</option>
+                                                                        <option value="">USA (+1)</option>
+                                                                        <option value="">UK (+44)</option>
+                                                                        <option value="">Alaska (+99)</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+                                                                <div class="form-group">
+                                                                    <label for="">Ext. or Opt</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="pui-col-md-3">
+
+                                                                <div class="form-group">
+                                                                    <label for="">-</label>
+                                                                    <input class="form-control" type="text" id=""
+                                                                        name="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep Cell Phone</label>
+                                                            <input class="form-control" type="text" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep Fax</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Vendor Rep Email</label>
+                                                            <input class="form-control" type="email" id="" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <!-- Member of AIM checkbox -->
+                                                        <div class="form-group pui-flex pui-align-items-center">
+                                                            <input class="form-check-input" type="checkbox" id=""
+                                                                name="">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="">Member of AIM</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Notes</label>
+                                                            <textarea class="form-control" id="" name=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="">AIM Exclusions
+                                                                (use commas to seperate multiple values)</label>
+                                                            <textarea class="form-control" id="" name=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <!-- No exclusions checkbox -->
+                                                        <div class="form-group pui-flex pui-align-items-center">
+                                                            <input class="form-check-input" type="checkbox" id=""
+                                                                name="">
+                                                            <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="">No Exclusions</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
+
+                                        </div>
+                                    </div>
+                                    <div class="section-card pui-mt-10px">
+                                        <div class="pui-row">
+
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <!-- Rating A to F radio buttons -->
+                                                    <label for="">Sage Rating</label>
+                                                    <div class="pui-flex pui-align-items-center">
+                                                        <div class="form-check pui-flex pui-align-items-center">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault1">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault1">
+                                                                A
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                B
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                C
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                D
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                E
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                F
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <div class="form-group">
+                                                    <!-- Rating A to F radio buttons -->
+                                                    <label for="">Pinpoint Rating</label>
+                                                    <div class="pui-flex pui-align-items-center">
+                                                        <div class="form-check pui-flex pui-align-items-center">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault1">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault1">
+                                                                A
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                B
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                C
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                D
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                E
+                                                            </label>
+                                                        </div>
+                                                        <div
+                                                            class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="flexRadioDefault" id="flexRadioDefault2">
+                                                            <label
+                                                                class="form-check-label pui-mb-none pui-ms-5px"
+                                                                for="flexRadioDefault2">
+                                                                F
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="pui-col-md-4">
+                                                <!-- 	Account Verified -->
+                                                <div class="form-group">
+                                                    <label for="">Account Verified</label>
+                                                    <input type="text" class="form-control" name="" id="">
+                                                    <p class="text-muted">Last Modified: 03/13/2025 10:07 AM</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-5">
+                                                        <div class="form-group">
+                                                            <label for="">Factory to Zip 73102 Transit Days</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                                <input type="text" class="form-control" name="" id=""
+                                                                    style="width: 100px;">
+                                                                <a href="#" class="pui-ms-5px">UPS</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-3">
+                                                        <!-- Vendor Status Yes/No Radio buttons -->
+                                                        <div class="form-group">
+                                                            <label for="">Vendor Status</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault1">
+                                                                        Yes
+                                                                    </label>
+                                                                </div>
+                                                                <div
+                                                                    class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault2">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <!-- Does Vendor Send Art Proofs? Yes/No Radio Buttons -->
+                                                            <label for="">Does Vendor Send Art Proofs?</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                                <div class="form-check pui-flex pui-align-items-center">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault1">
+                                                                        Yes
+                                                                    </label>
+                                                                </div>
+                                                                <div
+                                                                    class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexRadioDefault2">
+                                                                        No
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Federal EIN Number</label>
+                                                            <div class="pui-flex pui-align-items-center">
+                                                                <input type="text" class="form-control" name="" id=""
+                                                                    style="width: 150px;">
+                                                                <!-- N/A checkbox -->
+                                                                <div
+                                                                    class="form-check pui-flex pui-align-items-center pui-ms-15px">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="flexCheckDefault">
+                                                                    <label
+                                                                        class="form-check-label pui-mb-none pui-ms-5px"
+                                                                        for="flexCheckDefault">
+                                                                        N/A
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <a href="#" class="pui-mt-5px">Send W9 Request</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="">Accounting Email</label>
+                                                            <input type="text" class="form-control" name="" id="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pui-col-md-4">
+                                                        <div class="form-group">
+                                                            <!-- W-9 Document file upload -->
+                                                            <label for="">W-9 Document</label>
+                                                            <a href="#">Vendor W-9</a>
+                                                            <a href="#" class="btn-action">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                    height="16" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path d="M3 6h18"></path>
+                                                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6">
+                                                                    </path>
+                                                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                    <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                    <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                                </svg>
+                                                            </a>
+                                                            <!-- Vendor Free Rush PO Title -->
+                                                            <div class="form-group pui-mt-5px">
+                                                                <label for="">Vendor Free Rush PO Title</label>
+                                                                <input type="text" class="form-control" name="" id="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="form-group">
+                                                    <label for="">Standard Print Colors (Seperate By Commas)</label>
+                                                    <textarea class="form-control" name="" id="" cols="30"
+                                                        rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="">Notes</label>
+                                                            <textarea class="form-control" name="" id=""
+                                                                rows="5"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Document Folder</h4>
+                                                <div class="table-responsive">
+                                                    <table class="data-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Title</th>
+                                                                <th>Expires</th>
+                                                                <th>Document</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Document 1</td>
+                                                                <td>20/7/25</td>
+                                                                <td>Document 1</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-12">
+                                                        <button class="pui-btn pui-btn-secondary">Add Document</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Catalog</h4>
+                                                <!-- No catalog checkbox -->
+                                                <div class="form-check pui-flex pui-align-items-center pui-mb-10px">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                        for="flexCheckDefault">
+                                                        No Catalog
+                                                    </label>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="data-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Title</th>
+                                                                <th>Expires</th>
+                                                                <th>Document</th>
+                                                                <th>Catalog Year</th>
+                                                                <th>Brand</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Document 1</td>
+                                                                <td>20/7/25</td>
+                                                                <td>Document 1</td>
+                                                                <td>2022</td>
+                                                                <td>Brand 1</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-12">
+                                                        <button class="pui-btn pui-btn-secondary">Add Catalog</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Specials</h4>
+                                                <!-- No catalog checkbox -->
+                                                <div class="form-check pui-flex pui-align-items-center pui-mb-10px">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label pui-mb-none pui-ms-5px"
+                                                        for="flexCheckDefault">
+                                                        No Specials
+                                                    </label>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="data-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Title</th>
+                                                                <th>Expires</th>
+                                                                <th>Promo Code</th>
+                                                                <th>Document</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Document 1</td>
+                                                                <td>20/7/25</td>
+                                                                <td>Document 1</td>
+                                                                <td>Document 1</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-12">
+                                                        <button class="pui-btn pui-btn-secondary">Add Special</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="section-card pui-mt-10px">
+                                                <h4 class="section-card-title">Vendor Coupons</h4>
+                                                
+                                                <div class="table-responsive">
+                                                    <table class="data-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Title</th>
+                                                                <th>Expires</th>
+                                                                <th>Document</th>
+                                                                
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Coupon 1</td>
+                                                                <td>20/7/25</td>
+                                                                <td>Coupon 1</td>
+                                                                
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="pui-row">
+                                                    <div class="pui-col-md-12">
+                                                        <button class="pui-btn pui-btn-secondary">Add Coupon</button>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                       
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+                                    <!-- Add Vendor Button right aligned -->
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-12">
+                                            <div class="text-right pui-mt-15px">
+                                                <button type="button" class="pui-btn pui-btn-primary">Update
+                                                    Vendor</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="current-products-tab" style="display: none;">
+                            <div class="tab-content-inner">
+                                <div class="card">
+                                    <div class="list-header">
+                                        <div class="listing-header-right">
+                                            <!-- Sales Period Range date picker -->
+                                            <div class="form-group">
+                                                <label for="">Sales Period</label>
+                                                <div class="pui-flex pui-align-items-center">
+                                                    <div class="right-action-group">
+                                                        <input type="text" class="form-control" name=""
+                                                            value="12/31/2025" id="" style="width: 120px;">
+                                                        <button type="button" class="calendar-btn"
+                                                            data-initialized="true">
+                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                                </rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <span class="pui-me-5px pui-ms-5px">to</span>
+                                                    <div class="right-action-group">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            value="12/31/2026" style="width: 120px;">
+                                                        <button type="button" class="calendar-btn"
+                                                            data-initialized="true">
+                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                                </rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <button type="button"
+                                                        class="pui-btn pui-btn-secondary pui-ms-5px">Go</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Desc</th>
+                                                    <th>Status</th>
+                                                    <th>2024</th>
+                                                    <th>2025</th>
+                                                    <th>Sales</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#">PVC SXL5-400</a>
+                                                    </td>
+                                                    <td>Size 5 Waterproof Laminated PVC
+                                                        Soccer Ball</td>
+                                                    <td>expired, custom pricing</td>
+                                                    <td>$0.00</td>
+                                                    <td>$0.00</td>
+                                                    <td>$0.00</td>
+                                                    <td>
+                                                        <button class="btn-action" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
+                                                                </rect>
+                                                                <path
+                                                                    d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2">
+                                                                </path>
+                                                            </svg></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
     </div>
     </div>
@@ -436,12 +1651,12 @@
             });
         });
     </script>
-    
+
     <script>
-        
+
 
         // Tab switching functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const tabButtons = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.tab-content');
 
@@ -463,7 +1678,7 @@
 
             // Add click handlers to tab buttons
             tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     // Get the target tab ID from data attribute
                     const targetTabId = this.getAttribute('data-tab');
 

@@ -677,7 +677,8 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-
+<!-- Add new credit card button -->
+<button type="button" class="pui-btn pui-btn-secondary">Add New Credit Card</button>
                                         </div>
                                     </div>
                                 </div>
@@ -913,7 +914,7 @@
                                 </div>
                                 </div>
                                 <div class="pui-col-md-12">
-                                    <button class="pui-btn pui-btn-primary">Add User</button>
+                                    <button class="pui-btn pui-btn-secondary">Add User</button>
                                 </div>
                                 
                                 
@@ -943,7 +944,7 @@
 
                             <div class="pui-row">
                                 <div class="pui-col-md-12">
-                                    <button class="pui-btn pui-btn-primary">Add Document</button>
+                                    <button class="pui-btn pui-btn-secondary">Add Document</button>
                                 </div>
                                 
                                 
@@ -971,7 +972,7 @@
 
                             <div class="pui-row">
                                 <div class="pui-col-md-12">
-                                    <button class="pui-btn pui-btn-primary">Add Customization</button>
+                                    <button class="pui-btn pui-btn-secondary">Add Customization</button>
                                 </div>
                                 
                                 
@@ -1205,6 +1206,12 @@
             </div>
             <div class="modal-body">
                 <form id="addAddressForm">
+                    <div class="form-group">
+                        <div class="form-check pui-flex pui-align-items-center">
+                            <input type="checkbox" id="makeDefault" class="form-check-input">
+                            <label class="form-check-label pui-ms-5px pui-mb-none" for="makeDefault">Same as billing address</label>
+                        </div>
+                    </div>
                     <div class="pui-row">
                         <div class="pui-col-md-6">
                             <div class="form-group">

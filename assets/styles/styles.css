@@ -1019,7 +1019,6 @@ body {
 .new-ui-container {
   width: 100%;
   margin: 0 auto;
-  padding: 20px;
   background: white;
 }
 
@@ -2356,19 +2355,14 @@ textarea.form-control {
 
 /* Sticky Tabs */
 .tabs {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 46px; /* Height of top menu + order header */
+ 
   z-index: 89; /* One less than header */
   padding-top: 10px;
   -webkit-backface-visibility: hidden; /* Fix for flickering in Safari */
   backface-visibility: hidden;
 }
 
-/* Ensure content doesn't jump under sticky elements */
-.new-ui-container {
-  padding-top: 0; /* Remove top padding since we're using sticky positioning */
-}
+
 
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
@@ -4041,7 +4035,6 @@ select[multiple].form-control {
 }
 .main-content-inner{
   flex: 1;
-  overflow-y: auto;
   padding: 20px;
 }
 .personalization-preview{

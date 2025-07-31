@@ -374,146 +374,1004 @@
                         <h2>A & M Ranch</h2>
                     </div>
                     <div class="listing-header-right">
+                        <div class="action-buttons">
+                            <button class="action-btn view-order">
+                                 New Approval
+                            </button>
+                            <button class="action-btn view-order">
+                                 New Order
+                            </button>
+                            <button class="action-btn view-order">
+                                Send Link to Customer
+                            </button>
 
+                            <button class="action-btn view-order">
+                                Refresh Sales Total
+                            </button>
+                            <button class="action-btn close-order">
+                                Delete
+                            </button>
+                            
+                        </div>
+                        
 
                     </div>
                 </div>
                 
                 <div class="pui-row">
                     <div class="pui-col-md-12">
-                        <div class="card">
 
-<p>Page will be updated soon</p>
-                            
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="details-tab">Details</button>
+                            <button class="tab-btn" data-tab="shipping-addresses-tab">Shipping Addresses</button>
+                            <button class="tab-btn" data-tab="previous-orders-tab">Previous Online Orders</button>
+                            <button class="tab-btn" data-tab="approval-history-tab">Previous Approval History</button>
                         </div>
                     </div>
                   
+                </div>
+
+                <!-- Tab Content Sections -->
+                <div class="tab-content active" id="details-tab">
+                    <div class="tab-content-inner">
+                        <div class="pui-row">
+                            <div class="pui-col-md-6">
+                                <div class="section-card pui-mb-10px">
+                                    <div class="form-group">
+                                        <label for="company">Company <span class="required">*</span></label>
+                                        <input type="text" id="company" class="form-control" value="A & M Ranch">
+                                    </div>
+                        <h4>Contact Information</h4>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="first-name">First Name <span class="required">*</span></label>
+                                                <input type="text" id="first-name" class="form-control" value="Mark">
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="last-name">Last Name <span class="required">*</span></label>
+                                                <input type="text" id="last-name" class="form-control" value="Johnson">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="website">Website</label>
+                                                <input type="url" id="website" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" class="form-control" value="AandMRANCH@aol.com">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group phone-group">
+                                        <label>Phone</label>
+                                        <select class="form-control area-code">
+                                            <option>USA (+1)</option>
+                                            <option>UK (+44)</option>
+                                            <option>Canada (+1)</option>
+                                            <option>India (+91)</option>
+                                             <option>Australia (+61)</option>
+                                             <option>China (+86)</option>
+                                             <option>France (+33)</option>
+                                             <option>Germany (+49)</option>
+                                             <option>Italy (+39)</option>
+                                             <option>Japan (+81)</option>
+                                             <option>South Africa (+27)</option>
+                                             <option>Spain (+34)</option>
+                                             <option>United Kingdom (+44)</option>
+                                        </select>
+                                        <div class="phone-inputs-container">
+                                            <div class="phone-inputs" style="display: flex;">
+                                                <select class="phone-type">
+                                                    <option>Cell</option>
+                                                </select>
+                                                <input class="phone-number" type="text" value="405.255.7668">
+                                                <span class="phone-ext">Ext.</span>
+                                                <input class="ext-input" type="text">
+                                            </div>
+                                            <div class="phone-inputs" style="display: flex;">
+                                                <select class="phone-type">
+                                                    <option>Cell</option>
+                                                </select>
+                                                <input class="phone-number" type="text" value="405.255.7668">
+                                                <span class="phone-ext">Ext.</span>
+                                                <input class="ext-input" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="phone-buttons-container">
+                                            <button type="button" class="add-phone-btn">+ Add another phone
+                                                number</button>
+                                            <button type="button" class="show-more-phones" style="display: none;">Show
+                                                more phone numbers</button>
+                                        </div>
+                                    </div>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-3">  
+                                            <div class="form-group">
+                                                <label for="poRequired">PO Required? <span class="required">*</span></label>
+                                                <div class="radio-group">
+                                                    <input type="radio" id="poRequiredYes" name="poRequired" value="yes">
+                                                    <label for="poRequiredYes">Yes</label>
+                                                    <input type="radio" id="poRequiredNo" name="poRequired" value="no">
+                                                    <label for="poRequiredNo">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                  
+                        
+                                   
+                        
+                                </div>
+                                <div class="section-card pui-mb-10px">
+                                    <h4 class="section-card-title">Pricing Category</h4>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="caps">Caps<span class="required">*</span></label>
+                                                <select id="caps" class="form-control">
+                                                    <option value="">Select Caps</option>
+                                                    <option value="cost">Cost</option>
+                                                    <option value="retail">Retail</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="apparel">Apparel<span class="required">*</span></label>
+                                                <select id="apparel" class="form-control">
+                                                    <option value="">Select Apparel</option>
+                                                    <option value="cost">Cost</option>
+                                                    <option value="retail">Retail</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="screenprinting">Screenprinting<span class="required">*</span></label>
+                                                <select id="screenprinting" class="form-control">
+                                                    <option value="">Select Screenprinting</option>
+                                                    <option value="cost">Cost</option>
+                                                    <option value="retail">Retail</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="qbId">QB ID<span class="required">*</span></label>
+                                                <input type="text" id="qbId" class="form-control">
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                </div>
+                                <div class="section-card pui-mb-10px">
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-4">
+                                            <!-- Status Label, Active checkbox -->
+                                            <div class="form-group">
+                                                <label for="status">Status</label>
+                                                <!-- Active checkbox -->
+                                                <div class="form-check pui-flex pui-align-items-center">
+                                                    <input class="form-check-input" type="checkbox" value="" id="status">
+                                                    <label class="form-check-label pui-mb-none pui-ms-5px" for="status">
+                                                        Active
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-4">
+                                            <div class="form-group">
+                                                <!-- Re-Order Reminders? Yes/No radio buttons -->
+                                                <label for="reOrderReminders">Re-Order Reminders?</label>
+                                                <div class="radio-group">
+                                                    <input type="radio" id="reOrderRemindersYes" name="reOrderReminders" value="yes">
+                                                    <label for="reOrderRemindersYes">Yes</label>
+                                                    <input type="radio" id="reOrderRemindersNo" name="reOrderReminders" value="no">
+                                                    <label for="reOrderRemindersNo">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-4">
+                                            <div class="form-group">
+                                                <!-- Turn Emails Off? Yes/No radio buttons -->
+                                                <label for="turnEmailsOff">Turn Emails Off?</label>
+                                                <div class="radio-group">
+                                                    <input type="radio" id="turnEmailsOffYes" name="turnEmailsOff" value="yes">
+                                                    <label for="turnEmailsOffYes">Yes</label>
+                                                    <input type="radio" id="turnEmailsOffNo" name="turnEmailsOff" value="no">
+                                                    <label for="turnEmailsOffNo">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <!--Approval CC Email(s) -->
+                                            <div class="form-group">
+                                                <label for="approvalCC">Approval CC Email(s) <span class="text-muted">Separated by commas</span></label>
+                                                <input type="text" id="approvalCC" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="customerType">Customer Type <span class="required">*</span><button type="button" class="add-option-btn-sm" title="Add New">+</button></label>
+                                                <select id="customerType" class="form-control">
+                                                    <option value="">Select Customer Type</option>
+                                                    <option value="retail">Association</option>
+                                                    <option value="wholesale">BBRGear</option>
+                                                    <option value="wholesale">Cargil</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-card pui-mb-10px">
+                                    <h4 class="section-card-title">Payment</h4>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="paymentTerms">Payment Terms <span class="required">*</span></label>
+                                                <select id="paymentTerms" class="form-control">
+                                                    <option value="">Select Payment Terms</option>
+                                                    <option value="account">Account</option>
+                                                    <option value="cash">Cash</option>
+                                                    <option value="cod">COD</option>
+                                                    <option value="credit-card" selected>Credit Card</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="data-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Card</th>
+                                                            <th>Name</th>
+                                                            <th>Num</th>
+                                                            <th>Exp</th>
+                                                            <th>Desc</th>
+                                                            <th>
+
+                                                            </th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><a href="#">Visa</a></td> 
+                                                            <td>Mark Johnson</td>
+                                                            <td>*-2507</td>
+                                                            <td>12/23</td>
+                                                            <td>Visa 2507</td>
+                                                            <td><a href="#">Charge</a></td>
+                                                            <td><a href="#" class="btn-action">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path d="M3 6h18"></path>
+                                                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                                                    <line x1="10" x2="10" y1="11" y2="17"></line>
+                                                                    <line x1="14" x2="14" y1="11" y2="17"></line>
+                                                                </svg>
+                                                            </a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-col-md-6">
+                                <div class="section-card pui-mb-10px">
+                                    <h4 class="section-card-title">Billing Addresss</h4>
+                                    <div class="form-group">
+                                        <label for="billingCompany">Billing Company</label>
+                                        <input type="text" id="billingCompany" class="form-control">
+                                    </div>
+                                    <h4>Billing Contact</h4>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="billingFirstName">First Name</label>
+                                                <input type="text" id="billingFirstName" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="billingLastName">Last Name</label>
+                                                <input type="text" id="billingLastName" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="billingLine1">Line 1</label>
+                                                <input type="text" id="billingLine1" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-6">
+                                            <div class="form-group">
+                                                <label for="billingLine2">Line 2</label>
+                                                <input type="text" id="billingLine2" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group city-state-zip">
+                                        <div>
+                                            <label>City</label>
+                                            <input type="text" id="billingCity" class="form-control">
+                                        </div>
+                                        <div>
+                                            <label>State</label>
+                                            <input type="text" id="billingState" class="form-control">
+                                        </div>
+                                        <div>
+                                            <label>Zip</label>
+                                            <input type="text" id="billingZip" class="form-control">
+                                        </div>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="form-group">
+                                        <label for="billingEmail">Email</label>
+                                        <input type="email" id="billingEmail" class="form-control">
+                                    </div>
+                                    <!-- Phone group -->
+                                    <div class="form-group phone-group">
+                                        <label>Billing Phone</label>
+                                        <select class="form-control area-code">
+                                            <option>USA (+1)</option>
+                                            <option>UK (+44)</option>
+                                            <option>Canada (+1)</option>
+                                            <option>India (+91)</option>
+                                             <option>Australia (+61)</option>
+                                             <option>China (+86)</option>
+                                             <option>France (+33)</option>
+                                             <option>Germany (+49)</option>
+                                             <option>Italy (+39)</option>
+                                             <option>Japan (+81)</option>
+                                             <option>South Africa (+27)</option>
+                                             <option>Spain (+34)</option>
+                                             <option>United Kingdom (+44)</option>
+                                        </select>
+                                        <div class="phone-inputs-container">
+                                            <div class="phone-inputs" style="display: flex;">
+                                                <select class="phone-type">
+                                                    <option>Cell</option>
+                                                </select>
+                                                <input class="phone-number" type="text" value="405.255.7668">
+                                                <span class="phone-ext">Ext.</span>
+                                                <input class="ext-input" type="text">
+                                            </div>
+                                            <div class="phone-inputs" style="display: flex;">
+                                                <select class="phone-type">
+                                                    <option>Cell</option>
+                                                </select>
+                                                <input class="phone-number" type="text" value="405.255.7668">
+                                                <span class="phone-ext">Ext.</span>
+                                                <input class="ext-input" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="phone-buttons-container">
+                                            <button type="button" class="add-phone-btn">+ Add another phone
+                                                number</button>
+                                            <button type="button" class="show-more-phones" style="display: none;">Show
+                                                more phone numbers</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="section-card pui-mb-10px">
+                                    <h4 class="section-card-title">Financial</h4>
+                                    <div class="pui-row">
+                                        <div class="pui-col-md-2">
+                                            <div class="form-group">
+                                                <label for="taxRate">Tax Rate?</label>
+                                                <div class="input-group pui-flex pui-align-items-center">
+                                                    <input type="text" id="taxRate" class="form-control">
+                                                    <span class="input-group-text pui-ms-5px">%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pui-col-md-3">
+                                            <div class="form-group">
+                                                <label for="taxExempt">Tax Exempt?</label>
+                                                <div class="radio-group">
+                                                    <input type="radio" id="taxExemptYes" name="taxExempt" value="yes">
+                                                    <label for="taxExemptYes">Yes</label>
+                                                    <input type="radio" id="taxExemptNo" name="taxExempt" value="no">
+                                                    <label for="taxExemptNo">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="pui-col-md-4">
+                                            <div class="form-group">
+                                                <label for="paymentTerms">Payment Terms <span class="required">*</span></label>
+                                                <select id="paymentTerms" class="form-control">
+                                                    <option value="">Select Payment Terms</option>
+                                                    <option value="account">Account</option>
+                                                    <option value="cash">Cash</option>
+                                                    <option value="cod">COD</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                       </div>
+                                       <h4 class="section-card-title">TAX Re-Sale Permit</h4>
+                                       <div class="pui-row">
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <!-- Permit No -->
+                                                    <label for="permitNo">Permit No</label>
+                                                    <input type="text" id="permitNo" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <div class="form-group">
+                                                    <!-- Exp. Date -->
+                                                    <label for="permitExpDate">Exp. Date</label>
+                                                    <input type="text" id="permitExpDate" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-12">
+                                                <!-- Current File plain text-->
+                                                <p>Current File: <span>123456789</span></p>
+
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <!-- Permit File upload -->
+                                                <div class="form-group">
+                                                    <label for="permitFile">Permit File</label>
+                                                    <input type="file" id="permitFile" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="pui-col-md-6">
+                                                <!-- State, this permit is for -->
+                                                <div class="form-group">
+                                                    <label for="permitState">State, this permit is for</label>
+                                                    <input type="text" id="permitState" class="form-control">
+                                                </div>
+                                            </div>
+                                       </div>
+                                    
+                                </div>
+                                <div class="section-card pui-mb-10px">
+                                    <div class="form-group">
+                                        <label for="localFolderPath">Local Folder Path</label>
+                                        <input type="text" id="localFolderPath" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="localFolderPath">Notes</label>
+                                        <textarea id="localFolderPath" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="section-card pui-mb-10px">
+                            <h4 class="section-card-title">User List</h4>
+                            <div class="pui-row">
+                                <div class="pui-col-md-2">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name <span class="required">*</span></label>
+                                        <input type="text" id="firstName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-2">
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name <span class="required">*</span></label>
+                                        <input type="text" id="lastName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-2">
+                                    <div class="form-group">
+                                        <label for="username">Username <span class="required">*</span></label>
+                                        <input type="text" id="username" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-2">
+                                    <div class="form-group">
+                                        <label for="password">Password <span class="required">*</span></label>
+                                        <input type="password" id="password" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-2">
+                                    <div class="form-group">
+                                        <label for="email">Email <span class="required">*</span></label>
+                                        <input type="email" id="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-2">
+                                    <div class="d-flex pui-align-items-center">
+                                    <!-- Master access checkbox-->
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="masterAccess" class="form-control">
+                                        <label for="masterAccess">Master Access</label>
+                                        
+                                    </div>
+                                    <a href="#" class="btn-action pui-ms-15px">
+                                        <!-- delete icon-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 6h18"></path>
+                                            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                            <line x1="10" x2="10" y1="11" y2="17"></line>
+                                            <line x1="14" x2="14" y1="11" y2="17"></line>
+                                        </svg>
+                                    </a>
+                                </div>
+                                </div>
+                                <div class="pui-col-md-12">
+                                    <button class="pui-btn pui-btn-primary">Add User</button>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="section-card pui-mb-10px">
+                            <h4 class="section-card-title">Document Folder</h4>
+                            <!-- data-table Table with Headers: Title, Expires, Document -->
+                             <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Expires</th>
+                                            <th>Document</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Document 1</td>
+                                            <td>2022-01-01</td>
+                                            <td>Document 1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="pui-row">
+                                <div class="pui-col-md-12">
+                                    <button class="pui-btn pui-btn-primary">Add Document</button>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="section-card pui-mb-10px">
+                            <h4 class="section-card-title">Customization</h4>
+                            <!-- data-table Table with Headers: Title, Expires, Document -->
+                             <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Option</th>
+                                            <th>Customization</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Option 1</td>
+                                            <td>Customization 1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="pui-row">
+                                <div class="pui-col-md-12">
+                                    <button class="pui-btn pui-btn-primary">Add Customization</button>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <!-- Update button right aligned -->
+                         
+                            <div class="text-right pui-mt-10px">
+                                <button class="pui-btn pui-btn-primary">Update Customer</button>
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <div class="tab-content" id="shipping-addresses-tab">
+                    <div class="tab-content-inner">
+                        <div>
+                            <div class="listing-header">
+                                <div class="listing-header-left pui-flex">
+                                    <div class="pui-input-group pui-me-10px">
+                                        <input type="text" id="searchInput" class="form-control" placeholder="Search by Name / City / State / Zip" style="min-width: 300px;">
+
+                                        <button class="pui-btn pui-btn-secondary" id="searchButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="11" cy="11" r="8"></circle>
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                            </svg></button>
+                                    </div>
+                                </div>
+                                <div class="listing-header-right pui-flex">
+                                    <button class="pui-btn pui-btn-primary" onclick="openAddAddressModal()">Add New Address</button>
+                                </div>
+                            </div>
+                            <div class="pui-row">
+                                <div class="pui-col-md-4">
+                                    <div class="card">
+                                        <div>
+                                            <div class="address-card-header">
+                                                <div>
+                                                <h4>A & M Ranch</h4>
+                                                <h5>Attention: Mark Johnson</h5>
+                                            </div>
+                                                <span class="badge badge-primary">Default</span>
+                                            </div>
+                                            <div class="address-card-body">
+                                                <p>1234 Main St<br>
+                                                Oklahoma City, OK 73102<br>
+                                                United States</p>
+                                                
+                                                <p>Phone: (405) 255-7668</p>
+                                                <p>Email: AandMRANCH@aol.com</p>
+                                                
+                                                <div class="address-actions">
+                                                    <button class="btn-action" title="Edit">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn-action" title="Delete">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M3 6h18"></path>
+                                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pui-col-md-4">
+                                    <div class="card">
+                                        <div>
+                                            <div class="address-card-header">
+                                                <div>
+                                                <h4>A & M Ranch</h4>
+                                                <h5>Attention: Mark Johnson</h5>
+                                            </div>
+                                                
+                                            </div>
+                                            <div class="address-card-body">
+                                                <p>2702 N. 45th Road<br>
+                                                Oklahoma City, OK 73102<br>
+                                                United States</p>
+                                                
+                                                <p>Phone: (405) 255-7668</p>
+                                                <p>Email: AandMRANCH@aol.com</p>
+                                                
+                                                <div class="address-actions">
+                                                    <button class="btn-action" title="Edit">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn-action" title="Delete">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M3 6h18"></path>
+                                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="previous-orders-tab">
+                    <div class="tab-content-inner">
+                        <div class="card">
+                            <div class="listing-header">
+                                <div class="listing-header-left">
+                                    <div class="pui-flex pui-align-items-center">
+                                        <!-- search -->
+                                        <div class="pui-input-group pui-me-10px">
+                                            <input type="text" id="searchInput" class="form-control" placeholder="Search" style="min-width: 300px;">
+    
+                                            <button class="pui-btn pui-btn-secondary" id="searchButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                </svg></button>
+                                        </div>
+                                        <!-- View All Orders checkbox-->
+                                        <div class="pui-checkbox  pui-me-10px">
+                                            <input type="checkbox" id="viewAllOrders">
+                                            <label for="viewAllOrders">View All Orders</label>
+                                        </div>
+                                        <!-- Include shipping address checkbox -->
+                                        <div class="pui-checkbox">
+                                            <input type="checkbox" id="includeShippingAddress">
+                                            <label for="includeShippingAddress">Include Shipping Address</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-p-20px">
+                                <div class="table-responsive">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Order #</th>
+                                                <th>PO</th>
+                                                <th>Item(s)</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td><a href="#">OE-123456</a></td>
+                                            <td>(Apparel and logo setup)</td>
+                                            <td>(A new energy primary chest logo)</td>
+                                            <td>Closed</td>
+                                            <td>11/7/24</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="approval-history-tab">
+                    <div class="tab-content-inner">
+                        <div class="card">
+                            <div class="listing-header">
+                                <div class="listing-header-left">
+                                    <div class="pui-flex pui-align-items-center">
+                                        <!-- search -->
+                                        <div class="pui-input-group pui-me-10px">
+                                            <input type="text" id="searchInput" class="form-control" placeholder="Search" style="min-width: 300px;">
+    
+                                            <button class="pui-btn pui-btn-secondary" id="searchButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                </svg></button>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pui-p-20px">
+                                <div class="table-responsive">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Order #</th>
+                                                <th>Description</th>
+                                                <th>Status</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td><a href="#">117179</a></td>
+                                            <td>Hoodie Order</td>
+                                            <td>Approved</td>
+                                            <td>9/1/22</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">83775</a></td>
+                                                <td>A & M Ranch Wearables</td>
+                                                <td>Approved</td>
+                                                <td>4/25/11</td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
         </div>
     </div>
 
-    <!-- Add Logo Modal -->
-    <div id="addLogoModal" class="modal" style="display: none;">
+    <!-- Add New Address Modal -->
+    <div id="addAddressModal" class="modal" style="display: none;">
         <div class="modal-content" style="max-width: 700px;">
             <div class="modal-header">
-                <h3>Add New Logo Specification</h3>
-                <span class="close-modal" onclick="closeAddLogoModal()">&times;</span>
+                <h3>Add New Address</h3>
+                <span class="close-modal" onclick="closeAddAddressModal()">&times;</span>
             </div>
             <div class="modal-body">
-                <form id="addLogoForm">
-                    
-                    
-                    
-                    <div class="form-group pui-mb-15px">
-                        <label for="specType">Specification Type <span class="required">*</span></label>
-                        <select id="specType" class="form-control" onchange="toggleSpecificationFields()" required>
-                            <option value="screen_printing" selected>Screen Printing</option>
-                            <option value="embroidery">Embroidery</option>
+                <form id="addAddressForm">
+                    <div class="pui-row">
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label for="attention">Attention</label>
+                                <input type="text" id="attention" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressLine1">Line 1</label>
+                        <input type="text" id="addressLine1" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressLine2">Line 2</label>
+                        <input type="text" id="addressLine2" class="form-control">
+                    </div>
+                    <!-- phone type select -->
+                    <div class="form-group">
+                        <label for="phoneType">Phone Type</label>
+                        <select id="phoneType" class="form-control">
+                            <option value="home">Home</option>
+                            <option value="work">Work</option>
+                            <option value="mobile">Mobile</option>
                         </select>
                     </div>
-                    
-                    <!-- Screen Printing Fields -->
-                    <div id="screenPrintingFields">
-                        <div class="pui-row">
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="width">Width (cm) <span class="required">*</span></label>
-                                    <input type="number" id="width" class="form-control" step="0.1" min="0" required>
-                                </div>
-                            </div>
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="height">Height (cm) <span class="required">*</span></label>
-                                    <input type="number" id="height" class="form-control" step="0.1" min="0" required>
-                                </div>
+                    <div class="pui-row">
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" class="form-control" required>
                             </div>
                         </div>
-                        <div class="form-group pui-mb-15px">
-                            <label>Background Colors <span class="required">*</span> <button type="button" class="add-option-btn-sm" title="Add New">+</button></label>
-                            <div class="color-picker">
-                                <div class="color-options">
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="red" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #ff0000;" title="Red"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="yellow" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #ffff00;" title="Yellow"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="blue" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #0000ff;" title="Blue"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="green" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #008000;" title="Green"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="white" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #ffffff; border: 1px solid #ddd;" title="White"></span>
-                                    </label>
-                                    <label class="color-option">
-                                        <input type="checkbox" name="bgColors" value="black" class="color-checkbox">
-                                        <span class="color-swatch" style="background-color: #000000;" title="Black"></span>
-                                    </label>
-                                </div>
-                                <input type="hidden" id="bgColors" name="bgColors" required>
+                        <div class="pui-col-md-3">
+                            <div class="form-group">
+                                <label for="state">State</label>
+                                <input type="text" id="state" class="form-control" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="price">Price ($) <span class="required">*</span></label>
-                            <input type="number" id="price" class="form-control" step="0.01" min="0" required>
+                        <div class="pui-col-md-3">
+                            <div class="form-group">
+                                <label for="zip">ZIP Code</label>
+                                <input type="text" id="zip" class="form-control" required>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Embroidery Fields (initially hidden) -->
-                    <div id="embroideryFields" style="display: none;">
-                        <div class="pui-row">
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="stitchCount">Stitch Count <span class="required">*</span></label>
-                                    <input type="number" id="stitchCount" class="form-control" min="0" required>
-                                </div>
-                            </div>
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="size">Size (e.g., 100x100) <span class="required">*</span></label>
-                                    <input type="text" id="size" class="form-control" placeholder="Enter size (e.g., 100x100)" required>
-                                </div>
+                    <div class="pui-row">
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" class="form-control" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US" selected>United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="IN">India</option>
+                                </select>
                             </div>
                         </div>
-                        
-                        <div class="pui-row">
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="trims">No. of Trims <span class="required">*</span></label>
-                                    <input type="number" id="trims" class="form-control" min="0" required>
-                                </div>
-                            </div>
-                            <div class="pui-col-md-6">
-                                <div class="form-group pui-mb-15px">
-                                    <label for="colorChanges">No. of Color Changes <span class="required">*</span></label>
-                                    <input type="number" id="colorChanges" class="form-control" min="0" required>
-                                </div>
+                        <div class="pui-col-md-6">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="embroideryPrice">Price ($) <span class="required">*</span></label>
-                            <input type="number" id="embroideryPrice" class="form-control" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check pui-flex pui-align-items-center">
+                            <input type="checkbox" id="makeDefault" class="form-check-input">
+                            <label class="form-check-label pui-ms-5px pui-mb-none" for="makeDefault">Set as default shipping address</label>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer pui-p-15px pui-pt-0">
-                <button type="button" class="pui-btn pui-btn-secondary pui-mr-10px" onclick="closeAddLogoModal()">Cancel</button>
-                <button type="button" class="pui-btn pui-btn-primary" onclick="saveLogo()">Save</button>
+                <button type="button" class="pui-btn pui-btn-secondary pui-mr-10px" onclick="closeAddAddressModal()">Cancel</button>
+                <button type="button" class="pui-btn pui-btn-primary" onclick="saveAddress()">Save Address</button>
             </div>
         </div>
     </div>
 
+   
+
     <style>
+        /* Address Card Styling */
+        .address-card {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #eaeaea;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .address-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .address-card-header h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+        .address-card-header h5 {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .address-card-body {
+            position: relative;
+            padding-right: 60px;
+        }
+        
+        .address-card-body p {
+            margin: 5px 0;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .address-actions {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .btn-action {
+            background: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #666;
+            transition: all 0.2s;
+        }
+        
+        .btn-action:hover {
+            background: #f5f5f5;
+            color: #333;
+            border-color: #ccc;
+        }
+        
+        .btn-action svg {
+            width: 16px;
+            height: 16px;
+        }
+        
         .badge {
             background-color: #c7e2ff;
             color: rgb(10, 54, 109);
@@ -686,6 +1544,65 @@
     </style>
     
     <script>
+        // Address Modal Functions
+        function openAddAddressModal() {
+            document.getElementById('addAddressModal').style.display = 'block';
+        }
+        
+        function closeAddAddressModal() {
+            document.getElementById('addAddressModal').style.display = 'none';
+            document.getElementById('addAddressForm').reset();
+        }
+        
+        function saveAddress() {
+            const form = document.getElementById('addAddressForm');
+            if (form.checkValidity()) {
+                // Here you would typically save the address to your database
+                alert('Address saved successfully!');
+                closeAddAddressModal();
+                // Refresh the address list or add the new address to the UI
+            } else {
+                form.reportValidity();
+            }
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let modal of modals) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    if (modal.id === 'addAddressModal') {
+                        document.getElementById('addAddressForm').reset();
+                    }
+                }
+            }
+        }
+        
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Show corresponding tab content
+                    const tabId = button.getAttribute('data-tab');
+                    const tabContent = document.getElementById(tabId);
+                    if (tabContent) {
+                        tabContent.classList.add('active');
+                    }
+                });
+            });
+        });
+
         // Close dropdowns when clicking outside
         document.addEventListener('click', function(event) {
             if (!event.target.closest('.dropdown')) {
